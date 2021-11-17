@@ -2,7 +2,7 @@ import React from "react";
 import { View,Text } from "react-native";
 import styles from './style'
 
-export default function Label (props){
+export default function Label (props:any){
    const {labelname} =props;
     return(
         <View>

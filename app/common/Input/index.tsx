@@ -2,7 +2,7 @@ import React from "react";
 import { View,TextInput } from "react-native";
 import styles from './style'
 
-export default function Input (props){
+export default function Input (props:any){
    const {inputplaceholder} =props;
     return(
         <View>

@@ -6,16 +6,19 @@ const styles = StyleSheet.create({
         
         alignSelf:"center",
         position:'absolute',
-        borderRadius:90,
-      borderColor: 'skyblue',
+        // borderRadius:20,
+        backgroundColor:"rgba(0, 102, 204, 0.7)",
+       borderColor: 'rgba(0, 102, 204, 0.7)',
       borderWidth: 2,
       paddingHorizontal: 22,
       paddingVertical: 10,
+      borderBottomLeftRadius:30,
+      borderTopRightRadius:30
     },
     paragraph: {
         
         fontSize: 15,
-        color:"skyblue",
+        color:"white",
         fontWeight: 'bold',
         paddingHorizontal: 22,
       paddingVertical: 5,

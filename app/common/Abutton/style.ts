@@ -5,7 +5,7 @@ const styles = StyleSheet.create({
     container: {
         
         alignSelf:"center",
-        position:'absolute',
+        // position:'absolute',
         // borderRadius:20,
         backgroundColor:"rgba(0, 102, 204, 0.7)",
        borderColor: 'rgba(0, 102, 204, 0.7)',

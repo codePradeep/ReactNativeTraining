@@ -9,7 +9,8 @@ import Counterdemo from '../views/Counterscreen/counter';
 import ThunkApp from '../viewmodels/ReduxApimodel';
 import ApiCallDemo from '../views/ApiCallDemo';
 import fetchData from '../viewmodels/ApiCallModel';
-import signup from '../views/Signup/Signup';
+
+import Signupmodel from '../viewmodels/Signupmodel';
 
 type rootnode={
     Home:undefined;
@@ -23,7 +24,8 @@ const Routenavigation =() => {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Signup" >
         <Stack.Screen name="Home" component={Homemodel} />
-        <Stack.Screen name="Signup" component={signup} options={{headerShown:false}} />
+        <Stack.Screen name="Signup" component={Signupmodel} options={{headerShown:false}} />
+        
         <Stack.Screen name="login" component={Loginmodel} />
         <Stack.Screen name="counter" component={Counterdemo} />
         {/* <Stack.Screen name="Apicalldemo" component={Apicall} />

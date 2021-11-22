@@ -15,6 +15,7 @@ import { Provider } from 'react-redux'
 import Routenavigation from './app/routes/navigation';
 import rootReducer from './app/redux/reducer/rootreducer';
 
+
 const store = createStore(rootReducer)
 
 const App = () => {

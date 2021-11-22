@@ -7,24 +7,24 @@ import Input from '../../common/Input';
 const image = { uri: "https://images.pexels.com/photos/2670898/pexels-photo-2670898.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" };
 import Logo from '../../common/Logo';
 
-
 import * as Animatable from 'react-native-animatable';
  
 
 
   interface Signupeprops {
-    Input:any
+    [x: string]: any;
+    
     navigation: any
-
-    username:string
-    email:string
-    password:string
-    cpassword:string
+   
+    
     usernameinput:any
-    data: object
-    check_textInputChange:any
-    maxLength:number
-
+    emailinpute:any
+   
+    
+    submit:()=>void
+    re_enterPassword:any
+    enterPassword:any
+    isValidEmail:any
 }
 
 
@@ -33,52 +33,10 @@ import * as Animatable from 'react-native-animatable';
 const Signup =(props:Signupeprops)=> {
   
   
-  const [Username, setUsername] = useState("");
-  const [Email, setEmail] = useState("");
-  const [password, setpassword] = useState("");
-  const [cpassword, setcpassword] = useState("");
-  const [isValidEmail, setisValidEmail] = useState(true);
-  const [isValidUser, setisValidUser] = useState(true);
-  const [isValidPassword, setisValidPassword] = useState(true);
-  const [isPasswordSame, setisPasswordSame] = useState(true);
+
 
   
 
-  const submit=()=>{
-    const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
-    const usernameRegex = /^[a-zA-Z0-9._]$/
-    const passwordRegex= /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/
-
-            if(emailRegex.test(Email)){
-                setisValidEmail(true);
-            }else{
-              setisValidEmail(false);
-            }
-
-              if(usernameRegex.test(Username)){
-                setisValidUser(true);
-            }else{
-                setisValidUser(false);
-            }
-
-                if(passwordRegex.test(password)){
-                  setisValidPassword(true);
-              }else{
-                setisValidPassword(false);
-              }
-
-              if(password==cpassword){
-                setisPasswordSame(true);
-              }else{
-              setisPasswordSame(false);
-              }
-    
-    
-    console.log("email=>",Email)
-    console.log("name=>",Username)
-    console.log("password=>",password)
-    console.log("cunform password=>",cpassword)
-  }
     
   
    return (
@@ -108,37 +66,37 @@ const Signup =(props:Signupeprops)=> {
       <Input  labelname="User Name" 
               inputplaceholder="User Name"
               maxLength={16} 
-              changeText={(text:any)=>setUsername(text)} />
+              changeText={props.usernameinput} />
 
-{ isValidUser? null:<Text style={styles.error}> invalid Username</Text> }
+{ props.isValidUser? null:<Text style={styles.error}> invalid Username </Text> }
 
        
       <Input labelname="Email ID" 
               inputplaceholder="EX-abc@abc.com" 
               maxLength={16} 
-              changeText={(text:any)=>setEmail(text)}  />
+              changeText={props.emailinpute}  />
 
-{ isValidEmail? null:<Text style={styles.error}> Invalid Email Id</Text> }
+{ props.isValidEmail? null:<Text style={styles.error}> Invalid Email Id</Text> }
 
         
       <Input labelname="Password" 
              inputplaceholder="*********"
              maxLength={16} 
-             changeText={(text:any)=>setpassword(text)}/>
+             changeText={props.enterPassword}/>
 
-{isValidPassword? null:<Text style={styles.error}> Invalid Password:Minimum 8 characters, at least one letter and one number:</Text>}
+{props.isValidPassword? null:<Text style={styles.error}> Invalid Password:Minimum 8 characters, at least one letter and one number:</Text>}
 
      
       <Input labelname="Re-enter Password" 
              inputplaceholder="********"
              maxLength={12} 
-             changeText={(text:any)=>setcpassword(text)}/>
+             changeText={props.re_enterPassword}/>
 
-{isPasswordSame? null:<Text style={styles.error}> Input Same Password</Text>}
+{props.isPasswordSame? null:<Text style={styles.error}> Input Same Password</Text>}
 
      
      <View style={{paddingTop:10}}>
-      <Abutton title="Submit" press={submit}/> 
+      <Abutton title="Submit" press={props.submit}/> 
       
        </View>
        

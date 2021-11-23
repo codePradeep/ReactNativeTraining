@@ -1,8 +1,10 @@
 import React from "react";
 import { View,TextInput } from "react-native";
 import styles from './style'
-
-export default function Input (props){
+interface inputprops{
+    inputplaceholder:string
+}
+ const Input = (props:inputprops)=>{
    const {inputplaceholder} =props;
     return(
         <View>
@@ -15,3 +17,4 @@ export default function Input (props){
 }
 
 
+export default Input

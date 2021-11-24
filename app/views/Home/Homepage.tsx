@@ -1,6 +1,8 @@
 
 import React from "react";
 import { View, Text,Button} from "react-native";
+import Logo from "../../common/Logo";
+
 import styles from "./style";
 
 interface Homepageprops {
@@ -14,7 +16,7 @@ const Homepage=(props:Homepageprops)=>{
     return(
         <View style={styles.Container} >
             <Text style={styles.paragraph}> This is Home page </Text>
-
+            
             <Button title=" go to login" onPress={() => navigation.navigate('login')}/>
         
             {/* <Button title=" go to redux counter" onPress={() => navigation.navigate('counter')}/> */}

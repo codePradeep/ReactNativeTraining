@@ -9,6 +9,7 @@ import Counterdemo from '../views/Counterscreen/counter';
 import ThunkApp from '../viewmodels/ReduxApimodel';
 
 import GoogleLogin from '../views/Google';
+import FacebookSignIn from '../views/Facebook';
 
 type rootnode={
     Home:undefined;
@@ -20,10 +21,11 @@ const Stack = createNativeStackNavigator();
 const Routenavigation =() => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="GoogleSignIn">
+      <Stack.Navigator initialRouteName="facebookSignIn">
         <Stack.Screen name="Home" component={Homemodel} />
         <Stack.Screen name="login" component={Loginmodel} />
         <Stack.Screen name="GoogleSignIn" component={GoogleLogin} options={{headerShown:false}}/>
+        <Stack.Screen name="facebookSignIn" component={FacebookSignIn} options={{headerShown:false}}/>
 
       </Stack.Navigator>
     </NavigationContainer>

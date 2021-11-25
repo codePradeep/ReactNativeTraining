@@ -1,13 +1,7 @@
-import React, { useState } from "react";
-import { View, Text, Alert } from "react-native";
+import React from "react";
+import { View, Text } from "react-native";
 import styles from "./style";
 import { GoogleSignin, GoogleSigninButton, statusCodes } from '@react-native-google-signin/google-signin';
-
-interface Googleloginprops {
-    navigation: any
-    error: any
-}
-
 
 
 
@@ -41,6 +35,8 @@ const signIn = async () => {
         }
     }
 };
+// TO GET CURRERNT USER INFO
+
 
 //   const getCurrentUserInfo = async () => {
 //     try {
@@ -55,6 +51,9 @@ const signIn = async () => {
 //     }
 //   };
 
+
+// TO GET IS USER SIGNED IN  
+
 //  const isSignedIn = async () => {
 //     const isSignedIn = await GoogleSignin.isSignedIn();
 //     setloggedIn({ isLoginScreenPresented: !isSignedIn });
@@ -66,6 +65,7 @@ const GoogleLogin = () => {
     return (
         <View style={styles.Container}>
             <Text style={styles.paragraph}> Sign In with Google Account </Text>
+           
             <GoogleSigninButton
                 style={{ width: 192, height: 48 }}
                 size={GoogleSigninButton.Size.Wide}

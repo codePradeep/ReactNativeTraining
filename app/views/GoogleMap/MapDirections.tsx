@@ -46,7 +46,7 @@ const  MapDirections =()=>{
           <MapViewDirections
           origin={coordinates[0]}
           destination={coordinates[1]}
-          apikey={"AIzaSyBrbJ0c-12lV1yF9F4z1yx9myye4rDrxY0"} // insert your API Key here
+          apikey={"insert your API Key here"} 
           strokeWidth={4}
           strokeColor="#111111"
         />

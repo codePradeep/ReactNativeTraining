@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@react-native-community/netinfo": "^6.2.0",
+    "@react-native-firebase/app": "^13.0.1",
+    "@react-native-firebase/messaging": "^13.0.1",
     "@react-navigation/native": "^6.0.6",
     "@react-navigation/native-stack": "^6.2.5",
     "axios": "^0.24.0",

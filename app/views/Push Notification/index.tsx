@@ -41,8 +41,8 @@ const checkToken = async () => {
     return(
        
         <View style={styles.Container}>
-             <NotificationController />
-            <Text style={styles.paragraph}> Push Notification Demo </Text>
+             <NotificationController  />
+            <Text style={styles.paragraph}> Push Notification With Firebasse Demo  </Text>
             <Button title="Get FCM Token" onPress={()=>checkToken()} />
            
 

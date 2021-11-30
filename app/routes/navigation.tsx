@@ -18,7 +18,7 @@ const Stack = createNativeStackNavigator();
 const Routenavigation =() => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="PhoneOtp">
+      <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="Home" component={Homemodel} />
         <Stack.Screen name="login" component={Loginmodel} />
         <Stack.Screen name="counter" component={Counterdemo} />

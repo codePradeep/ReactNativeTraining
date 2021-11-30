@@ -15,12 +15,9 @@ const Homepage=(props:Homepageprops)=>{
         <View style={styles.Container} >
             <Text style={styles.paragraph}> This is Home page </Text>
 
-            <Button title=" go to login" onPress={() => navigation.navigate('login')}/>
+            <Button title="OTP with Custom Number" onPress={() => navigation.navigate('PhoneOtp')}/>
         
-            {/* <Button title=" go to redux counter" onPress={() => navigation.navigate('counter')}/> */}
-            {/* <Button title=" go to Api call" onPress={() => navigation.navigate('Apicalldemo')}/>
-            <Button title=" redux Api call" onPress={() => navigation.navigate('reduxApicalldemo')}/> */}
-            <Button title=" Api call" onPress={() => navigation.navigate('calldemo')}/>
+            <Button title="Auth" onPress={() => navigation.navigate('PhoneAuth')}/>
             
         </View>
     )

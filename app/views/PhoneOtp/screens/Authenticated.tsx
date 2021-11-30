@@ -4,13 +4,12 @@ import auth from '@react-native-firebase/auth';
 
 
 
-export default function Authenticated() {
+ const Authenticated=()=> {
 
   
   return (
     <View style={styles.screen}>
       <Text style={styles.text}>You're Logged in</Text>
-      <Text style={styles.phoneNumber}>{ auth().currentUser.phoneNumber}</Text>
       <View style={{ marginTop: 30 }}>
         <Button title="Signout" onPress={() => auth().signOut()} />
       </View>
@@ -41,3 +40,4 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
 });
+export default Authenticated

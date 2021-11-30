@@ -24,7 +24,7 @@ const Routenavigation =() => {
         <Stack.Screen name="counter" component={Counterdemo} />
 
         
-        <Stack.Screen name="PhoneAuth" component={PhoneSignIn} />
+        <Stack.Screen name="PhoneAuth" component={PhoneSignIn} />  
         <Stack.Screen name="PhoneOtp" component={PhoneOtp} />
 
       </Stack.Navigator>

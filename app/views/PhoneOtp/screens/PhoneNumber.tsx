@@ -1,14 +1,9 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
 
-interface phonprops{
-  
-  onSubmit:any
-  
 
-}
 
-export default function PhoneNumber(props:phonprops) {
+const PhoneNumber=(props: { onSubmit: (arg0: string) => void; }) =>{
   
 
 
@@ -47,3 +42,5 @@ const styles = StyleSheet.create({
     fontSize: 25,
   },
 });
+
+export default PhoneNumber

@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
 import {View, Button, TextInput } from 'react-native';
 import auth from '@react-native-firebase/auth';
-interface authprops{
-    confirmation:any
-    confirm:number
-
-}
 
 
 const PhoneSignIn=()=> {

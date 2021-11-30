@@ -5,10 +5,8 @@ import { Homemodel,Loginmodel } from '../viewmodels';
 import Homepage from '../views/Home/Homepage';
 import Loginpage from '../views/Login/Loginpage';
 import Counterdemo from '../views/Counterscreen/counter';
-import Apicall from '../views/Apicall';
-import ThunkApp from '../viewmodels/ReduxApimodel';
-import ApiCallDemo from '../views/ApiCallDemo';
-import fetchData from '../viewmodels/ApiCallModel';
+import PhoneSignIn from '../views/PhoneAuth';
+import PhoneOtp from '../views/PhoneOtp';
 
 type rootnode={
     Home:undefined;
@@ -20,13 +18,14 @@ const Stack = createNativeStackNavigator();
 const Routenavigation =() => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
+      <Stack.Navigator initialRouteName="PhoneOtp">
         <Stack.Screen name="Home" component={Homemodel} />
         <Stack.Screen name="login" component={Loginmodel} />
         <Stack.Screen name="counter" component={Counterdemo} />
-        {/* <Stack.Screen name="Apicalldemo" component={Apicall} />
-        <Stack.Screen name="reduxApicalldemo" component={ThunkApp} /> */}
-        <Stack.Screen name="calldemo" component={fetchData} />
+
+        
+        <Stack.Screen name="PhoneAuth" component={PhoneSignIn} />
+        <Stack.Screen name="PhoneOtp" component={PhoneOtp} />
 
       </Stack.Navigator>
     </NavigationContainer>

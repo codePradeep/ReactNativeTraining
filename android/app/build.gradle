@@ -147,7 +147,7 @@ android {
         }
     }
     signingConfigs {
-        debug {
+        debug {//codep27
             storeFile file('debug.keystore')
             storePassword 'android'
             keyAlias 'androiddebugkey'

@@ -1,8 +1,7 @@
-# ReactNativeTraining
 
-#Steps for Google Map Integration in Rect native Project
+# Steps for Google Map Integration in Rect native Project
 
-#Process First is to install the react-native-maps Library
+### Process First is to install the react-native-maps Library
 
 # Installation
 
@@ -51,6 +50,7 @@ Add your API key to your manifest file (`android/app/src/main/AndroidManifest.xm
    <!-- You will also only need to add this uses-library tag -->
    <uses-library android:name="org.apache.http.legacy" android:required="false"/>
 </application>
+```
 
 Source: https://developers.google.com/maps/documentation/android-api/signup
 

@@ -17,7 +17,7 @@ const Routenavigation =() => {
       <Stack.Navigator initialRouteName="Upipayment">
         <Stack.Screen name="Home" component={Homemodel} />
         
-        <Stack.Screen name="Upipayment" component={Upipayment} />
+        <Stack.Screen name="Upipayment" component={Upipayment} options={{headerShown:false}} />
 
       </Stack.Navigator>
     </NavigationContainer>

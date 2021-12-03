@@ -39,10 +39,10 @@ const Razorpay=()=>  {
             <Text style={styles.paragraph}>RAZORPAY GATEWAY </Text>
             
             <TouchableOpacity
-    onPress={payment}
-    style={styles.container}>
-    <Text style={styles.paragraph} >Razor Payment</Text>
-  </TouchableOpacity>
+                  onPress={payment}
+                  style={styles.container}>
+                  <Text style={styles.paragraph} >Razor Payment</Text>
+            </TouchableOpacity>
         </View>
     )
 }

@@ -1,0 +1,11 @@
+{
+  "name": "99code-pradeep",
+  "version": "1.2.0",
+  "description": "this is test demo packege",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

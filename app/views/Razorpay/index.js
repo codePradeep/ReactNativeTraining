@@ -23,8 +23,11 @@ const Razorpay=()=>  {
     }
     RazorpayCheckout.open(options).then((data) => {
       // handle success
+      console.log("payment id=>",data.razorpay_payment_id)
       alert(`Success: ${data.razorpay_payment_id}`);
+     
     }).catch((error) => {
+      console.log("Error",error.code|error.description)
       // handle failure
       alert(`Error: ${error.code} | ${error.description}`);
     });

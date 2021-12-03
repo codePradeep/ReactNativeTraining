@@ -2,16 +2,17 @@
 
 There are two steps:
 
-- Create your package.
-- Publish the package.
+1. Create your package.
+1. Publish the package.
 
 
-# Create your Package
+## Create your Package
 To publish your first package to npm, you need to go through these steps:
 
-- First, you need to have an npm account. Create one [here](https://www.npmjs.com/signup) if you don’t have one yet.
+- **First, you need to have an npm account. Create one [here](https://www.npmjs.com/signup) if you don’t have one yet.**
 
-- Second, you need to login to your npm account through the command line. (You need to have Node and npm installed on your system before you perform this stepS ).
+- **Second, you need to login to your npm account through the command line.** 
+>(You need to have Node and npm installed on your system before you perform this stepS ).
 
 To sign in, you use
 ```
@@ -27,7 +28,8 @@ Email: (this IS public)
 Email: (this IS public) pradeep.sharma1@successive.tech
 Logged in as codepradeep on https://registry.npmjs.org/.
 ```
-- Third, you need to create a package.for that create a folder somewhere on your computer and navigate to it. The command line version is:
+- **Third, you need to create a package.**
+  for that create a folder somewhere on your computer and navigate to it. The command line version is:
 ```
 # Creating a folder 
 mkdir npm-package
@@ -39,7 +41,7 @@ begin the project with the npm init command.
 ```
 npm init
 ```
-This command creating a package.json file. and ask for these info
+This command creating a package.json file and ask for these info..
 ```
 package name: (npm-packege) 99codepradeep //it should be unique and package should not already exists on npm
 version: (1.0.0)
@@ -51,7 +53,7 @@ keywords:
 author: Pradeep
 license: (ISC)
 ```
-- The final step is to publish your package with this command.
+- **The final step is to publish your package with this command.**
 ```
 npm publish
 ```
@@ -69,8 +71,8 @@ npm notice name:          99code-pradeep
 npm notice version:       1.0.0
 npm notice package size:  357 B
 npm notice unpacked size: 305 B
-npm notice shasum:        32f886ebe1205bf2ef7a916347e30bdfe673bb83
-npm notice integrity:     sha512-HYvq2DH+BrvCI[...]Q0ICDCuFjDqrg==
+npm notice shasum:        **************************
+npm notice integrity:     *********************************
 npm notice total files:   3
 npm notice
 + 99code-pradeep@1.0.0

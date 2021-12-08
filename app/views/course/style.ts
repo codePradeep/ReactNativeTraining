@@ -21,7 +21,7 @@ const styles = (orientation: any) => StyleSheet.create({
   },
 
   maincontainer: {
-    marginHorizontal: orientation.isLandscape ? orientation.height * 0.04 : orientation.height * 0.025,
+    marginHorizontal: orientation.isLandscape ? orientation.height * 0.045 : orientation.height * 0.025,
     marginVertical: orientation.height * 0.01
   },
   item: {
@@ -31,8 +31,8 @@ const styles = (orientation: any) => StyleSheet.create({
   title: {
     fontSize: 28,
     color: 'rgba(26, 24, 21,0.9)',
-    width: orientation.width * 0.8,
-    height: orientation.height * 0.13,
+    width: orientation.isLandscape ?orientation.width * 0.8:orientation.width*0.8,
+    height:orientation.isLandscape ? orientation.height * 0.16:orientation.height * 0.2,
     fontWeight: '600',
 
   },

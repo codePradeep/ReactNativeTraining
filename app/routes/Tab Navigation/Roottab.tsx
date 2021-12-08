@@ -1,7 +1,7 @@
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import React from 'react';
-import { Image } from 'react-native';
+import { Image, View } from 'react-native';
 import { useOrientation } from '../../config/useOrientation';
 import CourseModal from '../../viewmodels/CourseModel';
 
@@ -25,6 +25,9 @@ const Roottab = () => {
       <Tab.Screen name="Home" component={CourseModal}
 
         options={{
+          
+          tabBarBackground:()=>(<View style={{flex:1,backgroundColor:'rgba(26, 24, 21,1)'}}></View>),
+          //tabBarActiveBackgroundColor:"red",
           tabBarLabelPosition: "below-icon",
           headerShown: false, tabBarLabelStyle: { fontSize: 12, paddingBottom: 5 },
           tabBarStyle: { height: 50 },
@@ -38,6 +41,7 @@ const Roottab = () => {
         }} />
 
       <Tab.Screen name="Progress" component={CourseModal} options={{
+        tabBarBackground:()=>(<View style={{flex:1,backgroundColor:'rgba(26, 24, 21,1)'}}></View>),
         tabBarLabelPosition: "below-icon",
         headerShown: false, tabBarLabelStyle: { fontSize: 12, paddingBottom: 5 },
         tabBarStyle: { height: 50 },
@@ -53,6 +57,7 @@ const Roottab = () => {
       }} />
 
       <Tab.Screen name="Inbox" component={CourseModal} options={{
+        tabBarBackground:()=>(<View style={{flex:1,backgroundColor:'rgba(26, 24, 21,1)'}}></View>),
         tabBarLabelPosition: "below-icon",
         headerShown: false, tabBarLabelStyle: { fontSize: 12, paddingBottom: 5 },
         tabBarStyle: { height: 50 },
@@ -68,6 +73,7 @@ const Roottab = () => {
       }} />
 
       <Tab.Screen name="Settings" component={CourseModal} options={{
+        tabBarBackground:()=>(<View style={{flex:1,backgroundColor:'rgba(26, 24, 21,1)'}}></View>),
         tabBarLabelPosition: "below-icon",
         headerShown: false, tabBarLabelStyle: { fontSize: 12, paddingBottom: 5 },
         tabBarStyle: { height: 50 },

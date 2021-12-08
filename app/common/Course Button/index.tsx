@@ -13,6 +13,7 @@ const Coursebutton = (props: any) => {
 
     >
       <Text style={styles.paragraph}>{props.title}</Text>
+      
     </TouchableOpacity>
 
   )

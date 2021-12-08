@@ -1,0 +1,90 @@
+
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import React from 'react';
+import { Image } from 'react-native';
+import { useOrientation } from '../../config/useOrientation';
+import CourseModal from '../../viewmodels/CourseModel';
+
+
+import styles from './style';
+
+interface tabprop {
+  orientation: boolean
+}
+
+
+const Tab = createBottomTabNavigator();
+
+
+
+const Roottab = () => {
+
+  const orientation = useOrientation();
+  return (
+    <Tab.Navigator  >
+      <Tab.Screen name="Home" component={CourseModal}
+
+        options={{
+          tabBarLabelPosition: "below-icon",
+          headerShown: false, tabBarLabelStyle: { fontSize: 12, paddingBottom: 5 },
+          tabBarStyle: { height: 50 },
+          tabBarIcon: () => {
+            return (<Image
+              style={styles(orientation).image}
+              source={require('../../assets/home.png')} />
+            );
+          }
+
+        }} />
+
+      <Tab.Screen name="Progress" component={CourseModal} options={{
+        tabBarLabelPosition: "below-icon",
+        headerShown: false, tabBarLabelStyle: { fontSize: 12, paddingBottom: 5 },
+        tabBarStyle: { height: 50 },
+
+
+        tabBarIcon: () => {
+          return (<Image
+            style={styles(orientation).image}
+            source={require('../../assets/progress.png')} />
+          );
+        }
+
+      }} />
+
+      <Tab.Screen name="Inbox" component={CourseModal} options={{
+        tabBarLabelPosition: "below-icon",
+        headerShown: false, tabBarLabelStyle: { fontSize: 12, paddingBottom: 5 },
+        tabBarStyle: { height: 50 },
+
+
+        tabBarIcon: () => {
+          return (<Image
+            style={styles(orientation).image}
+            source={require('../../assets/inbox.png')} />
+          );
+        }
+
+      }} />
+
+      <Tab.Screen name="Settings" component={CourseModal} options={{
+        tabBarLabelPosition: "below-icon",
+        headerShown: false, tabBarLabelStyle: { fontSize: 12, paddingBottom: 5 },
+        tabBarStyle: { height: 50 },
+
+
+        tabBarIcon: () => {
+          return (<Image
+            style={styles(orientation).image}
+            source={require('../../assets/settings.png')} />
+          );
+        }
+
+      }} />
+
+
+    </Tab.Navigator>
+  );
+}
+
+export default Roottab

@@ -15,7 +15,7 @@ const styles = (orientation: any) => StyleSheet.create({
     flex: 1,
   },
   image: {
-    height: orientation.isLandscape ? orientation.height * 0.4 : orientation.height * 0.23,
+    height: orientation.isLandscape ? orientation.height * 0.4 : orientation.height * 0.23 ,
     width: orientation.isLandscape ? orientation.width * 0.9 : orientation.width * 0.9,
     resizeMode: "stretch"
   },
@@ -25,7 +25,7 @@ const styles = (orientation: any) => StyleSheet.create({
     marginVertical: orientation.height * 0.01
   },
   item: {
-    paddingRight: orientation.isLandscape ? orientation.width * 0.02 : orientation.width * 0.02
+   paddingRight: orientation.isLandscape ? orientation.width * 0.02 : orientation.width * 0.02
 
   },
   title: {

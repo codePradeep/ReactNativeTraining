@@ -43,17 +43,25 @@ const Coursepage = (props: courseprops) => {
     //     },
     // ]
 
-
+  const  ItemSeprator = () => <View style={{
+        height: 2,
+        width: 9,
+        backgroundColor: "rgba(0,0,0,0.5)",
+      }} />
 
     return (
         <ScrollView>
             <View style={styles(orientation).maincontainer}>
                {isLoading ? <ActivityIndicator/>: <FlatList
+                    
                     horizontal
                     showsVerticalScrollIndicator={false}
+                   // pagingEnabled={true}
                     showsHorizontalScrollIndicator={false}
+                  //  legacyImplementation={false}
                     data={data}
                     initialScrollIndex={0}
+                   ItemSeparatorComponent={ItemSeprator}
                     renderItem={({ item ,index }) => <RenderflatItem  item={item} orientation={orientation} index={0}/> }
                     keyExtractor={(_,index )=> index.toString()}
                 /> }
@@ -64,4 +72,8 @@ const Coursepage = (props: courseprops) => {
 
 
 export default Coursepage;
+
+function scrollToIndex(arg0: { animated: boolean; index: number; }): void {
+    throw new Error("Function not implemented.");
+}
 

@@ -63,7 +63,8 @@ const Coursepage = (props: courseprops) => {
                     initialScrollIndex={0}
                    ItemSeparatorComponent={ItemSeprator}
                     renderItem={({ item ,index }) => <RenderflatItem  item={item} orientation={orientation} index={0}/> }
-                    keyExtractor={(_,index )=> index.toString()}
+                    keyExtractor={(item) => item.id}
+                    // (_,index )=> index.toString()
                 /> }
             </View>
         </ScrollView>

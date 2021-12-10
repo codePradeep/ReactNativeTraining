@@ -4,6 +4,11 @@ import React from 'react';
 import { Image, View } from 'react-native';
 import { useOrientation } from '../../config/useOrientation';
 import CourseModal from '../../viewmodels/CourseModel';
+import Details from '../../views/Details';
+import CameraTest from '../../views/imagepicker test/App';
+import Progress from '../../views/Progress';
+import SettingsPage from '../../views/Settings';
+
 
 
 import styles from './style';
@@ -40,7 +45,7 @@ const Roottab = () => {
 
         }} />
 
-      <Tab.Screen name="Progress" component={CourseModal} options={{
+      <Tab.Screen name="Progress" component={Progress} options={{
         tabBarBackground:()=>(<View style={{flex:1,backgroundColor:'rgba(26, 24, 21,1)'}}></View>),
         tabBarLabelPosition: "below-icon",
         headerShown: false, tabBarLabelStyle: { fontSize: 12, paddingBottom: 5 },
@@ -56,7 +61,7 @@ const Roottab = () => {
 
       }} />
 
-      <Tab.Screen name="Inbox" component={CourseModal} options={{
+      <Tab.Screen name="Inbox" component={Details} options={{
         tabBarBackground:()=>(<View style={{flex:1,backgroundColor:'rgba(26, 24, 21,1)'}}></View>),
         tabBarLabelPosition: "below-icon",
         headerShown: false, tabBarLabelStyle: { fontSize: 12, paddingBottom: 5 },
@@ -72,7 +77,7 @@ const Roottab = () => {
 
       }} />
 
-      <Tab.Screen name="Settings" component={CourseModal} options={{
+      <Tab.Screen name="Settings" component={SettingsPage} options={{
         tabBarBackground:()=>(<View style={{flex:1,backgroundColor:'rgba(26, 24, 21,1)'}}></View>),
         tabBarLabelPosition: "below-icon",
         headerShown: false, tabBarLabelStyle: { fontSize: 12, paddingBottom: 5 },

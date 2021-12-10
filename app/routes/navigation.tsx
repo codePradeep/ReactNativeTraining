@@ -8,6 +8,7 @@ import { Homemodel, Loginmodel } from '../viewmodels';
 import { HeaderButton, Headerlogo } from '../common';
 
 import Roottab from './Tab Navigation/Roottab';
+import Details from '../views/Details';
 
 
 const Stack = createNativeStackNavigator();
@@ -24,6 +25,23 @@ const Routenavigation = () => {
       <Stack.Navigator initialRouteName="course">
         <Stack.Screen name="Home" component={Homemodel} />
         <Stack.Screen name="login" component={Loginmodel} />
+        <Stack.Screen name="Detail" component={Details} 
+        options={{
+
+           headerTitle:"",
+          headerRight: () => (<HeaderButton />),
+          headerTintColor: 'rgba(176, 174, 171,1)',
+
+          headerStyle: {
+            backgroundColor: 'rgba(26, 24, 21,0.9)'
+            
+
+
+          },
+
+
+        }}
+        />
         <Stack.Screen name="course" component={Roottab}
           options={{
 

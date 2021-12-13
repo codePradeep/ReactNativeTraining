@@ -25,13 +25,14 @@ const styles = (orientation: any) => StyleSheet.create({
     marginVertical: orientation.height * 0.009
   },
   item: {
-      height:90,
+      height:80,
       borderWidth:1,
    paddingRight: orientation.isLandscape ? orientation.width * 0.02 : orientation.width * 0.02,
-    marginVertical:orientation.isLandscape ? orientation.height * 0.02:orientation.height * 0.01,
+   marginHorizontal:orientation.isLandscape ? orientation.width * 0.02 : orientation.width * 0.01, 
+   marginVertical:orientation.isLandscape ? orientation.height * 0.02:orientation.height * 0.02,
   },
   title: {
-    fontSize: 18,
+    fontSize: 15,
     color: 'rgba(26, 24, 21,0.9)',
     width: orientation.isLandscape ?orientation.width * 0.8:orientation.width*0.8,
     height:orientation.isLandscape ? orientation.height * 0.16:orientation.height * 0.2,
@@ -39,7 +40,7 @@ const styles = (orientation: any) => StyleSheet.create({
 
   },
   header: {
-    fontSize: 22,
+    fontSize: 20,
     color: 'rgba(26, 24, 21,0.9)',
     fontWeight: "500",
     marginLeft: orientation.isLandscape ?orientation.width * 0.008:orientation.width*0.009,

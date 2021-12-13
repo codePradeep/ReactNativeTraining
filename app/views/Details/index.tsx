@@ -46,11 +46,11 @@ const  Details=()=> {
               <Text style={{fontSize:12,alignSelf:"center"}}>HEALTH COACH TRAINING PROGRAM</Text>
               <Text style={{fontSize:22,alignSelf:"center",color:"black"}}>Graduation Requirenments</Text>
              <View style={{marginLeft:20,marginTop:9}}>
-              <Text style={{fontSize:22,color:"black"}}>Test Results</Text>
+              <Text style={{fontSize:20,color:"black"}}>Test Results</Text>
               <Text>2/4 reuired to grduate</Text>
-              <Text style={{fontSize:22,color:"black"}}>Course</Text>
+              <Text style={{fontSize:20,color:"black"}}>Course</Text>
               <Text>Health Coach Training Program </Text>
-              <Text style={{fontSize:22,color:"black"}}>Student</Text>
+              <Text style={{fontSize:20,color:"black"}}>Student</Text>
               <Text>Pradeep Sharma</Text>
             </View> 
 

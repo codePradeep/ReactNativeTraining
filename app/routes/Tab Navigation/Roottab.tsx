@@ -61,7 +61,7 @@ const Roottab = () => {
 
       }} />
 
-      <Tab.Screen name="Inbox" component={Details} options={{
+      <Tab.Screen name="Inbox" component={CameraTest} options={{
         tabBarBackground:()=>(<View style={{flex:1,backgroundColor:'rgba(26, 24, 21,1)'}}></View>),
         tabBarLabelPosition: "below-icon",
         headerShown: false, tabBarLabelStyle: { fontSize: 12, paddingBottom: 5 },

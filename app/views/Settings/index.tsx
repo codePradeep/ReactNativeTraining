@@ -29,9 +29,9 @@ const SettingsPage = () => {
     //     },
     // ]
     const ItemSeprator = () => <View style={{
-        marginHorizontal:orientation.width*0.05,
-        height: orientation.height*0.001,
-        width: orientation.width*0.9,
+        marginHorizontal: orientation.isLandscape ?orientation.width*0.021:orientation.width*0.05,
+        height: orientation.isLandscape ?orientation.height*0.001:orientation.height*0.001,
+        width: orientation.isLandscape ?orientation.width*0.87:orientation.width*0.9,
         backgroundColor: "rgba(0,0,0,0.2)",
     }} />
 

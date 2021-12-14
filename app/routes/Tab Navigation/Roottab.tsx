@@ -6,6 +6,7 @@ import { useOrientation } from '../../config/useOrientation';
 import CourseModal from '../../viewmodels/CourseModel';
 import Details from '../../views/Details';
 import CameraTest from '../../views/imagepicker test/App';
+import Loginpage from '../../views/Login/Loginpage';
 import Progress from '../../views/Progress';
 import SettingsPage from '../../views/Settings';
 
@@ -61,7 +62,7 @@ const Roottab = () => {
 
       }} />
 
-      <Tab.Screen name="Inbox" component={CameraTest} options={{
+      <Tab.Screen name="Inbox" component={Loginpage} options={{
         tabBarBackground:()=>(<View style={{flex:1,backgroundColor:'rgba(26, 24, 21,1)'}}></View>),
         tabBarLabelPosition: "below-icon",
         headerShown: false, tabBarLabelStyle: { fontSize: 12, paddingBottom: 5 },

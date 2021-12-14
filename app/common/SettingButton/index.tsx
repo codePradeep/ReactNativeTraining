@@ -6,6 +6,7 @@ import styles from "./style"
 interface buttonprops{
    title:string
    url:number
+   OnPress:any
 }
 
 const SettingButton = (props: buttonprops) => {
@@ -18,7 +19,7 @@ const SettingButton = (props: buttonprops) => {
    
       <TouchableOpacity 
       style={styles(orientation).button}
-      onPress={() => Alert.alert("info of this app")} >
+      onPress={props.OnPress} >
 
 
                 <View style={styles(orientation).container}>

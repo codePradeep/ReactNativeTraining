@@ -4,4 +4,5 @@ import HeaderButton from "./HeaderButton";
 import Coursebutton from "./Course Button";
 import SettingButton from "./SettingButton";
 import ProgressButton from "./Progressbar Button";
-export {Headerlogo,Header,HeaderButton,Coursebutton,SettingButton,ProgressButton};
+import Input from "./Input";
+export {Headerlogo,Header,HeaderButton,Coursebutton,SettingButton,ProgressButton,Input};

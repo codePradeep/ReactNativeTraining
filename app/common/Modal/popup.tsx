@@ -12,9 +12,6 @@ const Popup = () => {
     <View style={{ flex: 1,
         justifyContent: "center",
         alignItems: "center",}}>
-
-
-
     <Modal  animationType="fade"
             transparent={true}
             visible={modalVisible}
@@ -37,18 +34,6 @@ const Popup = () => {
                 </View>
                 </View>
       </Modal>
- 
-
-
-
-       <Text>How do you show the modal on top in react-native?
-The Modal component is a native view that sits on top of the rest of your react-native application. The only way to put something above it is to put something in the modal itself, or alternately to use a js only implementation of a Modal.</Text>
-      <Pressable
-        style={[styles.button, styles.buttonOpen]}
-        onPress={() => setModalVisible(true)} >
-        <Text style={styles.textStyle}>Show Modal</Text>
-      </Pressable>
-
     </View>
   );
 };

@@ -1,5 +1,6 @@
 import React from "react";
-import { View, Text,Button} from "react-native";
+import { View, Text,Button, Image} from "react-native";
+import { Input } from "../../common";
 
 interface loginpageprops{
     navigation:any
@@ -9,9 +10,12 @@ const Loginpage=(props:loginpageprops)=>{
     const{navigation}=props
    
     return(
-        <View>
-            <Text>this is login page </Text>
-            <Button title=" go to Home" onPress={() => navigation.navigate('Home')}/>
+        <View style={{flex:1}}>
+            <View>
+                <Image source={require('../../assets/logo.png')} />
+            </View>
+            
+            
         </View>
     )
 }

@@ -4,9 +4,14 @@ import { SettingButton } from "../../common";
 import Logo from "../../common/Logo";
 import { useOrientation } from "../../config/useOrientation";
 
+interface Settingprop{
+    navigation:any
+}
 
 
-const SettingsPage = () => {
+const SettingsPage = (props:Settingprop) => {
+     
+    const {navigation}= props
 
     const orientation = useOrientation();
     console.log('orientation====>', orientation)
@@ -42,8 +47,9 @@ const SettingsPage = () => {
 <ScrollView>
         <View style={{ flex: 1, flexDirection: "column" }}>
             <View style={{ flex: 0.3, justifyContent: "center" }}>
-                <View style={{ flexDirection: "row", alignItems: "center" }}>
+                <View style={{ flexDirection: "row", alignItems: "center" }}>      
                     <Logo />
+                    
                     <View>
                         <Text style={{ fontSize: 20, fontWeight: "900", }}>Pradeep Kumar Sharma</Text>
                         <Text style={{ fontSize: 15, fontWeight: "500", }}>pradeep.sharma@gmail.com</Text>
@@ -56,19 +62,19 @@ const SettingsPage = () => {
             <View style={{ flex: 0.7, }}>
                 <Text style={{marginHorizontal:10,marginVertical:10,fontWeight:"900"}}>MANAGE ACCOUNT</Text>
 
-                <SettingButton title="Profile" url={require('../../assets/profile.png')} />
+                <SettingButton title="Profile" url={require('../../assets/profile.png')}  OnPress={() =>navigation.navigate('Profile')} />
 
                 <ItemSeprator />
-                <SettingButton title="Change Password" url={require('../../assets/padlock.png')} />
+                <SettingButton title="Change Password" url={require('../../assets/padlock.png')}  OnPress={() =>navigation.navigate('ChangePassword')} />
 
                 <ItemSeprator />
-                <SettingButton title="Communication Preference" url={require('../../assets/communication.png')} />
+                <SettingButton title="Communication Preference" url={require('../../assets/communication.png')}   OnPress={() =>navigation.navigate('Communication_preferences')}/>
 
                 <ItemSeprator />
-                <SettingButton title="Change Language" url={require('../../assets/translate.png')} />
+                <SettingButton title="Change Language" url={require('../../assets/translate.png')}   OnPress={() =>navigation.navigate('Detail')}/>
 
                 <ItemSeprator />
-                <SettingButton title="Sign Out" url={require('../../assets/logout.png')} />
+                <SettingButton title="Sign Out" url={require('../../assets/logout.png')}  OnPress={() =>navigation.navigate('Detail')} />
 
                 <ItemSeprator />
 

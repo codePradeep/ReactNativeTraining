@@ -29,7 +29,25 @@ const Routenavigation = () => {
         <Stack.Screen name="Home" component={Homemodel} />
     
         <Stack.Screen name="ChangePassword" component={ChangePassword} options={{headerShown:false}} />
-        <Stack.Screen name="Profile" component={Profile} />
+        <Stack.Screen name="Profile" component={Profile}
+        options={{
+
+          headerTitle: "",
+          headerRight: () => (<HeaderButton />),
+          headerTintColor: 'rgba(176, 174, 171,1)',
+
+          headerStyle: {
+            backgroundColor: 'rgba(26, 24, 21,0.9)'
+
+
+
+          },
+
+
+        }}
+        
+        
+        />
         
         
         <Stack.Screen name="Communication_preferences" component={Communication_preferences} 

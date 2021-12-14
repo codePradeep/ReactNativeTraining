@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
     centeredView: {
         
-      flex:0.7
+      flex:0.5
      // justifyContent: "center",
 //alignItems: "center",
     //  marginTop: 22,
@@ -11,13 +11,11 @@ export const styles = StyleSheet.create({
   
     },
     modalView: {
-      
+      // flexDirection:"row",
       backgroundColor: "#ccccca", 
       padding: 60,
-      alignItems: "center",
-      justifyContent:"center",
-      borderRadius:20,
-      opacity: 1,
+//alignItems: "center",
+    //  justifyContent:"center",
     },
   
   
@@ -34,11 +32,18 @@ export const styles = StyleSheet.create({
       color: "white",
       textAlign: "center"
      },
+     Textheader:{
+      fontSize: 11,
+      color:"black",
+      marginTop:10
+
+     },
   
-    modalText:
+    Text:
      {
-      marginBottom: 18,
-      textAlign: "center"
+      fontSize: 18,
+      color:"black",
+      marginTop:10
      }
   });
 

@@ -28,7 +28,7 @@ const Communication_preferences = () => {
 
             <View style={styles(orientation).conatainer}>
                 <Text style={styles(orientation).text}>Voice Messages</Text>
-                {isEnabled? <Text style={styles(orientation).enablemessage}>Active</Text>:<Text style={styles(orientation).enablemessage}>Inactive</Text> }  
+                <Text style={styles(orientation).enablemessage}>{isEnabled? "Active":"Inactive"}</Text>
                 <Switch
                     trackColor={{ false: "gray", true: "#81b0ff" }}
                     thumbColor={isEnabled ? "blue" : "white"}
@@ -40,7 +40,7 @@ const Communication_preferences = () => {
 
             <View style={styles(orientation).conatainer}>
             <Text style={styles(orientation).text}>SMS</Text>
-              {isEnabledsms? <Text style={styles(orientation).enablesms}>Active</Text>:<Text style={styles(orientation).enablesms}>Inactive</Text> }  
+             <Text style={styles(orientation).enablesms}>{isEnabledsms? "Active":"Inactive"}</Text>
                 <Switch
                     trackColor={{ false: "gray", true: "#81b0ff" }}
                     thumbColor={isEnabledsms ? "blue" : "white"}
@@ -50,7 +50,7 @@ const Communication_preferences = () => {
             </View>
             <View style={styles(orientation).conatainer}>
             <Text style={styles(orientation).text}>WhatsApp</Text>
-                {isEnabledwhatsapp? <Text style={styles(orientation).enablewhatsapp}>Active</Text>:<Text style={styles(orientation).enablewhatsapp}>Inactive</Text> }  
+                <Text style={styles(orientation).enablewhatsapp}>{isEnabledwhatsapp? "Active":"Inactive"}</Text>
                 <Switch
                     trackColor={{ false: "gray", true: "#81b0ff" }}
                     thumbColor={isEnabledwhatsapp ? "blue" : "white"}

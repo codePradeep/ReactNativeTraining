@@ -13,12 +13,14 @@ const styles = (orientation: any) => StyleSheet.create({
 
     },
     image: {
-        tintColor:"white",
+        
+       // tintColor:"white",
         
         marginTop:orientation.height *0.009,
         width: orientation.isLandscape ? orientation.width * 0.028 : orientation.width * 0.059,
         height: orientation.isLandscape ? orientation.height * 0.36 : orientation.height * 0.039,
         resizeMode: 'contain'
+
     }
 
 

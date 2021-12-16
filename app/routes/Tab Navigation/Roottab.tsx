@@ -27,19 +27,23 @@ const Roottab = () => {
 
   const orientation = useOrientation();
   return (
-    <Tab.Navigator  >
+    <Tab.Navigator screenOptions={{
+      tabBarBackground:()=>(<View style={{flex:1,backgroundColor:'rgba(26, 24, 21,1)'}}></View>),
+          tabBarActiveTintColor:"white",
+          tabBarInactiveTintColor:"lightgray",
+          
+       
+          tabBarLabelPosition: "below-icon",
+          headerShown: false, tabBarLabelStyle: { fontSize: 12, paddingBottom: 5 },
+           tabBarStyle: { height: 60 },
+
+    }} >
       <Tab.Screen name="Home" component={CourseModal}
 
         options={{
-          
-          tabBarBackground:()=>(<View style={{flex:1,backgroundColor:'rgba(26, 24, 21,1)'}}></View>),
-          //tabBarActiveBackgroundColor:"red",
-          tabBarLabelPosition: "below-icon",
-          headerShown: false, tabBarLabelStyle: { fontSize: 12, paddingBottom: 5 },
-          tabBarStyle: { height: 50 },
-          tabBarIcon: () => {
+          tabBarIcon: ({focused}) => {
             return (<Image
-              style={styles(orientation).image}
+              style={[styles(orientation).image,{tintColor:focused? "red":"white"}]}
               source={require('../../assets/home.png')} />
             );
           }
@@ -47,15 +51,10 @@ const Roottab = () => {
         }} />
 
       <Tab.Screen name="Progress" component={Progress} options={{
-        tabBarBackground:()=>(<View style={{flex:1,backgroundColor:'rgba(26, 24, 21,1)'}}></View>),
-        tabBarLabelPosition: "below-icon",
-        headerShown: false, tabBarLabelStyle: { fontSize: 12, paddingBottom: 5 },
-        tabBarStyle: { height: 50 },
 
-
-        tabBarIcon: () => {
+        tabBarIcon: ({focused}) => {
           return (<Image
-            style={styles(orientation).image}
+            style={[styles(orientation).image,{tintColor:focused? "red":"white"}]}
             source={require('../../assets/progress.png')} />
           );
         }
@@ -63,15 +62,9 @@ const Roottab = () => {
       }} />
 
       <Tab.Screen name="Inbox" component={Loginpage} options={{
-        tabBarBackground:()=>(<View style={{flex:1,backgroundColor:'rgba(26, 24, 21,1)'}}></View>),
-        tabBarLabelPosition: "below-icon",
-        headerShown: false, tabBarLabelStyle: { fontSize: 12, paddingBottom: 5 },
-        tabBarStyle: { height: 50 },
-
-
-        tabBarIcon: () => {
+        tabBarIcon: ({focused}) => {
           return (<Image
-            style={styles(orientation).image}
+            style={[styles(orientation).image,{tintColor:focused? "red":"white"}]}
             source={require('../../assets/inbox.png')} />
           );
         }
@@ -79,15 +72,9 @@ const Roottab = () => {
       }} />
 
       <Tab.Screen name="Settings" component={SettingsPage} options={{
-        tabBarBackground:()=>(<View style={{flex:1,backgroundColor:'rgba(26, 24, 21,1)'}}></View>),
-        tabBarLabelPosition: "below-icon",
-        headerShown: false, tabBarLabelStyle: { fontSize: 12, paddingBottom: 5 },
-        tabBarStyle: { height: 50 },
-
-
-        tabBarIcon: () => {
+        tabBarIcon: ({focused}) => {
           return (<Image
-            style={styles(orientation).image}
+            style={[styles(orientation).image,{tintColor:focused? "red":"white"}]}
             source={require('../../assets/settings.png')} />
           );
         }

@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text,Button, Image, ScrollView} from "react-native";
 import { Coursebutton, Input } from "../../common";
+import styles from "./style";
 
 interface loginpageprops{
     navigation:any
@@ -11,21 +12,21 @@ const ChangePassword=(props:loginpageprops)=>{
    
     return(
         <ScrollView>
-        <View style={{flex:1,justifyContent:"center" ,marginHorizontal:30}}>
+        <View style={styles.MainContainer}>
             
-            <View style={{alignSelf:"center"}}>
-                <Image source={require('../../assets/logo.png')}  style={{height:200,width:200,resizeMode:"contain"}}/>
+            <View style={styles.ImageContainer}>
+                <Image source={require('../../assets/logo.png')}  style={styles.Image}/>
             </View>
 
-            <Text style={{fontSize:35 ,alignSelf:"center",color:"black",fontWeight:"500"}}>Welcome!</Text>
+            <Text style={styles.welcometext}>Welcome!</Text>
 
-            <View style={{marginTop:20,alignSelf:"center"}}>
+            <View style={styles.ImageContainer}>
             <Input inputplaceholder={"Current Password"} icon={require('../../assets/hidden.png')} />
             </View>
-            <View style={{marginTop:20,alignSelf:"center"}}>
+            <View style={styles.ImageContainer}>
             <Input inputplaceholder={"Password"} icon={require('../../assets/hidden.png')} />
             </View>
-            <View style={{marginTop:20,alignSelf:"center"}}>
+            <View style={styles.ImageContainer}>
             <Input inputplaceholder={"Confirm Password"} icon={require('../../assets/hidden.png')} />
             </View>
             

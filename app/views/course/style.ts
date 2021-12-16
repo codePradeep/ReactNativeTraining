@@ -11,6 +11,10 @@ import { StyleSheet } from "react-native";
 
 
 const styles = (orientation: any) => StyleSheet.create({
+  ItemSeprator:{
+   borderBottomWidth:2,
+    backgroundColor: "rgba(0,0,0,0.5)",
+  },
   container: {
     flex: 1,
   },
@@ -32,7 +36,7 @@ const styles = (orientation: any) => StyleSheet.create({
     fontSize: 28,
     color: 'rgba(26, 24, 21,0.9)',
     width: orientation.isLandscape ?orientation.width * 0.8:orientation.width*0.8,
-    height:orientation.isLandscape ? orientation.height * 0.16:orientation.height * 0.2,
+    height:orientation.isLandscape ? orientation.height * 0.15:orientation.height * 0.15,
     fontWeight: '600',
 
   },

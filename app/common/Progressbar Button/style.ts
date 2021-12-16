@@ -33,9 +33,11 @@ const styles =(orientation:any)=> StyleSheet.create({
     }
 ,
     buttontitle:{ fontSize: 15, 
+        color:"black",
         justifyContent:"center",
         alignSelf:"center",
-        marginTop: orientation.isLandscape ? orientation.height * 0.02:orientation.height * 0.005,
+        padding:9
+        //marginTop: orientation.isLandscape ? orientation.height * 0.02:orientation.height * 0.005,
      }
 })
 

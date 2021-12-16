@@ -4,20 +4,27 @@ import { Text, View, Button, ScrollView, FlatList, Switch } from 'react-native';
 import { useOrientation } from '../../config/useOrientation';
 import { styles } from './style';
 
+interface communicationprops{
+    isEnabled:boolean
+    setIsEnabled:any
+        isEnabledsms:boolean
+        setIsEnabledsms:any
+        isEnabledwhatsapp:boolean
+        setIsEnabledwhatsapp:any
+        toggleSwitch:any
+        togglesmsSwitch :any
+        togglewhatsappSwitch:any
+        orientation:any
+}
 
 
+const Communication_preferences = (props:communicationprops) => {
 
-const Communication_preferences = () => {
+    const {orientation,isEnabled,setIsEnabled,isEnabledsms,setIsEnabledsms,isEnabledwhatsapp,setIsEnabledwhatsapp,toggleSwitch,togglesmsSwitch,togglewhatsappSwitch}=props
 
 
-    const orientation = useOrientation();
-    const [isEnabled, setIsEnabled] = useState(false);
-    const [isEnabledsms, setIsEnabledsms] = useState(false);
-    const [isEnabledwhatsapp, setIsEnabledwhatsapp] = useState(false);
+    
 
-    const toggleSwitch = () => setIsEnabled(previousState => !previousState);
-    const togglesmsSwitch = () => setIsEnabledsms(previousState => !previousState);
-    const togglewhatsappSwitch = () => setIsEnabledwhatsapp(previousState => !previousState);
 
     return (
 

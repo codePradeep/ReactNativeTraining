@@ -1,10 +1,12 @@
 
 import React, { useEffect, useState } from "react";
+import { useOrientation } from "../config/useOrientation";
 import { sendGetRequest } from "../network/Network";
 import Coursepage from "../views/course";
 
 
 const CourseModal = () => {
+    const orientation = useOrientation();
     const [isLoading, setLoading] = useState<boolean>(true);
     const [data, setData] = useState([]);
     console.log(data)
@@ -32,7 +34,12 @@ const CourseModal = () => {
     }, []);
 
 
-    return (<Coursepage isLoading={isLoading} data={data} item={{
+    return (
+    <Coursepage 
+        isLoading={isLoading} 
+        data={data} 
+        orientation={orientation}
+        item={{
         id: "",
         head: "",
         title: "",

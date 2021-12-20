@@ -28,17 +28,20 @@ const styles = (orientation: any) => StyleSheet.create({
     marginHorizontal: 10, 
     marginVertical: 10, 
     fontWeight: "900",
-    color: "black"
+    color: "black",
+    fontFamily:"PublicSans-Regular"
   },
   Name: {
-    fontSize: 20, 
-    fontWeight: "900",
-    color: "black"
+    fontSize: 19, 
+    // fontWeight: "900",
+    color: "black",
+    fontFamily:"PublicSans-Regular"
   },
   Email: {
-    fontSize: 15, 
+    fontSize: 12, 
     fontWeight: "500",
-    color: "black"
+    color: "black",
+    fontFamily:"PublicSans-Regular"
   }
 
 

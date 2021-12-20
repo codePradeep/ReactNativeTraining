@@ -1,6 +1,13 @@
 import { StyleSheet } from "react-native";
 
 const styles =(orientation:any)=> StyleSheet.create({
+
+    ItemSeprator:{
+        marginHorizontal:orientation.width*0.004,
+        height: orientation.height*0.001,
+        width: orientation.width*0.9,
+        backgroundColor: "rgba(0,0,0,0.2)",
+    },
     header: {
         marginTop:  orientation.isLandscape ? orientation.height * 0.06:orientation.height * 0.03,
         marginLeft: orientation.isLandscape ? orientation.height * 0.06:orientation.height * 0.03,

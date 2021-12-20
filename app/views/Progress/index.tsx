@@ -1,28 +1,27 @@
 import React from 'react'
-import { Text, View, FlatList, Alert, ScrollView, TouchableOpacity } from 'react-native'
+import { Text, View, ScrollView} from 'react-native'
 import { ProgressButton } from '../../common';
-import { useOrientation } from '../../config/useOrientation';
+
 
 
 import styles from './style'
 
 interface progressprops{
     navigation:any
+    orientation:{
+        isLandscape: boolean;
+        width: number;
+        height: number;
+        scale: number;
+        fontScale: number;
+    }
 }
 
 const Progress = (props:progressprops) => {
-    const {navigation}=props
+    const {navigation,orientation}=props
+ 
 
-
-    const orientation=useOrientation()
-
-    const ItemSeprator = () => <View style={{
-        marginHorizontal:orientation.width*0.004,
-        height: orientation.height*0.001,
-        width: orientation.width*0.9,
-        backgroundColor: "rgba(0,0,0,0.2)",
-    }} />
-    
+    const ItemSeprator = () => <View style={styles(orientation).ItemSeprator} />   
 
     return (
 

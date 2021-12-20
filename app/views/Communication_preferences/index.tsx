@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
 
-import { Text, View, Button, ScrollView, FlatList, Switch } from 'react-native';
-import { useOrientation } from '../../config/useOrientation';
+import { Text, View, ScrollView, Switch } from 'react-native';
 import { styles } from './style';
 
 interface communicationprops{
     isEnabled:boolean
-    setIsEnabled:any
+    setIsEnabled:(value: boolean) => void
         isEnabledsms:boolean
-        setIsEnabledsms:any
+        setIsEnabledsms:(value: boolean) => void
         isEnabledwhatsapp:boolean
-        setIsEnabledwhatsapp:any
+        setIsEnabledwhatsapp:(value: boolean) => void
         toggleSwitch:any
         togglesmsSwitch :any
         togglewhatsappSwitch:any

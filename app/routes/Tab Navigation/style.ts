@@ -7,6 +7,7 @@ const windowHeight = Dimensions.get('window').height;
 
 
 const styles = (orientation: any) => StyleSheet.create({
+    tabbarbackground:{flex:1,backgroundColor:'rgba(26, 24, 21,1)'},
     tabbarstyle: {
         height: orientation.isLandscape ? orientation.height * 0.6 : windowHeight * 0.05,
          

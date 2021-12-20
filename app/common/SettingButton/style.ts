@@ -22,7 +22,8 @@ const styles = (orientation: any) => StyleSheet.create({
         color:"black",
         fontWeight:"600",
         paddingLeft:"2%",
-        fontSize:17,
+        fontSize:15,
+        fontFamily:"PublicSans-Regular",
         alignSelf:"center",
         marginVertical:20,
         marginTop: orientation.isLandscape ? orientation.height * 0.001 : orientation.height * 0.009,
@@ -34,7 +35,8 @@ const styles = (orientation: any) => StyleSheet.create({
     imageRight:{
         width: orientation.isLandscape ? orientation.width * 0.03 : orientation.width * 0.03,
         height: orientation.isLandscape ? orientation.height * 0.05 : orientation.height * 0.04,
-        resizeMode:"contain"
+        resizeMode:"contain",
+        tintColor:"gray"
     },
 
     image: {

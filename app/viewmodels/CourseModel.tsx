@@ -3,9 +3,12 @@ import React, { useEffect, useState } from "react";
 import { useOrientation } from "../config/useOrientation";
 import { sendGetRequest } from "../network/Network";
 import Coursepage from "../views/course";
+interface Coursemodelprops{
+    navigation:any
+}
 
-
-const CourseModal = () => {
+const CourseModal = (props:Coursemodelprops) => {
+    const {navigation} =props
     const orientation = useOrientation();
     const [isLoading, setLoading] = useState<boolean>(true);
     const [data, setData] = useState([]);
@@ -36,6 +39,7 @@ const CourseModal = () => {
 
     return (
     <Coursepage 
+    navigation={navigation}
         isLoading={isLoading} 
         data={data} 
         orientation={orientation}

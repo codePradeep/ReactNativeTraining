@@ -3,13 +3,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import React from 'react';
 import { Image, View } from 'react-native';
 import { useOrientation } from '../../config/useOrientation';
-import CourseModal from '../../viewmodels/CourseModel';
-import Details from '../../views/Details';
-import CameraTest from '../../views/imagepicker test/App';
-import Loginpage from '../../views/Login/Loginpage';
-import Progress from '../../views/Progress';
-import SettingsPage from '../../views/Settings';
-
+import { ProgressModel ,CourseModal ,SettingModel} from '../../viewmodels';
 
 
 import styles from './style';
@@ -17,10 +11,7 @@ import styles from './style';
 interface tabprop {
   orientation: boolean
 }
-
-
 const Tab = createBottomTabNavigator();
-
 
 
 const Roottab = () => {
@@ -28,7 +19,7 @@ const Roottab = () => {
   const orientation = useOrientation();
   return (
     <Tab.Navigator screenOptions={{
-      tabBarBackground:()=>(<View style={{flex:1,backgroundColor:'rgba(26, 24, 21,1)'}}></View>),
+      tabBarBackground:()=>(<View style={styles(orientation).tabbarbackground}></View>),
           tabBarActiveTintColor:"white",
           tabBarInactiveTintColor:"lightgray",
           
@@ -40,7 +31,7 @@ const Roottab = () => {
     }} >
       <Tab.Screen name="Home" component={CourseModal}
 
-        options={{
+        options={{ headerShown:false,
           tabBarIcon: ({focused}) => {
             return (<Image
               style={[styles(orientation).image,{tintColor:focused? "red":"white"}]}
@@ -50,7 +41,7 @@ const Roottab = () => {
 
         }} />
 
-      <Tab.Screen name="Progress" component={Progress} options={{
+      <Tab.Screen name="Progress" component={ProgressModel} options={{
 
         tabBarIcon: ({focused}) => {
           return (<Image
@@ -61,7 +52,7 @@ const Roottab = () => {
 
       }} />
 
-      <Tab.Screen name="Inbox" component={Loginpage} options={{
+      <Tab.Screen name="Inbox" component={ProgressModel} options={{
         tabBarIcon: ({focused}) => {
           return (<Image
             style={[styles(orientation).image,{tintColor:focused? "red":"white"}]}
@@ -71,7 +62,7 @@ const Roottab = () => {
 
       }} />
 
-      <Tab.Screen name="Settings" component={SettingsPage} options={{
+      <Tab.Screen name="Settings" component={SettingModel} options={{
         tabBarIcon: ({focused}) => {
           return (<Image
             style={[styles(orientation).image,{tintColor:focused? "red":"white"}]}

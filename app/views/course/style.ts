@@ -38,14 +38,21 @@ const styles = (orientation: any) => StyleSheet.create({
     width: orientation.isLandscape ?orientation.width * 0.8:orientation.width*0.8,
     height:orientation.isLandscape ? orientation.height * 0.15:orientation.height * 0.15,
     fontWeight: '600',
+    fontFamily:"PublicSans-Regular"
 
   },
   header: {
     fontSize: 22,
     color: 'rgba(26, 24, 21,0.9)',
     fontWeight: "500",
-    paddingBottom: orientation.height * 0.02
+    paddingBottom: orientation.height * 0.02,
+    fontFamily:"PublicSans-Regular"
 
+
+  },
+  Progressbar:{ 
+    marginVertical: 15, 
+    height: 9 
   }
 });
 

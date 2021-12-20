@@ -22,7 +22,7 @@ const RanderListItem = (props: renderprops) => {
       <View style={{flexDirection:"row"  }}>
       <Image
         style={styles(props.orientation).image}
-        source={require('../../assets/padlock.png')}
+        source={require('../../assets/lock.png')}
       />
       <Text style={styles(props.orientation).title} >{props.item.title}</Text>
       </View>

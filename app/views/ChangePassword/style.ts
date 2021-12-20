@@ -10,11 +10,29 @@ import { StyleSheet } from "react-native";
 
 
 const styles = StyleSheet.create({
-    MainContainer:{flex:1,justifyContent:"center" ,marginHorizontal:30},
-    Image:{height:200,width:200,resizeMode:"contain"},
-    ImageContainer:{alignSelf:"center"},
-    welcometext:{fontSize:35 ,alignSelf:"center",color:"black",fontWeight:"500"},
-    InputContainer:{marginTop:20,alignSelf:"center"},
+    MainContainer:{
+        flex:1,
+        justifyContent:"center",
+        marginHorizontal:30
+    },
+    Image:{
+        height:200,
+        width:200,
+        resizeMode:"contain"
+    },
+    ImageContainer:{
+        alignSelf:"center"
+    },
+    welcometext:{
+        fontSize:35,
+        alignSelf:"center",
+        color:"black",
+        fontWeight:"500"
+    },
+    InputContainer:{
+        marginTop:20,
+        alignSelf:"center"
+    },
 
 
 

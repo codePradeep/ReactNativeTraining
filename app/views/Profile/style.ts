@@ -6,19 +6,34 @@ export const styles = StyleSheet.create({
     marginVertical: "2%",
     marginHorizontal: "3%"
   },
-Headersubcontainer:{ 
-  flexDirection: "row", 
-  alignItems: "center" 
-},
-  imageView:{ 
-    justifyContent: "center", 
-    alignSelf: "center", 
-    alignContent: "center" 
+  Headersubcontainer: {
+    flexDirection: "row",
+    alignItems: "center"
   },
-  headername:{ fontSize: 20, fontWeight: "900", color: "black" },
-  headerEmail:{ fontSize: 15, fontWeight: "500", },
-  boxContainer:{ marginHorizontal: 20, marginVertical: 20 },
-  innerBoxContainer:{ flexDirection: "row", justifyContent: "space-between" },
+  imageView: {
+    justifyContent: "center",
+    alignSelf: "center",
+    alignContent: "center"
+  },
+  headername: { 
+    fontSize: 20, 
+    fontWeight: "900", 
+    color: "black", 
+    fontFamily:"PublicSans-Regular"
+  },
+  headerEmail: { 
+    fontSize: 15, 
+    fontWeight: "500", 
+    color: "black" ,
+    fontFamily:"PublicSans-Regular"
+  },
+  boxContainer: { 
+    marginHorizontal: 20,
+     marginVertical: 20
+     },
+  innerBoxContainer: {
+     flexDirection: "row",
+      justifyContent: "space-between" },
 
 
   conatainer: {
@@ -34,35 +49,48 @@ Headersubcontainer:{
     position: "absolute",
     alignSelf: "center"
   },
-  line:{ 
-    borderBottomWidth:1, 
-    backgroundColor: "rgba(0,0,0,0.2)", 
+  line: {
+    borderBottomWidth: 1,
+    backgroundColor: "rgba(0,0,0,0.2)",
   },
-  centeredView: { 
+  centeredView: {
     flex: 1,
-    backgroundColor:'rgba(86, 94, 94,0.2)' 
-}
+    alignItems: "center",
+    backgroundColor: 'rgba(86, 94, 94,0.2)',
+  }
   ,
   modalView: {
-     flexDirection:"row",
+    flexDirection: "row",
     backgroundColor: "#274040",
     padding: 20,
-   alignContent:"center"
+    justifyContent:"space-between"
+    
+
+
   },
 
-modalimage1:{
-  height:35,
-  width:35,
-  resizeMode:"contain",
-  margin:10,
-  tintColor:"white"
+  modalimage1: {
+    height: 40,
+    width: 30,
+    resizeMode: "contain",
+    margin: 10,
+    tintColor: "white"
 
-},
+  },
+  modalCameraimage1: {
+    height: 40,
+    width: 40,
+    resizeMode: "stretch",
+    margin: 10,
+   // tintColor: "white"
 
-modaltext:{
-  alignSelf:"center",
-  color:"white"
-},
+  },
+
+  modaltext: {
+    alignSelf: "center",
+    color: "white",
+    fontFamily:"PublicSans-Regular"
+  },
 
   button: {
     backgroundColor: "blue",
@@ -75,33 +103,39 @@ modaltext:{
   textStyle:
   {
     color: "white",
-    textAlign: "center"
+    textAlign: "center",
+    fontFamily:"PublicSans-Regular"
   },
   Textheader: {
     fontSize: 12,
     color: "#636965",
-    marginTop: 10
+    marginTop: 10,
+    fontFamily:"PublicSans-Regular"
 
   },
-  mainHeading:{
-    fontSize:20,
-    color:"black",
-    fontWeight:"500"
+  mainHeading: {
+    fontSize: 20,
+    color: "black",
+    fontWeight: "500",
+    fontFamily:"PublicSans-Regular"
   },
-  InputText:{
-    color:"black",
-    fontSize:16
+  InputText: {
+    color: "black",
+    fontSize: 16,
+    fontFamily:"PublicSans-Regular"
   },
   Text:
   {
     fontSize: 18,
     color: "black",
-    marginTop: 10
+    marginTop: 10,
+    fontFamily:"PublicSans-Regular"
   },
-  editandsave:{
-    color:"black",
-    padding:5,
-    backgroundColor:"lightgray"
+  editandsave: {
+    color: "black",
+    padding: 5,
+    backgroundColor: "lightgray",
+    fontFamily:"PublicSans-Regular"
   }
 });
 

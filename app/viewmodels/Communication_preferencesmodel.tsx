@@ -17,9 +17,6 @@ const Communication_preferencesmodel=(props:Communication_preferencesprops)=>{
 
 
 
-
-
-
     const {navigation}=props
     return(
         <Communication_preferences 

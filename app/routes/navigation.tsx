@@ -6,8 +6,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import {
   ChangePasswordModel,
   Communication_preferencesmodel, 
-  DetailsModel, 
-  Homemodel, 
+  DetailsModel,  
   ProfileModel
   } from '../viewmodels';
 
@@ -19,44 +18,21 @@ import Roottab from './Tab Navigation/Roottab';
 const Stack = createNativeStackNavigator();
 
 
+
+
 const Routenavigation = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="course">
-        <Stack.Screen name="Home" component={Homemodel} />
-
+      <Stack.Navigator initialRouteName="course" screenOptions={{  headerTitle: "",
+            headerRight: () => (<HeaderButton />),
+            headerTintColor: 'rgba(176, 174, 171,1)',
+            headerStyle: {
+              backgroundColor: 'rgba(26, 24, 21,0.9)'
+            }, }} >
         <Stack.Screen name="ChangePassword" component={ChangePasswordModel} options={{ headerShown: false }} />
-        <Stack.Screen name="Profile" component={ProfileModel}
-          options={{
-            headerTitle: "",
-            headerRight: () => (<HeaderButton />),
-            headerTintColor: 'rgba(176, 174, 171,1)',
-            headerStyle: {
-              backgroundColor: 'rgba(26, 24, 21,0.9)'
-            },
-          }}
-        />
-
-
-        <Stack.Screen name="Communication_preferences" component={Communication_preferencesmodel}
-          options={{
-            headerTitle: "",
-            headerRight: () => (<HeaderButton />),
-            headerTintColor: 'rgba(176, 174, 171,1)',
-            headerStyle: {
-              backgroundColor: 'rgba(26, 24, 21,0.9)'
-            }, }}
-        />
-        <Stack.Screen name="Detail" component={DetailsModel}
-          options={{
-            headerTitle: "",
-            headerRight: () => (<HeaderButton />),
-            headerTintColor: 'rgba(176, 174, 171,1)',
-            headerStyle: {
-              backgroundColor: 'rgba(26, 24, 21,0.9)'
-            },
-          }}
-        />
+        <Stack.Screen name="Profile" component={ProfileModel} />
+        <Stack.Screen name="Communication_preferences" component={Communication_preferencesmodel} />
+        <Stack.Screen name="Detail" component={DetailsModel} />
         <Stack.Screen name="course" component={Roottab}
           options={{
             headerTitle: () => <Headerlogo />,

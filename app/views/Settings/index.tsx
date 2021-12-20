@@ -1,26 +1,36 @@
-import React, { useEffect, useState } from "react";
-import { View, Text, Button, FlatList, StyleSheet, Image, TouchableOpacity, ScrollView, Dimensions, ActivityIndicator, Alert } from "react-native";
+import React from "react";
+import { View, Text, ScrollView } from "react-native";
 import { SettingButton } from "../../common";
 import Logo from "../../common/Logo";
-import { useOrientation } from "../../config/useOrientation";
+import icon from "../../config/Icon";
 import styles from './style'
 
 interface Settingprop{
     navigation:any
+    orientation:{
+        isLandscape: boolean;
+        width: number;
+        height: number;
+        scale: number;
+        fontScale: number;
+    }
     
 }
 
 
 const SettingsPage = (props:Settingprop) => {
     
-    const {navigation}= props
-    const orientation = useOrientation();
+    const {navigation,orientation}= props
+    
     console.log('orientation====>', orientation)
 
     const ItemSeprator = () => <View style={styles(orientation).ItemSeprator} />
 
     return (
-<ScrollView>
+<ScrollView   
+showsVerticalScrollIndicator={false}
+showsHorizontalScrollIndicator={false}
+>
         <View style={styles(orientation).mainContainer}>
             <View style={styles(orientation).SubContainer}>
                 <View style={styles(orientation).ImageContainer}>      
@@ -38,19 +48,19 @@ const SettingsPage = (props:Settingprop) => {
             <View style={styles(orientation).Listontainer}>
                 <Text style={styles(orientation).Subheading}>MANAGE ACCOUNT</Text>
 
-                <SettingButton title="Profile" url={require('../../assets/profile.png')}  OnPress={() =>navigation.navigate('Profile')} />
+                <SettingButton title="Profile" url={icon.profile}  OnPress={() =>navigation.navigate('Profile')} />
 
                 <ItemSeprator />
-                <SettingButton title="Change Password" url={require('../../assets/padlock.png')}  OnPress={() =>navigation.navigate('ChangePassword')} />
+                <SettingButton title="Change Password" url={icon.padlock}  OnPress={() =>navigation.navigate('ChangePassword')} />
 
                 <ItemSeprator />
-                <SettingButton title="Communication Preference" url={require('../../assets/communication.png')}   OnPress={() =>navigation.navigate('Communication_preferences')}/>
+                <SettingButton title="Communication Preference" url={icon.communication}   OnPress={() =>navigation.navigate('Communication_preferences')}/>
 
                 <ItemSeprator />
-                <SettingButton title="Change Language" url={require('../../assets/translate.png')}   OnPress={() =>navigation.navigate('Detail')}/>
+                <SettingButton title="Change Language" url={icon.translate}   OnPress={() =>navigation.navigate('Detail')}/>
 
                 <ItemSeprator />
-                <SettingButton title="Sign Out" url={require('../../assets/logout.png')}  OnPress={() =>navigation.navigate('Detail')} />
+                <SettingButton title="Sign Out" url={icon.logout}  OnPress={() =>navigation.navigate('Detail')} />
 
                 <ItemSeprator />
 

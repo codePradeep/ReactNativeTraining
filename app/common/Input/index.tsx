@@ -12,7 +12,7 @@ interface inputprops{
         <View style={{justifyContent:"center"}}>
         <View style={styles.container}>
          <TextInput style={styles.input} placeholder={inputplaceholder} />
-         <Image source={props.icon} style={styles.image}/>
+         <Image source={props.icon} style={styles.image} />
         </View>
         </View>
     )

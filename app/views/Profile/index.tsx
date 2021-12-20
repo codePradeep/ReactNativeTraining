@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, Image, TouchableOpacity, Modal, TextInput, ScrollView } from "react-native";
+import { View, Text, Image, TouchableOpacity, Modal, TextInput, ScrollView, TouchableWithoutFeedback } from "react-native";
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
 import Logo from "../../common/Logo";
 import { styles } from "./style";
@@ -58,25 +58,32 @@ const Profile = (props: Profileprops) => {
 
           setModalVisible(!modalVisible);
         }} >
-          <View style={styles.centeredView} />
+          <TouchableWithoutFeedback onPress={() => setModalVisible(!modalVisible)}>
+               <View style={styles.centeredView} />
+               
+            </TouchableWithoutFeedback>
+         
+
             <View style={styles.modalView}>
+            <TouchableOpacity onPress={() => setModalVisible(!modalVisible)}>
+              <Image source={require('../../assets/exit.png')} style={styles.modalimage1}  />
+              <Text style={styles.modaltext}>Cancel</Text>
+              </TouchableOpacity>
              
               <TouchableOpacity onPress={() => openCamara()}>
 
-              <Image source={require('../../assets/camera.png')} style={styles.modalimage1} />
+              <Image source={require('../../assets/camera-icon.png')} style={styles.modalCameraimage1} />
               <Text style={styles.modaltext}>Camera</Text>
               </TouchableOpacity>
               
               <TouchableOpacity onPress={() => launchLibrary()} >
-              <Image source={require('../../assets/artgallery.png')} style={styles.modalimage1}  />
+              <Image source={require('../../assets/artgallery.png')} style={styles.modalCameraimage1}  />
               <Text style={styles.modaltext}>Gallery</Text>
               </TouchableOpacity>
              
-              <TouchableOpacity onPress={() => setModalVisible(!modalVisible)}>
-              <Image source={require('../../assets/exit.png')} style={styles.modalimage1}  />
-              <Text style={styles.modaltext}>Cancel</Text>
-              </TouchableOpacity>
+             
             </View>    
+           
       </Modal>
 
       <View style={styles.headercontiner}>
@@ -208,14 +215,16 @@ const Profile = (props: Profileprops) => {
 {/* <GooglePlacesAutocomplete
 
 placeholder='Address'
-textInputProps={{onChangeText={text=> setData({ ...Data, address: text })}
-}}
+
 onPress={(data, details = null) => {
   // 'details' is provided when fetchDetails = {true}
   console.log(data, details);
 }}
+onFail={(error) => console.error(error)}
+
+
 query={{
-  key: 'AIzaSyDsVrHrjKqTc0wcb8sIzH5NhgselxHuwKE',
+  key: 'AIzaSyD1T1y62SWmsQ0HeFRakjti7t1h5n18SBs',
   language: 'en',
 }}
 /> */}

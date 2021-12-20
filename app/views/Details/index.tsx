@@ -38,20 +38,24 @@ const  Details=()=> {
 
   
   return (
-    <ScrollView horizontal={false}>
-    <ScrollView horizontal={true}>
+    <ScrollView 
+    horizontal={false} 
+    showsVerticalScrollIndicator={false}
+    showsHorizontalScrollIndicator={false}
+    >
+    <ScrollView horizontal={true} >
     
           <View style={{flex:1}}>
           <View style={{}}>
-              <Text style={{fontSize:12,alignSelf:"center"}}>HEALTH COACH TRAINING PROGRAM</Text>
-              <Text style={{fontSize:22,alignSelf:"center",color:"black"}}>Graduation Requirenments</Text>
-             <View style={{marginLeft:20,marginTop:9}}>
-              <Text style={{fontSize:20,color:"black"}}>Test Results</Text>
-              <Text>2/4 reuired to grduate</Text>
-              <Text style={{fontSize:20,color:"black"}}>Course</Text>
-              <Text>Health Coach Training Program </Text>
-              <Text style={{fontSize:20,color:"black"}}>Student</Text>
-              <Text>Pradeep Sharma</Text>
+              <Text style={styles(orientation).Heading}>HEALTH COACH TRAINING PROGRAM</Text>
+              <Text style={styles(orientation).SubTextHeading}>Graduation Requirenments</Text>
+             <View style={styles(orientation).TextContainer}>
+              <Text style={styles(orientation).Textheading}>Test Results</Text>
+              <Text style={styles(orientation).Text}>2/4 reuired to grduate</Text>
+              <Text style={styles(orientation).Textheading}>Course</Text>
+              <Text style={styles(orientation).Text}>Health Coach Training Program </Text>
+              <Text style={styles(orientation).Textheading}>Student</Text>
+              <Text style={styles(orientation).Text}>Pradeep Sharma</Text>
             </View> 
 
           </View>
@@ -62,8 +66,8 @@ const  Details=()=> {
                     nestedScrollEnabled ={false}
                     
                     showsVerticalScrollIndicator={false}
-                   // pagingEnabled={true}
                     showsHorizontalScrollIndicator={false}
+                    // pagingEnabled={true}
                   //  legacyImplementation={false}
                     data={DATA}
                     initialScrollIndex={0}

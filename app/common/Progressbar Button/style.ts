@@ -27,7 +27,7 @@ const styles =(orientation:any)=> StyleSheet.create({
     },
     Button: {
         borderWidth: 1,
-        height: orientation.isLandscape ? orientation.height * 0.1:orientation.height * 0.045,
+        height: orientation.isLandscape ? orientation.height * 0.09:orientation.height * 0.045,
         width: 120,
         alignSelf: 'flex-end'
     }

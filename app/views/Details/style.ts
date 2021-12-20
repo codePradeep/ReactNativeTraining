@@ -11,13 +11,16 @@ import { StyleSheet } from "react-native";
 
 
 const styles = (orientation: any) => StyleSheet.create({
+
   container: {
     flex: 1,
   },
   image: {
     height: orientation.isLandscape ? orientation.height * 0.065 : orientation.height * 0.025 ,
-    width: orientation.isLandscape ? orientation.width * 0.045 : orientation.width * 0.07,
-    resizeMode: "stretch"
+    width: orientation.isLandscape ? orientation.width * 0.025 : orientation.width * 0.05,
+    resizeMode: "contain",
+    marginLeft:5,
+    tintColor:"black"
   },
 
   maincontainer: {
@@ -37,6 +40,8 @@ const styles = (orientation: any) => StyleSheet.create({
     width: orientation.isLandscape ?orientation.width * 0.8:orientation.width*0.8,
     height:orientation.isLandscape ? orientation.height * 0.16:orientation.height * 0.2,
     fontWeight: '600',
+    paddingLeft:5,
+    
 
   },
   header: {
@@ -47,6 +52,34 @@ const styles = (orientation: any) => StyleSheet.create({
     paddingBottom: orientation.height * 0.02
 
 
+  },
+  Textheading:{
+    fontSize:20,
+    color:"black",
+    paddingLeft:10
+  },
+  Heading:{
+    fontSize:14,
+    alignSelf:"center",
+    color:"gray",
+    paddingTop:10
+  },
+  SubTextHeading:{
+    fontSize:24,
+    alignSelf:"center",
+    color:"black",
+    paddingBottom:20
+    
+    
+  },
+  Text:{
+    color:"black",
+    paddingLeft:10,
+    paddingVertical:5
+  },
+  TextContainer:{
+    marginLeft:20,
+    marginTop:9
   }
 });
 

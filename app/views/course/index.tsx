@@ -1,9 +1,10 @@
 import React from "react";
-import { View, FlatList, ScrollView, ActivityIndicator } from "react-native";
+import { View, FlatList, ScrollView, ActivityIndicator, Button } from "react-native";
 import RenderflatItem from "./flatlistranderitem";
 import styles from "./style";
 
 interface courseprops {
+  navigation: any
 
   item: {
     id: string;
@@ -21,14 +22,11 @@ interface courseprops {
   }
   isLoading: boolean
   data: any
+
 }
 
 const Coursepage = (props: courseprops) => {
-  const { isLoading, data, orientation } = props
-
-
-
-
+  const { isLoading, data, orientation, navigation } = props
 
   const ItemSeprator = () => <View style={styles(orientation).ItemSeprator} />
 
@@ -40,8 +38,8 @@ const Coursepage = (props: courseprops) => {
           horizontal
           showsVerticalScrollIndicator={false}
           //  pagingEnabled={true}
-          showsHorizontalScrollIndicator={false}
           //  legacyImplementation={false}
+          showsHorizontalScrollIndicator={false}
           data={data}
           initialScrollIndex={0}
           ItemSeparatorComponent={ItemSeprator}
@@ -57,7 +55,5 @@ const Coursepage = (props: courseprops) => {
 
 export default Coursepage;
 
-function scrollToIndex(arg0: { animated: boolean; index: number; }): void {
-  throw new Error("Function not implemented.");
-}
+
 

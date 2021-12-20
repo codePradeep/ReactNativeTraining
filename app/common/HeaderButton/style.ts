@@ -11,8 +11,8 @@ const styles = (orientation: any) => StyleSheet.create({
         borderRadius: 180,
         //justifyContent: 'center',
         alignItems: 'center',
-        width: orientation.isLandscape ? orientation.width * 0.044 : orientation.width * 0.089,
-        height: orientation.isLandscape ? orientation.width * 0.044 : orientation.height * 0.04,
+        width: orientation.isLandscape ? orientation.width * 0.044 : orientation.width * 0.082,
+        height: orientation.isLandscape ? orientation.width * 0.044 : orientation.width  * 0.082,
 
     },
 

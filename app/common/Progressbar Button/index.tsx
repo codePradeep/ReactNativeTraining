@@ -1,5 +1,6 @@
 import React from "react"
 import { Alert, ScrollView, Text, TouchableOpacity, View } from "react-native"
+import { Constant } from "../../config"
 import Details from "../../views/Details"
 import styles from "./style"
 
@@ -25,7 +26,7 @@ return (
                 onPress={() =>navigation.navigate('Detail') }
                 style={styles(props.orientation).Button}
             >
-                <Text style={styles(props.orientation).buttontitle}>View Details</Text>
+                <Text style={styles(props.orientation).buttontitle}>{Constant.View_Details}</Text>
             </TouchableOpacity>
            
         </View>

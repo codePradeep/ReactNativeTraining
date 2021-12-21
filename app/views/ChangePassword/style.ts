@@ -17,11 +17,12 @@ const styles = StyleSheet.create({
     },
     Image:{
         height:200,
-        width:200,
+        width:250,
         resizeMode:"contain"
     },
     ImageContainer:{
-        alignSelf:"center"
+        alignSelf:"center",
+        marginTop:20    
     },
     welcometext:{
         fontSize:35,

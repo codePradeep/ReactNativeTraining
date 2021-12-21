@@ -1,5 +1,6 @@
 import React from "react"
 import { TouchableOpacity, View, Image, Alert } from "react-native"
+import { icon } from "../../config";
 import { useOrientation } from "../../config/useOrientation";
 import styles from "./style"
 
@@ -19,7 +20,7 @@ const HeaderButton = (props: any) => {
         <View style={styles(orientation).container}>
           <Image
             style={styles(orientation).image}
-            source={require('../../assets/help.png')}
+            source={icon.help}
           />
         </View>
       </TouchableOpacity>

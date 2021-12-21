@@ -4,6 +4,7 @@ import { View, Text, Image } from "react-native";
 import { ProgressBar } from "@react-native-community/progress-bar-android";
 import { Coursebutton } from "../../common";
 import styles from "./style";
+import { Constant } from "../../config";
 interface renderprops {
 
   index: number
@@ -38,7 +39,7 @@ const RenderflatItem = (props: renderprops) => {
         progress={0.5}
 
       />
-      <Coursebutton title="Continue Learning" />
+      <Coursebutton title={Constant.Continue_Learning} />
 
     </View>
 

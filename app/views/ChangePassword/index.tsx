@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text, Image, ScrollView} from "react-native";
 import { Coursebutton, Input } from "../../common";
+import { Constant, icon } from "../../config";
 import styles from "./style";
 
 interface loginpageprops{
@@ -15,28 +16,28 @@ const ChangePassword=(props:loginpageprops)=>{
         <View style={styles.MainContainer}>
             
             <View style={styles.ImageContainer}>
-                <Image source={require('../../assets/logo.png')}  style={styles.Image}/>
+                <Image source={icon.logo}  style={styles.Image}/>
             </View>
 
             <Text style={styles.welcometext}>Welcome!</Text>
 
             <View style={styles.ImageContainer}>
-            <Input inputplaceholder={"Current Password"} icon={require('../../assets/hidden.png')} />
+            <Input inputplaceholder={Constant.Current_Password} icon={icon.hiddeneye} />
             </View>
             <View style={styles.ImageContainer}>
-            <Input inputplaceholder={"Password"} icon={require('../../assets/hidden.png')} />
+            <Input inputplaceholder={Constant.password} icon={icon.hiddeneye} />
             </View>
             <View style={styles.ImageContainer}>
-            <Input inputplaceholder={"Confirm Password"} icon={require('../../assets/hidden.png')} />
+            <Input inputplaceholder={"Confirm Password"}icon={icon.hiddeneye} />
             </View>
             
             <Text />
 
-            <Coursebutton title="Continue" />
+            <Coursebutton title="Continue" Press={undefined}/>
             <Text />
 
             
-            <Coursebutton  title="Back" Press={() =>navigation.navigate('course')}/>
+            <Coursebutton  title="Back" Press={() =>navigation.goBack() }/>
            
             
         </View>

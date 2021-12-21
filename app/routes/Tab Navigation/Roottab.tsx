@@ -2,17 +2,14 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import React from 'react';
 import { Image, View } from 'react-native';
+import {icon } from '../../config';
 import { useOrientation } from '../../config/useOrientation';
 import { ProgressModel ,CourseModal ,SettingModel} from '../../viewmodels';
 
 
 import styles from './style';
 
-interface tabprop {
-  orientation: boolean
-}
 const Tab = createBottomTabNavigator();
-
 
 const Roottab = () => {
 
@@ -35,7 +32,7 @@ const Roottab = () => {
           tabBarIcon: ({focused}) => {
             return (<Image
               style={[styles(orientation).image,{tintColor:focused? "red":"white"}]}
-              source={require('../../assets/home.png')} />
+              source={icon.hometab} />
             );
           }
 
@@ -46,7 +43,7 @@ const Roottab = () => {
         tabBarIcon: ({focused}) => {
           return (<Image
             style={[styles(orientation).image,{tintColor:focused? "red":"white"}]}
-            source={require('../../assets/progress.png')} />
+            source={icon.progresstab} />
           );
         }
 
@@ -56,7 +53,7 @@ const Roottab = () => {
         tabBarIcon: ({focused}) => {
           return (<Image
             style={[styles(orientation).image,{tintColor:focused? "red":"white"}]}
-            source={require('../../assets/inbox.png')} />
+            source={icon.inboxtab} />
           );
         }
 
@@ -66,7 +63,7 @@ const Roottab = () => {
         tabBarIcon: ({focused}) => {
           return (<Image
             style={[styles(orientation).image,{tintColor:focused? "red":"white"}]}
-            source={require('../../assets/settings.png')} />
+            source={icon.settingstab} />
           );
         }
 

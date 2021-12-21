@@ -3,11 +3,11 @@ import { StyleSheet } from "react-native";
 
 
 export const styles =(orientation:any)=> StyleSheet.create({
-    maincontaner: { flex: 1, marginHorizontal: 30 },
+    maincontaner: { flex: 1, marginHorizontal: 30},
     conatainer: {
         justifyContent: "space-between",
         flexDirection: "row",
-        marginVertical: 20
+        marginVertical: 25
     },
 
     text: {
@@ -18,16 +18,17 @@ export const styles =(orientation:any)=> StyleSheet.create({
     heading: {
         fontSize: 22,
         alignSelf: "center",
-        color: "black"
+        color: "black",
+        marginVertical:25
     },
     enablemessage: {
-        marginLeft: orientation.isLandscape? "65%":"25%"
+        marginLeft: orientation.isLandscape? "70%":"40%",
     },
     enablesms: {
-        marginLeft: orientation.isLandscape? "78%":"55%"
+        marginLeft: orientation.isLandscape? "79%":"60%"
     },
     enablewhatsapp: {
-        marginLeft: orientation.isLandscape? "72%":"40%"
+        marginLeft: orientation.isLandscape? "74%":"50%"
     }
 
 

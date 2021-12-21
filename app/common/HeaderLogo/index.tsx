@@ -1,5 +1,6 @@
 import React from "react";
 import { Image, View } from "react-native";
+import { icon } from "../../config";
 import { useOrientation } from "../../config/useOrientation";
 import styles from "./style";
 
@@ -16,7 +17,7 @@ const Headerlogo = () => {
     <View style={styles(orientation).container}>
       <Image
         style={styles(orientation).image}
-        source={require('../../assets/header.png')}
+        source={icon.header}
       />
     </View>
   );

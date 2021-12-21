@@ -2,6 +2,7 @@ import React from "react";
 import { View, Text, Image, TouchableOpacity, Modal, TextInput, ScrollView, TouchableWithoutFeedback } from "react-native";
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
 import Logo from "../../common/Logo";
+import { icon } from "../../config";
 import { styles } from "./style";
 
 
@@ -96,7 +97,7 @@ const Profile = (props: Profileprops) => {
 
             <View style={styles.imageView}>
               <Logo source={{ uri: imageUriGallary }} />
-              <Image source={require('../../assets/camera.png')} style={styles.Camera} />
+              <Image source={icon.camera} style={styles.Camera} />
             </View>
           </TouchableOpacity>
           <View>

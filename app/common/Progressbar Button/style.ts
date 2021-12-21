@@ -23,11 +23,12 @@ const styles =(orientation:any)=> StyleSheet.create({
         fontSize: 17,
         marginVertical:  orientation.isLandscape ? orientation.height * 0.06:orientation.height * 0.039,
         color: 'black',
-        fontWeight: '300'
+        fontWeight: '300',
+        fontFamily:"PublicSans-Regular"
     },
     Button: {
         borderWidth: 1,
-        height: orientation.isLandscape ? orientation.height * 0.09:orientation.height * 0.045,
+        height: orientation.isLandscape ? orientation.width * 0.04:orientation.width * 0.09,
         width: 120,
         alignSelf: 'flex-end'
     }
@@ -36,7 +37,9 @@ const styles =(orientation:any)=> StyleSheet.create({
         color:"black",
         justifyContent:"center",
         alignSelf:"center",
-        padding:9
+        padding:9,
+        
+        fontFamily:"PublicSans-Regular"
         //marginTop: orientation.isLandscape ? orientation.height * 0.02:orientation.height * 0.005,
      }
 })

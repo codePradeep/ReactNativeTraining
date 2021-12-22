@@ -19,8 +19,17 @@ const icon={
     camera:require('../assets/camera.png'),
     //CHANGE PASSWORD
     logo:require('../assets/logo.png'),
-    hiddeneye:require('../assets/hidden.png')
+    hiddeneye:require('../assets/hidden.png'),
+    //Course screen
     
+    dots:require('../assets/kebabIcon.png'),
+    left_arrow:require('../assets/left_arrow.png'),
+    bookmark:require('../assets/bookmark.png'),
+    clock:require('../assets/clock.png'),
+    dropdown_line:require('../assets/dropdown_line.png'),
+    upload:require('../assets/upload.png'),
+    progress_chart:require('../assets/progress-chart.png')
+
     
     
 }

@@ -7,6 +7,7 @@ import DetailsModel from "./DetailsModel";
 import ProgressModel from "./ProgressModel";
 import CourseModal from "./CourseModel";
 import SettingModel from "./SettingModel";
+import CourseDetailsModel from "./CourseDetailsModel";
 export {
     Homemodel,
     Loginmodel,
@@ -17,5 +18,6 @@ export {
     ProgressModel,
     CourseModal,
     SettingModel,
+    CourseDetailsModel
    
 };

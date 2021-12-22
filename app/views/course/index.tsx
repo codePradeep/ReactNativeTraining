@@ -43,7 +43,7 @@ const Coursepage = (props: courseprops) => {
           data={data}
           initialScrollIndex={0}
           ItemSeparatorComponent={ItemSeprator}
-          renderItem={({ item, index }) => <RenderflatItem item={item} orientation={orientation} index={0} />}
+          renderItem={({ item, index }) => <RenderflatItem item={item} orientation={orientation} index={0} navigation={navigation}/>}
           keyExtractor={(item) => item.id}
         // (_,index )=> index.toString()
         />}

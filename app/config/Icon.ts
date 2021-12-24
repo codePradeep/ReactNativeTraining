@@ -28,7 +28,10 @@ const icon={
     clock:require('../assets/clock.png'),
     dropdown_line:require('../assets/dropdown_line.png'),
     upload:require('../assets/upload.png'),
-    progress_chart:require('../assets/progress-chart.png')
+    progress_chart:require('../assets/progress-chart.png'),
+    close:require('../assets/close.png'),
+    bookmark_saved:require('../assets/bookmark_saved.png'),
+
 
     
     

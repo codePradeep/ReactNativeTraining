@@ -30,6 +30,7 @@ const Styles=(orientation:any) =>StyleSheet.create({
         
     },
     Progressbar:{
+    
        
        
     },
@@ -62,9 +63,12 @@ const Styles=(orientation:any) =>StyleSheet.create({
 
     },
     modalView: {
-        backgroundColor: "#274040",
+        flex:1,
+        borderTopRightRadius:30,
+        borderTopLeftRadius:30,
+         backgroundColor: "lightgray",
         padding: 20,
-        justifyContent:"space-between"
+       // justifyContent:"flex-end"
         
     
     
@@ -75,7 +79,8 @@ const Styles=(orientation:any) =>StyleSheet.create({
         width: 30,
         resizeMode: "contain",
         margin: 10,
-        tintColor: "white"
+        tintColor: "white",
+        
     
       },
       modalCameraimage1: {

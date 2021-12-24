@@ -1,15 +1,21 @@
 import { ProgressBar } from "@react-native-community/progress-bar-android";
 import React, { useState } from "react";
 
-import { FlatList, Image, Modal, Text, TouchableOpacity, TouchableWithoutFeedback, View } from "react-native";
+import { FlatList, Image, Modal, Text, ToastAndroid, TouchableOpacity, TouchableWithoutFeedback, View } from "react-native";
 import { Coursebutton, CustomHeader, HeaderButton } from "../../common";
-import { icon } from "../../config";
+import { icon, MenuData } from "../../config";
 import styles from "../Details/style";
 import FlatListItem from "./flatlistitem";
 import Styles from "./style";
+import { Menu, MenuItem, MenuDivider } from 'react-native-material-menu';
+import SelectDropdown from 'react-native-select-dropdown'
+import DATA from '../../config/Data'
+
+
 
 interface CourseDetailsprops {
     navigation: any
+
     orientation: {
         isLandscape: boolean;
         width: number;
@@ -18,155 +24,164 @@ interface CourseDetailsprops {
         fontScale: number;
     }
 
+
 }
+
 
 
 const CourseDetails = (props: CourseDetailsprops) => {
 
     const { orientation, navigation } = props
 
-
-    const DATA = [
-        {
-            id: "1",
-            title: "Opening Soon",
-            bookmark: false,
-            submodule: [
-                {
-                    id: "1",
-                    title: "SubModule 1",
-                },
-                {
-                    id: "2",
-                    title: "SubModule 2",
-                },
-                {
-                    id: "3",
-                    title: "SubModule 3",
-                },
-                {
-                    id: "4",
-                    title: "SubModule 4",
-                }
-            ]
-
-        },
-        {
-            id: "2",
-            title: "Opening Soon",
-            bookmark: false,
-            submodule: [
-                {
-                    id: "1",
-                    title: "Secend SubModule 1",
-                },
-                {
-                    id: "2",
-                    title: "SubModule 2",
-                },
-                {
-                    id: "3",
-                    title: "SubModule 3",
-                },
-                {
-                    id: "4",
-                    title: "SubModule 4",
-                }
-            ]
-
-        },
-        {
-            id: "3",
-            title: "Opening Soon",
-            bookmark: false,
-            submodule: [
-                {
-                    id: "1",
-                    title: "SubModule 1",
-                },
-                {
-                    id: "2",
-                    title: "SubModule 2",
-                },
-                {
-                    id: "3",
-                    title: "SubModule 3",
-                },
-                {
-                    id: "4",
-                    title: "SubModule 4",
-                }
-            ]
-
-        },
-        {
-            id: "4",
-            title: "Opening Soon",
-            bookmark: false,
-            submodule: [
-                {
-                    id: "1",
-                    title: "SubModule 1",
-                },
-                {
-                    id: "2",
-                    title: "SubModule 2",
-                },
-                {
-                    id: "3",
-                    title: "SubModule 3",
-                },
-                {
-                    id: "4",
-                    title: "SubModule 4",
-                }
-            ]
-
-        },
-    ]
+    const [data, setdata] = useState(DATA)
 
     const [modalVisible, setModalVisible] = useState(false);
+    const [togglebookmark, settogglbookmark] = useState(false)
+    const [toggletitle, settoggletitle] = useState(false)
+
+    const [bookmarkdata, setbookmarkdata] = useState("")
+
+    const [title, settitle] = useState("")
+
+    const Bookmark = ["Bookmarked", "Not Bookmarked"]
+
+
+    const titledata = (inpute: any) => {
+        return data.filter((item) => item.bookmark == inpute).map(a => a.title)
+    }
+
+    const listdata = (inpute: any) => {
+        return data.filter((item) => item.bookmark == inpute).map(a => a)
+    }
+
+    const Checkbookmark = (bookdata: any) => {
+        if (bookdata == 'Bookmarked') {
+            return false
+        }
+        else {
+            return true
+        }
+    }
+
+    const flatlistdata = listdata(Checkbookmark(bookmarkdata))
+
+    const titlelistdata = titledata(Checkbookmark(bookmarkdata))
+
+
+    const listtitledata = (inpute: any) => {
+        return flatlistdata.filter((item) => item.title == inpute).map(a => a)
+    }
+
+    const finalflatlistdata = listtitledata(title)
+    const [filter, setfilter] = useState(false)
+
+
+    const [visible, setVisible] = useState(false);
+
+    const hideMenu = () => setVisible(false);
+    const showMenu = () => setVisible(true);
+
+    const [subvisible, setsubVisible] = useState(false);
+
+    const subhideMenu = () => setsubVisible(false);
+    const subshowMenu = () => setsubVisible(true);
+
+
+    const [submenudata, setsubmenudata] = useState([])
+    //   console.log("submoduledata====>",submenudata)
+    
+    
+
+
+
+
+
+
+
+
     return (
         <View style={Styles(orientation).mainContainer}>
-             
-             
-             <Modal animationType="slide"
-        transparent={true}
-        visible={modalVisible}
-        onRequestClose={() => {
 
-          setModalVisible(!modalVisible);
-        }} >
-          <TouchableWithoutFeedback onPress={() => setModalVisible(!modalVisible)}>
-               <View style={{}} />
-               
-            </TouchableWithoutFeedback>
-         
 
-            <View style={Styles(orientation).modalView}>
-            
-              <TouchableOpacity onPress={() => setModalVisible(!modalVisible)}>
-              <Image source={require('../../assets/exit.png')} style={Styles(orientation).modalimage1}  />
-              <Text style={Styles(orientation).modaltext}>Cancel</Text>
-              </TouchableOpacity>
-             
-              <TouchableOpacity onPress={undefined}>
+            <Modal animationType="slide"
+                transparent={true}
+                visible={modalVisible}
+                onRequestClose={() => {
 
-              <Image source={require('../../assets/camera-icon.png')} style={Styles(orientation).modalCameraimage1} />
-              <Text style={Styles(orientation).modaltext}>Camera</Text>
-              </TouchableOpacity>
-              
-              <TouchableOpacity onPress={undefined} >
-              <Image source={require('../../assets/artgallery.png')} style={Styles(orientation).modalCameraimage1}  />
-              <Text style={Styles(orientation).modaltext}>Gallery</Text>
-              </TouchableOpacity>
-             
-             
-            </View>    
-           
-      </Modal>
+                    setModalVisible(!modalVisible);
+                }} >
+
+                <View style={{ flex: .5 }} />
+
+
+
+
+                <View style={Styles(orientation).modalView}>
+
+                    <TouchableOpacity onPress={() => setModalVisible(!modalVisible)} style={{ alignSelf: "flex-end" }}>
+                        <Image source={icon.close} style={Styles(orientation).modalimage1} />
+                    </TouchableOpacity>
+
+                    <View style={{ flex: 0.9 }}>
+                        <View style={{ flex: .5 }}>
+                            <Text style={{ fontSize: 18, color: "black" }}>Select Bookmark</Text>
+                            <SelectDropdown
+                                data={Bookmark}
+                                defaultButtonText={bookmarkdata}
+                                buttonStyle={{ width: "100%" }}
+                                onSelect={(selectedItem, index) => {
+                                    setbookmarkdata(selectedItem)
+                                    //  settogglbookmark(true)
+                                    console.log(selectedItem, index)
+                                }}
+                                buttonTextAfterSelection={(selectedItem, index) => {
+                                    return selectedItem
+                                }}
+                                rowTextForSelection={(item, index) => {
+                                    return item
+                                }}
+                            />
+                        </View>
+                        <View style={{ flex: 0.7 }}>
+                            <Text style={{ fontSize: 18, color: "black" }}>Select Title</Text>
+                            <SelectDropdown
+                                data={titlelistdata}
+                                defaultButtonText={title}
+                                dropdownStyle={{ height: 300 }}
+                                buttonStyle={{ width: "100%" }}
+                                onSelect={(selectedItem, index) => {
+                                    settitle(selectedItem)
+                                    // settoggletitle(true)
+                                    console.log(selectedItem, index)
+                                }}
+                                buttonTextAfterSelection={(selectedItem, index) => {
+                                    return selectedItem
+                                }}
+                                rowTextForSelection={(item, index) => {
+                                    return item
+                                }}
+                            />
+                        </View>
+                        <TouchableOpacity
+                            onPress={() => { setfilter(true), setModalVisible(false), settogglbookmark(true), settoggletitle(true) }}
+                            style={{ borderWidth: 1, marginTop: 20 }}>
+                            <Text style={{ padding: 10, alignSelf: "center" }}>Filter</Text>
+                        </TouchableOpacity>
+
+
+                    </View>
+
+
+
+
+
+                </View>
+
+            </Modal>
 
             <View style={Styles(orientation).FirstContainer}>
+                
+               
                 <Image source={require("../../assets/course_main.png")} style={Styles(orientation).Image} />
 
 
@@ -174,24 +189,28 @@ const CourseDetails = (props: CourseDetailsprops) => {
                     <View style={{ flex: 1, marginVertical: 20 }}>
                         <CustomHeader navigation={navigation} />
                     </View>
-
+                    <View style={{flex:1}}>
                     <View style={{ flex: 1 }}>
 
                         <Text style={Styles(orientation).headingText}>Health Coach Training Program</Text>
                         <Text style={Styles(orientation).ProgressText}>55% modules Complete</Text>
 
                     </View>
+                    
+                    </View>
 
 
                 </View>
-                <ProgressBar
-                    style={Styles(orientation).Progressbar}
+                
+              
+            </View>
+            <ProgressBar
+                   // style={Styles(orientation).Progressbar}
                     color="green"
                     styleAttr="Horizontal"
                     indeterminate={false}
                     progress={0.5}
                 />
-            </View>
 
 
 
@@ -200,11 +219,49 @@ const CourseDetails = (props: CourseDetailsprops) => {
 
                 <View style={Styles(orientation).menucontainer}>
                     <Text style={{ color: "black", borderBottomWidth: 2, fontSize: 20, borderColor: "orange", padding: 9, fontFamily: "PublicSans-Regular" }}>Modules</Text>
-                    <TouchableOpacity
-                    // onPress={}
-                    >
-                        <Image source={icon.dots} style={{ height: 25, width: 25, resizeMode: "contain", alignSelf: "center" }} />
-                    </TouchableOpacity>
+
+
+                    <View style={{}}>
+                        <Menu
+                            visible={visible}
+                            anchor={<TouchableOpacity
+                                onPress={showMenu}
+                            >
+                                <Image source={icon.dots} style={{ height: 25, width: 25, resizeMode: "contain", alignSelf: "center" }} />
+                            </TouchableOpacity>}
+                            onRequestClose={hideMenu}
+                        >
+                            {MenuData.map((item: any, i: any) => {
+                                return (
+                                    <View key={i} style={{ flex: 1, flexDirection: "row", justifyContent: "space-between" }}>
+                                        <MenuItem onPress={() => { subshowMenu(), hideMenu(), setsubmenudata(item.submodule) }}>{item.title}</MenuItem>
+                                      { item.submodule.length == 0? null : <Image source={icon.right_arrow} style={{ height: 20, width: 20, resizeMode: "contain", alignSelf: "center" }} />}
+                                    </View>
+                                );
+                            })}
+                        </Menu>
+                        <Menu
+                            visible={subvisible}
+                            anchor={<View></View>}
+                            onRequestClose={subhideMenu}
+                        >
+                            {submenudata.map((item: any, i: any) => {
+                                return (
+                                    <View key={i} style={{ flex: 1, flexDirection: "row", justifyContent: "space-between" }}>
+                                        <MenuItem onPress={subhideMenu}>{item.title}</MenuItem>
+                                    </View>);
+                            })}
+
+                        </Menu>
+
+                    </View>
+
+
+
+
+
+
+
                 </View>
                 <View style={{ flexDirection: "row", justifyContent: "space-between", marginTop: 20 }}>
                     <View>
@@ -212,6 +269,7 @@ const CourseDetails = (props: CourseDetailsprops) => {
                         <Text style={{ fontSize: 25, color: "black", fontWeight: "600", fontFamily: "PublicSans-Regular" }}>Dextox Your Life</Text>
                     </View>
                     <TouchableOpacity
+                        // onPress={() => console.log(titledata)}
                         style={{ backgroundColor: "black", height: 35 }}>
                         <Text style={{ color: "white", padding: 8, fontFamily: "PublicSans-Regular", paddingHorizontal: 20 }}>Resume</Text>
                     </TouchableOpacity>
@@ -222,8 +280,32 @@ const CourseDetails = (props: CourseDetailsprops) => {
                 <View style={Styles(orientation).ItemSeprator} />
 
                 <View style={Styles(orientation).filterContainer}>
-                    <Text style={{ color: "black", fontSize: 20, fontFamily: "PublicSans-Regular" }}>Filters:</Text>
+                    <View style={{ flexDirection: "row" }}>
+                        <Text style={{ color: "black", fontSize: 20, fontFamily: "PublicSans-Regular", marginRight: 10 }}>Filters:</Text>
+
+                        <View style={{ backgroundColor: "lightgray", flexDirection: "row", justifyContent: "space-evenly" }}>
+
+                            {togglebookmark ? <View style={{ flexDirection: "row", alignItems: "center" }}>
+                                <Text style={{ padding: 4 }}>{bookmarkdata}</Text>
+                                <TouchableOpacity
+                                    onPress={() => { settogglbookmark(false), setfilter(false), setdata(DATA), setbookmarkdata("Select") }}>
+                                    <Image source={icon.close} style={{ height: 15, width: 15, resizeMode: "contain", alignSelf: "center" }} />
+                                </TouchableOpacity>
+                            </View> : null}
+                            <View />
+
+                            {toggletitle ? <View style={{ flexDirection: "row", alignItems: "center" }}>
+                                <Text style={{ padding: 4 }}>Title</Text>
+                                <TouchableOpacity
+                                    onPress={() => { settoggletitle(false), setfilter(false), setdata(flatlistdata), settitle("Select") }}>
+                                    <Image source={icon.close} style={{ height: 15, width: 15, resizeMode: "contain", alignSelf: "center" }} />
+                                </TouchableOpacity>
+                            </View> : null}
+                        </View>
+                    </View>
+
                     <TouchableOpacity
+                        onPress={() => { setModalVisible(true) }}
                         style={{ backgroundColor: "white", height: 35, borderColor: "orange", borderWidth: 1 }}>
                         <Text style={{ color: "orange", padding: 9, fontFamily: "PublicSans-Regular" }}>Filter</Text>
                     </TouchableOpacity>
@@ -232,10 +314,10 @@ const CourseDetails = (props: CourseDetailsprops) => {
                     nestedScrollEnabled={false}
                     showsVerticalScrollIndicator={false}
                     showsHorizontalScrollIndicator={false}
-                    data={DATA}
+                    data={filter ? finalflatlistdata : data}
                     initialScrollIndex={0}
 
-                    renderItem={({ item, index }) => <FlatListItem item={item} orientation={orientation} index={0} />}
+                    renderItem={({ item, index }) => <FlatListItem item={item} orientation={orientation} index={0} setdata={setdata} />}
                     keyExtractor={(_, index) => index.toString()}
                 />
 

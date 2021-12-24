@@ -5,6 +5,7 @@ import { Image, View } from 'react-native';
 import {icon } from '../../config';
 import { useOrientation } from '../../config/useOrientation';
 import { ProgressModel ,CourseModal ,SettingModel} from '../../viewmodels';
+import TestScreen from '../../views/test';
 
 
 import styles from './style';
@@ -49,7 +50,7 @@ const Roottab = () => {
 
       }} />
 
-      <Tab.Screen name="Inbox" component={ProgressModel} options={{
+      <Tab.Screen name="Inbox" component={TestScreen} options={{
         tabBarIcon: ({focused}) => {
           return (<Image
             style={[styles(orientation).image,{tintColor:focused? "red":"white"}]}

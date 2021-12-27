@@ -71,14 +71,16 @@ const FlatListItem = (props: renderprops) => {
             <View style={{ flexDirection: "row" }}>
               <Text style={{ paddingRight: 10 }}>100%</Text>
 
-              {!item.bookmark ?
+              {item.bookmark ?
                 <TouchableOpacity
-                  onPress={() => setdata({...item,bookmark:true})}>
+                  // onPress={() => setdata({...item,bookmark:true})}
+                  >
                   <Image source={icon.bookmark_saved} style={{ height: 20, width: 20, resizeMode: "contain", }} />
                 </TouchableOpacity>
                 :
                 <TouchableOpacity
-                  onPress={() => setdata({...item,bookmark:false})}>
+                  // onPress={() => setdata({...item,bookmark:false})}
+                  >
                   <Image source={icon.bookmark} style={{ height: 20, width: 20, resizeMode: "contain" }} />
                 </TouchableOpacity>
               }

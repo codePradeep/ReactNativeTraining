@@ -51,7 +51,7 @@
     {
         id: "3",
         title: "Learning to code is useful no matter what your career ambitions are",
-        bookmark: false,
+        bookmark: true,
         submodule: [
             {
                 id: "1",
@@ -123,7 +123,7 @@
     {
         id: "7",
         title: "When you throw yourself out there great things happen. Just take this course blindly and dive into the world of programming starting from scratch",
-        bookmark: false,
+        bookmark: true,
         submodule: [
             {
                 id: "1",
@@ -171,7 +171,7 @@
     {
         id: "10",
         title: "When you throw yourself out there great things happen. Just take this course blindly and dive into the world of programming starting from scratch",
-        bookmark: false,
+        bookmark: true,
         submodule: [
             {
                 id: "1",

@@ -1,13 +1,12 @@
-import { ProgressBar } from "@react-native-community/progress-bar-android";
-import React, { useState } from "react";
 
-import { FlatList, Image, Modal, Text, ToastAndroid, TouchableOpacity, TouchableWithoutFeedback, View } from "react-native";
-import { Coursebutton, CustomHeader, HeaderButton } from "../../common";
+import React, { useEffect, useState } from "react";
+import { ProgressBar } from "@react-native-community/progress-bar-android";
+import { FlatList, Image, Modal, Text, TouchableOpacity, View } from "react-native";
+import {CustomHeader } from "../../common";
 import { icon, MenuData } from "../../config";
-import styles from "../Details/style";
 import FlatListItem from "./flatlistitem";
 import Styles from "./style";
-import { Menu, MenuItem, MenuDivider } from 'react-native-material-menu';
+import { Menu, MenuItem } from 'react-native-material-menu';
 import SelectDropdown from 'react-native-select-dropdown'
 import DATA from '../../config/Data'
 
@@ -15,7 +14,6 @@ import DATA from '../../config/Data'
 
 interface CourseDetailsprops {
     navigation: any
-
     orientation: {
         isLandscape: boolean;
         width: number;
@@ -23,11 +21,7 @@ interface CourseDetailsprops {
         scale: number;
         fontScale: number;
     }
-
-
 }
-
-
 
 const CourseDetails = (props: CourseDetailsprops) => {
 
@@ -46,6 +40,15 @@ const CourseDetails = (props: CourseDetailsprops) => {
     const Bookmark = ["Bookmarked", "Not Bookmarked"]
 
 
+    const Checkbookmark = (bookdata: any) => {
+        if (bookdata == 'Bookmarked') {
+            return true
+        }
+        else {
+            return false
+        }
+    }
+    
     const titledata = (inpute: any) => {
         return data.filter((item) => item.bookmark == inpute).map(a => a.title)
     }
@@ -54,19 +57,9 @@ const CourseDetails = (props: CourseDetailsprops) => {
         return data.filter((item) => item.bookmark == inpute).map(a => a)
     }
 
-    const Checkbookmark = (bookdata: any) => {
-        if (bookdata == 'Bookmarked') {
-            return false
-        }
-        else {
-            return true
-        }
-    }
-
     const flatlistdata = listdata(Checkbookmark(bookmarkdata))
 
     const titlelistdata = titledata(Checkbookmark(bookmarkdata))
-
 
     const listtitledata = (inpute: any) => {
         return flatlistdata.filter((item) => item.title == inpute).map(a => a)
@@ -75,7 +68,9 @@ const CourseDetails = (props: CourseDetailsprops) => {
     const finalflatlistdata = listtitledata(title)
     const [filter, setfilter] = useState(false)
 
+    console.log("finalflatlistdata====>",finalflatlistdata)
 
+    //MATERIAL MENU ITEMS
     const [visible, setVisible] = useState(false);
 
     const hideMenu = () => setVisible(false);
@@ -85,20 +80,11 @@ const CourseDetails = (props: CourseDetailsprops) => {
 
     const subhideMenu = () => setsubVisible(false);
     const subshowMenu = () => setsubVisible(true);
-
-
+    
     const [submenudata, setsubmenudata] = useState([])
     //   console.log("submoduledata====>",submenudata)
     
     
-
-
-
-
-
-
-
-
     return (
         <View style={Styles(orientation).mainContainer}>
 
@@ -113,18 +99,16 @@ const CourseDetails = (props: CourseDetailsprops) => {
 
                 <View style={{ flex: .5 }} />
 
-
-
-
                 <View style={Styles(orientation).modalView}>
 
-                    <TouchableOpacity onPress={() => setModalVisible(!modalVisible)} style={{ alignSelf: "flex-end" }}>
+                    <TouchableOpacity onPress={() => setModalVisible(!modalVisible)} 
+                        style={Styles(orientation).Crossmodalbutton}>
                         <Image source={icon.close} style={Styles(orientation).modalimage1} />
                     </TouchableOpacity>
 
                     <View style={{ flex: 0.9 }}>
                         <View style={{ flex: .5 }}>
-                            <Text style={{ fontSize: 18, color: "black" }}>Select Bookmark</Text>
+                            <Text style={Styles(orientation).ModalTextTitle}>Select Bookmark</Text>
                             <SelectDropdown
                                 data={Bookmark}
                                 defaultButtonText={bookmarkdata}
@@ -143,7 +127,7 @@ const CourseDetails = (props: CourseDetailsprops) => {
                             />
                         </View>
                         <View style={{ flex: 0.7 }}>
-                            <Text style={{ fontSize: 18, color: "black" }}>Select Title</Text>
+                            <Text style={Styles(orientation).ModalTextTitle}>Select Title</Text>
                             <SelectDropdown
                                 data={titlelistdata}
                                 defaultButtonText={title}
@@ -164,16 +148,12 @@ const CourseDetails = (props: CourseDetailsprops) => {
                         </View>
                         <TouchableOpacity
                             onPress={() => { setfilter(true), setModalVisible(false), settogglbookmark(true), settoggletitle(true) }}
-                            style={{ borderWidth: 1, marginTop: 20 }}>
-                            <Text style={{ padding: 10, alignSelf: "center" }}>Filter</Text>
+                            style={Styles(orientation).ModalFilterButton}>
+                            <Text style={Styles(orientation).Modalfiltertext}>Filter</Text>
                         </TouchableOpacity>
 
 
                     </View>
-
-
-
-
 
                 </View>
 
@@ -185,11 +165,11 @@ const CourseDetails = (props: CourseDetailsprops) => {
                 <Image source={require("../../assets/course_main.png")} style={Styles(orientation).Image} />
 
 
-                <View style={{ flex: 1, justifyContent: "space-between", marginHorizontal: 20 }}>
-                    <View style={{ flex: 1, marginVertical: 20 }}>
+                <View style={Styles(orientation).headercontainer}>
+                    <View style={Styles(orientation).customheadercontainer}>
                         <CustomHeader navigation={navigation} />
                     </View>
-                    <View style={{flex:1}}>
+                    
                     <View style={{ flex: 1 }}>
 
                         <Text style={Styles(orientation).headingText}>Health Coach Training Program</Text>
@@ -197,28 +177,30 @@ const CourseDetails = (props: CourseDetailsprops) => {
 
                     </View>
                     
-                    </View>
+                    
 
 
                 </View>
+               
                 
               
             </View>
             <ProgressBar
-                   // style={Styles(orientation).Progressbar}
+                    style={Styles(orientation).Progressbar}
                     color="green"
                     styleAttr="Horizontal"
                     indeterminate={false}
                     progress={0.5}
                 />
+          
 
 
 
-            <View style={{ flex: 0.7, marginHorizontal: 30, marginTop: 20 }}>
+            <View style={Styles(orientation).SecondContainer}>
 
 
                 <View style={Styles(orientation).menucontainer}>
-                    <Text style={{ color: "black", borderBottomWidth: 2, fontSize: 20, borderColor: "orange", padding: 9, fontFamily: "PublicSans-Regular" }}>Modules</Text>
+                    <Text style={Styles(orientation).Moduletext}>Modules</Text>
 
 
                     <View style={{}}>
@@ -227,19 +209,21 @@ const CourseDetails = (props: CourseDetailsprops) => {
                             anchor={<TouchableOpacity
                                 onPress={showMenu}
                             >
-                                <Image source={icon.dots} style={{ height: 25, width: 25, resizeMode: "contain", alignSelf: "center" }} />
+                                <Image source={icon.dots} style={Styles(orientation).icon} />
                             </TouchableOpacity>}
                             onRequestClose={hideMenu}
                         >
                             {MenuData.map((item: any, i: any) => {
                                 return (
-                                    <View key={i} style={{ flex: 1, flexDirection: "row", justifyContent: "space-between" }}>
+                                    <View key={i} style={Styles(orientation).MenuContainer}>
                                         <MenuItem onPress={() => { subshowMenu(), hideMenu(), setsubmenudata(item.submodule) }}>{item.title}</MenuItem>
-                                      { item.submodule.length == 0? null : <Image source={icon.right_arrow} style={{ height: 20, width: 20, resizeMode: "contain", alignSelf: "center" }} />}
+                                      { item.submodule.length == 0? null : <Image source={icon.right_arrow} style={Styles(orientation).icon} />}
                                     </View>
                                 );
                             })}
                         </Menu>
+                       
+                        <View style={{position:"absolute"}}>
                         <Menu
                             visible={subvisible}
                             anchor={<View></View>}
@@ -247,12 +231,13 @@ const CourseDetails = (props: CourseDetailsprops) => {
                         >
                             {submenudata.map((item: any, i: any) => {
                                 return (
-                                    <View key={i} style={{ flex: 1, flexDirection: "row", justifyContent: "space-between" }}>
+                                    <View key={i} style={Styles(orientation).SubmenuContainer}>
                                         <MenuItem onPress={subhideMenu}>{item.title}</MenuItem>
                                     </View>);
                             })}
 
                         </Menu>
+                        </View>
 
                     </View>
 
@@ -260,45 +245,43 @@ const CourseDetails = (props: CourseDetailsprops) => {
 
 
 
-
-
                 </View>
-                <View style={{ flexDirection: "row", justifyContent: "space-between", marginTop: 20 }}>
+                <View style={Styles(orientation).Viewedmodulecontainer}>
                     <View>
-                        <Text style={{ color: "gray", fontFamily: "PublicSans-Regular" }}>LAST VIEWED MODULE</Text>
-                        <Text style={{ fontSize: 25, color: "black", fontWeight: "600", fontFamily: "PublicSans-Regular" }}>Dextox Your Life</Text>
+                        <Text style={Styles(orientation).ViewedmoduleText}>LAST VIEWED MODULE</Text>
+                        <Text style={Styles(orientation).lifeText}>Dextox Your Life</Text>
                     </View>
                     <TouchableOpacity
                         // onPress={() => console.log(titledata)}
-                        style={{ backgroundColor: "black", height: 35 }}>
-                        <Text style={{ color: "white", padding: 8, fontFamily: "PublicSans-Regular", paddingHorizontal: 20 }}>Resume</Text>
+                        style={Styles(orientation).resumebutton}>
+                        <Text style={Styles(orientation).ResumeText}>Resume</Text>
                     </TouchableOpacity>
                 </View>
 
-                <Text style={{ fontSize: 17, color: "gray", paddingVertical: 20, fontFamily: "PublicSans-Regular" }}>This first module is all about setting you up</Text>
+                <Text style={Styles(orientation).Text}>This first module is all about setting you up</Text>
 
                 <View style={Styles(orientation).ItemSeprator} />
 
                 <View style={Styles(orientation).filterContainer}>
                     <View style={{ flexDirection: "row" }}>
-                        <Text style={{ color: "black", fontSize: 20, fontFamily: "PublicSans-Regular", marginRight: 10 }}>Filters:</Text>
+                        <Text style={Styles(orientation).Filtertext}>Filters:</Text>
 
-                        <View style={{ backgroundColor: "lightgray", flexDirection: "row", justifyContent: "space-evenly" }}>
+                        <View style={Styles(orientation).bookmarktagconatiner}>
 
-                            {togglebookmark ? <View style={{ flexDirection: "row", alignItems: "center" }}>
+                            {togglebookmark ? <View style={Styles(orientation).bookmarkContainer}>
                                 <Text style={{ padding: 4 }}>{bookmarkdata}</Text>
                                 <TouchableOpacity
                                     onPress={() => { settogglbookmark(false), setfilter(false), setdata(DATA), setbookmarkdata("Select") }}>
-                                    <Image source={icon.close} style={{ height: 15, width: 15, resizeMode: "contain", alignSelf: "center" }} />
+                                    <Image source={icon.close} style={Styles(orientation).smallIcon} />
                                 </TouchableOpacity>
                             </View> : null}
                             <View />
 
-                            {toggletitle ? <View style={{ flexDirection: "row", alignItems: "center" }}>
+                            {toggletitle ? <View style={Styles(orientation).bookmarkContainer}>
                                 <Text style={{ padding: 4 }}>Title</Text>
                                 <TouchableOpacity
                                     onPress={() => { settoggletitle(false), setfilter(false), setdata(flatlistdata), settitle("Select") }}>
-                                    <Image source={icon.close} style={{ height: 15, width: 15, resizeMode: "contain", alignSelf: "center" }} />
+                                    <Image source={icon.close} style={Styles(orientation).smallIcon} />
                                 </TouchableOpacity>
                             </View> : null}
                         </View>
@@ -306,8 +289,8 @@ const CourseDetails = (props: CourseDetailsprops) => {
 
                     <TouchableOpacity
                         onPress={() => { setModalVisible(true) }}
-                        style={{ backgroundColor: "white", height: 35, borderColor: "orange", borderWidth: 1 }}>
-                        <Text style={{ color: "orange", padding: 9, fontFamily: "PublicSans-Regular" }}>Filter</Text>
+                        style={Styles(orientation).filterButton}>
+                        <Text style={Styles(orientation).filterbuttonText}>Filter</Text>
                     </TouchableOpacity>
                 </View>
                 <FlatList

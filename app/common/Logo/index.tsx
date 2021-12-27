@@ -6,7 +6,7 @@ export default function Logo() {
   return (
   <View style={{flexDirection:"row",justifyContent:"center",alignItems:"center",marginVertical:20}}>
     <Image source={icon.eatmelogo} style={styles.image} />
-    <Text style={styles.Text}>Eat Me</Text>
+    <Text style={styles.Text}>EatMe</Text>
     </View>)
 }
 

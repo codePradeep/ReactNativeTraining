@@ -1,15 +1,26 @@
 import React from 'react'
-import { Image, StyleSheet, View } from 'react-native'
+import { Image, StyleSheet, Text, View } from 'react-native'
+import { icon } from '../../config'
 
 export default function Logo() {
-  return (<View style={{justifyContent:"center",alignItems:"center"}}><Image source={require('../../assets/logo.png')} style={styles.image} /></View>)
+  return (
+  <View style={{flexDirection:"row",justifyContent:"center",alignItems:"center",marginVertical:20}}>
+    <Image source={icon.eatmelogo} style={styles.image} />
+    <Text style={styles.Text}>Eat Me</Text>
+    </View>)
 }
 
 const styles = StyleSheet.create({
   image: {
       
-    width: 110,
-    height: 110,
-    marginBottom: 8,
+    width: "22%",
+    height:"170%",
+    
+    resizeMode:"contain"
   },
+  Text:{
+    fontSize:35,
+    fontWeight:"700",
+    color:"darkorange"
+  }
 })

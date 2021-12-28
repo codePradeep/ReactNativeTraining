@@ -18,5 +18,7 @@ const icon ={
     update:require('../assets/icon/update.png'),
     list:require('../assets/icon/list.png'),
     eye:require('../assets/icon/eye.png'),
+    ticket:require('../assets/icon/ticket.png'),
+    hamburger:require('../assets/dummyData/hamburger.png'),
 }
 export default icon

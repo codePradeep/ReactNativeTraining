@@ -7,6 +7,7 @@ import OnboradingModel from "./OnboradingModel";
 import SettingModel from "./SettingModel";
 import ChangePasswordModel from "./ChangePasswordModel";
 import NoticationSettingModel from "./NotificationSettingModel";
+import MyCouponModel from "./MyCouponModel";
 
 export {
     Homemodel,
@@ -16,5 +17,6 @@ export {
     OnboradingModel,
     SettingModel,
     ChangePasswordModel,
-    NoticationSettingModel
+    NoticationSettingModel,
+    MyCouponModel
 };

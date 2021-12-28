@@ -6,6 +6,7 @@ import OtpModel from "./Otpmodel";
 import OnboradingModel from "./OnboradingModel";
 import SettingModel from "./SettingModel";
 import ChangePasswordModel from "./ChangePasswordModel";
+import NoticationSettingModel from "./NotificationSettingModel";
 
 export {
     Homemodel,
@@ -14,5 +15,6 @@ export {
     OtpModel,
     OnboradingModel,
     SettingModel,
-    ChangePasswordModel
+    ChangePasswordModel,
+    NoticationSettingModel
 };

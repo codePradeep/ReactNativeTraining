@@ -40,7 +40,7 @@ const SettingData = [
     {
         id: "7",
         title: "check Update",
-        icondata: icon.check_tick
+        icondata: icon.update
       
     },
     {
@@ -58,7 +58,7 @@ const SettingData = [
     {
         id: "10",
         title: "Terms & Conditions",
-        icondata: icon.notification
+        icondata: icon.list
       
     },
     {

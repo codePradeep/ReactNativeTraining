@@ -12,8 +12,10 @@ const icon ={
     notification:require('../assets/icon/notification.png'),
     stock:require('../assets/icon/stock.png'),
     worldicon:require('../assets/icon/worldicon.png'),
-    call:require('../assets/icon/call.jpg'),
-    shield:require('../assets/icon/notification.png'),
+    call:require('../assets/icon/call.png'),
+    shield:require('../assets/icon/shield.png'),
     door:require('../assets/icon/logout.png'),
+    update:require('../assets/icon/update.png'),
+    list:require('../assets/icon/list.png'),
 }
 export default icon

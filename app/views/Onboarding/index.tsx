@@ -14,7 +14,6 @@ const Onborading = (props: Onboardingprops) => {
    
       
         const pagerRef = useRef<any|null>(null);
-
         const handlePageChange =( pageNumber:any) => {
           pagerRef.current.setPage(pageNumber);
         };

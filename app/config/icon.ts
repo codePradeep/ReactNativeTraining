@@ -17,5 +17,6 @@ const icon ={
     door:require('../assets/icon/logout.png'),
     update:require('../assets/icon/update.png'),
     list:require('../assets/icon/list.png'),
+    eye:require('../assets/icon/eye.png'),
 }
 export default icon

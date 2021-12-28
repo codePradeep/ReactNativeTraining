@@ -5,6 +5,7 @@ import PasswordRecoveryModel from "./PasswordRecoveryModel";
 import OtpModel from "./Otpmodel";
 import OnboradingModel from "./OnboradingModel";
 import SettingModel from "./SettingModel";
+import ChangePasswordModel from "./ChangePasswordModel";
 
 export {
     Homemodel,
@@ -12,5 +13,6 @@ export {
     PasswordRecoveryModel,
     OtpModel,
     OnboradingModel,
-    SettingModel
+    SettingModel,
+    ChangePasswordModel
 };

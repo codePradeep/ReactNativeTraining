@@ -27,6 +27,7 @@ const icon ={
     rediouncheck:require('../assets/icon/rediounchecked.png'),
     Googlepay:require('../assets/icon/googlepay.png'),
     Card:require('../assets/icon/card.png'),
+    bonfire:require('../assets/icon/celeb.png'),
 
 }
 export default icon

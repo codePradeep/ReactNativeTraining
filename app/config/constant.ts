@@ -18,7 +18,12 @@ screens: {
     Paypal:"paypal"
 },
 Button:{
-    add:"Add"
+    add:"Add",
+    Done:"Done"
+},
+SuccessScreen:{
+    title:"Congratulations!",
+    subtitle:"Payment was Successfully made!"
 }
 }
 export default Constant

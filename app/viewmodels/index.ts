@@ -9,6 +9,7 @@ import ChangePasswordModel from "./ChangePasswordModel";
 import NoticationSettingModel from "./NotificationSettingModel";
 import MyCouponModel from "./MyCouponModel";
 import MyCardModel from "./MyCardModel";
+import SuccessModel from "./SuccessModel";
 export {
     Homemodel,
     Loginmodel,
@@ -19,5 +20,6 @@ export {
     ChangePasswordModel,
     NoticationSettingModel,
     MyCouponModel,
-    MyCardModel
+    MyCardModel,
+    SuccessModel
 };

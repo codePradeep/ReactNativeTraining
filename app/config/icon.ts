@@ -20,5 +20,13 @@ const icon ={
     eye:require('../assets/icon/eye.png'),
     ticket:require('../assets/icon/ticket.png'),
     hamburger:require('../assets/dummyData/hamburger.png'),
+    paypal:require('../assets/icon/paypal.png'),
+    master:require('../assets/icon/master.png'),
+    visa:require('../assets/icon/visa.png'),
+    rediocheck:require('../assets/icon/rediochecked.png'),
+    rediouncheck:require('../assets/icon/rediounchecked.png'),
+    Googlepay:require('../assets/icon/googlepay.png'),
+    Card:require('../assets/icon/card.png'),
+
 }
 export default icon

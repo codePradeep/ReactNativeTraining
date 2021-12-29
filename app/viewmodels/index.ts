@@ -10,6 +10,7 @@ import NoticationSettingModel from "./NotificationSettingModel";
 import MyCouponModel from "./MyCouponModel";
 import MyCardModel from "./MyCardModel";
 import SuccessModel from "./SuccessModel";
+import AddNewCardModel from "./AddNewCardModel";
 export {
     Homemodel,
     Loginmodel,
@@ -21,5 +22,6 @@ export {
     NoticationSettingModel,
     MyCouponModel,
     MyCardModel,
-    SuccessModel
+    SuccessModel,
+    AddNewCardModel
 };

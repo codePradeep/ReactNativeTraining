@@ -28,6 +28,7 @@ const icon ={
     Googlepay:require('../assets/icon/googlepay.png'),
     Card:require('../assets/icon/card.png'),
     bonfire:require('../assets/icon/celeb.png'),
+    ok:require('../assets/icon/ok.png'),
 
 }
 export default icon

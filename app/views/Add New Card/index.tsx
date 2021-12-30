@@ -30,7 +30,6 @@ const AddNewCard = (props: PasswordRecoveryprops) => {
         isvalid,
         setisvalid,
         validate ,toggle,buttonclicked ,Data,setData} = props
-        console.log(Data)
 
     return (
 

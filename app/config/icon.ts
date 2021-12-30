@@ -31,6 +31,9 @@ const icon ={
     ok:require('../assets/icon/ok.png'),
     coupon:require('../assets/icon/coupon.png'),
     target:require('../assets/icon/target.png'),
+    star_corner:require('../assets/icon/star_corner.png'),
+    star_filled:require('../assets/icon/star_filled.png'),
+    user_avatar:require('../assets/icon/user_avatar.png'),
 
 }
 export default icon

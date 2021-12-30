@@ -12,6 +12,7 @@ import MyCardModel from "./MyCardModel";
 import SuccessModel from "./SuccessModel";
 import AddNewCardModel from "./AddNewCardModel";
 import CheckoutModel from "./CheckoutModel";
+import RiderReviewModel from "./RiderReviewModel";
 export {
     Homemodel,
     Loginmodel,
@@ -25,5 +26,6 @@ export {
     MyCardModel,
     SuccessModel,
     AddNewCardModel,
-    CheckoutModel
+    CheckoutModel,
+    RiderReviewModel
 };

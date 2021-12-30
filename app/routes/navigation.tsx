@@ -14,6 +14,7 @@ import {
   OnboradingModel,
   OtpModel,
   PasswordRecoveryModel,
+  RiderReviewModel,
   SettingModel,
   SuccessModel
 } from '../viewmodels';
@@ -25,7 +26,7 @@ const Stack = createNativeStackNavigator();
 const Routenavigation = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="CheckoutModel">
+      <Stack.Navigator initialRouteName="RiderReviewModel">
         <Stack.Screen name="PasswordRecoveryModel" component={PasswordRecoveryModel} options={{ headerShown: false }} />
         <Stack.Screen name="OtpModel" component={OtpModel} options={{ headerShown: false }} />
         <Stack.Screen name="OnboradingModel" component={OnboradingModel} options={{ headerShown: false }} />
@@ -37,6 +38,7 @@ const Routenavigation = () => {
         <Stack.Screen name="SuccessModel" component={SuccessModel} options={{ headerShown: false }} />
         <Stack.Screen name="AddNewCardModel" component={AddNewCardModel} options={{ headerShown: false }} />
         <Stack.Screen name="CheckoutModel" component={CheckoutModel} options={{ headerShown: false }} />
+        <Stack.Screen name="RiderReviewModel" component={RiderReviewModel} options={{ headerShown: false }} />
         <Stack.Screen name="calldemo" component={fetchData} />
 
       </Stack.Navigator>

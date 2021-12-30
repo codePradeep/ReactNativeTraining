@@ -10,7 +10,8 @@ screens: {
     notification: "Notification",
     MYCARDS:"MY CARDS",
     Addnewcard:"ADD NEW CARD",
-    checkout:"CHECKOUT"
+    checkout:"CHECKOUT",
+    riderreview:"RIDER REVIEW"
 
 },
  Card:{
@@ -24,7 +25,8 @@ Button:{
     add:"Add",
     Done:"Done",
     AddCard:"Add Card",
-    PlaceyourOrder:"Place your Order"
+    PlaceyourOrder:"Place your Order",
+    SubmitReview:"Submit Review"
 },
 SuccessScreen:{
     title:"Congratulations!",
@@ -44,6 +46,14 @@ checkoutScreen:{
     Shipping:"Shipping Fee",
     Total:"Total:",
     Couponcode:"Coupon Code"
+},
+RiderReviewscreen:{
+    addtips:"Add Tips",
+    notip:"No Tips",
+    addcomment:"Add a Comment",
+    please:"Please rate Delivery Service",
+    Deliveryman:"Delivery Man",
+    Order:"Order Delivered"
 }
 
 

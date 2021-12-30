@@ -9,7 +9,9 @@ screens: {
     favourite: "Favourite",
     notification: "Notification",
     MYCARDS:"MY CARDS",
-    Addnewcard:"ADD NEW CARD"
+    Addnewcard:"ADD NEW CARD",
+    checkout:"CHECKOUT"
+
 },
  Card:{
     master:"Master Caard",
@@ -21,7 +23,8 @@ screens: {
 Button:{
     add:"Add",
     Done:"Done",
-    AddCard:"Add Card"
+    AddCard:"Add Card",
+    PlaceyourOrder:"Place your Order"
 },
 SuccessScreen:{
     title:"Congratulations!",
@@ -33,10 +36,18 @@ AddNewCardscreen:{
     date:"Expiry Date",
     Cvv:"CVV",
     check:"Remember This Card Details"
-    
-
-
-
+},
+checkoutScreen:{
+    DA:"Delivery Address",
+    AddCoupon:"Add Coupon",
+    subtotoal:"Subtotoal",
+    Shipping:"Shipping Fee",
+    Total:"Total:",
+    Couponcode:"Coupon Code"
 }
+
+
+
+
 }
 export default Constant

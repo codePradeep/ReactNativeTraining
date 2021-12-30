@@ -11,6 +11,7 @@ import MyCouponModel from "./MyCouponModel";
 import MyCardModel from "./MyCardModel";
 import SuccessModel from "./SuccessModel";
 import AddNewCardModel from "./AddNewCardModel";
+import CheckoutModel from "./CheckoutModel";
 export {
     Homemodel,
     Loginmodel,
@@ -23,5 +24,6 @@ export {
     MyCouponModel,
     MyCardModel,
     SuccessModel,
-    AddNewCardModel
+    AddNewCardModel,
+    CheckoutModel
 };

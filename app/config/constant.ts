@@ -11,7 +11,8 @@ screens: {
     MYCARDS:"MY CARDS",
     Addnewcard:"ADD NEW CARD",
     checkout:"CHECKOUT",
-    riderreview:"RIDER REVIEW"
+    riderreview:"RIDER REVIEW",
+    notificationTab:"NOTIFICATION"
 
 },
  Card:{

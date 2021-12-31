@@ -34,6 +34,10 @@ const icon ={
     star_corner:require('../assets/icon/star_corner.png'),
     star_filled:require('../assets/icon/star_filled.png'),
     user_avatar:require('../assets/icon/user_avatar.png'),
+    dots:require('../assets/icon/kebabIcon.png'),
+    veg_biryani:require('../assets/dummyData/veg_biryani.png'),
+    wrap_sandwich:require('../assets/dummyData/wrap_sandwich.png'),
+    menu:require('../assets/icon/menu.png'),
 
 }
 export default icon

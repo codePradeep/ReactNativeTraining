@@ -38,6 +38,14 @@ const icon ={
     veg_biryani:require('../assets/dummyData/veg_biryani.png'),
     wrap_sandwich:require('../assets/dummyData/wrap_sandwich.png'),
     menu:require('../assets/icon/menu.png'),
+    //Tab navigation
+    home:require('../assets/icon/home.png'),
+    search:require('../assets/icon/search.png'),
+    love:require('../assets/icon/love.png'),
+    cart:require('../assets/icon/cart.png'),
+    loacation:require('../assets/icon/location.png'),
+    setting:require('../assets/icon/setting.png'),
+    favourite:require('../assets/icon/favourite.png'),
 
 }
 export default icon

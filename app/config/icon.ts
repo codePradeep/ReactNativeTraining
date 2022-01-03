@@ -46,6 +46,8 @@ const icon ={
     loacation:require('../assets/icon/location.png'),
     setting:require('../assets/icon/setting.png'),
     favourite:require('../assets/icon/favourite.png'),
+    calender:require('../assets/icon/calender.png'),
+    down_arrow:require('../assets/icon/down_arrow.png'),
 
 }
 export default icon

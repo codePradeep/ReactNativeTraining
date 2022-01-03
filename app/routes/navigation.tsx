@@ -8,6 +8,7 @@ import {
   ChangePasswordModel,
   CheckoutModel,
   Homemodel, Loginmodel,
+  MyAccountModel,
   MyCardModel,
   MyCouponModel,
   NoticationSettingModel,
@@ -28,7 +29,7 @@ const Stack = createNativeStackNavigator();
 const Routenavigation = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Roottab">
+      <Stack.Navigator initialRouteName="MyAccountModel">
         <Stack.Screen name="PasswordRecoveryModel" component={PasswordRecoveryModel} options={{ headerShown: false }} />
         <Stack.Screen name="OtpModel" component={OtpModel} options={{ headerShown: false }} />
         <Stack.Screen name="OnboradingModel" component={OnboradingModel} options={{ headerShown: false }} />
@@ -43,6 +44,7 @@ const Routenavigation = () => {
         <Stack.Screen name="RiderReviewModel" component={RiderReviewModel} options={{ headerShown: false }} />
         <Stack.Screen name="NotificationTabModel" component={NotificationTabModel} options={{ headerShown: false }} />
         <Stack.Screen name="Roottab" component={Roottab} options={{ headerShown: false }} />
+        <Stack.Screen name="MyAccountModel" component={MyAccountModel} options={{ headerShown: false }} />
         <Stack.Screen name="calldemo" component={fetchData} />
 
       </Stack.Navigator>

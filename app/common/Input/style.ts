@@ -1,15 +1,18 @@
 import React from "react";
 import { StyleSheet } from "react-native";
+import { COLORS } from "../../config";
 
 const styles = StyleSheet.create({
     input:{
-      borderRadius:50,
-      backgroundColor:"white",
-      height: 40,
-      margin: 15,
+      borderRadius:10,
+      backgroundColor:COLORS.white,
+      
       paddingLeft: 10,
-  
-  
+    },
+    constainer:{
+      flex:1,
+      marginHorizontal:15
+
     }
   
   

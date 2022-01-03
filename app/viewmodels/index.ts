@@ -14,6 +14,7 @@ import AddNewCardModel from "./AddNewCardModel";
 import CheckoutModel from "./CheckoutModel";
 import RiderReviewModel from "./RiderReviewModel";
 import NotificationTabModel from "./NotificationTabModel";
+import MyAccountModel from "./MyAccountModel";
 export {
     Homemodel,
     Loginmodel,
@@ -29,5 +30,6 @@ export {
     AddNewCardModel,
     CheckoutModel,
     RiderReviewModel,
-    NotificationTabModel
+    NotificationTabModel,
+    MyAccountModel
 };

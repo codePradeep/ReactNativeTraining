@@ -12,7 +12,8 @@ screens: {
     Addnewcard:"ADD NEW CARD",
     checkout:"CHECKOUT",
     riderreview:"RIDER REVIEW",
-    notificationTab:"NOTIFICATION"
+    notificationTab:"NOTIFICATION",
+    myaccount:"MY ACCOUNT"
 
 },
  Card:{
@@ -27,7 +28,8 @@ Button:{
     Done:"Done",
     AddCard:"Add Card",
     PlaceyourOrder:"Place your Order",
-    SubmitReview:"Submit Review"
+    SubmitReview:"Submit Review",
+    save:"Save"
 },
 SuccessScreen:{
     title:"Congratulations!",
@@ -55,6 +57,19 @@ RiderReviewscreen:{
     please:"Please rate Delivery Service",
     Deliveryman:"Delivery Man",
     Order:"Order Delivered"
+},
+
+Myaccount:{
+    edit:"Edit",
+    fullname:"Full name",
+    Phone:"Phone Number",
+    userid:"User ID",
+    IDCard:"ID Card",
+    Dob:"Date of Birth",
+    gender:"Gender",
+    joined:"Joind",
+    Email:"Email",
+    address:"Address"
 }
 
 

@@ -29,7 +29,8 @@ Button:{
     AddCard:"Add Card",
     PlaceyourOrder:"Place your Order",
     SubmitReview:"Submit Review",
-    save:"Save"
+    save:"Save",
+    applyfilter:"Apply Filters"
 },
 SuccessScreen:{
     title:"Congratulations!",
@@ -70,6 +71,20 @@ Myaccount:{
     joined:"Joind",
     Email:"Email",
     address:"Address"
+},
+HomeScreen:{
+    deliverto:"DELIVERY TO",
+    populer:"Popular Near You",
+    showall:"Show All",
+    Recommonded:"Recommended",
+    //filter
+    filter:"Filter Your Search",
+    distance:"Distance",
+    deliverytime:"Delivery Time",
+    pricingrange:"Pricing Range",
+    rating:"Ratings",
+    tags:"Tags"
+
 }
 
 

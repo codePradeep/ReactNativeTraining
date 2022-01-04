@@ -111,7 +111,7 @@ const Checkout = (props: Checkoutprops) => {
                 style={styles.button}
                 onPress={()=>{setModalVisible(false),setistoggle({ ...data})}}
                 >
-                <Text style={styles.buttontext} >{Constant.Button.PlaceyourOrder}</Text>
+                <Text style={styles.buttontext}> {Constant.Button.PlaceyourOrder}</Text>
             </TouchableOpacity>
                     
                     </View>

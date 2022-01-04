@@ -3,7 +3,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import React from 'react';
 import { COLORS, icon } from '../../config';
 import { useOrientation } from '../../config/useOrientation';
-import { NoticationSettingModel, NotificationTabModel } from '../../viewmodels';
+import { Homemodel, NoticationSettingModel, NotificationTabModel, RiderReviewModel } from '../../viewmodels';
 import TabbarItem from './TabbarItem';
 
 const Tab = createBottomTabNavigator();
@@ -13,36 +13,45 @@ const Roottab = () => {
 
   return (
     <Tab.Navigator
+    
       screenOptions={{
         tabBarShowLabel: false,
         headerShown: false,
-        
-        tabBarStyle: {
-          height: 90,
-          position: "absolute",
-          
-          backgroundColor: COLORS.white,
-          borderRadius: 20,
-          borderColor: 'white',
-          borderBottomWidth: 0,
-          shadowColor: COLORS.orange,
-          shadowOffset: { width: 10, height: 20 },
-          shadowOpacity: 1,
-          shadowRadius: 3,
-          elevation: 20,
-          flex: 1,
+        tabBarHideOnKeyboard:true,
+        tabBarStyle:{
+          height:70,
+          borderTopLeftRadius: 20,
+          borderTopRightRadius: 20,
           paddingHorizontal:20,
-          marginHorizontal:10,
+          backgroundColor: COLORS.white2,
+          
+        }
+        // tabBarStyle: {
+        //   height: 90,
+        //   position: "absolute",
+          
+        //   backgroundColor: COLORS.white,
+        //   borderRadius: 20,
+        //   borderColor: 'white',
+        //   borderBottomWidth: 0,
+        //   shadowColor: COLORS.orange,
+        //   shadowOffset: { width: 10, height: 20 },
+        //   shadowOpacity: 1,
+        //   shadowRadius: 3,
+        //   elevation: 20,
+        //   flex: 1,
+        //   paddingHorizontal:20,
+        //   marginHorizontal:10,
           
           
           
-        },
+        // },
 
       }} >
-      <Tab.Screen name="Home" component={NoticationSettingModel}
+      <Tab.Screen name="Home" component={Homemodel}
       
 
-            options={{     
+            options={{      
               tabBarIcon: ({ focused }: any) => (<TabbarItem focused={focused} orientation={orientation} ICON={icon.home} label={'Home'} />)
             }} />
 
@@ -57,7 +66,7 @@ const Roottab = () => {
               tabBarIcon: ({ focused }: any) => (<TabbarItem focused={focused} orientation={orientation} ICON={icon.cart} label={'Cart'} />),
             }} />
 
-      <Tab.Screen name="Favourite" component={NoticationSettingModel}
+      <Tab.Screen name="Favourite" component={RiderReviewModel}
             options={{
               tabBarIcon: ({ focused }: any) => (<TabbarItem focused={focused} orientation={orientation} ICON={icon.favourite} label={'Favourite'} />),
             }} />

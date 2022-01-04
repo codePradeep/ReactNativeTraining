@@ -48,6 +48,11 @@ const icon ={
     favourite:require('../assets/icon/favourite.png'),
     calender:require('../assets/icon/calender.png'),
     down_arrow:require('../assets/icon/down_arrow.png'),
+    burger:require('../assets/icon/burger.png'),
+    cherry:require('../assets/icon/cherry.png'),
+    rice:require('../assets/icon/rice.png'),
+    calories:require('../assets/icon/calories.png'),
+    cross:require('../assets/icon/cross.png'),
 
 }
 export default icon

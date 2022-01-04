@@ -29,7 +29,7 @@ const Stack = createNativeStackNavigator();
 const Routenavigation = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="MyAccountModel">
+      <Stack.Navigator initialRouteName="Roottab">
         <Stack.Screen name="PasswordRecoveryModel" component={PasswordRecoveryModel} options={{ headerShown: false }} />
         <Stack.Screen name="OtpModel" component={OtpModel} options={{ headerShown: false }} />
         <Stack.Screen name="OnboradingModel" component={OnboradingModel} options={{ headerShown: false }} />
@@ -45,6 +45,8 @@ const Routenavigation = () => {
         <Stack.Screen name="NotificationTabModel" component={NotificationTabModel} options={{ headerShown: false }} />
         <Stack.Screen name="Roottab" component={Roottab} options={{ headerShown: false }} />
         <Stack.Screen name="MyAccountModel" component={MyAccountModel} options={{ headerShown: false }} />
+        <Stack.Screen name="Homemodel" component={Homemodel} options={{ headerShown: false }} />
+  
         <Stack.Screen name="calldemo" component={fetchData} />
 
       </Stack.Navigator>

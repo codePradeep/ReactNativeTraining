@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react"
-import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native"
+import { Image, KeyboardAvoidingView, StyleSheet, Text, TouchableOpacity, View } from "react-native"
 import { COLORS, icon } from "../../config"
 
 import * as Animatable from 'react-native-animatable';
@@ -34,9 +34,10 @@ const TabbarItem = (props: any) => {
   // }, [focused])
 
   return (
+   
    <View style={styles.maincontainer}>
     <View
-      style={[styles.container, { flex: focused ? .85 : 0 ,}]} >
+      style={[styles.container, { flex: focused ? .9 : 0 ,}]} >
 
       <Animatable.View
         ref={viewRef}
@@ -56,7 +57,7 @@ const TabbarItem = (props: any) => {
       </View>
     </View>
     </View>
-
+  
   )
 
 }

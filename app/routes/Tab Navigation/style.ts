@@ -2,9 +2,6 @@
 import { StyleSheet, Dimensions } from "react-native";
 import { COLORS } from "../../config";
 
-const windowWidth = Dimensions.get('window').width;
-const windowHeight = Dimensions.get('window').height;
-
 const styles = StyleSheet.create({
     maincontainer: { marginRight: 10, marginLeft: 1, justifyContent: "center" },
     container: {

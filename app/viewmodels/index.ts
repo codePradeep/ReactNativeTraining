@@ -17,6 +17,7 @@ import NotificationTabModel from "./NotificationTabModel";
 import MyAccountModel from "./MyAccountModel";
 import MyCartModel from "./MyCartModel";
 import SignInModel from "./SignInModel";
+import SignUpModel from "./SignUpModel";
 export {
     Homemodel,
     Loginmodel,
@@ -35,6 +36,7 @@ export {
     NotificationTabModel,
     MyAccountModel,
     MyCartModel,
-    SignInModel
+    SignInModel,
+    SignUpModel
 
 };

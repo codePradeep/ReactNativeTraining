@@ -96,8 +96,20 @@ SigninScreen:{
     save:"Save Me",
     Forget:"Forget password ?",
     dont:"Don't have an account ?",
-    passwordvalidation:"Min 8 letter password, with at least a symbol, upper and lower case letters and a number"
+    
 
+},
+SignUpScreen:{
+    gettingstarted:"Getting Started",
+    createaccount:"Create an account to continue!",
+    username:"Username",
+    already:"Already have an account?"
+
+},
+Validation:{
+    username:"Invalid Username",
+    EmailValidation:"Invalid Email",
+    passwordvalidation:"Min 8 letter password, with at least a symbol, upper and lower case letters and a number"
 }
 
 

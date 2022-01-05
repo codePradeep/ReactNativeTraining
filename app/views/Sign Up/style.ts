@@ -8,7 +8,7 @@ const styles=StyleSheet.create({
 
     },
     container:{
-        flex:.8,
+        flex:.9,
         justifyContent:"space-between",
         marginHorizontal:"5%",
         marginVertical:"2%"
@@ -16,7 +16,8 @@ const styles=StyleSheet.create({
     },
     subcontainer:{
         flex:1,
-        justifyContent:"space-around"
+        justifyContent:"space-around",
+        marginTop:20
     },
     textcontainer:{
         
@@ -27,7 +28,7 @@ const styles=StyleSheet.create({
     },
     text:{
         fontSize:22,
-        fontWeight:"600",
+        fontWeight:"700",
         color:"black"
     },
     Subtext:{
@@ -43,7 +44,8 @@ const styles=StyleSheet.create({
     },
     textinput:{
         width:"90%",
-        fontSize:19
+        fontSize:19,
+        paddingLeft:10
     },
     icon:{
         height:25,
@@ -92,7 +94,8 @@ const styles=StyleSheet.create({
     },
     EmailContainer:{
         flexDirection:"row",
-        justifyContent:"space-between"
+        justifyContent:"space-between",
+        marginVertical:5
     }
 
 })

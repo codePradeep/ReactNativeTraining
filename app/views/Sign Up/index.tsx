@@ -12,15 +12,17 @@ interface signinprops {
     navigation: any
     isvalidEmail: boolean
     isvalidPassword: boolean
+    isvalidusername:boolean
     Emailinpute: (text: string) => void
-    EnterPassword: (text: string) => void,
+    EnterPassword: (text: string) => void
+    UsernameInput:(text: string) => void
     visible:boolean
     setvisible:any
     isEnabled: boolean
     toggleSwitch: any
 }
 
-const SignIn = (props: signinprops) => {
+const SignUp = (props: signinprops) => {
     const {
         navigation,
         isvalidEmail,
@@ -29,6 +31,8 @@ const SignIn = (props: signinprops) => {
         Emailinpute,
         EnterPassword,
         isEnabled, toggleSwitch,
+        isvalidusername,
+        UsernameInput
 
     } = props
 
@@ -43,8 +47,8 @@ const SignIn = (props: signinprops) => {
                     <View style={styles.subcontainer}>
 
                         <View style={styles.textcontainer}>
-                            <Text style={styles.text}>{Constant.SigninScreen.letsSign}</Text>
-                            <Text style={styles.Subtext}>{Constant.SigninScreen.welcome}</Text>
+                            <Text style={styles.text}>{Constant.SignUpScreen.gettingstarted}</Text>
+                            <Text style={styles.Subtext}>{Constant.SignUpScreen.createaccount}</Text>
                         </View>
 
 
@@ -63,8 +67,20 @@ const SignIn = (props: signinprops) => {
                             </View>
                            
                         </View>
-
-                        
+                        <View>
+                            <View style={styles.EmailContainer}>
+                            <Text style={styles.Email}>{Constant.SignUpScreen.username}</Text>
+                            { !isvalidusername?<Text  style={styles.bottomsignuptext}>{Constant.Validation.username}</Text>:<View />}
+                            </View>
+                            <View style={styles.input}>
+                                <TextInput
+                                    onChangeText={UsernameInput}
+                                    style={styles.textinput}
+                                />
+                                <Image source={isvalidusername ? icon.check_tick : icon.wrong} style={styles.icon} />
+                            </View>
+                           
+                        </View>
                         <View>
                             <Text style={styles.Email}>{Constant.SigninScreen.password}</Text>
                             <View style={styles.input}>
@@ -80,29 +96,16 @@ const SignIn = (props: signinprops) => {
                            { !isvalidPassword?<Text  style={styles.bottomsignuptext}>{Constant.Validation.passwordvalidation}</Text>:null}
                         </View>
 
-                        <View style={[styles.flexdirection, { justifyContent: "space-between" }]}>
-                            <View style={styles.flexdirection}>
-                                <Switch 
-                                trackColor={{false: COLORS.primary, true: COLORS.lightGray1 }}
-                                thumbColor={isEnabled ? COLORS.primary : COLORS.lightGray1}
-                                onValueChange={toggleSwitch}
-                                value={isEnabled}
-                                />
-                                <Text style={styles.bottomtext}>{Constant.SigninScreen.save}</Text>
-                            </View>
-                            <TouchableOpacity style={styles.forget}>
-                                <Text style={styles.bottomtext}>{Constant.SigninScreen.Forget}</Text>
-                            </TouchableOpacity>
-                        </View>
+                        
                         <KeyboardAvoidingView style={styles.subcontainer}>
                             <TouchableOpacity style={styles.button}>
                                 <Text style={styles.buttontext}>{Constant.Button.signin}</Text>
                             </TouchableOpacity>
 
                             <View style={[styles.flexdirection, { alignSelf: "center" }]}>
-                                <Text style={styles.bottomtext}>{Constant.SigninScreen.dont}</Text>
-                                <TouchableOpacity onPress={()=>navigation.navigate("SignUpModel")}>
-                                    <Text style={styles.bottomsignuptext}>{Constant.Button.Signup}</Text>
+                                <Text style={styles.bottomtext}>{Constant.SignUpScreen.already}</Text>
+                                <TouchableOpacity onPress={()=>navigation.navigate("SignInModel")}>
+                                    <Text style={styles.bottomsignuptext}>{Constant.Button.signin}</Text>
                                 </TouchableOpacity>
 
                             </View>
@@ -116,4 +119,4 @@ const SignIn = (props: signinprops) => {
         </View>
     )
 }
-export default SignIn
+export default SignUp

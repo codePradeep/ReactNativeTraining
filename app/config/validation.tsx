@@ -21,6 +21,16 @@ const PasswordValidate = (text: string) => {
         return true
     }
 }
+const UsernameValidation = (text: string) => {
+
+    const usernameRegex = /^(?=.{4,20}$)(?:[a-zA-Z\d]+(?:(?:\.|-|_)[a-zA-Z\d])*)+$/
+  
+    if (usernameRegex.test(text)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 
 
-export {EmailValidate,PasswordValidate}
+export {EmailValidate,PasswordValidate,UsernameValidation}

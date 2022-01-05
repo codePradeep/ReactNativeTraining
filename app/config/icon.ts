@@ -53,6 +53,7 @@ const icon ={
     rice:require('../assets/icon/rice.png'),
     calories:require('../assets/icon/calories.png'),
     cross:require('../assets/icon/cross.png'),
+    trash:require('../assets/icon/trash.png'),
 
 }
 export default icon

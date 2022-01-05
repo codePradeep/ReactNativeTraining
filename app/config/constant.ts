@@ -5,7 +5,7 @@ screens: {
     main_layout: "MainLayout",
     home: "Home",
     search: "Search",
-    cart: "Cart",
+    cart: "MY CART",
     favourite: "Favourite",
     notification: "Notification",
     MYCARDS:"MY CARDS",

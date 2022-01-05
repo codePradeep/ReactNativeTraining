@@ -13,7 +13,7 @@ interface inputprops{
     return(
         <View style={styles.constainer}>
         <Text style={[FONTS.h4,{paddingVertical:10}]}>{label}</Text>
-         <TextInput style={styles.input} placeholder={inputplaceholder} 
+         <TextInput style={styles.input} defaultValue={inputplaceholder} 
          
          
          {...props}/>

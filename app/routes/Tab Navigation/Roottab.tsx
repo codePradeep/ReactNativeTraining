@@ -3,7 +3,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import React from 'react';
 import { COLORS, icon } from '../../config';
 import { useOrientation } from '../../config/useOrientation';
-import { Homemodel, NoticationSettingModel, NotificationTabModel, RiderReviewModel } from '../../viewmodels';
+import { Homemodel, MyCartModel, NoticationSettingModel, NotificationTabModel, RiderReviewModel } from '../../viewmodels';
 import TabbarItem from './TabbarItem';
 
 const Tab = createBottomTabNavigator();
@@ -61,7 +61,7 @@ const Roottab = () => {
               tabBarIcon: ({ focused }: any) => (<TabbarItem focused={focused} orientation={orientation} ICON={icon.search} label={'Search'} />),
             }} />
 
-      <Tab.Screen name="Cart" component={NoticationSettingModel}
+      <Tab.Screen name="Cart" component={MyCartModel}
             options={{
               tabBarIcon: ({ focused }: any) => (<TabbarItem focused={focused} orientation={orientation} ICON={icon.cart} label={'Cart'} />),
             }} />

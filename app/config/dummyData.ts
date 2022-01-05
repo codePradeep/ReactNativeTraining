@@ -33,7 +33,6 @@ const menu= [
     id: 2,
     name: "Hot Tacos",
     description: "Mexican tortilla & tacos",
-    
     price: 10.99,
     calories: 78,
     isFavourite: false,
@@ -54,7 +53,6 @@ const menu= [
     id: 4,
     name: "Wrap Sandwich",
     description: "Grilled vegetables sandwich",
-   
     price: 10.99,
     calories: 78,
     isFavourite: true,

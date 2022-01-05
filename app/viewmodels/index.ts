@@ -16,6 +16,7 @@ import RiderReviewModel from "./RiderReviewModel";
 import NotificationTabModel from "./NotificationTabModel";
 import MyAccountModel from "./MyAccountModel";
 import MyCartModel from "./MyCartModel";
+import SignInModel from "./SignInModel";
 export {
     Homemodel,
     Loginmodel,
@@ -33,5 +34,7 @@ export {
     RiderReviewModel,
     NotificationTabModel,
     MyAccountModel,
-    MyCartModel
+    MyCartModel,
+    SignInModel
+
 };

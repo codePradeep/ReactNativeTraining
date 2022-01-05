@@ -18,6 +18,7 @@ import {
   PasswordRecoveryModel,
   RiderReviewModel,
   SettingModel,
+  SignInModel,
   SuccessModel
 } from '../viewmodels';
 import Roottab from './Tab Navigation/Roottab';
@@ -29,7 +30,7 @@ const Stack = createNativeStackNavigator();
 const Routenavigation = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Roottab">
+      <Stack.Navigator initialRouteName="SignInModel">
         <Stack.Screen name="PasswordRecoveryModel" component={PasswordRecoveryModel} options={{ headerShown: false }} />
         <Stack.Screen name="OtpModel" component={OtpModel} options={{ headerShown: false }} />
         <Stack.Screen name="OnboradingModel" component={OnboradingModel} options={{ headerShown: false }} />
@@ -46,6 +47,7 @@ const Routenavigation = () => {
         <Stack.Screen name="Roottab" component={Roottab} options={{ headerShown: false }} />
         <Stack.Screen name="MyAccountModel" component={MyAccountModel} options={{ headerShown: false }} />
         <Stack.Screen name="Homemodel" component={Homemodel} options={{ headerShown: false }} />
+        <Stack.Screen name="SignInModel" component={SignInModel} options={{ headerShown: false }} />
   
         <Stack.Screen name="calldemo" component={fetchData} />
 

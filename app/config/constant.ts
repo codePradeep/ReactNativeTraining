@@ -30,7 +30,9 @@ Button:{
     PlaceyourOrder:"Place your Order",
     SubmitReview:"Submit Review",
     save:"Save",
-    applyfilter:"Apply Filters"
+    applyfilter:"Apply Filters",
+    signin:"Sign In",
+    Signup:"Sign Up"
 },
 SuccessScreen:{
     title:"Congratulations!",
@@ -84,6 +86,17 @@ HomeScreen:{
     pricingrange:"Pricing Range",
     rating:"Ratings",
     tags:"Tags"
+
+},
+SigninScreen:{
+    letsSign:"Let's Sign You In",
+    welcome:"Welcome Back, You'ev been missed",
+    email:"Email",
+    password:"Password",
+    save:"Save Me",
+    Forget:"Forget password ?",
+    dont:"Don't have an account ?",
+    passwordvalidation:"Min 8 letter password, with at least a symbol, upper and lower case letters and a number"
 
 }
 

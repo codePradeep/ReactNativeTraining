@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Children } from "react";
 import { View,TextInput } from "react-native";
 import { Text } from "react-native-animatable";
 import { FONTS } from "../../config";
@@ -7,6 +7,7 @@ interface inputprops{
     inputplaceholder:string
     label:string,
     onChangeText:((text: string) => void) | undefined
+   
 }
  const Input = (props:inputprops)=>{
    const {inputplaceholder,label,onChangeText} =props;

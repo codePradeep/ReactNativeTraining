@@ -18,7 +18,7 @@ interface NotificationSettingprops {
 
 const NotificationSetting = (props: NotificationSettingprops) => {
 
-    const {  isEnabled,  isEnabledpromosion,  toggleSwitch, togglepromosionSwitch,navigation} = props
+    const {  isEnabled, toggleSwitch, isEnabledpromosion,   togglepromosionSwitch,navigation} = props
 
 
 

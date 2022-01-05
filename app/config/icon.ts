@@ -54,6 +54,9 @@ const icon ={
     calories:require('../assets/icon/calories.png'),
     cross:require('../assets/icon/cross.png'),
     trash:require('../assets/icon/trash.png'),
+    maineatmelogo:require('../assets/icon/eatmelogo.png'),
+    closedeyes:require('../assets/icon/closedeyes.png'),
+    openeye:require('../assets/icon/openeye.png'),
 
 }
 export default icon

@@ -57,6 +57,8 @@ const icon ={
     maineatmelogo:require('../assets/icon/eatmelogo.png'),
     closedeyes:require('../assets/icon/closedeyes.png'),
     openeye:require('../assets/icon/openeye.png'),
+    clock:require('../assets/icon/clock.png'),
+    coin:require('../assets/icon/coin.png'),
 
 }
 export default icon

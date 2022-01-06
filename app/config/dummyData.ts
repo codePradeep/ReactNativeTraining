@@ -23,10 +23,12 @@ const menu= [
     {
     id: 1,
     name: "Hamburger",
-    description: "Chicken patty hamburger",    
+    description: "Chicken patty hamburger", 
+    rating:4.5,   
     price: 15.99,
     calories: 78,
     isFavourite: true,
+    time: "30min",
     image: require("../assets/dummyData/hamburger.png")
 },
  {

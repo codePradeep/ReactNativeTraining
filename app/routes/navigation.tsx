@@ -7,6 +7,7 @@ import {
   AddNewCardModel,
   ChangePasswordModel,
   CheckoutModel,
+  FoodDetailModel,
   Homemodel, Loginmodel,
   MyAccountModel,
   MyCardModel,
@@ -31,7 +32,7 @@ const Stack = createNativeStackNavigator();
 const Routenavigation = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="SignUpModel">
+      <Stack.Navigator initialRouteName="FoodDetailModel">
         <Stack.Screen name="PasswordRecoveryModel" component={PasswordRecoveryModel} options={{ headerShown: false }} />
         <Stack.Screen name="OtpModel" component={OtpModel} options={{ headerShown: false }} />
         <Stack.Screen name="OnboradingModel" component={OnboradingModel} options={{ headerShown: false }} />
@@ -50,6 +51,7 @@ const Routenavigation = () => {
         <Stack.Screen name="Homemodel" component={Homemodel} options={{ headerShown: false }} />
         <Stack.Screen name="SignInModel" component={SignInModel} options={{ headerShown: false }} />
         <Stack.Screen name="SignUpModel" component={SignUpModel} options={{ headerShown: false }} />
+        <Stack.Screen name="FoodDetailModel" component={FoodDetailModel} options={{ headerShown: false }} />
         <Stack.Screen name="calldemo" component={fetchData} />
 
       </Stack.Navigator>

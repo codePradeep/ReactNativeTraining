@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { EmailValidate, PasswordValidate,UsernameValidation } from "../config/validation";
 import SignUp from "../views/Sign Up";
 
@@ -11,17 +11,36 @@ const SignUpModel = (props: SignInModelprops) => {
     const [Email, setEmail] = useState("");
     const [password, setpassword] = useState("");
     const [username, setusername] = useState("");
-    const [isvalidEmail, setisvalidEmail] = useState(false)
-    const [isvalidusername, setisvalidusername] = useState(false)
-    const [isvalidPassword, setisvalidPassword] = useState(false)
+    const [isvalidEmail, setisvalidEmail] = useState(true)
+    const [isvalidusername, setisvalidusername] = useState(true)
+    const [isvalidPassword, setisvalidPassword] = useState(true)
     const [visible,setvisible]=useState(true)
     const [isEnabled, setIsEnabled] = useState(false);
+    const firstRender = useRef(true)
 
 useEffect(() => {
-    setisvalidEmail(EmailValidate(Email))
-    setisvalidPassword(PasswordValidate(password))
-    setisvalidusername(UsernameValidation(username))
+
+    if (firstRender.current) {
+        firstRender.current = false
+        return
+      }
+      submit()
+
 }, [Email,password,username])
+
+
+const submit = () => {
+
+    let validate = EmailValidate(Email)
+    setisvalidEmail(validate)
+    validate = PasswordValidate(password)
+    setisvalidPassword(validate)
+    validate = UsernameValidation(username)
+    setisvalidusername(validate)
+    
+  }
+
+
 
 const toggleSwitch = () => setIsEnabled(previousState => !previousState);
 

@@ -99,7 +99,7 @@ const SignUp = (props: signinprops) => {
                         
                         <KeyboardAvoidingView style={styles.subcontainer}>
                             <TouchableOpacity style={styles.button}>
-                                <Text style={styles.buttontext}>{Constant.Button.signin}</Text>
+                                <Text style={styles.buttontext}>{Constant.Button.Signup}</Text>
                             </TouchableOpacity>
 
                             <View style={[styles.flexdirection, { alignSelf: "center" }]}>

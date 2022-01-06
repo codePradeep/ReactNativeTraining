@@ -13,7 +13,8 @@ screens: {
     checkout:"CHECKOUT",
     riderreview:"RIDER REVIEW",
     notificationTab:"NOTIFICATION",
-    myaccount:"MY ACCOUNT"
+    myaccount:"MY ACCOUNT",
+    details:"DETAILS"
 
 },
  Card:{
@@ -32,7 +33,9 @@ Button:{
     save:"Save",
     applyfilter:"Apply Filters",
     signin:"Sign In",
-    Signup:"Sign Up"
+    Signup:"Sign Up",
+    buynow:"Buy Now",
+
 },
 SuccessScreen:{
     title:"Congratulations!",
@@ -106,6 +109,18 @@ SignUpScreen:{
     already:"Already have an account?"
 
 },
+
+foodDetails:{
+    freeshipping:"Free Shipping",
+    Size:"Sizes:",
+    hambarger:"Hamburger",
+    details:"A popular spice and vegetables mixed favoured rice dish which is typically prepared by layering the biryani gravy and basmati rice in flat bottom vessel.",
+
+
+},
+
+
+
 Validation:{
     username:"Invalid Username",
     EmailValidation:"Invalid Email",

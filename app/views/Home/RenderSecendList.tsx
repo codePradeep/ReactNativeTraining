@@ -32,7 +32,6 @@ const RenderSecendlist = (props: renderprops) => {
                     <Image source={icon.love} style={styles.Icon} />
                 </TouchableOpacity>
             </View>
-           
                 <Image source={item.image} style={styles.image} />
                 <Text style={[styles.text,FONTS.h3]}>{item.name}</Text>
                 <Text style={[styles.text,FONTS.body4]}>{item.description}</Text>

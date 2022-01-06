@@ -18,6 +18,7 @@ import MyAccountModel from "./MyAccountModel";
 import MyCartModel from "./MyCartModel";
 import SignInModel from "./SignInModel";
 import SignUpModel from "./SignUpModel";
+import FoodDetailModel from "./FoodDetailsModel";
 export {
     Homemodel,
     Loginmodel,
@@ -37,6 +38,7 @@ export {
     MyAccountModel,
     MyCartModel,
     SignInModel,
-    SignUpModel
+    SignUpModel,
+    FoodDetailModel
 
 };

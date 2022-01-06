@@ -1,9 +1,10 @@
 import React from "react";
 import { StyleSheet } from "react-native";
+import { COLORS } from "../../config";
 
 const styles = StyleSheet.create({
   button:{
-    backgroundColor:"darkorange",
+    backgroundColor:COLORS.primary,
     borderRadius:9,
 
 },

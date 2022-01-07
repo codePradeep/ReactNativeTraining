@@ -42,7 +42,7 @@ const Setting = (props: Settingprops) => {
                     data={SettingData}
                     initialScrollIndex={0}
                  //  ItemSeparatorComponent={ItemSeprator}
-                    renderItem={({ item ,index }) => <RanderListItem  item={item} index={0}/> }
+                    renderItem={({ item ,index }) => <RanderListItem  item={item} index={0} navigation={navigation}/> }
                     keyExtractor={(_,index )=> index.toString()}
                 />
 

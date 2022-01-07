@@ -8,7 +8,7 @@ import styles from './style'
     return(
         <View style={styles.headercontainer}>
         <View style={styles.headersubcontainer}>
-            <TouchableOpacity onPress={() => navigation.goBack()} >
+            <TouchableOpacity onPress={()=>navigation.goBack()} >
                 <View style={styles.headerleftimagecontainer}>
                     <Image source={icon.left_arrow} style={styles.headerleftimage} />
                 </View>

@@ -42,7 +42,9 @@ const RanderListItem = (props: renderprops) => {
                         <Text style={toggle?styles.renderclickedbuttontext:styles.rendernotclickedbuttontext}>{props.item.button1}</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={toggle?styles.notclickedbutton:styles.clickedbutton}
-                      onPress={()=>settogle(false)} 
+                      onPress={()=>{settogle(false),
+                        props.item.button2==Constant.Button.rate?navigation.navigate("RiderReviewModel"):null
+                      }} 
                     >
                         <Text style={!toggle?styles.renderclickedbuttontext:styles.rendernotclickedbuttontext}>{props.item.button2}</Text>
                     </TouchableOpacity>

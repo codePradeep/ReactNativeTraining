@@ -4,13 +4,16 @@ const SettingData = [
     {
         id: "1",
         title: "Profile",
-        icondata: icon.profile
+        icondata: icon.profile,
+        navigationdata:"MyAccountModel"
+
     
     },
     {
         id: "2",
         title: "Change Password",
-        icondata: icon.lock
+        icondata: icon.lock,
+        navigationdata:'ChangePasswordModel'
       
     },
     {
@@ -22,7 +25,8 @@ const SettingData = [
     {
         id: "4",
         title: "Notification",
-        icondata: icon.notification
+        icondata: icon.notification,
+        navigationdata:"NoticationSettingModel"
       
     },
     {
@@ -64,7 +68,8 @@ const SettingData = [
     {
         id: "11",
         title: "LogOut",
-        icondata: icon.door
+        icondata: icon.door,
+        navigationdata:"OnboradingModel"
       
     },
 ]

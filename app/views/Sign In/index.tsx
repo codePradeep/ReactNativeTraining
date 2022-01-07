@@ -95,7 +95,9 @@ const SignIn = (props: signinprops) => {
                             </TouchableOpacity>
                         </View>
                         <KeyboardAvoidingView style={styles.subcontainer}>
-                            <TouchableOpacity style={styles.button}>
+                            <TouchableOpacity style={styles.button}
+                            
+                            onPress={()=>navigation.navigate("DrawerNavigation")}>
                                 <Text style={styles.buttontext}>{Constant.Button.signin}</Text>
                             </TouchableOpacity>
 

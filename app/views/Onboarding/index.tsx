@@ -69,7 +69,8 @@ const Onborading = (props: Onboardingprops) => {
                     <Text style={styles.subheading}>You'll receive the great food within a hour. And get free Delivery Credits for every order</Text>
                 </View>
                 <View style={styles.lastbuttoncontainer}>
-                    <TouchableOpacity style={styles.button}>
+                    <TouchableOpacity style={styles.button}
+                    onPress={()=>navigation.navigate("SignInModel")}>
                         <Text style={styles.endbuttontext}>Let's Get Started</Text>
                     </TouchableOpacity>
                 </View>

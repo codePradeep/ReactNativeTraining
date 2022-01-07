@@ -26,7 +26,7 @@ const NotificationTab = (props: NotificationTabprops) => {
 
             <View style={styles.headercontainer}>
                 <View style={styles.headersubcontainer}>
-                    <TouchableOpacity onPress={() => navigation.navigate("SettingModel")} >
+                    <TouchableOpacity onPress={() => navigation.openDrawer()} >
                         <View style={styles.headerleftimagecontainer}>
                             <Image source={icon.menu} style={styles.headerleftimage} />
                         </View>

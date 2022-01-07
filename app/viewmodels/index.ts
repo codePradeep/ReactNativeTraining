@@ -21,6 +21,7 @@ import SignUpModel from "./SignUpModel";
 import FoodDetailModel from "./FoodDetailsModel";
 import DeliveryStatusModel from "./DeliveryStatusModel";
 import MyOrderModel from "./MyOrderModel";
+import MapViewModel from "./MapViewModel";
 export {
     Homemodel,
     Loginmodel,
@@ -43,6 +44,7 @@ export {
     SignUpModel,
     FoodDetailModel,
     DeliveryStatusModel,
-    MyOrderModel
+    MyOrderModel,
+    MapViewModel
 
 };

@@ -30,6 +30,7 @@ const style = StyleSheet.create({
         backgroundColor: COLORS.primary,
         borderRadius: 9,
         width: "45%",
+        
 
     },
 

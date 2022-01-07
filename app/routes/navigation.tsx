@@ -10,6 +10,7 @@ import {
   DeliveryStatusModel,
   FoodDetailModel,
   Homemodel, Loginmodel,
+  MapViewModel,
   MyAccountModel,
   MyCardModel,
   MyCouponModel,
@@ -58,6 +59,8 @@ const Routenavigation = () => {
         <Stack.Screen name="DeliveryStatusModel" component={DeliveryStatusModel} options={{ headerShown: false }} />
         <Stack.Screen name="DrawerNavigation" component={DrawerNavigation} options={{ headerShown: false }} />
         <Stack.Screen name="MyOrderModel" component={MyOrderModel} options={{ headerShown: false }} />
+        <Stack.Screen name="MapViewModel" component={MapViewModel} options={{ headerShown: false }} />
+
         <Stack.Screen name="calldemo" component={fetchData} />
       </Stack.Navigator>
     </NavigationContainer>

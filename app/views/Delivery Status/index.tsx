@@ -78,6 +78,7 @@ const DeliveryStatus = (props: DeliveryStatus) => {
                     </TouchableOpacity>
                     <TouchableOpacity
                         {...props}
+                        onPress={()=>navigation.navigate("MapViewModel")}
                         style={style.button}>
                         <Text style={style.buttontext}>{Constant.Button.mapview}</Text>
                     </TouchableOpacity>

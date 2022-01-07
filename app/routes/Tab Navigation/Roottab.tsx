@@ -48,7 +48,7 @@ const Roottab = () => {
         // },
 
       }} >
-      <Tab.Screen name="Home" component={Homemodel}
+      <Tab.Screen name="HomeTab" component={Homemodel}
       
 
             options={{      
@@ -66,7 +66,7 @@ const Roottab = () => {
               tabBarIcon: ({ focused }: any) => (<TabbarItem focused={focused} orientation={orientation} ICON={icon.cart} label={'Cart'} />),
             }} />
 
-      <Tab.Screen name="Favourite" component={RiderReviewModel}
+      <Tab.Screen name="Favouritetab" component={RiderReviewModel}
             options={{
               tabBarIcon: ({ focused }: any) => (<TabbarItem focused={focused} orientation={orientation} ICON={icon.favourite} label={'Favourite'} />),
             }} />

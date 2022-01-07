@@ -31,7 +31,7 @@ const MyCard = (props: Mycardprops) => {
 
             <View style={styles.headercontainer}>
                 <View style={styles.headersubcontainer}>
-                    <TouchableOpacity onPress={() => navigation.navigate("SettingModel")} >
+                    <TouchableOpacity onPress={() => navigation.goBack()} >
                         <View style={styles.headerleftimagecontainer}>
                             <Image source={icon.left_arrow} style={styles.headerleftimage} />
                         </View>

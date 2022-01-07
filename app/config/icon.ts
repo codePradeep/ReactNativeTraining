@@ -59,6 +59,8 @@ const icon ={
     openeye:require('../assets/icon/openeye.png'),
     clock:require('../assets/icon/clock.png'),
     coin:require('../assets/icon/coin.png'),
+    wallet:require('../assets/icon/wallet.png'),
+    help:require('../assets/icon/help.png'),
 
 }
 export default icon

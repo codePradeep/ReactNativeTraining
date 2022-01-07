@@ -99,7 +99,7 @@ const Homepage = (props: Homepageprops) => {
             <View style={styles.Container} >
                 <View style={styles.headercontainer}>
                     <View style={styles.headersubcontainer}>
-                        <TouchableOpacity onPress={() => navigation.goBack()} >
+                        <TouchableOpacity onPress={() => navigation.openDrawer()} >
                             <View style={styles.headerleftimagecontainer}>
                                 <Image source={icon.menu} style={styles.headerleftimage} />
                             </View>

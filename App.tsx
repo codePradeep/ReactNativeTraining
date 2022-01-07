@@ -14,6 +14,7 @@ import { Provider } from 'react-redux'
 
 import Routenavigation from './app/routes/navigation';
 import rootReducer from './app/redux/reducer/rootreducer';
+import DrawerNavigation from './app/routes/Drawer Navigation';
 
 
 const store = createStore(rootReducer)
@@ -23,7 +24,8 @@ const App = () => {
 
   return (
 
-    <Routenavigation />
+     <Routenavigation />
+    
 
 
 

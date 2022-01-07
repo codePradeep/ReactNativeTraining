@@ -71,7 +71,8 @@ const DeliveryStatus = (props: DeliveryStatus) => {
                 </View>
                {currentstep==4?<Abutton title={Constant.Button.Done}/>: <View style={style.secendContainer}>
                     <TouchableOpacity
-                        {...props}
+                        
+                        onPress={()=>navigation.goBack()}
                         style={style.button}>
                         <Text style={style.buttontext}>{Constant.Button.cancel}</Text>
                     </TouchableOpacity>

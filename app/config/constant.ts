@@ -15,7 +15,8 @@ screens: {
     notificationTab:"NOTIFICATION",
     myaccount:"MY ACCOUNT",
     details:"DETAILS",
-    deliverystatus:"DELIVERY STATUS"
+    deliverystatus:"DELIVERY STATUS",
+    myorder:"MY ORDERS"
 
 },
  Card:{
@@ -37,7 +38,13 @@ Button:{
     Signup:"Sign Up",
     buynow:"Buy Now",
     cancel:"Cancel",
-    mapview:"Map View"
+    mapview:"Map View",
+    History:"History",
+    Upcoming:"Upcoming",
+    reorder:"Re-Order",
+    rate:"Rate",
+    Trackorder:"Track Order",
+    Cancel:"Cancel"
 
 },
 SuccessScreen:{

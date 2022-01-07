@@ -34,7 +34,7 @@ const DrawerData = [
         id: "5",
         title: "Track Your Order",
         icondata: icon.loacation,
-        navigationdata:"DeliveryStatusModel"
+        navigationdata:"MyOrderModel"
       
     },
     {

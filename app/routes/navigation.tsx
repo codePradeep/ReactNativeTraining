@@ -13,6 +13,7 @@ import {
   MyAccountModel,
   MyCardModel,
   MyCouponModel,
+  MyOrderModel,
   NoticationSettingModel,
   NotificationTabModel,
   OnboradingModel,
@@ -56,6 +57,7 @@ const Routenavigation = () => {
         <Stack.Screen name="FoodDetailModel" component={FoodDetailModel} options={{ headerShown: false }} />
         <Stack.Screen name="DeliveryStatusModel" component={DeliveryStatusModel} options={{ headerShown: false }} />
         <Stack.Screen name="DrawerNavigation" component={DrawerNavigation} options={{ headerShown: false }} />
+        <Stack.Screen name="MyOrderModel" component={MyOrderModel} options={{ headerShown: false }} />
         <Stack.Screen name="calldemo" component={fetchData} />
       </Stack.Navigator>
     </NavigationContainer>

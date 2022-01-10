@@ -5,14 +5,15 @@ import styles from './style'
 
 interface Buttonprops {
     title: string;
-    // press:any;
+    OnPress:any
 }
 
-export default function Abutton(props: any) {
-    const { title } = props;
+export default function Abutton(props: Buttonprops) {
+    const { title,OnPress } = props;
     return (
         <View>
             <TouchableOpacity
+                onPress={OnPress}
                 {...props}
                 style={styles.button}>
                 <Text style={styles.buttontext}>{title}</Text>

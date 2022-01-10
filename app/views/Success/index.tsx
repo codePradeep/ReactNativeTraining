@@ -1,6 +1,7 @@
 import React from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
-import { Constant, FONTS, icon } from "../../config";
+import { Abutton } from "../../common";
+import { Constant, FONTS, icon, Screen } from "../../config";
 import styles from "./style";
 
 interface PasswordRecoveryprops {
@@ -25,9 +26,7 @@ const Success = (props: PasswordRecoveryprops) => {
                 </View>
 
 
-                <TouchableOpacity style={styles.button}>
-                    <Text style={styles.buttontext}>{Constant.Button.Done}</Text>
-                </TouchableOpacity>
+                <Abutton title={Constant.Button.Done} OnPress={()=>navigation.navigate(Screen.DrawerNavigation)} />
 
 
 

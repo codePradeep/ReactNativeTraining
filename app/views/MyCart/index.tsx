@@ -2,6 +2,7 @@ import React from "react";
 import { Modal, Text, TouchableHighlight, TouchableOpacity, TouchableWithoutFeedback, View } from "react-native";
 import { Image } from "react-native-animatable";
 import { SwipeListView } from "react-native-swipe-list-view";
+import { Header } from "../../common";
 import { COLORS, Constant, FONTS, icon } from "../../config";
 import styles from "./style";
 
@@ -74,22 +75,22 @@ const MyCart = (props: MyCartprops) => {
         <View style={styles.maincontainer} >
             <View style={styles.container}>
                 <View style={styles.headercontainer}>
-                    <View style={styles.headersubcontainer}>
-                        <TouchableOpacity onPress={() => navigation.goBack()} >
-                            <View style={styles.headerleftimagecontainer}>
-                                <Image source={icon.left_arrow} style={styles.headerleftimage} />
-                            </View>
-                        </TouchableOpacity>
-                        <Text style={styles.HeaderText}>{Constant.screens.cart}</Text>
-                        <View style={styles.HeaderRight} >
-                            <Image source={icon.cart} style={styles.headerRightimage} />
+                    <Header headertitle={Constant.screens.cart} navigation={navigation}
+                        HeaderRightComponent={
+                            <View style={styles.HeaderRight} >
+                                <Image source={icon.cart} style={styles.headerRightimage} />
 
-                            <Text style={styles.headerRightimagecountertext}>{cartcount}</Text>
+                                <Text style={styles.headerRightimagecountertext}>{cartcount}</Text>
 
-                        </View>
-                    </View>
+                            </View>}
+                    />
+
                 </View>
+
+
+
                 <SwipeListView
+                    style={{ flex: 1 }}
                     data={listData}
                     renderItem={renderItem}
                     renderHiddenItem={renderHiddenItem}

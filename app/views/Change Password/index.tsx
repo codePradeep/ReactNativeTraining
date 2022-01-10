@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Image, ScrollView, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { Abutton, Header } from "../../common";
 import Logo from "../../common/Logo";
-import { icon } from "../../config";
+import { Constant, icon } from "../../config";
 import styles from "./style";
 
 interface PasswordRecoveryprops {
@@ -12,28 +13,17 @@ interface PasswordRecoveryprops {
 const ChangePassword = (props: PasswordRecoveryprops) => {
     const { navigation, } = props
 
-
-
     return (
 
         <View style={styles.mainContainer}>
-
-            <View style={styles.headercontainer}>
-                <View style={styles.headersubcontainer}>
-                    <TouchableOpacity onPress={() => navigation.goBack()} >
-                        <View style={styles.headerleftimagecontainer}>
-                            <Image source={icon.left_arrow} style={styles.headerleftimage} />
-                        </View>
-                    </TouchableOpacity>
-                    <Text style={styles.HeaderText}>CHANGE PASSWORD</Text>
-                    <View style={styles.HeaderRight} />
-                </View>
-            </View>
+            
 
             <View style={styles.container}>
+            <Header headertitle={Constant.screens.CHANGEPASSWORD} navigation={navigation} HeaderRightComponent={undefined}/>
+
 
                     <View style={styles.inputView}>
-                        <Text style={styles.Email}>Current Password</Text>
+                        <Text style={styles.Email}>{Constant.changePassword.currentpassword}</Text>
                         <View style={styles.input}>
                             <TextInput
                                 style={styles.textinput}
@@ -43,7 +33,7 @@ const ChangePassword = (props: PasswordRecoveryprops) => {
                                 //source={isvalid ? icon.check_tick : icon.wrong}
                                 style={styles.icon} />
                         </View>
-                        <Text style={styles.Email}>New Password</Text>
+                        <Text style={styles.Email}>{Constant.changePassword.newpassword}</Text>
                         <View style={styles.input}>
                             <TextInput
                                 style={styles.textinput}
@@ -53,7 +43,7 @@ const ChangePassword = (props: PasswordRecoveryprops) => {
                                 //source={isvalid ? icon.check_tick : icon.wrong}
                                 style={styles.icon} />
                         </View>
-                        <Text style={styles.Email}>Retype New Password</Text>
+                        <Text style={styles.Email}>{Constant.changePassword.repasssword}</Text>
                         <View style={styles.input}>
                             <TextInput
                                 style={styles.textinput}
@@ -65,9 +55,7 @@ const ChangePassword = (props: PasswordRecoveryprops) => {
                         </View>
                     </View>
 
-                <TouchableOpacity style={styles.button}>
-                    <Text style={styles.buttontext}>Change Password</Text>
-                </TouchableOpacity>
+                <Abutton title={Constant.Button.ChangePassword} OnPress={undefined} />
                 
             </View>
         

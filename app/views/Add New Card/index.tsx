@@ -1,6 +1,7 @@
 import React from "react";
 import { Image, ScrollView, Text, TextInput, TouchableOpacity, View } from "react-native";
-import { Constant, icon } from "../../config";
+import { Abutton, Header } from "../../common";
+import { Constant, icon, Screen } from "../../config";
 import styles from "./style";
 
 interface PasswordRecoveryprops {
@@ -35,19 +36,11 @@ const AddNewCard = (props: PasswordRecoveryprops) => {
 
         <View style={styles.mainContainer}>
             <View style={styles.container}>
+<View style={styles.headercontainer}>
 
-                <View style={styles.headercontainer}>
-                    <View style={styles.headersubcontainer}>
-                        <TouchableOpacity onPress={() => navigation.goBack()} >
-                            <View style={styles.headerleftimagecontainer}>
-                                <Image source={icon.left_arrow} style={styles.headerleftimage} />
-                            </View>
-                        </TouchableOpacity>
-                        <Text style={styles.HeaderText}>{Constant.screens.Addnewcard}</Text>
-                        <View style={styles.HeaderRight} />
-                    </View>
-                </View>
 
+               <Header headertitle={Constant.screens.Addnewcard} navigation={navigation} HeaderRightComponent={undefined} />
+               </View>  
                 <ScrollView>
 
 
@@ -113,9 +106,7 @@ const AddNewCard = (props: PasswordRecoveryprops) => {
                             <Text style={styles.checktext}>{Constant.AddNewCardscreen.check}</Text>
                         </View>
                     </View>
-                    <TouchableOpacity style={styles.button}>
-                        <Text style={styles.buttontext}>{Constant.Button.AddCard}</Text>
-                    </TouchableOpacity>
+                    <Abutton title={Constant.Button.AddCard} OnPress={()=>navigation.navigate(Screen.SuccessModel)} />
                 </ScrollView>
             </View>
 

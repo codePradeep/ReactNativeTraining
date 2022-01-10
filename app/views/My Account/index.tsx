@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 
 import { Button, FlatList, Image, ScrollView, Text, TextInput, TouchableOpacity, View } from "react-native";
 import DatePicker from "react-native-date-picker";
-import { Abutton, Input } from "../../common";
+import { Abutton, Header, Input } from "../../common";
 import { Picker } from '@react-native-picker/picker';
 import { Constant, FONTS, icon } from "../../config";
 import Item from "../Notification Tab/renderItem";
@@ -55,22 +55,15 @@ const MyAccount = (props: MyAccountprops) => {
         <View style={styles.mainContainer}>
 
             <View style={styles.container}>
-                <View style={styles.subcontainer}>
-                    <TouchableOpacity onPress={() => navigation.goBack()} >
-                        <View style={styles.leftimagecontainer}>
-                            <Image source={icon.left_arrow} style={styles.leftimage} />
-                        </View>
-                    </TouchableOpacity>
-                    <Text style={[styles.HeaderText]}>{Constant.screens.myaccount}</Text>
-                    <View style={styles.HeaderRight}>
-                     { ifclickedEdit?  <TouchableOpacity
-                     onPress={()=>setifclickedEdit(false)}
-                     
-                     >
-                            <Text style={styles.HeaderRightText}>{Constant.Myaccount.edit}</Text>
-                        </TouchableOpacity>:null}
-                    </View>
-                </View>
+                <Header headertitle={Constant.screens.myaccount} navigation={navigation} 
+                HeaderRightComponent={ <View style={styles.HeaderRight}>
+                { ifclickedEdit?  <TouchableOpacity
+                onPress={()=>setifclickedEdit(false)}
+                
+                >
+                       <Text style={styles.HeaderRightText}>{Constant.Myaccount.edit}</Text>
+                   </TouchableOpacity>:null}
+               </View>} />
             </View>
             <ScrollView style={{ flex: 1 }}>
                 {ifclickedEdit ?
@@ -151,7 +144,7 @@ const MyAccount = (props: MyAccountprops) => {
                         <Text />
                        
                         </View>
-                       <View style={styles.buttoncontner}><Abutton  onPress={()=>setifclickedEdit(true)} title={Constant.Button.save}/></View> 
+                       <View style={styles.buttoncontner}><Abutton  OnPress={()=>setifclickedEdit(true)} title={Constant.Button.save}/></View> 
                     </View>
                     
                 }

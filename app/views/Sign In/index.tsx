@@ -3,7 +3,8 @@ import { KeyboardAvoidingView, ScrollView, Switch, TextInput, TouchableOpacity, 
 import { Image, Text } from "react-native-animatable";
 import { Input } from "../../common";
 import Logo from "../../common/Logo";
-import { COLORS, Constant, icon } from "../../config";
+import { COLORS, Constant, icon, Screen } from "../../config";
+
 import styles from "./style";
 
 
@@ -90,14 +91,15 @@ const SignIn = (props: signinprops) => {
                                 />
                                 <Text style={styles.bottomtext}>{Constant.SigninScreen.save}</Text>
                             </View>
-                            <TouchableOpacity style={styles.forget}>
+                            <TouchableOpacity style={styles.forget} 
+                             onPress={()=>navigation.navigate(Screen.PasswordRecoveryModel)}>
                                 <Text style={styles.bottomtext}>{Constant.SigninScreen.Forget}</Text>
                             </TouchableOpacity>
                         </View>
                         <KeyboardAvoidingView style={styles.subcontainer}>
                             <TouchableOpacity style={styles.button}
                             
-                            onPress={()=>navigation.navigate("DrawerNavigation")}>
+                            onPress={()=>navigation.navigate(Screen.DrawerNavigation)}>
                                 <Text style={styles.buttontext}>{Constant.Button.signin}</Text>
                             </TouchableOpacity>
 

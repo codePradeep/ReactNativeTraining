@@ -2,11 +2,12 @@ import React from 'react';
 import {
     View,
     Text,
-    
+
     TouchableOpacity,
     Image
 } from 'react-native';
-import { COLORS, Constant, FONTS, icon } from '../../config';
+import { Abutton, Header } from '../../common';
+import { COLORS, Constant, FONTS, icon, Screen } from '../../config';
 import styles from './style';
 
 
@@ -29,17 +30,7 @@ const MyCard = (props: Mycardprops) => {
     return (
         <View style={styles.MainContainer}>
 
-            <View style={styles.headercontainer}>
-                <View style={styles.headersubcontainer}>
-                    <TouchableOpacity onPress={() => navigation.goBack()} >
-                        <View style={styles.headerleftimagecontainer}>
-                            <Image source={icon.left_arrow} style={styles.headerleftimage} />
-                        </View>
-                    </TouchableOpacity>
-                    <Text style={styles.HeaderText}>{Constant.screens.MYCARDS}</Text>
-                    <View style={styles.HeaderRight} />
-                </View>
-            </View>
+            <Header headertitle={Constant.screens.MYCARDS} navigation={navigation} HeaderRightComponent={undefined} />
 
             <TouchableOpacity onPress={() => setistoggle({ ...data, master: true })}>
                 <View style={styles.CardContainer}>
@@ -64,9 +55,9 @@ const MyCard = (props: Mycardprops) => {
                     </View>
                 </View>
             </TouchableOpacity>
-            <Text style={ FONTS.h3}>Add New Card</Text>
+            <Text style={FONTS.h3}>Add New Card</Text>
             <View style={styles.subContainer}>
-                
+
                 <TouchableOpacity onPress={() => setistoggle({ ...data, apple: true })}>
                     <View style={styles.CardContainer}>
                         <View style={[styles.subcardcontainer, { borderColor: istoggle.apple ? COLORS.primary : COLORS.lightGray1 }]}>
@@ -104,9 +95,7 @@ const MyCard = (props: Mycardprops) => {
                 </TouchableOpacity>
 
             </View>
-            <TouchableOpacity style={styles.button}>
-                <Text style={styles.buttontext}>Add</Text>
-            </TouchableOpacity>
+            <Abutton title={Constant.Button.add} OnPress={()=>navigation.navigate(Screen.AddNewCardModel)} />
         </View>
     )
 }

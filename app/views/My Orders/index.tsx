@@ -1,5 +1,6 @@
 import React from "react";
 import { FlatList, Image, SectionList, Text, TouchableOpacity, View } from "react-native";
+import { Header } from "../../common";
 import { Constant, icon } from "../../config";
 import CouponData from "../../config/Coupondata";
 import RanderListItem from "./RanderListItem";
@@ -23,15 +24,7 @@ const MyOrder = (props: Onboardingprops) => {
         <View style={styles.maincontainer}>
 
             <View style={styles.headercontainer}>
-                <View style={styles.headersubcontainer}>
-                    <TouchableOpacity onPress={() => navigation.goBack()} >
-                        <View style={styles.headerleftimagecontainer}>
-                            <Image source={icon.left_arrow} style={styles.headerleftimage} />
-                        </View>
-                    </TouchableOpacity>
-                    <Text style={styles.HeaderText}>{Constant.screens.myorder}</Text>
-                    <View style={styles.HeaderRight} />
-                </View>
+                <Header headertitle={Constant.screens.myorder} navigation={navigation} HeaderRightComponent={undefined} />
             </View>
 
             <View style={styles.FirstView} >

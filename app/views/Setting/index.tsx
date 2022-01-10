@@ -5,6 +5,7 @@ import { Constant, icon} from "../../config";
 import RanderListItem from "./RanderListItem";
 import styles from "./style";
 import SettingData from '../../config/SettingData'
+import { Header } from "../../common";
 
 interface Settingprops {
     navigation: any
@@ -23,15 +24,7 @@ const Setting = (props: Settingprops) => {
 
 
                     <View style={styles.container}>
-                        <View style={styles.subcontainer}>
-                            <TouchableOpacity onPress={() => navigation.goBack()} >
-                                <View style={styles.leftimagecontainer}>
-                                    <Image source={icon.left_arrow} style={styles.leftimage} />
-                                </View>
-                            </TouchableOpacity>
-                            <Text style={styles.HeaderText}>{Constant.screens.SETTING}</Text>
-                            <View style={styles.HeaderRight}/>                          
-                        </View>
+                        <Header headertitle={Constant.screens.SETTING} navigation={navigation} HeaderRightComponent={undefined} />
                     </View>
             <View style={styles.flatlistcontainer}>
 
@@ -41,7 +34,6 @@ const Setting = (props: Settingprops) => {
                     showsHorizontalScrollIndicator={false}
                     data={SettingData}
                     initialScrollIndex={0}
-                 //  ItemSeparatorComponent={ItemSeprator}
                     renderItem={({ item ,index }) => <RanderListItem  item={item} index={0} navigation={navigation}/> }
                     keyExtractor={(_,index )=> index.toString()}
                 />

@@ -8,7 +8,7 @@ import {
     Modal,
     ScrollView
 } from 'react-native';
-import { Header } from '../../common';
+import { Abutton, Header } from '../../common';
 import { COLORS, Constant, FONTS, icon } from '../../config';
 import styles from './style';
 
@@ -88,7 +88,7 @@ const RiderReview = (props: Checkoutprops) => {
     return (
         <View style={styles.parentContainer}>
             <View style={styles.MainContainer}>
-                <Header headertitle={Constant.screens.riderreview} navigation={navigation}/>
+                <Header headertitle={Constant.screens.riderreview} navigation={navigation} HeaderRightComponent={undefined}/>
                 <ScrollView style={styles.scrollview}>
                     <View style={styles.container}>
                         <View style={styles.ridercontainer}>
@@ -126,11 +126,7 @@ const RiderReview = (props: Checkoutprops) => {
                         <View style={styles.textinputcontainer}>
                             <TextInput style={styles.inputtext} placeholder={Constant.RiderReviewscreen.addcomment} />
                         </View>
-
-                        <TouchableOpacity
-                        style={styles.button}>
-                            <Text style={styles.buttontext}>{Constant.Button.SubmitReview}</Text>
-                        </TouchableOpacity>
+                        <Abutton title={Constant.Button.SubmitReview} OnPress={undefined} />
                        
 
 

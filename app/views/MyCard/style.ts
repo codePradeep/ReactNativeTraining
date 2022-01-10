@@ -16,36 +16,6 @@ const styles=StyleSheet.create({
         
         
     },
-    headersubcontainer: {
-        flexDirection: "row",
-        justifyContent: "space-between"
-
-    },
-    headerleftimagecontainer: {
-        backgroundColor: "rgba(176, 174, 171,0.02)",
-        borderRadius: 10,
-        height: 40, width: 40,
-        justifyContent: "center",
-        borderWidth: 0.5
-    },
-    HeaderRight: {
-
-        height: 40,
-        width: 40,
-        justifyContent: "center"
-    },
-    headerleftimage: {
-        height: 25,
-        width: 25,
-        resizeMode: "contain",
-        alignSelf: "center",
-    },
-    HeaderText: {
-        color: COLORS.black,
-        fontSize: 22,
-        fontWeight: "700",
-        textAlignVertical: "center"
-    },
     subContainer:{
         flex:0.65,
         justifyContent:"space-between"
@@ -84,23 +54,6 @@ const styles=StyleSheet.create({
         paddingLeft:10,
         color:COLORS.black
     },
-
-    button: {
-        backgroundColor: COLORS.primary,
-        borderRadius: 9,
-        
-        
-
-    },
-
-    buttontext: {
-        padding: 10,
-        color:COLORS.white2,
-        textAlign: "center",
-        fontWeight: "800",
-        fontSize: 19
-
-    }
 
 
 })

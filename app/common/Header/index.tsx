@@ -3,8 +3,15 @@ import { View,Text, TouchableOpacity, Image } from "react-native";
 import { Constant, icon } from "../../config";
 import styles from './style'
 
- const Header=(props:any)=>{
-    const {headertitle,navigation} =props;
+
+interface Headerprops{
+    headertitle:string
+    navigation:any
+    HeaderRightComponent:any
+
+}
+ const Header=(props:Headerprops)=>{
+    const {headertitle,navigation,HeaderRightComponent} =props;
     return(
         <View style={styles.headercontainer}>
         <View style={styles.headersubcontainer}>
@@ -14,7 +21,9 @@ import styles from './style'
                 </View>
             </TouchableOpacity>
             <Text style={styles.HeaderText}>{headertitle}</Text>
-            <View style={styles.HeaderRight} />
+            <View style={styles.HeaderRight}>
+                {HeaderRightComponent}
+            </View>
         </View>
     </View>
     )

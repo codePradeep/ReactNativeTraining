@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { View, Text,TouchableOpacity, Image, TextInput, FlatList, ScrollView, Modal } from "react-native";
-import { Slider } from "../../common";
+import { Header, Slider } from "../../common";
 import { categories, COLORS, Constant, FONTS, icon, menu } from "../../config";
 import RanderListItem from "./RanderListItem";
 import RenderSecendlist from "./RenderSecendList";
@@ -97,6 +97,7 @@ const Homepage = (props: Homepageprops) => {
     return (
         <View style={{ flex: 1, backgroundColor: COLORS.white }}>
             <View style={styles.Container} >
+        
                 <View style={styles.headercontainer}>
                     <View style={styles.headersubcontainer}>
                         <TouchableOpacity onPress={() => navigation.openDrawer()} >
@@ -151,7 +152,7 @@ const Homepage = (props: Homepageprops) => {
                             initialScrollIndex={0}
                             showsHorizontalScrollIndicator={false}
                             renderItem={({ item, index }) => <RenderSecendlist item={item}
-
+                            navigation={navigation}
                                 index={0} />}
                             keyExtractor={(_, index) => index.toString()}
                         />

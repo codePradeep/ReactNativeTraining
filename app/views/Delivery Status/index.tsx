@@ -55,7 +55,7 @@ const DeliveryStatus = (props: DeliveryStatus) => {
                         </View>
                     </ScrollView>
                 </View>
-                {currentstep == 4 ? <Abutton title={Constant.Button.Done} /> : <View style={style.secendContainer}>
+                {currentstep == 4 ? <Abutton title={Constant.Button.Done} OnPress={undefined} /> : <View style={style.secendContainer}>
                     <TouchableOpacity
 
                         onPress={() => navigation.goBack()}

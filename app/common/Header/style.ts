@@ -13,11 +13,11 @@ const styles = StyleSheet.create(
     
         },
         headerleftimagecontainer: {
-            backgroundColor: "rgba(176, 174, 171,0.02)",
-            borderRadius: 10,
+            backgroundColor: COLORS.lightGray2,
+            borderRadius: 5,
             height: 40, width: 40,
             justifyContent: "center",
-            borderWidth: 0.5
+            
         },
         HeaderRight: {
     

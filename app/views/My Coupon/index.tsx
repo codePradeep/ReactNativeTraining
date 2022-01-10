@@ -1,5 +1,6 @@
 import React from "react";
 import { FlatList, Image, Text, TouchableOpacity, View } from "react-native";
+import { Header } from "../../common";
 import { Constant, icon } from "../../config";
 import RanderListItem from "./RanderListItem";
 import styles from "./style";
@@ -33,15 +34,7 @@ const MyCoupon = (props: Onboardingprops) => {
         <View style={styles.maincontainer}>
 
             <View style={styles.headercontainer}>
-                <View style={styles.headersubcontainer}>
-                    <TouchableOpacity onPress={() => navigation.goBack()} >
-                        <View style={styles.headerleftimagecontainer}>
-                            <Image source={icon.left_arrow} style={styles.headerleftimage} />
-                        </View>
-                    </TouchableOpacity>
-                    <Text style={styles.HeaderText}>{Constant.screens.mycoupon}</Text>
-                    <View style={styles.HeaderRight} />
-                </View>
+               <Header headertitle={Constant.screens.mycoupon} navigation={navigation} HeaderRightComponent={undefined} />
             </View>
 
             <View style={styles.FirstView} >

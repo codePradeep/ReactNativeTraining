@@ -130,23 +130,6 @@ const styles=StyleSheet.create({
           
         paddingLeft:10
       },
-      button: {
-        backgroundColor: COLORS.primary,
-        borderRadius: 9,
-        
-        
-
-    },
-   
-
-    buttontext: {
-        padding: 10,
-        color:COLORS.white2,
-        textAlign: "center",
-        fontWeight: "800",
-        fontSize: 16
-
-    },
 
 })
 

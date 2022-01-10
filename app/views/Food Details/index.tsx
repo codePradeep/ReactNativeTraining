@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
-import { icon, Constant, COLORS, FONTS, menu } from "../../config";
+import { Header } from "../../common";
+import { icon, Constant, COLORS, FONTS, menu, Screen } from "../../config";
 import styles from "./style";
 interface FoodDetailprops {
     navigation: any
@@ -81,19 +82,15 @@ const FoodDetail = (props: FoodDetailprops) => {
     return (
         <View style={styles.maincontainer} >
             <View style={styles.container}>
+               
                 <View style={styles.headercontainer}>
-                    <View style={styles.headersubcontainer}>
-                        <TouchableOpacity onPress={() => navigation.goBack()} >
-                            <View style={styles.headerleftimagecontainer}>
-                                <Image source={icon.left_arrow} style={styles.headerleftimage} />
-                            </View>
-                        </TouchableOpacity>
-                        <Text style={styles.HeaderText}>{Constant.screens.details}</Text>
-                        <View style={styles.HeaderRight} >
+                <Header headertitle={Constant.screens.details} navigation={navigation}
+                    HeaderRightComponent={
+                            <View style={styles.HeaderRight}>
                             <Image source={icon.cart} style={styles.headerRightimage} />
                             <Text style={styles.headerRightimagecountertext}>{item.id}</Text>
-                        </View>
-                    </View>
+                            </View>
+                    } />   
                 </View>
 
                 {/* Detail Container */}
@@ -105,7 +102,7 @@ const FoodDetail = (props: FoodDetailprops) => {
                                 <Text style={[styles.itemtext, { color: COLORS.black }]}>78 calories</Text>
                             </View>
                             <TouchableOpacity>
-                                <Image source={icon.love} style={[styles.Icon,{ tintColor:item.isFavourite? COLORS.red:COLORS.gray  }]} />
+                                <Image source={icon.love} style={[styles.Icon, { tintColor: item.isFavourite ? COLORS.red : COLORS.gray }]} />
                             </TouchableOpacity>
                         </View>
                         <Image source={item.image} style={styles.image} />
@@ -173,7 +170,7 @@ const FoodDetail = (props: FoodDetailprops) => {
                     </View>
                     <TouchableOpacity
                         style={styles.button}
-
+                        onPress={()=>navigation.navigate(Screen.CheckoutModel)}
                     >
                         <Text style={styles.buttontext}> {Constant.Button.buynow}</Text>
                         <Text style={styles.buttontext}>${item.price * count}</Text>

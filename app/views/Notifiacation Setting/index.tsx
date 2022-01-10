@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 
 import { Text, View, ScrollView, Switch, TouchableOpacity, Image } from 'react-native';
-import { Constant, icon } from '../../config';
+import { Header } from '../../common';
+import { COLORS, Constant, icon } from '../../config';
 import { styles } from './style';
 
 interface NotificationSettingprops {
@@ -21,37 +22,26 @@ const NotificationSetting = (props: NotificationSettingprops) => {
     const {  isEnabled, toggleSwitch, isEnabledpromosion,   togglepromosionSwitch,navigation} = props
 
 
-
-
-
     return (
 
         <ScrollView>
             <View style={styles.maincontaner}>
 
             <View style={styles.headercontainer}>
-                <View style={styles.headersubcontainer}>
-                    <TouchableOpacity onPress={() => navigation.goBack()} >
-                        <View style={styles.headerleftimagecontainer}>
-                            <Image source={icon.left_arrow} style={styles.headerleftimage} />
-                        </View>
-                    </TouchableOpacity>
-                    <Text style={styles.HeaderText}>{Constant.screens.notification}</Text>
-                    <View style={styles.HeaderRight} />
-                </View>
+                <Header headertitle={Constant.screens.notification} navigation={navigation} HeaderRightComponent={undefined} />
             </View>
 
                 <View style={styles.conatainer}>
                     <View style={styles.noficationcontainer}>
                         <Image source={icon.notification} style={styles.icon}/>
                     <View>
-                    <Text style={styles.text}>Notifications</Text>
-                    <Text>You will receive daily updates</Text>
+                    <Text style={styles.text}>{Constant.Notificationscreen.Notifications}</Text>
+                    <Text>{Constant.Notificationscreen.details}</Text>
                     </View></View>
 
                     <Switch
-                        trackColor={{false: "orange", true: "white" }}
-                        thumbColor={isEnabled ? "orange" : "white"}
+                        trackColor={{false: COLORS.lightGray1, true: COLORS.lightGray1 }}
+                        thumbColor={isEnabled ? COLORS.primary : COLORS.darkGray}
                         onValueChange={toggleSwitch}
                         value={isEnabled}
                     />
@@ -61,13 +51,13 @@ const NotificationSetting = (props: NotificationSettingprops) => {
                     <View style={styles.noficationcontainer}>
                         <Image source={icon.notification} style={styles.icon}/>
                     <View>
-                    <Text style={styles.text}>Promotional Notifications</Text>
-                    <Text>You will receive daily updates</Text>
+                    <Text style={styles.text}>{Constant.Notificationscreen.PromotionalNotifications}</Text>
+                    <Text>{Constant.Notificationscreen.details}</Text>
                     </View></View>
 
                     <Switch
-                        trackColor={{ false: "orange", true: "white" }}
-                        thumbColor={isEnabledpromosion ? "orange" : "white"}
+                        trackColor={{ false: COLORS.lightGray1, true: COLORS.lightGray1 }}
+                        thumbColor={isEnabledpromosion ?COLORS.primary : COLORS.darkGray}
                         onValueChange={togglepromosionSwitch}
                         value={isEnabledpromosion}
                     />

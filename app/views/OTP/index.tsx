@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Image, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { Abutton } from "../../common";
 import Logo from "../../common/Logo";
-import { icon } from "../../config";
+import { Constant, icon, Screen } from "../../config";
 import styles from "./style";
 
 interface PasswordRecoveryprops {
@@ -41,9 +42,7 @@ const OTP = (props: PasswordRecoveryprops) => {
 
                 </View>
 <View>
-                <TouchableOpacity style={styles.button}>
-                    <Text style={styles.buttontext}>Continue</Text>
-                </TouchableOpacity>
+                <Abutton title={Constant.Button.Continue} OnPress={()=>navigation.navigate(Screen.DrawerNavigation)} />
                 <Text style={styles.Subtext}>By signing up, you agree to our</Text>
                 <TouchableOpacity>
                     <Text style={styles.term}>Terms and Conditions</Text>

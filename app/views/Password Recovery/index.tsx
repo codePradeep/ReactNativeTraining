@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Image, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { Abutton } from "../../common";
 import Logo from "../../common/Logo";
-import { icon } from "../../config";
+import { Constant, icon, Screen } from "../../config";
 import styles from "./style";
 
 interface PasswordRecoveryprops {
@@ -45,9 +46,7 @@ const PasswordRecovery = (props: PasswordRecoveryprops) => {
                     </View>
 
                 </View>
-                <TouchableOpacity style={styles.button}>
-                    <Text style={styles.buttontext}>Send Email</Text>
-                </TouchableOpacity>
+                <Abutton title={Constant.Button.SendEmail} OnPress={()=>navigation.navigate(Screen.OtpModel)} />
             </View>
 
         </View>

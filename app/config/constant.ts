@@ -18,11 +18,12 @@ screens: {
     deliverystatus:"DELIVERY STATUS",
     myorder:"MY ORDERS",
     mycoupon:"MY COUPON",
-    SETTING:"SETTINGS"
+    SETTING:"SETTINGS",
+    CHANGEPASSWORD:"CHANGE PASSWORD"
 
 },
  Card:{
-    master:"Master Caard",
+    master:"Master Card",
     Google:"Google Pay",
     Apple:"Apple Pay",
     Visa:"Visa",
@@ -48,7 +49,10 @@ Button:{
     Trackorder:"Track Order",
     Cancel:"Cancel",
     avialble:"Available",
-    used:"Used"
+    used:"Used",
+    ChangePassword:"Change Password",
+    SendEmail:"Send Email",
+    Continue:"Continue"
 
 },
 SuccessScreen:{
@@ -145,6 +149,18 @@ DeliveryStatussScreen:{
     ratedetails:"Help us improve our service"
 
 
+},
+changePassword:{
+    currentpassword:"Current Password",
+    newpassword:"New Password",
+    repasssword:"Retype New Password"
+
+
+},
+Notificationscreen:{
+    Notifications:"Notifications",
+    details:"You will receive daily updates",
+    PromotionalNotifications:"Promotional Notifications"
 },
 
 

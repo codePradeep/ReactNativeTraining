@@ -1,7 +1,7 @@
 import React from "react";
 
 import { FlatList, Image, Text, TouchableOpacity, View } from "react-native";
-import { icon} from "../../config";
+import { Constant, icon} from "../../config";
 import RanderListItem from "./RanderListItem";
 import styles from "./style";
 import SettingData from '../../config/SettingData'
@@ -29,7 +29,7 @@ const Setting = (props: Settingprops) => {
                                     <Image source={icon.left_arrow} style={styles.leftimage} />
                                 </View>
                             </TouchableOpacity>
-                            <Text style={styles.HeaderText}>SETTINGS</Text>
+                            <Text style={styles.HeaderText}>{Constant.screens.SETTING}</Text>
                             <View style={styles.HeaderRight}/>                          
                         </View>
                     </View>

@@ -8,12 +8,12 @@ import style from "./style";
 
 interface DeliveryStatus {
     navigation: any
-    currentstep:number
+    currentstep: number
 }
 
 const DeliveryStatus = (props: DeliveryStatus) => {
-    const { navigation ,currentstep} = props
-    
+    const { navigation, currentstep } = props
+
 
     return (
         <View style={style.mainContainer}>
@@ -29,8 +29,6 @@ const DeliveryStatus = (props: DeliveryStatus) => {
                                 <Text style={style.text}>N3332NN23</Text>
                             </View>
                             <View style={style.seperator} />
-
-
                             {Deliverystatusdata.map((item, index) => {
                                 return (
                                     <View
@@ -44,41 +42,29 @@ const DeliveryStatus = (props: DeliveryStatus) => {
                                         </View>
                                         {index < Deliverystatusdata.length - 1 &&
                                             <View>
-                                               {index<currentstep&& <View style={style.line} />}
-                                                {index >=currentstep &&
-                                                
-                                                <View style={style.dottedline}/>
-                                        
+                                                {index < currentstep && <View style={style.line} />}
+                                                {index >= currentstep &&
+
+                                                    <View style={style.dottedline} />
                                                 }
                                             </View>
                                         }
-
-
-
                                     </View>
-
-
-
                                 )
                             })}
-
-
-
                         </View>
                     </ScrollView>
-
-
                 </View>
-               {currentstep==4?<Abutton title={Constant.Button.Done}/>: <View style={style.secendContainer}>
+                {currentstep == 4 ? <Abutton title={Constant.Button.Done} /> : <View style={style.secendContainer}>
                     <TouchableOpacity
-                        
-                        onPress={()=>navigation.goBack()}
+
+                        onPress={() => navigation.goBack()}
                         style={style.button}>
                         <Text style={style.buttontext}>{Constant.Button.cancel}</Text>
                     </TouchableOpacity>
                     <TouchableOpacity
                         {...props}
-                        onPress={()=>navigation.navigate("MapViewModel")}
+                        onPress={() => navigation.navigate("MapViewModel")}
                         style={style.button}>
                         <Text style={style.buttontext}>{Constant.Button.mapview}</Text>
                     </TouchableOpacity>

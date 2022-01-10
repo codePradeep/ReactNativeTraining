@@ -1,5 +1,3 @@
-import Loginmodel from "./Loginmodel";
-
 import Homemodel from "./Homemodel";
 import PasswordRecoveryModel from "./PasswordRecoveryModel";
 import OtpModel from "./Otpmodel";
@@ -24,7 +22,6 @@ import MyOrderModel from "./MyOrderModel";
 import MapViewModel from "./MapViewModel";
 export {
     Homemodel,
-    Loginmodel,
     PasswordRecoveryModel,
     OtpModel,
     OnboradingModel,

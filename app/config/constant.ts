@@ -7,7 +7,7 @@ screens: {
     search: "Search",
     cart: "MY CART",
     favourite: "Favourite",
-    notification: "Notification",
+    notification: "NOTIFICATION",
     MYCARDS:"MY CARDS",
     Addnewcard:"ADD NEW CARD",
     checkout:"CHECKOUT",
@@ -16,7 +16,9 @@ screens: {
     myaccount:"MY ACCOUNT",
     details:"DETAILS",
     deliverystatus:"DELIVERY STATUS",
-    myorder:"MY ORDERS"
+    myorder:"MY ORDERS",
+    mycoupon:"MY COUPON",
+    SETTING:"SETTINGS"
 
 },
  Card:{
@@ -44,7 +46,9 @@ Button:{
     reorder:"Re-Order",
     rate:"Rate",
     Trackorder:"Track Order",
-    Cancel:"Cancel"
+    Cancel:"Cancel",
+    avialble:"Available",
+    used:"Used"
 
 },
 SuccessScreen:{

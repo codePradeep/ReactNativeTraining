@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { COLORS, FONTS } from "../../config";
+import { COLORS, FONTS, SIZES } from "../../config";
 const styles = StyleSheet.create({
     mainContainer:{flex:1,backgroundColor:"white"},
     
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
         alignSelf: "center",
     },
     HeaderText:{
-        fontSize:17,
+        fontSize:SIZES.headerLable,
         color:COLORS.black,
         fontWeight:"700",
         textAlignVertical:"center"

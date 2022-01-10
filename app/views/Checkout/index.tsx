@@ -36,7 +36,7 @@ const Checkout = (props: Checkoutprops) => {
         <View style={styles.parentContainer} >
         <View style={styles.MainContainer}>
 
-        <Header headertitle={Constant.screens.checkout} />
+        <Header headertitle={Constant.screens.checkout} navigation={navigation}/>
 
         <ScrollView style={styles.scrollview}>
        

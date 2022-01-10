@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { View } from "react-native";
 import { EmailValidate, PasswordValidate } from "../config/validation";
 import SignIn from "../views/Sign In";
@@ -11,15 +11,26 @@ const SignInModel = (props: SignInModelprops) => {
     const { navigation } = props
     const [Email, setEmail] = useState("");
     const [password, setpassword] = useState("");
-    const [isvalidEmail, setisvalidEmail] = useState(false)
-    const [isvalidPassword, setisvalidPassword] = useState(false)
+    const [isvalidEmail, setisvalidEmail] = useState(true)
+    const [isvalidPassword, setisvalidPassword] = useState(true)
     const [visible,setvisible]=useState(true)
     const [isEnabled, setIsEnabled] = useState(false);
+    const firstRender = useRef(true)
 
 useEffect(() => {
-    setisvalidEmail(EmailValidate(Email))
-    setisvalidPassword(PasswordValidate(password))
+    if (firstRender.current) {
+        firstRender.current = false
+        return
+      }
+      submit()
 }, [Email,password])
+
+const submit = () => {
+    let validate = EmailValidate(Email)
+    setisvalidEmail(validate)
+    validate = PasswordValidate(password)
+    setisvalidPassword(validate)
+  }
 
 const toggleSwitch = () => setIsEnabled(previousState => !previousState);
 

@@ -65,10 +65,8 @@ const MyCard = (props: Mycardprops) => {
                 </View>
             </TouchableOpacity>
             <Text style={ FONTS.h3}>Add New Card</Text>
-
             <View style={styles.subContainer}>
-
-
+                
                 <TouchableOpacity onPress={() => setistoggle({ ...data, apple: true })}>
                     <View style={styles.CardContainer}>
                         <View style={[styles.subcardcontainer, { borderColor: istoggle.apple ? COLORS.primary : COLORS.lightGray1 }]}>

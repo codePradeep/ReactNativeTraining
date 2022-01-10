@@ -1,5 +1,5 @@
 import { StatusBar, StyleSheet } from "react-native";
-import { COLORS } from "../../config";
+import { COLORS, SIZES } from "../../config";
 
 const styles = StyleSheet.create({
     maincontainer: {
@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     },
     HeaderText: {
         color: COLORS.black,
-        fontSize: 18,
+        fontSize: SIZES.headerLable,
         fontWeight: "700",
         textAlignVertical: "center"
     },

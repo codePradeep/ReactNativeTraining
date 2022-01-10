@@ -4,16 +4,14 @@ import MyCard from "../views/MyCard";
 interface CheckoutModelprops {
     navigation: any
 }
-const CheckoutModel = (props: CheckoutModelprops) => {
 
-    const data = {
-        master: false,
-        google: false,
-    }
+const data = {
+    master: false,
+    google: false,
+}
+const CheckoutModel = (props: CheckoutModelprops) => {
     const [modalVisible, setModalVisible] = useState(false);
     const [istoggle, setistoggle] = useState(data)
-
-
 
     const { navigation } = props
     return (
@@ -21,7 +19,7 @@ const CheckoutModel = (props: CheckoutModelprops) => {
             istoggle={istoggle}
             setistoggle={setistoggle}
             data={data}
-            modalVisible ={modalVisible }
+            modalVisible={modalVisible}
             setModalVisible={setModalVisible}
         />
     )

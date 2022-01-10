@@ -1,25 +1,18 @@
 import React, { useState } from "react";
+import { EmailValidate } from "../config/validation";
 import PasswordRecovery from "../views/Password Recovery";
 interface loginmodelprops {
     navigation: any
 }
 const PasswordRecoveryModel = (props: loginmodelprops) => {
-
+    const { navigation } = props
     const [isvalid, setisvalid] = useState(true)
     const validate = (text: string) => {
-        console.log(text);
-        let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w\w+)+$/;
-        if (reg.test(text) === false) {
-            console.log("Email is Not Correct");
-
-            setisvalid(false);
+      setisvalid(EmailValidate(text))
         }
-        else {
-            setisvalid(true)
-        }
-    }
+    
 
-    const { navigation } = props
+   
     return (
         <PasswordRecovery
             navigation={navigation}

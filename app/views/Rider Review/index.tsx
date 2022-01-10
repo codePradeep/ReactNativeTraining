@@ -88,7 +88,7 @@ const RiderReview = (props: Checkoutprops) => {
     return (
         <View style={styles.parentContainer}>
             <View style={styles.MainContainer}>
-                <Header headertitle={Constant.screens.riderreview} />
+                <Header headertitle={Constant.screens.riderreview} navigation={navigation}/>
                 <ScrollView style={styles.scrollview}>
                     <View style={styles.container}>
                         <View style={styles.ridercontainer}>

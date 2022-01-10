@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { COLORS } from "../../config";
+import { COLORS, SIZES } from "../../config";
 
 const style=StyleSheet.create({
     maincontainer: {
@@ -42,7 +42,7 @@ const style=StyleSheet.create({
     },
     HeaderText: {
         color: COLORS.black,
-        fontSize: 20,
+        fontSize: SIZES.headerLable,
         fontWeight: "700",
         textAlignVertical: "center"
     },

@@ -1,5 +1,6 @@
 
 import { StyleSheet } from "react-native";
+import { SIZES } from "../../config";
 
 
 export const styles = StyleSheet.create({
@@ -45,7 +46,7 @@ export const styles = StyleSheet.create({
     },
     HeaderText: {
         color: "black",
-        fontSize: 22,
+        fontSize: SIZES.headerLable,
         fontWeight: "700",
         textAlignVertical: "center"
     },

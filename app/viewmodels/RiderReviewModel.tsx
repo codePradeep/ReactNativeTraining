@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import  Loginpage from '../views/Login/Loginpage'
 import RiderReview from "../views/Rider Review";
 interface RiderReviewModelprops{
     navigation:any

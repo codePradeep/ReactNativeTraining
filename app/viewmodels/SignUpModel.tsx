@@ -40,8 +40,6 @@ const submit = () => {
     
   }
 
-
-
 const toggleSwitch = () => setIsEnabled(previousState => !previousState);
 
 

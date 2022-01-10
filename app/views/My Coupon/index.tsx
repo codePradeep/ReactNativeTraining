@@ -1,20 +1,33 @@
-import React, { useState } from "react";
+import React from "react";
 import { FlatList, Image, Text, TouchableOpacity, View } from "react-native";
-import { icon } from "../../config";
-import CouponData from "../../config/Coupondata";
+import { Constant, icon } from "../../config";
 import RanderListItem from "./RanderListItem";
 import styles from "./style";
 
 interface Onboardingprops {
     navigation: any
+    toggle:any
+    settogle:any
+    Available:{
+        id: string;
+        title: string;
+        Subtitle: string;
+        coupon: boolean;
+        icondata: any;
+    }[]
+    Used:{
+        id: string;
+        title: string;
+        Subtitle: string;
+        coupon: boolean;
+        icondata: any;
+    }[]
 }
 
 const MyCoupon = (props: Onboardingprops) => {
 
-    const { navigation } = props
-    const [toggle,settogle]=useState(true)
-    const Available = CouponData.filter((item) => item.coupon == false).map(a => a)
-    const Used = CouponData.filter((item) => item.coupon == true).map(a => a)
+    const { navigation,toggle,settogle,Available ,Used} = props
+   
    
     return (
         <View style={styles.maincontainer}>
@@ -26,7 +39,7 @@ const MyCoupon = (props: Onboardingprops) => {
                             <Image source={icon.left_arrow} style={styles.headerleftimage} />
                         </View>
                     </TouchableOpacity>
-                    <Text style={styles.HeaderText}>MY COUPON</Text>
+                    <Text style={styles.HeaderText}>{Constant.screens.mycoupon}</Text>
                     <View style={styles.HeaderRight} />
                 </View>
             </View>
@@ -36,12 +49,12 @@ const MyCoupon = (props: Onboardingprops) => {
                     <TouchableOpacity style={toggle?styles.clickedbutton:styles.notclickedbutton}
                     onPress={()=>settogle(true)} 
                     >
-                        <Text style={toggle?styles.clickedbuttontext:styles.notclickedbuttontext}>Available</Text>
+                        <Text style={toggle?styles.clickedbuttontext:styles.notclickedbuttontext}>{Constant.Button.avialble}</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={toggle?styles.notclickedbutton:styles.clickedbutton}
                       onPress={()=>settogle(false)} 
                     >
-                        <Text style={!toggle?styles.clickedbuttontext:styles.notclickedbuttontext}>Used</Text>
+                        <Text style={!toggle?styles.clickedbuttontext:styles.notclickedbuttontext}>{Constant.Button.used}</Text>
                     </TouchableOpacity>
                 </View>
             </View>

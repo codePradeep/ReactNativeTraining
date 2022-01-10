@@ -1,5 +1,5 @@
 import { BackHandler, Dimensions, StyleSheet } from "react-native";
-import { COLORS } from "../../config";
+import { COLORS, SIZES } from "../../config";
 const width = Dimensions.get("screen").width
 
 const styles = StyleSheet.create({
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     },
     HeaderText: {
         color: COLORS.black,
-        fontSize: 20,
+        fontSize: SIZES.headerLable,
         fontWeight: "700",
         textAlignVertical: "center"
     },

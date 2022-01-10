@@ -21,7 +21,6 @@ const MyCartModel = (props: myCartmodelprops) => {
     }, [])
 
     const deleteRow = (rowMap: any, rowKey: any) => {
-
         const newData = [...listData];
         const prevIndex = listData.findIndex(item => item.id === rowKey);
         newData.splice(prevIndex, 1);

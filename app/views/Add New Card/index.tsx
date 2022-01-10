@@ -38,7 +38,7 @@ const AddNewCard = (props: PasswordRecoveryprops) => {
 
                 <View style={styles.headercontainer}>
                     <View style={styles.headersubcontainer}>
-                        <TouchableOpacity onPress={() => navigation.navigate("SettingModel")} >
+                        <TouchableOpacity onPress={() => navigation.goBack()} >
                             <View style={styles.headerleftimagecontainer}>
                                 <Image source={icon.left_arrow} style={styles.headerleftimage} />
                             </View>
@@ -87,7 +87,7 @@ const AddNewCard = (props: PasswordRecoveryprops) => {
                                      style={styles.dateinput}
                                      onChangeText={(text)=>setData({...Data,expirydate:text})}
                                      keyboardType={"numbers-and-punctuation"}
-                                    maxLength={5}
+                                     maxLength={5}
                                      />
                                     <Image source={icon.ok} style={styles.secondicon} />
                                 </View>

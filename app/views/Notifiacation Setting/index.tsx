@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import { Text, View, ScrollView, Switch, TouchableOpacity, Image } from 'react-native';
-import { icon } from '../../config';
+import { Constant, icon } from '../../config';
 import { styles } from './style';
 
 interface NotificationSettingprops {
@@ -36,7 +36,7 @@ const NotificationSetting = (props: NotificationSettingprops) => {
                             <Image source={icon.left_arrow} style={styles.headerleftimage} />
                         </View>
                     </TouchableOpacity>
-                    <Text style={styles.HeaderText}>NOTIFICATION</Text>
+                    <Text style={styles.HeaderText}>{Constant.screens.notification}</Text>
                     <View style={styles.HeaderRight} />
                 </View>
             </View>

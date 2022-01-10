@@ -1,12 +1,23 @@
 import React, { useState } from "react";
+import { EmailValidate } from "../config/validation";
 import AddNewCard from "../views/Add New Card";
 import  Loginpage from '../views/Login/Loginpage'
 interface AddNewCardModelprops{
     navigation:any
 }
+const carddata={
+    cardnumber:"123",
+    Holdername:"Pradeep",
+    expirydate:"23/22",
+    cvv:"123",
+
+}
 const AddNewCardModel=(props:AddNewCardModelprops)=>{
     const {navigation}=props
     const [toggle, settogle] = useState(false)
+    const [isvalid, setisvalid] = useState(true)
+    const [Data,setData]=useState(carddata)
+
     const buttonclicked=()=>{
         if( toggle==true){
             settogle(false)
@@ -14,32 +25,10 @@ const AddNewCardModel=(props:AddNewCardModelprops)=>{
             settogle(true)
         }
     }
-    const [isvalid, setisvalid] = useState(true)
+    
     const validate = (text: string) => {
-        console.log(text);
-        let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w\w+)+$/;
-        if (reg.test(text) === false) {
-            console.log("Email is Not Correct");
-
-            setisvalid(false);
-        }
-        else {
-            setisvalid(true)
-        }
+        setisvalid(EmailValidate(text))
     }
-
-    const carddata={
-        cardnumber:"123",
-        Holdername:"Pradeep",
-        expirydate:"23/22",
-        cvv:"123",
-
-    }
-    const [Data,setData]=useState(carddata)
-
-
-
-
 
     return(
         <AddNewCard      

@@ -26,7 +26,6 @@ const NoticationSettingModel=(props:NoticationSettingModelprops)=>{
         toggleSwitch={toggleSwitch}
         togglepromosionSwitch ={togglepromosionSwitch}
         navigation={navigation}
-       
         
         />
 

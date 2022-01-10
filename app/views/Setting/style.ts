@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { SIZES } from "../../config";
 const styles = StyleSheet.create({
     mainContainer:{flex:1,backgroundColor:"white"},
     
@@ -30,7 +31,7 @@ const styles = StyleSheet.create({
     },
     HeaderText:{
         color:"black",
-        fontSize:26,
+        fontSize:SIZES.headerLable,
         fontWeight:"700",
         textAlignVertical:"center"
     },

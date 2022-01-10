@@ -17,10 +17,7 @@ const Drawer = createDrawerNavigator();
 screenOptions={{headerShown:true,headerStyle: { backgroundColor: 'transparent'}, headerTitle: '',
 drawerStyle:{
   width:300
-}
-
-
-}} 
+}}} 
         drawerContent={props => <CustomDrawer {...props} />} >
 
       <Drawer.Screen name="Root" component={Roottab}   options={{

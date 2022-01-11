@@ -93,7 +93,12 @@ const styles=StyleSheet.create({
     EmailContainer:{
         flexDirection:"row",
         justifyContent:"space-between"
-    }
+    },
+    GoogleSignInButton:{ 
+        width: "100%", 
+        paddingVertical:"8%",
+        
+     }
 
 })
 export default styles

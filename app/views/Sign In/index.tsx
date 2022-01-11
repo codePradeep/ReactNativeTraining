@@ -1,7 +1,8 @@
+import { GoogleSigninButton } from "@react-native-google-signin/google-signin";
 import React from "react";
 import { KeyboardAvoidingView, ScrollView, Switch, TextInput, TouchableOpacity, View } from "react-native";
 import { Image, Text } from "react-native-animatable";
-import { Input } from "../../common";
+import { Abutton, Input } from "../../common";
 import Logo from "../../common/Logo";
 import { COLORS, Constant, icon, Screen } from "../../config";
 
@@ -15,21 +16,25 @@ interface signinprops {
     isvalidPassword: boolean
     Emailinpute: (text: string) => void
     EnterPassword: (text: string) => void,
-    visible:boolean
-    setvisible:any
+    visible: boolean
+    setvisible: any
     isEnabled: boolean
     toggleSwitch: any
+    signIn: () => Promise<void>
 }
 
 const SignIn = (props: signinprops) => {
     const {
         navigation,
         isvalidEmail,
-    isvalidPassword,
-    visible,setvisible,
+        isvalidPassword,
+        visible,
+        setvisible,
         Emailinpute,
         EnterPassword,
-        isEnabled, toggleSwitch,
+        isEnabled,
+        toggleSwitch,
+        signIn
 
     } = props
 
@@ -48,24 +53,23 @@ const SignIn = (props: signinprops) => {
                             <Text style={styles.Subtext}>{Constant.SigninScreen.welcome}</Text>
                         </View>
 
-
                         <View>
                             <View style={styles.EmailContainer}>
-                            <Text style={styles.Email}>{Constant.SigninScreen.email}</Text>
-                            { !isvalidEmail?<Text  style={styles.bottomsignuptext}>{Constant.Validation.EmailValidation}</Text>:<View />}
+                                <Text style={styles.Email}>{Constant.SigninScreen.email}</Text>
+                                {!isvalidEmail ? <Text style={styles.bottomsignuptext}>{Constant.Validation.EmailValidation}</Text> : <View />}
                             </View>
                             <View style={styles.input}>
                                 <TextInput
                                     keyboardType={"email-address"}
                                     onChangeText={Emailinpute}
                                     style={styles.textinput}
-                                    
+
                                 />
                                 <Image source={isvalidEmail ? icon.check_tick : icon.wrong} style={styles.icon} />
                             </View>
                         </View>
 
-                        
+
                         <View>
                             <Text style={styles.Email}>{Constant.SigninScreen.password}</Text>
                             <View style={styles.input}>
@@ -73,46 +77,49 @@ const SignIn = (props: signinprops) => {
                                     secureTextEntry={visible}
                                     onChangeText={EnterPassword}
                                     style={styles.textinput}
-                                    
+
                                 />
-                                <TouchableOpacity style={styles.eyeiconcontainer}  onPress={ ()=>{visible? setvisible(false): setvisible(true)}}   >
-                                <Image source={visible ? icon.closedeyes : icon.openeye} style={styles.icon} />
+                                <TouchableOpacity style={styles.eyeiconcontainer} onPress={() => { visible ? setvisible(false) : setvisible(true) }}   >
+                                    <Image source={visible ? icon.closedeyes : icon.openeye} style={styles.icon} />
                                 </TouchableOpacity>
                             </View>
-                           { !isvalidPassword?<Text  style={styles.bottomsignuptext}>{Constant.Validation.passwordvalidation}</Text>:null}
+                            {!isvalidPassword ? <Text style={styles.bottomsignuptext}>{Constant.Validation.passwordvalidation}</Text> : null}
                         </View>
 
                         <View style={[styles.flexdirection, { justifyContent: "space-between" }]}>
                             <View style={styles.flexdirection}>
-                                <Switch 
-                                trackColor={{false: COLORS.primary, true: COLORS.lightGray1 }}
-                                thumbColor={isEnabled ? COLORS.primary : COLORS.lightGray1}
-                                onValueChange={toggleSwitch}
-                                value={isEnabled}
+                                <Switch
+                                    trackColor={{ false: COLORS.primary, true: COLORS.lightGray1 }}
+                                    thumbColor={isEnabled ? COLORS.primary : COLORS.lightGray1}
+                                    onValueChange={toggleSwitch}
+                                    value={isEnabled}
                                 />
                                 <Text style={styles.bottomtext}>{Constant.SigninScreen.save}</Text>
                             </View>
-                            <TouchableOpacity style={styles.forget} 
-                             onPress={()=>navigation.navigate(Screen.PasswordRecoveryModel)}>
+                            <TouchableOpacity style={styles.forget}
+                                onPress={() => navigation.navigate(Screen.PasswordRecoveryModel)}>
                                 <Text style={styles.bottomtext}>{Constant.SigninScreen.Forget}</Text>
                             </TouchableOpacity>
                         </View>
                         <KeyboardAvoidingView style={styles.subcontainer}>
-                            <TouchableOpacity style={styles.button}
-                            
-                            onPress={()=>navigation.navigate(Screen.DrawerNavigation)}>
-                                <Text style={styles.buttontext}>{Constant.Button.signin}</Text>
-                            </TouchableOpacity>
+                            <Abutton title={Constant.Button.signin} OnPress={() => navigation.navigate(Screen.DrawerNavigation)} />
 
                             <View style={[styles.flexdirection, { alignSelf: "center" }]}>
                                 <Text style={styles.bottomtext}>{Constant.SigninScreen.dont}</Text>
-                                <TouchableOpacity onPress={()=>navigation.navigate("SignUpModel")}>
+                                <TouchableOpacity onPress={() => navigation.navigate(Screen.SignUpModel)}>
                                     <Text style={styles.bottomsignuptext}>{Constant.Button.Signup}</Text>
                                 </TouchableOpacity>
-
                             </View>
+                           
                         </KeyboardAvoidingView>
+                      
                     </View>
+                    <GoogleSigninButton
+                                style={styles.GoogleSignInButton}
+                                size={GoogleSigninButton.Size.Wide}
+                                color={GoogleSigninButton.Color.Dark}
+                                onPress={() => signIn()}
+                            />
 
 
                 </View>

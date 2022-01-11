@@ -29,8 +29,6 @@ import {
 import Roottab from './Tab Navigation/Roottab';
 import DrawerNavigation from './Drawer Navigation';
 
-
-
 const Stack = createNativeStackNavigator();
 
 const Routenavigation = () => {
@@ -60,7 +58,6 @@ const Routenavigation = () => {
         <Stack.Screen name="DrawerNavigation" component={DrawerNavigation} options={{ headerShown: false }} />
         <Stack.Screen name="MyOrderModel" component={MyOrderModel} options={{ headerShown: false }} />
         <Stack.Screen name="MapViewModel" component={MapViewModel} options={{ headerShown: false }} />
-
         <Stack.Screen name="calldemo" component={fetchData} />
       </Stack.Navigator>
     </NavigationContainer>

@@ -1,3 +1,4 @@
+import { GoogleSignin, statusCodes } from "@react-native-google-signin/google-signin";
 import React, { useEffect, useRef, useState } from "react";
 import { View } from "react-native";
 import { EmailValidate, PasswordValidate } from "../config/validation";
@@ -31,8 +32,33 @@ const submit = () => {
     validate = PasswordValidate(password)
     setisvalidPassword(validate)
   }
-
 const toggleSwitch = () => setIsEnabled(previousState => !previousState);
+
+
+const signIn = async () => {
+
+    GoogleSignin.configure({
+        scopes: [], // [Android] what API you want to access on behalf of the user, default is email and profile
+        webClientId: '240602027263-1lkogv3s3mvj7eo39n036tp076ao12ga.apps.googleusercontent.com', 
+        offlineAccess: true,
+    });
+    try {
+        await GoogleSignin.hasPlayServices();
+        const userInfo = await GoogleSignin.signIn();
+        console.log("userinfo=>", userInfo)
+    }
+    catch (error) {
+        console.log(error)
+        if (error === statusCodes.SIGN_IN_CANCELLED) {
+        } else if (error === statusCodes.IN_PROGRESS) {
+            // operation (e.g. sign in) is in progress already
+        } else if (error === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
+            // play services not available or outdated
+        } else {
+            // some other error happened
+        }
+    }
+};
 
 
     return (
@@ -46,6 +72,7 @@ const toggleSwitch = () => setIsEnabled(previousState => !previousState);
             setvisible={setvisible}
             isEnabled={isEnabled}
             toggleSwitch={toggleSwitch}
+            signIn={signIn}
         />
     )
 }

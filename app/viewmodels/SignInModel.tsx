@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { View } from "react-native";
 import { EmailValidate, PasswordValidate } from "../config/validation";
 import SignIn from "../views/Sign In";
+import { AccessToken, LoginManager, Profile } from "react-native-fbsdk-next";
 
 interface SignInModelprops {
     navigation: any
@@ -35,7 +36,7 @@ const submit = () => {
 const toggleSwitch = () => setIsEnabled(previousState => !previousState);
 
 
-const signIn = async () => {
+const signInwithGoogle = async () => {
 
     GoogleSignin.configure({
         scopes: [], // [Android] what API you want to access on behalf of the user, default is email and profile
@@ -59,6 +60,38 @@ const signIn = async () => {
         }
     }
 };
+    // TO GET CURRENT PROFILE DETAILS
+
+    // const currentProfile = Profile.getCurrentProfile().then(
+    //     function (currentProfile) {
+    //         if (currentProfile) {
+    //             console.log("The current logged user is: " +
+    //                 currentProfile.name
+    //                 + ". His profile id is: " +
+    //                 currentProfile.userID
+    //             );
+    //         }
+    //     }    
+    // );
+
+    
+    const SigninWithFacebook = () => {
+        LoginManager.logInWithPermissions(["public_profile", "email"]).then(
+
+            
+          function(result) {
+            if (result.isCancelled) {
+              console.log("==> Login cancelled");
+            } else {
+              console.log("==> Login success with permissions: " ,result.grantedPermissions?.toString());
+              AccessToken.getCurrentAccessToken().then((data) => { console.log(data) })
+            }
+           },
+           function(error) {
+            console.log("==> Login fail with error: " + error);
+           }
+         );
+      }
 
 
     return (
@@ -72,7 +105,8 @@ const signIn = async () => {
             setvisible={setvisible}
             isEnabled={isEnabled}
             toggleSwitch={toggleSwitch}
-            signIn={signIn}
+            signInwithGoogle={signInwithGoogle}
+            SigninWithFacebook={SigninWithFacebook}
         />
     )
 }

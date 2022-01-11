@@ -5,6 +5,7 @@ import { Image, Text } from "react-native-animatable";
 import { Abutton, Input } from "../../common";
 import Logo from "../../common/Logo";
 import { COLORS, Constant, icon, Screen } from "../../config";
+import { LoginButton, AccessToken, LoginManager } from 'react-native-fbsdk-next';
 
 import styles from "./style";
 
@@ -20,7 +21,8 @@ interface signinprops {
     setvisible: any
     isEnabled: boolean
     toggleSwitch: any
-    signIn: () => Promise<void>
+    signInwithGoogle: () => Promise<void>
+    SigninWithFacebook: () => void
 }
 
 const SignIn = (props: signinprops) => {
@@ -34,11 +36,9 @@ const SignIn = (props: signinprops) => {
         EnterPassword,
         isEnabled,
         toggleSwitch,
-        signIn
-
+        signInwithGoogle,
+        SigninWithFacebook
     } = props
-
-
 
     return (
         <View style={styles.mainContainer}>
@@ -63,7 +63,6 @@ const SignIn = (props: signinprops) => {
                                     keyboardType={"email-address"}
                                     onChangeText={Emailinpute}
                                     style={styles.textinput}
-
                                 />
                                 <Image source={isvalidEmail ? icon.check_tick : icon.wrong} style={styles.icon} />
                             </View>
@@ -110,17 +109,26 @@ const SignIn = (props: signinprops) => {
                                     <Text style={styles.bottomsignuptext}>{Constant.Button.Signup}</Text>
                                 </TouchableOpacity>
                             </View>
-                           
-                        </KeyboardAvoidingView>
-                      
-                    </View>
-                    <GoogleSigninButton
-                                style={styles.GoogleSignInButton}
-                                size={GoogleSigninButton.Size.Wide}
-                                color={GoogleSigninButton.Color.Dark}
-                                onPress={() => signIn()}
-                            />
 
+                        </KeyboardAvoidingView>
+
+                    </View>
+                    
+                    <View>
+                    <GoogleSigninButton
+                        style={styles.GoogleSignInButton}
+                        size={GoogleSigninButton.Size.Wide}
+                        color={GoogleSigninButton.Color.Dark}
+                        onPress={() => signInwithGoogle()}
+                    />
+
+                    <TouchableOpacity onPress={() => SigninWithFacebook()}
+                    style={styles.FacebookSigninButton}
+                    > 
+                    <Image  source={icon.facebook} style={styles.FacebookSigninButtonicon}/>
+                        <Text style={styles.FacebookSigninButtontext}>{Constant.Button.facebook}</Text>
+                    </TouchableOpacity>
+                    </View>
 
                 </View>
             </ScrollView>

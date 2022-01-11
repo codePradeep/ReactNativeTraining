@@ -61,6 +61,7 @@ const icon ={
     coin:require('../assets/icon/coin.png'),
     wallet:require('../assets/icon/wallet.png'),
     help:require('../assets/icon/help.png'),
+    facebook:require('../assets/icon/facebook.png'),
 
 }
 export default icon

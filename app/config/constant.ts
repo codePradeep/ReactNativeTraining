@@ -55,7 +55,8 @@ Button:{
     SendEmail:"Send Email",
     Continue:"Continue",
     Resend:"Resend",
-    TnC:"Terms and Conditions"
+    TnC:"Terms and Conditions",
+    facebook:"Sign In with Facebook"
 
 },
 SuccessScreen:{

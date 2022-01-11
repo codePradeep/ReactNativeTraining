@@ -41,7 +41,7 @@ const AddNewCard = (props: PasswordRecoveryprops) => {
 
                <Header headertitle={Constant.screens.Addnewcard} navigation={navigation} HeaderRightComponent={undefined} />
                </View>  
-                <ScrollView>
+                <ScrollView style={{flex:1}}>
 
 
                     <View style={styles.subcontainer}>
@@ -79,7 +79,7 @@ const AddNewCard = (props: PasswordRecoveryprops) => {
                                     <TextInput
                                      style={styles.dateinput}
                                      onChangeText={(text)=>setData({...Data,expirydate:text})}
-                                     keyboardType={"numbers-and-punctuation"}
+                                     keyboardType={"name-phone-pad"}
                                      maxLength={5}
                                      />
                                     <Image source={icon.ok} style={styles.secondicon} />

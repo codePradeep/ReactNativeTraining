@@ -27,6 +27,7 @@ const MyAccountModel = (props: MyAccountModelprops) => {
     const [open, setOpen] = useState(false)
     const Gender = ["Male", "Female", "Others"]
     var datedata = date.toISOString().slice(0, 10).replace(/ /g, "");
+    
 
 
     return (

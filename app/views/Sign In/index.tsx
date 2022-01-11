@@ -59,10 +59,10 @@ const SignIn = (props: signinprops) => {
                                     keyboardType={"email-address"}
                                     onChangeText={Emailinpute}
                                     style={styles.textinput}
+                                    
                                 />
                                 <Image source={isvalidEmail ? icon.check_tick : icon.wrong} style={styles.icon} />
                             </View>
-                           
                         </View>
 
                         
@@ -73,6 +73,7 @@ const SignIn = (props: signinprops) => {
                                     secureTextEntry={visible}
                                     onChangeText={EnterPassword}
                                     style={styles.textinput}
+                                    
                                 />
                                 <TouchableOpacity style={styles.eyeiconcontainer}  onPress={ ()=>{visible? setvisible(false): setvisible(true)}}   >
                                 <Image source={visible ? icon.closedeyes : icon.openeye} style={styles.icon} />

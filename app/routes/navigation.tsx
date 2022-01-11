@@ -9,7 +9,7 @@ import {
   CheckoutModel,
   DeliveryStatusModel,
   FoodDetailModel,
-  Homemodel, Loginmodel,
+  Homemodel, 
   MapViewModel,
   MyAccountModel,
   MyCardModel,

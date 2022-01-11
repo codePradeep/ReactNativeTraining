@@ -1,7 +1,7 @@
 import React, { useRef,useState } from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 import PagerView from "react-native-pager-view";
-import { icon } from "../../config";
+import { icon, Screen } from "../../config";
 import styles from "./style";
 
 interface Onboardingprops {
@@ -22,13 +22,13 @@ const Onborading = (props: Onboardingprops) => {
     return (
 
 
-        <PagerView style={styles.pagerview} initialPage={0} ref={pagerRef} onPageSelected = {(e) => { console.log(e.nativeEvent.position) }}>
+        <PagerView style={styles.pagerview} initialPage={0} ref={pagerRef} >
             <View key="1" style={styles.FirstView} >
                 <View style={styles.maincontainer}>
                     <Image source={icon.mainlogo} style={styles.image} />
 
                     <Text style={styles.heading}>Choose a Favourite Food</Text>
-                    <Text style={styles.subheading}>when you oder Eat dteet,we'll hook you up with exclusive coupon,specials and rewards</Text>
+                    <Text style={styles.subheading}>when you oder Eat treet,we'll hook you up with exclusive coupon,specials and rewards</Text>
                 </View>
                 <View style={styles.buttoncontainer}>
                     <TouchableOpacity style={styles.skipbutton}>
@@ -70,7 +70,7 @@ const Onborading = (props: Onboardingprops) => {
                 </View>
                 <View style={styles.lastbuttoncontainer}>
                     <TouchableOpacity style={styles.button}
-                    onPress={()=>navigation.navigate("SignInModel")}>
+                    onPress={()=>navigation.navigate(Screen.SignInModel)}>
                         <Text style={styles.endbuttontext}>Let's Get Started</Text>
                     </TouchableOpacity>
                 </View>

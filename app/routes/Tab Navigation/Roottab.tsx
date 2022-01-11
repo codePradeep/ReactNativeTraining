@@ -1,6 +1,9 @@
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import React from 'react';
+import { useDrawerProgress } from '@react-navigation/drawer';
+import React, { useState } from 'react';
+import { View } from 'react-native';
+import Animated from 'react-native-reanimated';
 import { COLORS, icon } from '../../config';
 import { useOrientation } from '../../config/useOrientation';
 import { Homemodel, MyCartModel, NoticationSettingModel, NotificationTabModel, RiderReviewModel } from '../../viewmodels';
@@ -8,10 +11,28 @@ import TabbarItem from './TabbarItem';
 
 const Tab = createBottomTabNavigator();
 
-const Roottab = () => {
-  const orientation = useOrientation();
+const Roottab = ({navigation,style}:any) => {
+   const orientation = useOrientation();
+
+  // const progress = useDrawerProgress();
+  // const scale = Animated.interpolateNode(progress, {
+  //   inputRange: [0, 1],
+  //   outputRange: [1, 0.9],
+  // });
+  // const borderRadius = Animated.interpolateNode(progress, {
+  //   inputRange: [0, 1],
+  //   outputRange: [0, 25],
+  // });
+
+  // const animatedStyle = {
+  //   borderRadius,
+  //   transform: [{ scale }],
+  //  // overflow: 'hidden',
+  // };
 
   return (
+    // <View style={{flex:1,backgroundColor:COLORS.primary}}>
+    // <Animated.View style={[{flex:1,...animatedStyle,backgroundColor:COLORS.primary,borderRadius:20}]}>
     <Tab.Navigator
     
       screenOptions={{
@@ -20,37 +41,14 @@ const Roottab = () => {
         tabBarHideOnKeyboard:true,
         tabBarStyle:{
           height:70,
-          borderTopLeftRadius: 20,
-          borderTopRightRadius: 20,
           paddingHorizontal:20,
           backgroundColor: COLORS.white2,
           
         }
-        // tabBarStyle: {
-        //   height: 90,
-        //   position: "absolute",
-          
-        //   backgroundColor: COLORS.white,
-        //   borderRadius: 20,
-        //   borderColor: 'white',
-        //   borderBottomWidth: 0,
-        //   shadowColor: COLORS.orange,
-        //   shadowOffset: { width: 10, height: 20 },
-        //   shadowOpacity: 1,
-        //   shadowRadius: 3,
-        //   elevation: 20,
-        //   flex: 1,
-        //   paddingHorizontal:20,
-        //   marginHorizontal:10,
-          
-          
-          
-        // },
 
       }} >
       <Tab.Screen name="HomeTab" component={Homemodel}
       
-
             options={{      
               tabBarIcon: ({ focused }: any) => (<TabbarItem focused={focused} orientation={orientation} ICON={icon.home} label={'Home'} />)
             }} />
@@ -76,6 +74,8 @@ const Roottab = () => {
             }} />
 
     </Tab.Navigator>
+    // </Animated.View>
+    // </View>
   );
 }
 

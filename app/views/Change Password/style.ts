@@ -5,12 +5,16 @@ const styles = StyleSheet.create({
     mainContainer: {
         flex: 1,
         backgroundColor: "white",
+    },headerview:{
+        flex:1,
+        marginHorizontal: "5%",
+        marginVertical: "5%",
+
     },
     container: {
         flex: 1,
         justifyContent: "space-between",
-        marginHorizontal: "5%",
-        marginVertical: "2%",
+        
     },
     subcontainer: {
         flex: 0.6,

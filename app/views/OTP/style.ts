@@ -59,13 +59,18 @@ const styles=StyleSheet.create({
        
     },
     Email:{
-        paddingBottom:10
+        paddingBottom:"10%"
     },
 
     button:{
         backgroundColor:"darkorange",
         borderRadius:9,
 
+    },
+    btncon:{
+        marginVertical:"2%",
+        alignSelf:"center",
+        flexDirection:"row"
     },
 
     buttontext:{

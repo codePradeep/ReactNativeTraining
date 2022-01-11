@@ -3,7 +3,7 @@ import { KeyboardAvoidingView, ScrollView, Switch, TextInput, TouchableOpacity, 
 import { Image, Text } from "react-native-animatable";
 import { Input } from "../../common";
 import Logo from "../../common/Logo";
-import { COLORS, Constant, icon } from "../../config";
+import { COLORS, Constant, icon, Screen } from "../../config";
 import styles from "./style";
 
 
@@ -104,7 +104,7 @@ const SignUp = (props: signinprops) => {
 
                             <View style={[styles.flexdirection, { alignSelf: "center" }]}>
                                 <Text style={styles.bottomtext}>{Constant.SignUpScreen.already}</Text>
-                                <TouchableOpacity onPress={()=>navigation.navigate("SignInModel")}>
+                                <TouchableOpacity onPress={()=>navigation.navigate(Screen.SignInModel)}>
                                     <Text style={styles.bottomsignuptext}>{Constant.Button.signin}</Text>
                                 </TouchableOpacity>
 

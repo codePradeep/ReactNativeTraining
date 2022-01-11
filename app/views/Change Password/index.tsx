@@ -16,10 +16,10 @@ const ChangePassword = (props: PasswordRecoveryprops) => {
     return (
 
         <View style={styles.mainContainer}>
-            
-
-            <View style={styles.container}>
+            <View style={styles.headerview}>
             <Header headertitle={Constant.screens.CHANGEPASSWORD} navigation={navigation} HeaderRightComponent={undefined}/>
+            
+            <View style={styles.container}>
 
 
                     <View style={styles.inputView}>
@@ -57,6 +57,7 @@ const ChangePassword = (props: PasswordRecoveryprops) => {
 
                 <Abutton title={Constant.Button.ChangePassword} OnPress={undefined} />
                 
+            </View>
             </View>
         
         </View >

@@ -6,6 +6,7 @@ const styles = StyleSheet.create({
         flex: 1
     },
     FirstView: {
+        flex: 1,
         backgroundColor: "white",
         justifyContent: "space-between"
     },

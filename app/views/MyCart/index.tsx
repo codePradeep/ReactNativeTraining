@@ -1,9 +1,10 @@
 import React from "react";
-import { Modal, Text, TouchableHighlight, TouchableOpacity, TouchableWithoutFeedback, View } from "react-native";
+import { Modal, Text, TouchableOpacity, TouchableWithoutFeedback, View } from "react-native";
 import { Image } from "react-native-animatable";
 import { SwipeListView } from "react-native-swipe-list-view";
-import { Header } from "../../common";
-import { COLORS, Constant, FONTS, icon } from "../../config";
+import { Abutton, Header } from "../../common";
+import { Constant, icon } from "../../config";
+import { RenderHiddenItem, RenderItem } from "./RenderItem";
 import styles from "./style";
 
 interface MyCartprops {
@@ -20,56 +21,13 @@ interface MyCartprops {
 const MyCart = (props: MyCartprops) => {
     const {
         navigation,
-        listData, setListData,
-        modalVisible, setModalVisible,
-        cartcount, setcartcount, deleteRow } = props
-
-
-
-
-    const renderItem = (data: any) => {
-        return (
-            <TouchableHighlight
-                onPress={() => console.log('render item clicked')}
-                style={styles.rowFront}
-                underlayColor={COLORS.lightOrange}
-            >
-                <View
-                    style={styles.renderitemContainer}
-                >
-                    <Image source={data.item.image} style={styles.itemimage} />
-                    <View>
-                        <Text style={FONTS.h3}>{data.item.name}</Text>
-                        <Text style={[FONTS.h4, { color: COLORS.primary }]}>${data.item.price}</Text>
-                    </View>
-                    <View style={styles.subrenderitemcontainer}>
-                        <TouchableOpacity
-                        >
-                            <Text style={[FONTS.body1, { color: COLORS.primary }]}>-</Text>
-                        </TouchableOpacity>
-                        <Text style={[FONTS.body2, { color: COLORS.black, paddingHorizontal: 10 }]}>{data.item.id}</Text>
-                        <TouchableOpacity
-                            onPress={() => setModalVisible(true)}
-                        >
-                            <Text style={[FONTS.body1, { color: COLORS.primary }]}>+</Text>
-                        </TouchableOpacity>
-                    </View>
-                </View>
-            </TouchableHighlight>
-        );
-    }
-
-    const renderHiddenItem = (data: any, rowMap: any) => (
-        <View style={styles.rowBack}>
-            <TouchableOpacity
-                style={[styles.backRightBtn, styles.backRightBtnRight]}
-                onPress={() => deleteRow(rowMap, data.item.key)}
-            >
-                <Image source={icon.trash} style={styles.icon} />
-            </TouchableOpacity>
-        </View>
-    );
-
+        listData,
+        setListData,
+        modalVisible,
+        setModalVisible,
+        cartcount,
+        setcartcount,
+        deleteRow } = props
 
     return (
         <View style={styles.maincontainer} >
@@ -79,28 +37,26 @@ const MyCart = (props: MyCartprops) => {
                         HeaderRightComponent={
                             <View style={styles.HeaderRight} >
                                 <Image source={icon.cart} style={styles.headerRightimage} />
-
                                 <Text style={styles.headerRightimagecountertext}>{cartcount}</Text>
-
                             </View>}
                     />
-
                 </View>
-
-
 
                 <SwipeListView
                     style={{ flex: 1 }}
                     data={listData}
-                    renderItem={renderItem}
-                    renderHiddenItem={renderHiddenItem}
+                    renderItem={(data) => <RenderItem data={data} />}
+                    renderHiddenItem={(data, rowMap) => <RenderHiddenItem data={data} rowMap={rowMap} deleteRow={deleteRow} />}
                     rightOpenValue={-75}
                     previewRowKey={'0'}
                     previewOpenValue={-20}
                     previewOpenDelay={7000}
-                    onRowDidOpen={() => console.log("did open")}
+                    //  onRowDidOpen={() => console.log("did open")}
                     ItemSeparatorComponent={() => (<View><Text /></View>)}
                 />
+
+                <Abutton title={Constant.Button.Continue} OnPress={() => setModalVisible(true)} />
+
             </View>
 
             <Modal animationType="slide"

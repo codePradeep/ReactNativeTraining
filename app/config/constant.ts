@@ -19,7 +19,8 @@ screens: {
     myorder:"MY ORDERS",
     mycoupon:"MY COUPON",
     SETTING:"SETTINGS",
-    CHANGEPASSWORD:"CHANGE PASSWORD"
+    CHANGEPASSWORD:"CHANGE PASSWORD",
+    OTPAuthentication:"OTP Authentication"
 
 },
  Card:{
@@ -52,7 +53,9 @@ Button:{
     used:"Used",
     ChangePassword:"Change Password",
     SendEmail:"Send Email",
-    Continue:"Continue"
+    Continue:"Continue",
+    Resend:"Resend",
+    TnC:"Terms and Conditions"
 
 },
 SuccessScreen:{
@@ -162,7 +165,11 @@ Notificationscreen:{
     details:"You will receive daily updates",
     PromotionalNotifications:"Promotional Notifications"
 },
-
+Otp:{
+    preEmail:"An authentication code has been sent to",
+    detailterm:"By signing up, you agree to our",
+    didnotrecive:"Didn't receive code ?" 
+},
 
 Validation:{
     username:"Invalid Username",

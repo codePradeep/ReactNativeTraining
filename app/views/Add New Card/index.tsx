@@ -8,7 +8,6 @@ interface PasswordRecoveryprops {
     navigation: any
     isvalid: boolean
     setisvalid: React.Dispatch<React.SetStateAction<boolean>>
-    
     validate: (text: string) => void
     buttonclicked: () => void
     toggle: boolean

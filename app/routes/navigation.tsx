@@ -26,7 +26,6 @@ import {
   SignUpModel,
   SuccessModel
 } from '../viewmodels';
-import Roottab from './Tab Navigation/Roottab';
 import DrawerNavigation from './Drawer Navigation';
 
 const Stack = createNativeStackNavigator();
@@ -48,7 +47,6 @@ const Routenavigation = () => {
         <Stack.Screen name="CheckoutModel" component={CheckoutModel} options={{ headerShown: false }} />
         <Stack.Screen name="RiderReviewModel" component={RiderReviewModel} options={{ headerShown: false }} />
         <Stack.Screen name="NotificationTabModel" component={NotificationTabModel} options={{ headerShown: false }} />
-        <Stack.Screen name="Roottab" component={Roottab} options={{ headerShown: false }} />
         <Stack.Screen name="MyAccountModel" component={MyAccountModel} options={{ headerShown: false }} />
         <Stack.Screen name="Homemodel" component={Homemodel} options={{ headerShown: false }} />
         <Stack.Screen name="SignInModel" component={SignInModel} options={{ headerShown: false }} />

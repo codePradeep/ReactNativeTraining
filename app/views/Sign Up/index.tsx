@@ -1,3 +1,4 @@
+import { GoogleSigninButton } from "@react-native-google-signin/google-signin";
 import React from "react";
 import { KeyboardAvoidingView, ScrollView, Switch, TextInput, TouchableOpacity, View } from "react-native";
 import { Image, Text } from "react-native-animatable";
@@ -20,6 +21,8 @@ interface signinprops {
     setvisible:any
     isEnabled: boolean
     toggleSwitch: any
+    signInwithGoogle: () => Promise<void>
+   
 }
 
 const SignUp = (props: signinprops) => {
@@ -32,7 +35,9 @@ const SignUp = (props: signinprops) => {
         EnterPassword,
         isEnabled, toggleSwitch,
         isvalidusername,
-        UsernameInput
+        UsernameInput,
+        signInwithGoogle,
+       
 
     } = props
 
@@ -110,6 +115,17 @@ const SignUp = (props: signinprops) => {
 
                             </View>
                         </KeyboardAvoidingView>
+                        
+                    </View>
+                    <View>
+                    <GoogleSigninButton
+                        style={styles.GoogleSignInButton}
+                        size={GoogleSigninButton.Size.Wide}
+                        color={GoogleSigninButton.Color.Dark}
+                        onPress={() => signInwithGoogle()}
+                    />
+
+                    
                     </View>
 
 

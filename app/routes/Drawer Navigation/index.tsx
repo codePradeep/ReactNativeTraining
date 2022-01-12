@@ -15,10 +15,8 @@ const DrawerNavigation = () => {
    
     
       drawerContent={props =>{
-        
         setTimeout(()=>{
-            
-
+          
         },0)
       return(<CustomDrawer {...props} />)}}
       screenOptions={{

@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import {  signInwithGoogle } from "../config";
 import { EmailValidate, PasswordValidate,UsernameValidation } from "../config/validation";
 import SignUp from "../views/Sign Up";
 
@@ -56,6 +57,8 @@ const toggleSwitch = () => setIsEnabled(previousState => !previousState);
             setvisible={setvisible}
             isEnabled={isEnabled}
             toggleSwitch={toggleSwitch}
+            signInwithGoogle={signInwithGoogle}
+           
         />
     )
 }

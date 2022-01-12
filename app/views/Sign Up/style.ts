@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { COLORS } from "../../config";
+import { COLORS, SIZES } from "../../config";
 
 const styles=StyleSheet.create({
     mainContainer:{
@@ -96,7 +96,45 @@ const styles=StyleSheet.create({
         flexDirection:"row",
         justifyContent:"space-between",
         marginVertical:5
+    },
+    GoogleSignInButton: {
+        width: "100%",
+        paddingVertical: "8%",
+
+    },
+    FacebookSigninButton: {
+        width: "100%",
+        paddingVertical: "4%",
+        marginVertical: "4%",
+        backgroundColor: COLORS.blue,
+        flexDirection: "row",
+        justifyContent: "space-between",
+        borderRadius: 5,
+
+        shadowColor: COLORS.black,
+        shadowOpacity: 0.8,
+        elevation: 6,
+        shadowRadius: 15,
+        shadowOffset: { width: 1, height: 13 },
+
+    },
+    FacebookSigninButtontext: {
+        flex: .7,
+        color: COLORS.white,
+        alignSelf: "center",
+        textAlignVertical: "center",
+        fontSize: SIZES.h4,
+        fontWeight: "600"
+    },
+    FacebookSigninButtonicon: {
+        marginLeft: 10,
+        height: "200%",
+        width: "10%",
+        resizeMode: "contain",
+        alignSelf: "center",
+
     }
+
 
 })
 export default styles

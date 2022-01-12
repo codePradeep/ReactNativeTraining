@@ -232,7 +232,8 @@ const style=StyleSheet.create({
         alignSelf: "center",
         tintColor:COLORS.white,
         margin:5
-    }
+    },
+    customStatusBarContainer:{ flexDirection: "row", backgroundColor: "white", justifyContent: "space-between" }
 
 })
 

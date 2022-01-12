@@ -8,16 +8,18 @@ interface PasswordRecoveryprops {
     navigation: any
     isvalid: boolean
     setisvalid: React.Dispatch<React.SetStateAction<boolean>>
-    validate:  (text: string) => void
+    
+    validate: (text: string) => void
     buttonclicked: () => void
-    toggle:boolean
+    toggle: boolean
     Data: {
         cardnumber: string;
         Holdername: string;
         expirydate: string;
         cvv: string;
     }
-    setData:React.Dispatch<React.SetStateAction<{
+    
+    setData: React.Dispatch<React.SetStateAction<{
         cardnumber: string;
         Holdername: string;
         expirydate: string;
@@ -30,35 +32,37 @@ const AddNewCard = (props: PasswordRecoveryprops) => {
         navigation,
         isvalid,
         setisvalid,
-        validate ,toggle,buttonclicked ,Data,setData} = props
+        validate,
+        toggle,
+        buttonclicked,
+        Data,
+        setData } = props
 
     return (
 
         <View style={styles.mainContainer}>
             <View style={styles.container}>
-<View style={styles.headercontainer}>
-
-
-               <Header headertitle={Constant.screens.Addnewcard} navigation={navigation} HeaderRightComponent={undefined} />
-               </View>  
-                <ScrollView style={{flex:1}}>
+                <View style={styles.headercontainer}>
+                    <Header headertitle={Constant.screens.Addnewcard} navigation={navigation} HeaderRightComponent={undefined} />
+                </View>
+                <ScrollView style={{ flex: 1 }}>
 
 
                     <View style={styles.subcontainer}>
                         <View style={styles.card}>
                             <View>
-                            <Text style={styles.Cardnumber}>{Data.Holdername}</Text>
-                            <Text style={styles.Cardnumber}>{Data.cardnumber}</Text>
+                                <Text style={styles.Cardnumber}>{Data.Holdername}</Text>
+                                <Text style={styles.Cardnumber}>{Data.cardnumber}</Text>
                             </View>
                             <Text style={styles.Cardnumber}>{Data.expirydate}</Text>
                         </View>
                         <View >
                             <Text style={styles.label}>{Constant.AddNewCardscreen.CardNumber}</Text>
                             <View style={styles.textinputcontainer}>
-                                <TextInput style={styles.textinput} 
-                                onChangeText={(text)=>setData({...Data,cardnumber:text})}
-                                keyboardType={"number-pad"}
-                                maxLength={16}
+                                <TextInput style={styles.textinput}
+                                    onChangeText={(text) => setData({ ...Data, cardnumber: text })}
+                                    keyboardType={"number-pad"}
+                                    maxLength={16}
                                 />
                                 <Image source={icon.ok} style={styles.icon} />
                             </View>
@@ -67,8 +71,8 @@ const AddNewCard = (props: PasswordRecoveryprops) => {
                             <Text style={styles.label}>{Constant.AddNewCardscreen.CardHolder}</Text>
                             <View style={styles.textinputcontainer}>
                                 <TextInput style={styles.textinput}
-                                onChangeText={(text)=>setData({...Data,Holdername:text})}
-                                maxLength={25} />
+                                    onChangeText={(text) => setData({ ...Data, Holdername: text })}
+                                    maxLength={25} />
                                 <Image source={icon.ok} style={styles.icon} />
                             </View>
                         </View>
@@ -77,11 +81,11 @@ const AddNewCard = (props: PasswordRecoveryprops) => {
                                 <Text style={styles.label}>{Constant.AddNewCardscreen.date}</Text>
                                 <View style={styles.SmallContainer}>
                                     <TextInput
-                                     style={styles.dateinput}
-                                     onChangeText={(text)=>setData({...Data,expirydate:text})}
-                                     keyboardType={"name-phone-pad"}
-                                     maxLength={5}
-                                     />
+                                        style={styles.dateinput}
+                                        onChangeText={(text) => setData({ ...Data, expirydate: text })}
+                                        keyboardType={"name-phone-pad"}
+                                        maxLength={5}
+                                    />
                                     <Image source={icon.ok} style={styles.secondicon} />
                                 </View>
                             </View>
@@ -89,10 +93,10 @@ const AddNewCard = (props: PasswordRecoveryprops) => {
                                 <Text style={styles.label}>{Constant.AddNewCardscreen.Cvv}</Text>
                                 <View style={styles.SmallContainer}>
                                     <TextInput style={styles.dateinput}
-                                     onChangeText={(text)=>setData({...Data,cvv:text})}
-                                    keyboardType={"number-pad"}
-                                    maxLength={3}
-                                    
+                                        onChangeText={(text) => setData({ ...Data, cvv: text })}
+                                        keyboardType={"number-pad"}
+                                        maxLength={3}
+
                                     />
                                     <Image source={icon.ok} style={styles.secondicon} />
                                 </View>
@@ -100,13 +104,13 @@ const AddNewCard = (props: PasswordRecoveryprops) => {
                         </View>
                         <View style={styles.check}>
                             <TouchableOpacity
-                            onPress={()=>buttonclicked()}>
+                                onPress={() => buttonclicked()}>
                                 <Image source={toggle ? icon.rediocheck : icon.rediouncheck} style={styles.redioicon} />
                             </TouchableOpacity>
                             <Text style={styles.checktext}>{Constant.AddNewCardscreen.check}</Text>
                         </View>
                     </View>
-                    <Abutton title={Constant.Button.AddCard} OnPress={()=>navigation.navigate(Screen.SuccessModel)} />
+                    <Abutton title={Constant.Button.AddCard} OnPress={() => navigation.navigate(Screen.SuccessModel)} />
                 </ScrollView>
             </View>
 

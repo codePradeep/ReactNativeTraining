@@ -22,7 +22,9 @@ const FoodDetail = (props: FoodDetailprops) => {
         maxRating,
         defaultsize,
         setDefaultsize,
-        Add, Subs, count,
+        Add, 
+        Subs, 
+        count,
         maxsize, } = props
 
     const item = menu[0]
@@ -93,7 +95,7 @@ const FoodDetail = (props: FoodDetailprops) => {
                     } />   
                 </View>
 
-                {/* Detail Container */}
+               
                 <View style={styles.firstrendercontainer} >
                     <View style={styles.subfirstrendercontainer}>
                         <View style={[styles.itemcontainer,]}>
@@ -144,7 +146,7 @@ const FoodDetail = (props: FoodDetailprops) => {
                 </View>
 
                 <View style={styles.statuscontainer}>
-                    <View style={{ flexDirection: "row", backgroundColor: "white", justifyContent: "space-between" }}>
+                    <View style={styles.customStatusBarContainer}>
                         <Image source={icon.user_avatar} style={styles.usericon} />
                         <View>
                             <Text style={[FONTS.h3, { paddingLeft: 10 }]}>{Constant.Myaccount.fullname}</Text>
@@ -154,7 +156,7 @@ const FoodDetail = (props: FoodDetailprops) => {
                     </View>
                     <CustomRatingBar />
                 </View>
-                <View style={{ flexDirection: "row", backgroundColor: "white", justifyContent: "space-between" }}>
+                <View style={styles.customStatusBarContainer}>
                     <View style={styles.subrenderitemcontainer}>
                         <TouchableOpacity
                             onPress={Subs}

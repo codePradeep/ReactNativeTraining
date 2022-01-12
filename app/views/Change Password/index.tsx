@@ -30,7 +30,6 @@ const ChangePassword = (props: PasswordRecoveryprops) => {
                             />
                             <Image
                                 source={icon.eye}
-                                //source={isvalid ? icon.check_tick : icon.wrong}
                                 style={styles.icon} />
                         </View>
                         <Text style={styles.Email}>{Constant.changePassword.newpassword}</Text>
@@ -40,7 +39,6 @@ const ChangePassword = (props: PasswordRecoveryprops) => {
                             />
                             <Image
                                 source={icon.eye}
-                                //source={isvalid ? icon.check_tick : icon.wrong}
                                 style={styles.icon} />
                         </View>
                         <Text style={styles.Email}>{Constant.changePassword.repasssword}</Text>
@@ -50,7 +48,6 @@ const ChangePassword = (props: PasswordRecoveryprops) => {
                             />
                             <Image
                                 source={icon.eye}
-                                //source={isvalid ? icon.check_tick : icon.wrong}
                                 style={styles.icon} />
                         </View>
                     </View>

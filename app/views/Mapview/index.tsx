@@ -5,9 +5,15 @@ import { Constant, FONTS, icon } from "../../config";
 import styles from "./style";
 interface MapViewModelprops {
     navigation: any
+    Data:{
+        name: string;
+        jD: string;
+        DeliveryTime: string;
+        address: string;
+    }
 }
 const MapViewScreen = (props: MapViewModelprops) => {
-    const { navigation } = props
+    const { navigation ,Data} = props
     const [modalVisible, setModalVisible] = useState(true);
 
     return (
@@ -18,15 +24,15 @@ const MapViewScreen = (props: MapViewModelprops) => {
                 <View style={styles.buttondata}>
                     <Image source={icon.clock} style={styles.image1} />
                     <View>
-                        <Text style={FONTS.h5}>Your delivery Time</Text>
-                        <Text style={FONTS.h3}>8 minutes</Text>
+                        <Text style={FONTS.h5}>{Constant.mapview.YourdeliveryTime}</Text>
+                        <Text style={FONTS.h3}>{Data.DeliveryTime}</Text>
                     </View>
                 </View>
                 <View style={styles.buttondata}>
                     <Image source={icon.loacation} style={styles.image1} />
                     <View>
-                        <Text style={FONTS.h5}>Your address</Text>
-                        <Text style={FONTS.h3}>Sector 2 Noids,UP</Text>
+                        <Text style={FONTS.h5}>{Constant.mapview.address}</Text>
+                        <Text style={FONTS.h3}>{Data.address}</Text>
                     </View>
                 </View>
 
@@ -38,8 +44,8 @@ const MapViewScreen = (props: MapViewModelprops) => {
                     <View style={styles.buttondata}>
                         <Image source={icon.user_avatar} style={styles.image} />
                         <View>
-                            <Text style={styles.text}>rahul</Text>
-                            <Text style={styles.text}>delivery man</Text>
+                            <Text style={styles.text}>{Data.name}</Text>
+                            <Text style={styles.text}>{Data.jD}</Text>
                         </View>
                     </View>
 

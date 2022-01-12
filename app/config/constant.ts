@@ -171,6 +171,11 @@ Otp:{
     detailterm:"By signing up, you agree to our",
     didnotrecive:"Didn't receive code ?" 
 },
+mapview:{
+    YourdeliveryTime:"Your delivery Time",
+    address:"Your address"
+
+},
 
 Validation:{
     username:"Invalid Username",

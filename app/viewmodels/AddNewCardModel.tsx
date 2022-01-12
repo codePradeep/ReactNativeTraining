@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { EmailValidate } from "../config/validation";
 import AddNewCard from "../views/Add New Card";
-import  Loginpage from '../views/Login/Loginpage'
 interface AddNewCardModelprops{
     navigation:any
 }
@@ -16,6 +15,7 @@ const AddNewCardModel=(props:AddNewCardModelprops)=>{
     const {navigation}=props
     const [toggle, settogle] = useState(false)
     const [isvalid, setisvalid] = useState(true)
+    
     const [Data,setData]=useState(carddata)
 
     const buttonclicked=()=>{

@@ -42,8 +42,7 @@ const signInwithGoogle = async () => {
     
     const SigninWithFacebook = () => {
         LoginManager.logInWithPermissions(["public_profile", "email"]).then(
-
-            
+  
           function(result) {
             if (result.isCancelled) {
               console.log("==> Login cancelled");

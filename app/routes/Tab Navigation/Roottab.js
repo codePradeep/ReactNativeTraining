@@ -13,11 +13,10 @@ import TabbarItem from './TabbarItem';
 const Tab = createBottomTabNavigator();
 
 const Roottab = ({navigation,style}) => {
-   const orientation = useOrientation();
+  const orientation = useOrientation();
 
   const isStatus = useDrawerStatus();
   const isprogressdata=useDrawerProgress()
-  
   
   // const aniVar = useRef(new Animated.Value(0)).current;
   // const scale = aniVar.interpolate( {

@@ -164,7 +164,9 @@ changePassword:{
 Notificationscreen:{
     Notifications:"Notifications",
     details:"You will receive daily updates",
-    PromotionalNotifications:"Promotional Notifications"
+    PromotionalNotifications:"Promotional Notifications",
+    Today:"Today",
+    Yesterday:"Yesterday"
 },
 Otp:{
     preEmail:"An authentication code has been sent to",

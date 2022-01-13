@@ -39,8 +39,6 @@ const SignUp = (props: signinprops) => {
         UsernameInput,
         signInwithGoogle,
         SigninWithFacebook
-       
-
     } = props
 
 
@@ -132,14 +130,9 @@ const SignUp = (props: signinprops) => {
                     <Image  source={icon.facebook} style={styles.FacebookSigninButtonicon}/>
                         <Text style={styles.FacebookSigninButtontext}>{Constant.Button.facebook}</Text>
                     </TouchableOpacity>
-
-                    
                     </View>
-
-
                 </View>
             </ScrollView>
-
         </View>
     )
 }

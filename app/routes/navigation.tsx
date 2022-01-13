@@ -27,6 +27,7 @@ import {
   SuccessModel
 } from '../viewmodels';
 import DrawerNavigation from './Drawer Navigation';
+import Pushnotification from '../views/Push Notification';
 
 const Stack = createNativeStackNavigator();
 
@@ -34,6 +35,7 @@ const Routenavigation = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="OnboradingModel">
+     
         <Stack.Screen name="PasswordRecoveryModel" component={PasswordRecoveryModel} options={{ headerShown: false }} />
         <Stack.Screen name="OtpModel" component={OtpModel} options={{ headerShown: false }} />
         <Stack.Screen name="OnboradingModel" component={OnboradingModel} options={{ headerShown: false }} />
@@ -56,7 +58,7 @@ const Routenavigation = () => {
         <Stack.Screen name="DrawerNavigation" component={DrawerNavigation} options={{ headerShown: false }} />
         <Stack.Screen name="MyOrderModel" component={MyOrderModel} options={{ headerShown: false }} />
         <Stack.Screen name="MapViewModel" component={MapViewModel} options={{ headerShown: false }} />
-        <Stack.Screen name="calldemo" component={fetchData} />
+        <Stack.Screen name="calldemo" component={fetchData} /> 
 
       </Stack.Navigator>
     </NavigationContainer>

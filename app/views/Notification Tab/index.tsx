@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, View, SafeAreaView, SectionList, StatusBar, Image, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, View, SafeAreaView, SectionList, StatusBar, Image, TouchableOpacity, FlatList, ScrollView } from "react-native";
 import { COLORS, Constant, icon } from "../../config";
 import Item from "./renderItem";
 import styles from "./style";
@@ -8,19 +8,25 @@ import styles from "./style";
 
 interface NotificationTabprops {
     navigation: any
-    DATA: {
+    YesterdayData: {
         title: string;
-        data: {
-            title: string;
-            time: string;
-            subtitle: string;
-            image: any;
-        }[];
+        time: string;
+        subtitle: string;
+        image: any;
+        day: string;
     }[]
+    TodayData: {
+        title: string;
+        time: string;
+        subtitle: string;
+        image: any;
+        day: string;
+    }[]
+
 }
 
 const NotificationTab = (props: NotificationTabprops) => {
-    const { DATA, navigation } = props
+    const { TodayData,YesterdayData, navigation } = props
     return (
         <SafeAreaView style={styles.maincontainer}>
 
@@ -38,16 +44,25 @@ const NotificationTab = (props: NotificationTabprops) => {
                     </View>
                 </View>
             </View>
-            <View style={styles.container}>
-                <SectionList
-                    sections={DATA}
-                    keyExtractor={(item, index) => item + index.toString()}
-                    renderItem={({ item }) => <Item item={item} />}
-                    renderSectionHeader={({ section: { title } }) => (
-                        <Text style={styles.header}>{title}</Text>
-                    )}
-                />
-            </View>
+            
+            <ScrollView 
+            style={styles.container}
+            showsVerticalScrollIndicator={false} >
+                
+                <Text style={styles.header}>{Constant.Notificationscreen.Today}</Text>
+              
+                {TodayData.map((item: any, key: any) => {
+                    return(
+                        <Item item={item} key={key} />
+                    )
+                })}
+                 <Text style={styles.header}>{Constant.Notificationscreen.Yesterday}</Text>
+                {YesterdayData.map((item: any, key: any) => {
+                    return (
+                        <Item item={item} key={key} />
+                    );
+                })}
+            </ScrollView>
         </SafeAreaView>
     );
 }

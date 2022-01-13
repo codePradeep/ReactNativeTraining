@@ -8,30 +8,54 @@
  * @format
  */
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 
 import Routenavigation from './app/routes/navigation';
 import rootReducer from './app/redux/reducer/rootreducer';
-import DrawerNavigation from './app/routes/Drawer Navigation';
+
+import { Alert, View } from 'react-native';
+import messaging from '@react-native-firebase/messaging';
+import NotificationController from './app/controllers/NotificationController.android';
 
 
 const store = createStore(rootReducer)
 
 const App = () => {
 
+  NotificationController()
+  useEffect(() => {
+
+    messaging().setBackgroundMessageHandler(async remoteMessage => {
+     // console.log('Message handled in the background!', remoteMessage);
+    });
+  
+    const unsubscribe = messaging().onMessage(async remoteMessage => {
+    // Alert.alert('A new FCM message arrived!', JSON.stringify(remoteMessage));
+    console.log(remoteMessage)
+     
+      
+    });
+
+    return unsubscribe;
+  }, []);
+
+
+
+
+
+
+
 
   return (
-
-     <Routenavigation />
     
-
-
-
-
-
+     
+     <Routenavigation />
+     
   );
 };
 
 export default App;
+  
+

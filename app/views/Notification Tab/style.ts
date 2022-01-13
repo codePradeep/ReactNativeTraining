@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
         width: 20,
          resizeMode: "contain" },
     header: {
-        fontSize: 18,
+        fontSize: 20,
         color: COLORS.black
     },
     title: {

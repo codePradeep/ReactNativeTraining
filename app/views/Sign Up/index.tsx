@@ -22,6 +22,7 @@ interface signinprops {
     isEnabled: boolean
     toggleSwitch: any
     signInwithGoogle: () => Promise<void>
+    SigninWithFacebook:() => void
    
 }
 
@@ -37,6 +38,7 @@ const SignUp = (props: signinprops) => {
         isvalidusername,
         UsernameInput,
         signInwithGoogle,
+        SigninWithFacebook
        
 
     } = props
@@ -124,6 +126,12 @@ const SignUp = (props: signinprops) => {
                         color={GoogleSigninButton.Color.Dark}
                         onPress={() => signInwithGoogle()}
                     />
+                    <TouchableOpacity onPress={() => SigninWithFacebook()}
+                    style={styles.FacebookSigninButton}
+                    > 
+                    <Image  source={icon.facebook} style={styles.FacebookSigninButtonicon}/>
+                        <Text style={styles.FacebookSigninButtontext}>{Constant.Button.facebook}</Text>
+                    </TouchableOpacity>
 
                     
                     </View>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { View, Text, TouchableOpacity, Image, TextInput, FlatList, ScrollView, Modal } from "react-native";
 import { Header, Slider } from "../../common";
-import { categories, COLORS, Constant, FONTS, icon } from "../../config";
+import { categories, COLORS, Constant, FONTS, icon, Screen } from "../../config";
 import RanderListItem from "./RanderListItem";
 import RenderSecendlist from "./RenderSecendList";
 import styles from "./style";
@@ -24,7 +24,7 @@ interface Homepageprops {
     setprice: any
     filteredData: any
     filterdata: boolean
-    setfilterdata: any
+    setfilterdata:React.Dispatch<React.SetStateAction<boolean>>
 
 
 }
@@ -118,9 +118,10 @@ const Homepage = (props: Homepageprops) => {
                             </View>
                         </TouchableOpacity>
                         <Text style={styles.HeaderText}>{Constant.screens.home}</Text>
-                        <View style={styles.HeaderRight} >
+                        <TouchableOpacity style={styles.HeaderRight}
+                        >
                             <Image source={icon.user_avatar} style={styles.headerRightimage} />
-                        </View>
+                        </TouchableOpacity>
                     </View>
                 </View>
 

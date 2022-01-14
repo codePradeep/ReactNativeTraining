@@ -1,10 +1,13 @@
-import React, { useEffect } from 'react';
-import { Alert } from 'react-native';
+import React, {
+  useEffect
+} from 'react';
+import {
+  Alert
+} from 'react-native';
 import messaging from '@react-native-firebase/messaging';
 import PushNotification from 'react-native-push-notification';
 
-PushNotification.createChannel(
-  {
+PushNotification.createChannel({
     channelId: "channel-id", // (required)
     channelName: "My channel", // (required)
     channelDescription: "A channel to categorise your notifications", // (optional) default: undefined.
@@ -15,8 +18,6 @@ PushNotification.createChannel(
   },
   (created) => console.log(`createChannel returned '${created}'`) // (optional) callback returns whether the channel was created, false means it already existed.
 );
-
-
 
 
 const NotificationController = (props) => {
@@ -31,13 +32,13 @@ const NotificationController = (props) => {
         bigPictureUrl: remoteMessage.notification.android.imageUrl,
         smallIcon: remoteMessage.notification.android.imageUrl,
         // channelId: remoteMessage.notification.android.channelId,
-        channelId:true,
+        channelId: true,
         vibrate: true,
-        
+
       });
     });
     return unsubscribe;
-    
+
   }, []);
 
   return null;

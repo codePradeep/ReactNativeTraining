@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
 
     },
     Email: {
-        paddingBottom: 10,
+        paddingVertical: 10,
         fontSize: 16,
         fontWeight: "700"
     },
@@ -77,12 +77,22 @@ const styles = StyleSheet.create({
         marginVertical: 10
     },
     bottomtext: {
+        color:COLORS.darkGray2,
+        fontSize:17,
+        fontWeight:"600",
+        textAlignVertical: "center"
+    },
+    bottomforgetText: {
+        color:COLORS.darkBlue,
+        fontSize:17,
+        fontWeight:"600",
         textAlignVertical: "center"
     },
     bottomsignuptext: {
         color: COLORS.red,
-        fontWeight: "600",
-        fontSize: 16
+        fontWeight: "700",
+        fontSize: 18,
+        paddingLeft:10
     },
     forget: {
         alignSelf: "center"

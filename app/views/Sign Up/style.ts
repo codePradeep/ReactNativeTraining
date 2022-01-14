@@ -79,15 +79,16 @@ const styles=StyleSheet.create({
         marginVertical:10
     },
     bottomtext:{
-        textAlignVertical:"center"
+        color:COLORS.darkGray2,
+        fontSize:17,
+        fontWeight:"600",
+        textAlignVertical: "center"
     },
     bottomsignuptext:{
-      color:COLORS.red,
-      fontWeight:"600",
-      fontSize:16
-    },
-    forget:{
-        alignSelf:"center"
+        color: COLORS.red,
+        fontWeight: "700",
+        fontSize: 18,
+        paddingLeft:10
     },
     eyeiconcontainer:{
         alignSelf:"center"

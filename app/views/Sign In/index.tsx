@@ -88,8 +88,8 @@ const SignIn = (props: signinprops) => {
                         <View style={[styles.flexdirection, { justifyContent: "space-between" }]}>
                             <View style={styles.flexdirection}>
                                 <Switch
-                                    trackColor={{ false: COLORS.primary, true: COLORS.lightGray1 }}
-                                    thumbColor={isEnabled ? COLORS.primary : COLORS.lightGray1}
+                                    trackColor={{ false: COLORS.lightGray1, true: COLORS.lightGray1 }}
+                                    thumbColor={isEnabled ? COLORS.green : COLORS.darkGray}
                                     onValueChange={toggleSwitch}
                                     value={isEnabled}
                                 />
@@ -97,7 +97,7 @@ const SignIn = (props: signinprops) => {
                             </View>
                             <TouchableOpacity style={styles.forget}
                                 onPress={() => navigation.navigate(Screen.PasswordRecoveryModel)}>
-                                <Text style={styles.bottomtext}>{Constant.SigninScreen.Forget}</Text>
+                                <Text style={styles.bottomforgetText}>{Constant.SigninScreen.Forget}</Text>
                             </TouchableOpacity>
                         </View>
                         <KeyboardAvoidingView style={styles.subcontainer}>

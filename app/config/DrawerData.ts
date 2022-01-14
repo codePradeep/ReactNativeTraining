@@ -1,4 +1,5 @@
-import { icon } from ".";
+
+import { icon, Screen } from ".";
 
 const DrawerData = [
     {
@@ -55,14 +56,14 @@ const DrawerData = [
         id: "8",
         title: "Invite a Friend",
         icondata: icon.profile,
-        navigationdata:{}
+        navigationdata:Screen.SuccessModel
       
     },
     {
         id: "9",
         title: "Help Center",
         icondata: icon.help,
-        navigationdata:{}
+        navigationdata:Screen.SuccessModel
       
     },
    

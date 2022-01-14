@@ -4,7 +4,7 @@ import { useDrawerStatus,useDrawerProgress} from '@react-navigation/drawer';
 import React, { useRef, useState ,useEffect} from 'react';
 //import { Animated } from 'react-native';
 import { View } from 'react-native';
-import Animated from 'react-native-reanimated';
+import Animated,{} from 'react-native-reanimated';
 import { COLORS, icon } from '../../config';
 import { useOrientation } from '../../config/useOrientation';
 import { Homemodel, MyCartModel, NoticationSettingModel, NotificationTabModel, RiderReviewModel } from '../../viewmodels';

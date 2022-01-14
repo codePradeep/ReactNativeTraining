@@ -16,7 +16,7 @@ interface HiddenItemprops{
 }
 const RenderItem = (props:RenderItemProps) => {
     const {data,ItemPrice}=props
-    const [count,setcount]=useState(0)
+    const [count,setcount]=useState(1)
     const newprice =data.item.price*count
  //   setListData({...data,price:newprice})
     

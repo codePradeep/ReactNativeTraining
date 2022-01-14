@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { View, Text,TouchableOpacity, Image, TextInput, FlatList, ScrollView, Modal } from "react-native";
+import { View, Text, TouchableOpacity, Image, TextInput, FlatList, ScrollView, Modal } from "react-native";
 import { Header, Slider } from "../../common";
-import { categories, COLORS, Constant, FONTS, icon} from "../../config";
+import { categories, COLORS, Constant, FONTS, icon } from "../../config";
 import RanderListItem from "./RanderListItem";
 import RenderSecendlist from "./RenderSecendList";
 import styles from "./style";
@@ -13,13 +13,18 @@ interface Homepageprops {
     modalVisible: boolean
     setModalVisible: React.Dispatch<React.SetStateAction<boolean>>
     defaultRating: number
-    setDefaultRating:React.Dispatch<React.SetStateAction<number>>
+    setDefaultRating: React.Dispatch<React.SetStateAction<number>>
     maxRating: number[]
     defaulttime: string
-    setDefaulttime:React.Dispatch<React.SetStateAction<string>>
+    setDefaulttime: React.Dispatch<React.SetStateAction<string>>
     maxtime: string[]
-    menu:any
-    menulist:any
+    menu: any
+    menulist: any
+    setdistance: any
+    setprice: any
+    filteredData: any
+    filterdata: boolean
+    setfilterdata: any
 
 
 }
@@ -31,13 +36,18 @@ const Homepage = (props: Homepageprops) => {
         modalVisible,
         setModalVisible,
         defaultRating,
-         setDefaultRating,
-         maxRating, 
-         defaulttime, setDefaulttime,
-         maxtime, 
-         menu,
-         menulist
-    
+        setDefaultRating,
+        maxRating,
+        defaulttime,
+        setDefaulttime,
+        maxtime,
+        menu,
+        menulist,
+        setdistance,
+        setprice,
+        filteredData,
+        filterdata, setfilterdata
+
     } = props
 
 
@@ -52,14 +62,14 @@ const Homepage = (props: Homepageprops) => {
                             onPress={() => setDefaultRating(item)}
                             style={item <= defaultRating
                                 ? styles.activestarStyle : styles.inactivestarStyle}
-                            >
-                                <View style={styles.starcontainer}>
-                                    <Text style={styles.startext}>{item}</Text>
-                            <Image
-                                style={item <= defaultRating
-                                    ? styles.activestarImageStyle : styles.inactivestarImageStyle}
-                                source={icon.star_filled}
-                            />
+                        >
+                            <View style={styles.starcontainer}>
+                                <Text style={styles.startext}>{item}</Text>
+                                <Image
+                                    style={item <= defaultRating
+                                        ? styles.activestarImageStyle : styles.inactivestarImageStyle}
+                                    source={icon.star_filled}
+                                />
                             </View>
                         </TouchableOpacity>
                     );
@@ -99,7 +109,7 @@ const Homepage = (props: Homepageprops) => {
     return (
         <View style={{ flex: 1, backgroundColor: COLORS.white }}>
             <View style={styles.Container} >
-        
+
                 <View style={styles.headercontainer}>
                     <View style={styles.headersubcontainer}>
                         <TouchableOpacity onPress={() => navigation.openDrawer()} >
@@ -122,50 +132,75 @@ const Homepage = (props: Homepageprops) => {
                     </TouchableOpacity>
                 </View>
 
-                <ScrollView 
-                style={styles.scrollview}
-                showsVerticalScrollIndicator={false}
+                <ScrollView
+                    style={styles.scrollview}
+                    showsVerticalScrollIndicator={false}
                 >
+
                     <View style={styles.addresscontainer}>
                         <Text style={[FONTS.body4, { color: COLORS.primary, marginVertical: 5 }]}>{Constant.HomeScreen.deliverto}</Text>
                         <View style={styles.DeliveryContainer}>
-                        <Text style={FONTS.h4}>Sector-22, Noida ,UP</Text>
-                        {}
+                            <Text style={FONTS.h4}>Sector-22, Noida ,UP </Text>
+                            <TouchableOpacity onPress={() => setfilterdata(false)} style={styles.button}>
+                                {filterdata ? <Text style={styles.closefilter} >Close Filter</Text> : null}
+                            </TouchableOpacity>
                         </View>
                     </View>
 
+                    {!filterdata ?
+                        <><View style={styles.firstflatlistContainer}>
 
-                    <View style={styles.firstflatlistContainer}>
-
-                        <FlatList
-                            horizontal
-                            data={categories}
-                            initialScrollIndex={0}
-                            showsHorizontalScrollIndicator={false}
-                            renderItem={({ item, index }) => <RanderListItem item={item}
-                                defaultitem={defaultitem}
-                                setdefaultitem={setdefaultitem}
-                                index={0} />}
-                            keyExtractor={(_, index) => index.toString()}
-                        />
-                    </View>
-                    <View style={styles.mainsmallcontainer}>
-                        <View style={styles.smallcontainer}>
-                            <Text style={FONTS.h4}>{Constant.HomeScreen.populer}</Text>
-                            <Text style={[FONTS.body4, { color: COLORS.red }]}>{Constant.HomeScreen.showall}</Text>
+                            <FlatList
+                                horizontal
+                                data={categories}
+                                initialScrollIndex={0}
+                                showsHorizontalScrollIndicator={false}
+                                renderItem={({ item, index }) => <RanderListItem item={item}
+                                    defaultitem={defaultitem}
+                                    setdefaultitem={setdefaultitem}
+                                    index={0} />}
+                                keyExtractor={(_, index) => index.toString()} />
                         </View>
-                        <FlatList
-                            horizontal
-                            data={menulist}
-                            initialScrollIndex={0}
-                            showsHorizontalScrollIndicator={false}
-                            renderItem={({ item, index }) => <RenderSecendlist item={item}
-                            navigation={navigation}
-                                index={0} />}
-                            keyExtractor={(_, index) => index.toString()}
-                        />
+                            <View style={styles.mainsmallcontainer}>
+                                <View style={styles.smallcontainer}>
+                                    <Text style={FONTS.h4}>{Constant.HomeScreen.populer}</Text>
+                                    <Text style={[FONTS.body4, { color: COLORS.red }]}>{Constant.HomeScreen.showall}</Text>
+                                </View>
+                                <FlatList
+                                    horizontal
+                                    data={menulist}
+                                    initialScrollIndex={0}
+                                    showsHorizontalScrollIndicator={false}
+                                    renderItem={({ item, index }) => <RenderSecendlist item={item}
+                                        navigation={navigation}
+                                        index={0} />}
+                                    keyExtractor={(_, index) => index.toString()} />
+                            </View></>
+                        :
 
-                    </View>
+
+                        <View>
+                            <View style={styles.mainsmallcontainer}>
+                                <View style={styles.smallcontainer}>
+                                    <Text style={FONTS.h4}>{Constant.HomeScreen.populer}</Text>
+                                    <Text style={[FONTS.body4, { color: COLORS.red }]}>{Constant.HomeScreen.showall}</Text>
+                                </View>
+                                <FlatList
+                                    horizontal
+                                    data={filteredData}
+                                    initialScrollIndex={0}
+                                    showsHorizontalScrollIndicator={false}
+                                    renderItem={({ item, index }) => <RenderSecendlist item={item}
+                                        navigation={navigation}
+                                        index={0} />}
+                                    keyExtractor={(_, index) => index.toString()} />
+                            </View>
+                        </View>
+
+
+
+
+                    }
                     <View style={styles.mainsmallcontainer}>
                         <View style={styles.smallcontainer}>
                             <Text style={FONTS.h4}>{Constant.HomeScreen.Recommonded}</Text>
@@ -177,7 +212,7 @@ const Homepage = (props: Homepageprops) => {
                             initialScrollIndex={0}
                             showsHorizontalScrollIndicator={false}
                             renderItem={({ item, index }) => <RenderSecendlist item={item}
-                            navigation={navigation}
+                                navigation={navigation}
                                 index={0} />}
                             keyExtractor={(_, index) => index.toString()}
                         />
@@ -207,31 +242,31 @@ const Homepage = (props: Homepageprops) => {
                             </View>
                             <View style={styles.distancecontainer}>
                                 <Text style={styles.ModalSubText}>{Constant.HomeScreen.distance}</Text>
-                                <Slider 
+                                <Slider
                                     values={[3, 18]}
                                     min={1}
                                     max={20}
                                     postfix="km"
-                                    onValueChange={(values: any) => console.log(values)} prifix={""}                                        
-                                        />
+                                    onValueChange={(values: any) => setdistance(values)} prifix={""}
+                                />
                             </View>
-                            
+
                             <View style={styles.distancecontainer}>
-                            <Text style={styles.ModalSubText}>{Constant.HomeScreen.deliverytime}</Text>
-                               < CustomTimeBar />
-                                
+                                <Text style={styles.ModalSubText}>{Constant.HomeScreen.deliverytime}</Text>
+                                < CustomTimeBar />
+
                             </View>
                             <View style={styles.distancecontainer}>
                                 <Text style={styles.ModalSubText}>{Constant.HomeScreen.pricingrange}</Text>
-                                <Slider 
+                                <Slider
                                     values={[3, 18]}
                                     min={1}
                                     max={20}
                                     prifix="$"
-                                    onValueChange={(values: any) => console.log(values)} postfix={undefined}                                        
-                                        />
+                                    onValueChange={(values: any) => setprice(values)} postfix={undefined}
+                                />
                             </View>
-                            
+
                             <View style={styles.distancecontainer}>
                                 <Text style={styles.ModalSubText}>{Constant.HomeScreen.rating}</Text>
                                 <CustomRatingBar />
@@ -239,7 +274,7 @@ const Homepage = (props: Homepageprops) => {
                         </ScrollView>
                         <TouchableOpacity
                             style={styles.button}
-                            onPress={() => { setModalVisible(false) }}
+                            onPress={() => { setModalVisible(false), setfilterdata(true) }}
                         >
                             <Text style={styles.buttontext}> {Constant.Button.applyfilter}</Text>
                         </TouchableOpacity>

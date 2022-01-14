@@ -13,7 +13,7 @@ const MyCartModel = (props: myCartmodelprops) => {
     const [modalVisible, setModalVisible] = useState(false);
     const [cartcount, setcartcount] = useState(0)
 
-    console.log(Cartmenu.map(a=>a.price))
+  //  console.log(Cartmenu.map(a=>a.price))
 
 
 

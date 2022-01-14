@@ -23,14 +23,16 @@ const menu= [
     {
     id: 1,
     name: "Hamburger",
-    description: "Chicken patty hamburger", 
-    rating:4.5,   
+    description: "Chicken patty hamburger",   
     price: 15.99,
     calories: 78,
     isFavourite: true,
-    time: "30min",
     image: require("../assets/dummyData/hamburger.png"),
-    categories: 1
+    categories: 1,
+    distance:4,
+    rating:1, 
+    time: "30 Mins",
+
 
 
 },
@@ -42,7 +44,10 @@ const menu= [
     calories: 78,
     isFavourite: false,
     image: require("../assets/dummyData/hot_tacos.png"),
-    categories: 1
+    categories: 1,
+    distance:8,
+    rating:2, 
+    time: "10 Mins",
 
 },
 
@@ -55,7 +60,10 @@ const menu= [
     calories: 78,
     isFavourite: true,
     image: require("../assets/dummyData/veg_biryani.png"),
-    categories:3
+    categories:3,
+    distance:12,
+    rating:3, 
+    time: "30 Mins",
 
 },
 {
@@ -66,18 +74,24 @@ const menu= [
     calories: 78,
     isFavourite: true,
     image: require("../assets/dummyData/wrap_sandwich.png"),
-    categories: 1
+    categories: 1,
+    distance:14,
+    rating:3, 
+    time: "20 Mins",
 
 },
 {
     id: 5,
-    name: "Fruit Sandwich",
+    name: "Fruit mix Sandwich",
     description: " vegetables sandwich",
     price: 10.99,
     calories: 78,
     isFavourite: true,
     image: require("../assets/dummyData/wrap_sandwich.png"),
-    categories:2
+    categories:2,
+    distance:3,
+    rating:3, 
+    time: "10 Mins",
 },
 {
     id: 6,
@@ -87,7 +101,10 @@ const menu= [
     calories: 78,
     isFavourite: true,
     image: require("../assets/dummyData/wrap_sandwich.png"),
-    categories:2
+    categories:2,
+    distance:4,
+    rating:4, 
+    time: "30 Mins",
 },
 {
     id: 7,
@@ -97,7 +114,10 @@ const menu= [
     calories: 78,
     isFavourite: true,
     image: require("../assets/dummyData/wrap_sandwich.png"),
-    categories:2
+    categories:2,
+    distance:5,
+    rating:4, 
+    time: "30 Mins",
 }
 ]
 

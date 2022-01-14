@@ -1,4 +1,4 @@
-import { icon } from ".";
+import { icon, Screen } from ".";
 
 const SettingData = [
     {
@@ -6,8 +6,6 @@ const SettingData = [
         title: "Profile",
         icondata: icon.profile,
         navigationdata:"MyAccountModel"
-
-    
     },
     {
         id: "2",
@@ -19,7 +17,8 @@ const SettingData = [
     {
         id: "3",
         title: "Preferences",
-        icondata: icon.filter
+        icondata: icon.filter,
+        navigationdata:"NoticationSettingModel"
       
     },
     {
@@ -32,37 +31,43 @@ const SettingData = [
     {
         id: "5",
         title: "Data Use",
-        icondata: icon.stock
+        icondata: icon.stock,
+        navigationdata:Screen.NoticationSettingModel
       
     },
     {
         id: "6",
         title: "Language",
-        icondata: icon.worldicon
+        icondata: icon.worldicon,
+        navigationdata:Screen.NoticationSettingModel
       
     },
     {
         id: "7",
         title: "check Update",
-        icondata: icon.update
+        icondata: icon.update,
+        navigationdata:Screen.NoticationSettingModel
       
     },
     {
         id: "8",
         title: "Contect Us",
-        icondata: icon.call
+        icondata: icon.call,
+        navigationdata:Screen.NoticationSettingModel
       
     },
     {
         id: "9",
         title: "Privacy Policy",
-        icondata: icon.shield
+        icondata: icon.shield,
+        navigationdata:Screen.NoticationSettingModel
       
     },
     {
         id: "10",
         title: "Terms & Conditions",
-        icondata: icon.list
+        icondata: icon.list,
+        navigationdata:Screen.NoticationSettingModel
       
     },
     {

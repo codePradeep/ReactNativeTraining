@@ -95,7 +95,8 @@ const MyCard = (props: Mycardprops) => {
                 </TouchableOpacity>
 
             </View>
-            <Abutton title={Constant.Button.add} OnPress={()=>navigation.navigate(Screen.AddNewCardModel)} />
+            {istoggle.google==true&&istoggle.master==true?<Abutton title={"Checkout"} OnPress={()=>navigation.navigate(Screen.CheckoutModel)} />: <Abutton title={Constant.Button.add} OnPress={()=>navigation.navigate(Screen.AddNewCardModel)} />}
+            {/* <Abutton title={Constant.Button.add} OnPress={()=>navigation.navigate(Screen.AddNewCardModel)} /> */}
         </View>
     )
 }

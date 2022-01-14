@@ -3,7 +3,7 @@ import { Modal, Text, TouchableOpacity, TouchableWithoutFeedback, View } from "r
 import { Image } from "react-native-animatable";
 import { SwipeListView } from "react-native-swipe-list-view";
 import { Abutton, Header } from "../../common";
-import { Constant, icon } from "../../config";
+import { Constant, icon, Screen } from "../../config";
 import { RenderHiddenItem, RenderItem } from "./RenderItem";
 import styles from "./style";
 
@@ -90,7 +90,7 @@ const MyCart = (props: MyCartprops) => {
                     </View>
                     <TouchableOpacity
                         style={styles.button}
-                        onPress={() => { setModalVisible(false) }}
+                        onPress={() => { setModalVisible(false),navigation.navigate(Screen.CheckoutModel) }}
                     >
                         <Text style={styles.buttontext}> {Constant.Button.PlaceyourOrder}</Text>
                     </TouchableOpacity>

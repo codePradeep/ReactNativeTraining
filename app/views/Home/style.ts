@@ -314,7 +314,8 @@ const styles = StyleSheet.create({
         ,marginVertical:10
     },
     DeliveryContainer:{
-        flexDirection:"row"
+        flexDirection:"row",
+        justifyContent:"space-between"
     },
     DeliveryContainericon:{
         // flex:.2,
@@ -322,6 +323,10 @@ const styles = StyleSheet.create({
         width:20,
         resizeMode:"contain",
         alignSelf:"center"
+    },
+    closefilter:{
+        color:COLORS.white,
+        margin:10 ,
     }
 
 

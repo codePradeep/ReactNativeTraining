@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { menu } from "../config";
 
 import Homepage from "../views/Home/Homepage";
 
@@ -10,14 +11,16 @@ interface Homemodelprops {
 
 const Homemodel = (props: Homemodelprops) => {
     const { navigation } = props
-
-
     const [defaultitem, setdefaultitem] = useState(1);
     const [modalVisible, setModalVisible] = useState(false);
     const [defaultRating, setDefaultRating] = useState(0);
     const [maxRating, setMaxRating] = useState([1, 2, 3, 4, 5]);
     const [defaulttime, setDefaulttime] = useState("0");
     const [maxtime, setMaxtime] = useState(["10 Mins", "20 Mins", "30 Mins"]);
+    
+    const menulist=menu.filter(a=>a.categories==defaultitem)
+    
+    
 
     return (
         <Homepage
@@ -29,11 +32,12 @@ const Homemodel = (props: Homemodelprops) => {
             defaultRating={defaultRating}
             setDefaultRating={setDefaultRating}
             maxRating={maxRating}
-            setMaxRating={setMaxRating}
             defaulttime={defaulttime}
             setDefaulttime={setDefaulttime}
             maxtime={maxtime}
-            setMaxtime={setMaxtime}
+            menu={menu}
+            menulist={menulist}
+
 
 
         />

@@ -29,7 +29,10 @@ const menu= [
     calories: 78,
     isFavourite: true,
     time: "30min",
-    image: require("../assets/dummyData/hamburger.png")
+    image: require("../assets/dummyData/hamburger.png"),
+    categories: 1
+
+
 },
  {
     id: 2,
@@ -38,7 +41,9 @@ const menu= [
     price: 10.99,
     calories: 78,
     isFavourite: false,
-    image: require("../assets/dummyData/hot_tacos.png")
+    image: require("../assets/dummyData/hot_tacos.png"),
+    categories: 1
+
 },
 
 {
@@ -49,7 +54,9 @@ const menu= [
     price: 10.99,
     calories: 78,
     isFavourite: true,
-    image: require("../assets/dummyData/veg_biryani.png")
+    image: require("../assets/dummyData/veg_biryani.png"),
+    categories:3
+
 },
 {
     id: 4,
@@ -58,8 +65,71 @@ const menu= [
     price: 10.99,
     calories: 78,
     isFavourite: true,
-    image: require("../assets/dummyData/wrap_sandwich.png")
+    image: require("../assets/dummyData/wrap_sandwich.png"),
+    categories: 1
+
+},
+{
+    id: 5,
+    name: "Fruit Sandwich",
+    description: " vegetables sandwich",
+    price: 10.99,
+    calories: 78,
+    isFavourite: true,
+    image: require("../assets/dummyData/wrap_sandwich.png"),
+    categories:2
+},
+{
+    id: 6,
+    name: "Fruit Sandwich",
+    description: "vegetables sandwich",
+    price: 10.99,
+    calories: 78,
+    isFavourite: true,
+    image: require("../assets/dummyData/wrap_sandwich.png"),
+    categories:2
+},
+{
+    id: 7,
+    name: "Sandwich",
+    description: "Grilled vegetables sandwich",
+    price: 10.99,
+    calories: 78,
+    isFavourite: true,
+    image: require("../assets/dummyData/wrap_sandwich.png"),
+    categories:2
 }
+]
+
+const Cartmenu= [
+    {
+    id: 1,
+    name: "Hamburger",
+    description: "Chicken patty hamburger",   
+    price: 15.99,
+    image: require("../assets/dummyData/hamburger.png"),
+    categories: 1
+
+
+},
+ {
+    id: 2,
+    name: "Hot Tacos",
+    description: "Mexican tortilla & tacos",
+    price: 10.99,
+    image: require("../assets/dummyData/hot_tacos.png"),
+    
+
+},
+
+{
+    id: 3,
+    name: "Veg Biryani",
+    description: "Indian Vegetable Biryani",
+    price: 10.99,
+    image: require("../assets/dummyData/veg_biryani.png"),
+
+},
 ]
 
 
@@ -67,4 +137,5 @@ const menu= [
 export {
     categories,
     menu,
+    Cartmenu
 }

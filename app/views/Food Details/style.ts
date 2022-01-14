@@ -12,7 +12,7 @@ const style=StyleSheet.create({
     },
 
     headercontainer: {
-        flex:.1,
+        flex:.4,
         marginBottom: 20
     },
     headersubcontainer: {

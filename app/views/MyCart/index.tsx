@@ -16,6 +16,7 @@ interface MyCartprops {
     cartcount: any
     setcartcount: any
     deleteRow: any
+    ItemPrice:any
 }
 
 const MyCart = (props: MyCartprops) => {
@@ -27,7 +28,7 @@ const MyCart = (props: MyCartprops) => {
         setModalVisible,
         cartcount,
         setcartcount,
-        deleteRow } = props
+        deleteRow,ItemPrice} = props
 
     return (
         <View style={styles.maincontainer} >
@@ -45,7 +46,7 @@ const MyCart = (props: MyCartprops) => {
                 <SwipeListView
                     style={{ flex: 1 }}
                     data={listData}
-                    renderItem={(data) => <RenderItem data={data} />}
+                    renderItem={(data) => <RenderItem data={data} setListData={setListData} ItemPrice={ItemPrice}/>}
                     renderHiddenItem={(data, rowMap) => <RenderHiddenItem data={data} rowMap={rowMap} deleteRow={deleteRow} />}
                     rightOpenValue={-75}
                     previewRowKey={'0'}

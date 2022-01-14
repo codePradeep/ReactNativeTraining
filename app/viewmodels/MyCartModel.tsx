@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { View } from "react-native";
-import { menu } from "../config";
+import { Cartmenu } from "../config/dummyData";
 import MyCart from "../views/MyCart";
 
 interface myCartmodelprops {
@@ -9,9 +9,11 @@ interface myCartmodelprops {
 
 const MyCartModel = (props: myCartmodelprops) => {
     const {navigation}=props
-    const [listData, setListData] = useState(menu);
-    const [modalVisible, setModalVisible] = useState(true);
+    const [listData, setListData] = useState(Cartmenu);
+    const [modalVisible, setModalVisible] = useState(false);
     const [cartcount, setcartcount] = useState(0)
+
+    console.log(Cartmenu.map(a=>a.price))
 
 
 
@@ -28,18 +30,19 @@ const MyCartModel = (props: myCartmodelprops) => {
         setcartcount(cartcount - 1)
        
     }
-
+    const [count, setcount] = useState(1);
     return (
         <MyCart
-         navigation={navigation}
-         listData={listData}
-         setListData={setListData}
-         modalVisible={modalVisible}
-         setModalVisible={setModalVisible}
-         cartcount={cartcount}
-         setcartcount={setcartcount}
-         deleteRow={deleteRow}
-         
+            navigation={navigation}
+            listData={listData}
+            setListData={setListData}
+            modalVisible={modalVisible}
+            setModalVisible={setModalVisible}
+            cartcount={cartcount}
+            setcartcount={setcartcount}
+            deleteRow={deleteRow}
+
+             ItemPrice={undefined}         
          />
     )
 }

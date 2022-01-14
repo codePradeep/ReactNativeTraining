@@ -63,11 +63,6 @@ const NotificationTabModel=(props:NotificationTabModelprops)=>{
       const TodayData= DATA.filter((a)=>a.day=="today")
       const YesterdayData= DATA.filter((a)=>a.day=="Yesterday")
    
-
-
-
-
-
     return(
         <NotificationTab
          navigation={navigation}

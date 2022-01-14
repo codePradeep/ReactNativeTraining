@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { Image, Text, TouchableHighlight, TouchableOpacity, View } from "react-native";
 import { COLORS, FONTS, icon } from "../../config";
+import SettingData from "../../config/SettingData";
 import styles from "./style";
 
 interface RenderItemProps{
     data: any
+    ItemPrice:number
+    setListData:any
 }
 interface HiddenItemprops{
     data:any
@@ -12,7 +15,11 @@ interface HiddenItemprops{
     deleteRow:any
 }
 const RenderItem = (props:RenderItemProps) => {
-    const {data}=props
+    const {data,ItemPrice}=props
+    const [count,setcount]=useState(0)
+    const newprice =data.item.price*count
+ //   setListData({...data,price:newprice})
+    
     return (
         <TouchableHighlight
             style={styles.rowFront}
@@ -24,15 +31,17 @@ const RenderItem = (props:RenderItemProps) => {
                 <Image source={data.item.image} style={styles.itemimage} />
                 <View>
                     <Text style={FONTS.h3}>{data.item.name}</Text>
-                    <Text style={[FONTS.h4, { color: COLORS.primary }]}>${data.item.price}</Text>
+                    <Text style={[FONTS.h4, { color: COLORS.primary }]}>${newprice}</Text>
                 </View>
                 <View style={styles.subrenderitemcontainer}>
                     <TouchableOpacity
+                    onPress={() => { count == 0 ? 0 : setcount(count - 1); }}
                     >
                         <Text style={[FONTS.body1, { color: COLORS.primary }]}>-</Text>
                     </TouchableOpacity>
-                    <Text style={[FONTS.body2, { color: COLORS.black, paddingHorizontal: 10 }]}>{data.item.id}</Text>
+                    <Text style={[FONTS.body2, { color: COLORS.black, paddingHorizontal: 10 }]}>{count}</Text>
                     <TouchableOpacity
+                    onPress={()=>setcount(count+1)}
                     >
                         <Text style={[FONTS.body1, { color: COLORS.primary }]}>+</Text>
                     </TouchableOpacity>

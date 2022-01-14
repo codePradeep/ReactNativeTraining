@@ -101,8 +101,7 @@ const SignIn = (props: signinprops) => {
                             </TouchableOpacity>
                         </View>
                         <KeyboardAvoidingView style={styles.subcontainer}>
-                            <Abutton title={Constant.Button.signin} OnPress={() => navigation.navigate(Screen.DrawerNavigation)} />
-
+                            <Abutton title={Constant.Button.signin} OnPress={() =>{isvalidEmail&&isvalidPassword? navigation.navigate(Screen.DrawerNavigation):null}} />
                             <View style={[styles.flexdirection, { alignSelf: "center" }]}>
                                 <Text style={styles.bottomtext}>{Constant.SigninScreen.dont}</Text>
                                 <TouchableOpacity onPress={() => navigation.navigate(Screen.SignUpModel)}>

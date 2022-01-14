@@ -17,7 +17,8 @@ const styles = StyleSheet.create({
         justifyContent: "space-between"
     },
     headerleftimagecontainer: {
-        backgroundColor: "rgba(176, 174, 171,0.02)",
+        borderColor: COLORS.gray,
+        backgroundColor:COLORS.lightGray2,
         borderRadius: 10,
         height: 40, width: 40,
         justifyContent: "center",
@@ -308,6 +309,19 @@ const styles = StyleSheet.create({
     },
     itemsubcontainer:{
         flexDirection:"row"
+    },
+    scrollview:{ flex: 1 
+        ,marginVertical:10
+    },
+    DeliveryContainer:{
+        flexDirection:"row"
+    },
+    DeliveryContainericon:{
+        // flex:.2,
+        height:20,
+        width:20,
+        resizeMode:"contain",
+        alignSelf:"center"
     }
 
 

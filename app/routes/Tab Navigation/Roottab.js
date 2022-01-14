@@ -61,7 +61,7 @@ const Roottab = ({navigation,style}) => {
               tabBarIcon: ({ focused }) => (<TabbarItem focused={focused} orientation={orientation} ICON={icon.home} label={'Home'} />)
             }} />
 
-      <Tab.Screen name="Search" component={NoticationSettingModel}
+      <Tab.Screen name="Search" component={Homemodel}
             options={{
               
               tabBarIcon: ({ focused }) => (<TabbarItem focused={focused} orientation={orientation} ICON={icon.search} label={'Search'} />),

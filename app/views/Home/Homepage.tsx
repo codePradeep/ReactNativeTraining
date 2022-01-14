@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { View, Text,TouchableOpacity, Image, TextInput, FlatList, ScrollView, Modal } from "react-native";
 import { Header, Slider } from "../../common";
-import { categories, COLORS, Constant, FONTS, icon, menu } from "../../config";
+import { categories, COLORS, Constant, FONTS, icon} from "../../config";
 import RanderListItem from "./RanderListItem";
 import RenderSecendlist from "./RenderSecendList";
 import styles from "./style";
@@ -15,11 +15,11 @@ interface Homepageprops {
     defaultRating: number
     setDefaultRating:React.Dispatch<React.SetStateAction<number>>
     maxRating: number[]
-    setMaxRating: React.Dispatch<React.SetStateAction<number[]>>
     defaulttime: string
     setDefaulttime:React.Dispatch<React.SetStateAction<string>>
     maxtime: string[]
-    setMaxtime: React.Dispatch<React.SetStateAction<string[]>>
+    menu:any
+    menulist:any
 
 
 }
@@ -32,9 +32,11 @@ const Homepage = (props: Homepageprops) => {
         setModalVisible,
         defaultRating,
          setDefaultRating,
-         maxRating, setMaxRating,
+         maxRating, 
          defaulttime, setDefaulttime,
-         maxtime, setMaxtime,
+         maxtime, 
+         menu,
+         menulist
     
     } = props
 
@@ -120,10 +122,16 @@ const Homepage = (props: Homepageprops) => {
                     </TouchableOpacity>
                 </View>
 
-                <ScrollView style={{ flex: 1 }}>
+                <ScrollView 
+                style={styles.scrollview}
+                showsVerticalScrollIndicator={false}
+                >
                     <View style={styles.addresscontainer}>
                         <Text style={[FONTS.body4, { color: COLORS.primary, marginVertical: 5 }]}>{Constant.HomeScreen.deliverto}</Text>
+                        <View style={styles.DeliveryContainer}>
                         <Text style={FONTS.h4}>Sector-22, Noida ,UP</Text>
+                        {}
+                        </View>
                     </View>
 
 
@@ -144,6 +152,23 @@ const Homepage = (props: Homepageprops) => {
                     <View style={styles.mainsmallcontainer}>
                         <View style={styles.smallcontainer}>
                             <Text style={FONTS.h4}>{Constant.HomeScreen.populer}</Text>
+                            <Text style={[FONTS.body4, { color: COLORS.red }]}>{Constant.HomeScreen.showall}</Text>
+                        </View>
+                        <FlatList
+                            horizontal
+                            data={menulist}
+                            initialScrollIndex={0}
+                            showsHorizontalScrollIndicator={false}
+                            renderItem={({ item, index }) => <RenderSecendlist item={item}
+                            navigation={navigation}
+                                index={0} />}
+                            keyExtractor={(_, index) => index.toString()}
+                        />
+
+                    </View>
+                    <View style={styles.mainsmallcontainer}>
+                        <View style={styles.smallcontainer}>
+                            <Text style={FONTS.h4}>{Constant.HomeScreen.Recommonded}</Text>
                             <Text style={[FONTS.body4, { color: COLORS.red }]}>{Constant.HomeScreen.showall}</Text>
                         </View>
                         <FlatList

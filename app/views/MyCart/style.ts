@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
     },
 
     headercontainer: {
-         flex:.2,
+         flex:.1,
     },
     headersubcontainer: {
         flexDirection: "row",

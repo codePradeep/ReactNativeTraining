@@ -99,7 +99,7 @@ const styles=StyleSheet.create({
     },
     GoogleSignInButton: {
         width: "100%",
-        paddingVertical: "8%",
+        paddingVertical: "7%",
 
     },
     FacebookSigninButton: {

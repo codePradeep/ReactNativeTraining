@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
         backgroundColor: "white",
         justifyContent: "space-between"
     },
-    maincontainer: { flex: 0.7 },
+    maincontainer: { flex: .6 },
     image: { resizeMode: "contain", height: "100%", width: "100%" },
     heading: {
         color: "black",

@@ -17,9 +17,50 @@ marginHorizontal:10
         tintColor: COLORS.white
     },
     user: {
-        height: 60,
-        width: 60,
+        height: 80,
+        width: 80,
+        alignSelf:"center",
+        borderRadius:180,
+
+        
+    },
+    camera:{
+        height: 40,
+        width: 40,
+        // height: "20%",
+        // width:"70%",
         resizeMode: "contain",
+      alignSelf: "center",
+        position:"absolute",
+        
+        
+    },
+    cameracontainer:{
+    
+        justifyContent:"center",
+        alignItems:"center",
+        
+    },
+    modalicon:{
+        height: "25%",
+        width:"90%",
+        resizeMode:"contain",
+        alignSelf:"center",
+        tintColor:COLORS.white
+
+    },
+    modaltext:{
+        color:COLORS.white,
+        fontSize:20,
+        
+        marginVertical:5
+    },
+    Modalview:{
+        flex:.2,
+        justifyContent:"space-evenly",
+        flexDirection:"row",
+        backgroundColor:COLORS.darkBlue,
+        alignItems:"center"
     },
     usertext: {
         paddingLeft: 10,
@@ -29,6 +70,12 @@ marginHorizontal:10
         flexDirection: "row",
         alignContent: "center",
         marginVertical: 10
+    },
+    imageView:{
+        flexDirection:"row",
+        justifyContent: "flex-start",
+        
+      
     },
     username: {
         color: COLORS.white,

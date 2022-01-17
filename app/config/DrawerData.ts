@@ -1,6 +1,11 @@
 
 import { icon, Screen } from ".";
 
+const userdata={
+    username:"Pradeep Sharma",
+    email:"Pradeep@testmail.com"
+}
+
 const DrawerData = [
     {
         id: "1",
@@ -70,4 +75,4 @@ const DrawerData = [
 ]
 
 
-export default DrawerData
+export  {DrawerData,userdata}

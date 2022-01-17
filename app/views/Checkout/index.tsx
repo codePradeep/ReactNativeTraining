@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import {
     View,
     Text,
-
     TouchableOpacity,
     Image,
     TextInput,
@@ -24,11 +23,11 @@ interface Checkoutprops {
     data: any
     setistoggle: any
     modalVisible: boolean
-    setModalVisible: React.Dispatch<React.SetStateAction<boolean>>
+    setModalVisible:any
 }
 
 const Checkout = (props: Checkoutprops) => {
-    const { navigation, istoggle, setistoggle, data, modalVisible, setModalVisible } = props
+    const {  navigation,istoggle, setistoggle, data, modalVisible, setModalVisible } = props
 
 
 
@@ -36,7 +35,7 @@ const Checkout = (props: Checkoutprops) => {
         <View style={styles.parentContainer} >
             <View style={styles.MainContainer}>
 
-                <Header headertitle={Constant.screens.checkout} navigation={navigation} HeaderRightComponent={undefined} />
+              <Header headertitle={Constant.screens.checkout} navigation={navigation} HeaderRightComponent={undefined} />
 
                 <ScrollView style={styles.scrollview}>
 
@@ -75,7 +74,7 @@ const Checkout = (props: Checkoutprops) => {
                         <View>
                             <Text style={FONTS.h3}>{Constant.checkoutScreen.AddCoupon}</Text>
                             <TouchableOpacity
-                            onPress={navigation.navigate(Screen.MyCouponModel)}
+                            onPress={()=>navigation.navigate(Screen.MyCouponModel)}
                              style={styles.textinpute}>
                                 <TextInput placeholder={Constant.checkoutScreen.Couponcode} style={styles.Inputtext} />
                                 <Image source={icon.coupon} style={styles.Icon} />
@@ -110,7 +109,7 @@ const Checkout = (props: Checkoutprops) => {
                                     <Text style={styles.modalText}>$37.97</Text>
                                 </View>
 
-                                <Abutton title={Constant.Button.PlaceyourOrder} OnPress={() => { setModalVisible(false), setistoggle({ ...data }) }} />
+                                <Abutton title={Constant.Button.PlaceyourOrder} OnPress={() => { setModalVisible(false), setistoggle({ ...data }),navigation.navigate(Screen.SuccessModel) }} />
 
                             </View>
 

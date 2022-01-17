@@ -55,7 +55,7 @@ const styles=StyleSheet.create({
        
     },
     Email:{
-        paddingBottom:10,
+        paddingVertical:10,
         fontSize:16,
         fontWeight:"700"
     },
@@ -63,7 +63,6 @@ const styles=StyleSheet.create({
     button:{
         backgroundColor:COLORS.primary,
         borderRadius:9,
-
     },
 
     buttontext:{

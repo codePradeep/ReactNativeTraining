@@ -1,5 +1,6 @@
 import { AccessToken, LoginManager, Profile } from "react-native-fbsdk-next";
 import { GoogleSignin, statusCodes } from "@react-native-google-signin/google-signin";
+import { NavigationContainer } from "@react-navigation/native";
 
 const signInwithGoogle = async () => {
 
@@ -47,7 +48,8 @@ const signInwithGoogle = async () => {
             if (result.isCancelled) {
               console.log("==> Login cancelled");
             } else {
-              console.log("==> Login success with permissions: " ,result.grantedPermissions?.toString());
+             // console.log("==> Login success with permissions: " ,result.grantedPermissions?.toString());
+              
               AccessToken.getCurrentAccessToken().then((data) => { console.log(data) })
             }
            },

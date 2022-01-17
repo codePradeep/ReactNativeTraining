@@ -10,12 +10,15 @@ const data = {
     google: false,
 }
 const CheckoutModel = (props: CheckoutModelprops) => {
+    const { navigation } = props
+
     const [modalVisible, setModalVisible] = useState(false);
     const [istoggle, setistoggle] = useState(data)
 
-    const { navigation } = props
+    
     return (
-        <Checkout navigation={navigation}
+        <Checkout
+            navigation={navigation}
             istoggle={istoggle}
             setistoggle={setistoggle}
             data={data}

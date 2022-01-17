@@ -48,7 +48,10 @@ marginHorizontal:10
         alignItems: 'center',
         bottom: 10,
         borderRadius: 90,
-        marginVertical: 10
+        marginVertical: 10,
+      
+        padding:5,
+        width:"80%"
 
     },
     itemicon: {

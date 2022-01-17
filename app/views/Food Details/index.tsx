@@ -172,7 +172,7 @@ const FoodDetail = (props: FoodDetailprops) => {
                     </View>
                     <TouchableOpacity
                         style={styles.button}
-                        onPress={()=>navigation.navigate(Screen.CheckoutModel)}
+                        onPress={()=>navigation.navigate(Screen.Cart)}
                     >
                         <Text style={styles.buttontext}> {Constant.Button.buynow}</Text>
                         <Text style={styles.buttontext}>${item.price * count}</Text>

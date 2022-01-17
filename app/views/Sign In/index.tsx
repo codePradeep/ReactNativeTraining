@@ -18,11 +18,12 @@ interface signinprops {
     Emailinpute: (text: string) => void
     EnterPassword: (text: string) => void,
     visible: boolean
-    setvisible: any
+    setvisible:React.Dispatch<React.SetStateAction<boolean>>
     isEnabled: boolean
-    toggleSwitch: any
+    toggleSwitch: () => void
     signInwithGoogle: () => Promise<void>
     SigninWithFacebook: () => void
+    submit: () => void
 }
 
 const SignIn = (props: signinprops) => {
@@ -37,7 +38,8 @@ const SignIn = (props: signinprops) => {
         isEnabled,
         toggleSwitch,
         signInwithGoogle,
-        SigninWithFacebook
+        SigninWithFacebook,
+        submit
     } = props
 
     return (
@@ -56,7 +58,9 @@ const SignIn = (props: signinprops) => {
                         <View>
                             <View style={styles.EmailContainer}>
                                 <Text style={styles.Email}>{Constant.SigninScreen.email}</Text>
-                                {!isvalidEmail ? <Text style={styles.bottomsignuptext}>{Constant.Validation.EmailValidation}</Text> : <View />}
+                                {!isvalidEmail ? <Text style={styles.bottomsignuptext}>
+                                    {/* {Constant.Validation.EmailValidation} */}
+                                    </Text> : <View />}
                             </View>
                             <View style={styles.input}>
                                 <TextInput
@@ -64,10 +68,9 @@ const SignIn = (props: signinprops) => {
                                     onChangeText={Emailinpute}
                                     style={styles.textinput}
                                 />
-                                <Image source={isvalidEmail ? icon.check_tick : icon.wrong} style={styles.icon} />
+                               {isvalidEmail? <Image source={isvalidEmail ? icon.check_tick : icon.wrong} style={styles.icon} />:null}
                             </View>
                         </View>
-
 
                         <View>
                             <Text style={styles.Email}>{Constant.SigninScreen.password}</Text>
@@ -76,7 +79,6 @@ const SignIn = (props: signinprops) => {
                                     secureTextEntry={visible}
                                     onChangeText={EnterPassword}
                                     style={styles.textinput}
-
                                 />
                                 <TouchableOpacity style={styles.eyeiconcontainer} onPress={() => { visible ? setvisible(false) : setvisible(true) }}   >
                                     <Image source={visible ? icon.closedeyes : icon.openeye} style={styles.icon} />
@@ -101,7 +103,7 @@ const SignIn = (props: signinprops) => {
                             </TouchableOpacity>
                         </View>
                         <KeyboardAvoidingView style={styles.subcontainer}>
-                            <Abutton title={Constant.Button.signin} OnPress={() =>{isvalidEmail&&isvalidPassword? navigation.navigate(Screen.DrawerNavigation):null}} />
+                            <Abutton title={Constant.Button.signin} OnPress={() =>{submit()}} />
                             <View style={[styles.flexdirection, { alignSelf: "center" }]}>
                                 <Text style={styles.bottomtext}>{Constant.SigninScreen.dont}</Text>
                                 <TouchableOpacity onPress={() => navigation.navigate(Screen.SignUpModel)}>

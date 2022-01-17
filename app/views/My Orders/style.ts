@@ -85,11 +85,13 @@ const styles = StyleSheet.create({
     clickedbutton: {
         backgroundColor: COLORS.primary,
         borderRadius: 9,
+        width: "45%"
 
     },
     notclickedbutton: {
         backgroundColor: "#fff3e3",
         borderRadius: 9,
+        width: "45%"
 
     },
     clickedbuttontext: {
@@ -98,7 +100,7 @@ const styles = StyleSheet.create({
         textAlign: "center",
         fontWeight: "700",
         fontSize: 19,
-        width: 180
+        
 
     },
     notclickedbuttontext: {
@@ -107,7 +109,7 @@ const styles = StyleSheet.create({
         textAlign: "center",
         fontWeight: "700",
         fontSize: 19,
-        width: 180
+       
 
     },
     endbuttontext: {
@@ -126,11 +128,9 @@ const styles = StyleSheet.create({
     },
     flatlistcontainer: {
         flex: 1
-
     },
     rendermaincontainer:{
         flex:1,
-
     },
     Ticket: {
         backgroundColor: COLORS.lightGray2,
@@ -138,7 +138,6 @@ const styles = StyleSheet.create({
         borderRadius:15,
         
         marginHorizontal: 20
-
     },
     icon: {
         height: 60,

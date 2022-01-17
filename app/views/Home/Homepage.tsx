@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { View, Text, TouchableOpacity, Image, TextInput, FlatList, ScrollView, Modal } from "react-native";
-import { Header, Slider } from "../../common";
+import { Abutton, Header, Slider } from "../../common";
 import { categories, COLORS, Constant, FONTS, icon, Screen } from "../../config";
 import RanderListItem from "./RanderListItem";
 import RenderSecendlist from "./RenderSecendList";
@@ -24,7 +24,8 @@ interface Homepageprops {
     setprice: any
     filteredData: any
     filterdata: boolean
-    setfilterdata:React.Dispatch<React.SetStateAction<boolean>>
+    setfilterdata: React.Dispatch<React.SetStateAction<boolean>>
+    Resetfilter:() => void
 
 
 }
@@ -46,7 +47,8 @@ const Homepage = (props: Homepageprops) => {
         setdistance,
         setprice,
         filteredData,
-        filterdata, setfilterdata
+        filterdata, setfilterdata,
+        Resetfilter
 
     } = props
 
@@ -119,6 +121,7 @@ const Homepage = (props: Homepageprops) => {
                         </TouchableOpacity>
                         <Text style={styles.HeaderText}>{Constant.screens.home}</Text>
                         <TouchableOpacity style={styles.HeaderRight}
+                        onPress={()=>navigation.navigate(Screen.MyAccountModel)}
                         >
                             <Image source={icon.user_avatar} style={styles.headerRightimage} />
                         </TouchableOpacity>
@@ -128,7 +131,7 @@ const Homepage = (props: Homepageprops) => {
                 <View style={styles.searchbarcontainer}>
                     <Image source={icon.search} style={styles.searchbarimage} />
                     <TextInput style={styles.searchbarinput} />
-                    <TouchableOpacity onPress={() => setModalVisible(true)} style={{ alignSelf: "center" }}>
+                    <TouchableOpacity onPress={() => {setModalVisible(true)}} style={{ alignSelf: "center" }}>
                         <Image source={icon.filter} style={styles.searchbarimage} />
                     </TouchableOpacity>
                 </View>
@@ -138,14 +141,15 @@ const Homepage = (props: Homepageprops) => {
                     showsVerticalScrollIndicator={false}
                 >
 
-                    <View style={styles.addresscontainer}>
-                        <Text style={[FONTS.body4, { color: COLORS.primary, marginVertical: 5 }]}>{Constant.HomeScreen.deliverto}</Text>
-                        <View style={styles.DeliveryContainer}>
+                    <View style={styles.DeliveryContainer}>
+                        <View>
+                            <Text style={[FONTS.body4, { color: COLORS.primary, marginVertical: 5 }]}>{Constant.HomeScreen.deliverto}</Text>
                             <Text style={FONTS.h4}>Sector-22, Noida ,UP </Text>
-                            <TouchableOpacity onPress={() => setfilterdata(false)} style={styles.button}>
-                                {filterdata ? <Text style={styles.closefilter} >Close Filter</Text> : null}
-                            </TouchableOpacity>
                         </View>
+                        <TouchableOpacity onPress={() => {setfilterdata(false),Resetfilter()}} style={styles.button}>
+                            {filterdata ? <Text style={styles.closefilter} >Close Filter</Text> : null}
+                        </TouchableOpacity>
+
                     </View>
 
                     {!filterdata ?
@@ -183,10 +187,10 @@ const Homepage = (props: Homepageprops) => {
                         <View>
                             <View style={styles.mainsmallcontainer}>
                                 <View style={styles.smallcontainer}>
-                                    <Text style={FONTS.h4}>{Constant.HomeScreen.populer}</Text>
-                                    <Text style={[FONTS.body4, { color: COLORS.red }]}>{Constant.HomeScreen.showall}</Text>
+                                    <Text style={FONTS.h3}>{Constant.HomeScreen.FilterData}</Text>
+                                    <Text style={[FONTS.body4, { color: COLORS.red }]}></Text>
                                 </View>
-                                <FlatList
+                               <FlatList
                                     horizontal
                                     data={filteredData}
                                     initialScrollIndex={0}
@@ -264,7 +268,8 @@ const Homepage = (props: Homepageprops) => {
                                     min={1}
                                     max={20}
                                     prifix="$"
-                                    onValueChange={(values: any) => setprice(values)} postfix={undefined}
+                                    onValueChange={(values: any) => setprice(values)} 
+                                    postfix={undefined}
                                 />
                             </View>
 
@@ -273,12 +278,9 @@ const Homepage = (props: Homepageprops) => {
                                 <CustomRatingBar />
                             </View>
                         </ScrollView>
-                        <TouchableOpacity
-                            style={styles.button}
-                            onPress={() => { setModalVisible(false), setfilterdata(true) }}
-                        >
-                            <Text style={styles.buttontext}> {Constant.Button.applyfilter}</Text>
-                        </TouchableOpacity>
+
+                        <Abutton title={Constant.Button.applyfilter} OnPress={() => { setModalVisible(false), setfilterdata(true) }} />
+                        
 
                     </View>
 

@@ -15,14 +15,9 @@ const Tab = createBottomTabNavigator();
 const Roottab = ({navigation,style}) => {
   const orientation = useOrientation();
 
-  const isStatus = useDrawerStatus();
+
   const isprogressdata=useDrawerProgress()
-  
-  // const aniVar = useRef(new Animated.Value(0)).current;
-  // const scale = aniVar.interpolate( {
-  //     inputRange: [0, 1],
-  //     outputRange: [1, 0.9],
-  //   });
+
   
   const scale = Animated.interpolateNode(isprogressdata, {
     inputRange: [0, 1],

@@ -1,7 +1,8 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import { View } from "react-native";
-import { SigninWithFacebook, signInwithGoogle } from "../config";
+import { AccessToken, LoginManager } from "react-native-fbsdk-next";
+import { Screen, SigninWithFacebook, signInwithGoogle } from "../config";
 import { EmailValidate, PasswordValidate } from "../config/validation";
 import SignIn from "../views/Sign In";
 
@@ -14,34 +15,54 @@ const SignInModel = (props: SignInModelprops) => {
     const { navigation } = props
     const [Email, setEmail] = useState("");
     const [password, setpassword] = useState("");
-    const [isvalidEmail, setisvalidEmail] = useState(true)
+    const [isvalidEmail, setisvalidEmail] = useState(false)
     const [isvalidPassword, setisvalidPassword] = useState(true)
     const [visible,setvisible]=useState(true)
     const [isEnabled, setIsEnabled] = useState(false);
+
     const firstRender = useRef(true)
 
-useEffect(() => {
-    if (firstRender.current) {
-        firstRender.current = false
-        return
-      }
-      submit()
-}, [Email,password])
+// useEffect(() => {
+//     if (firstRender.current) {
+//         firstRender.current = false
+//         return
+//       }
+//       submit()
+// }, [Email,password])
+
+
 
 const submit = () => {
-    let validate = EmailValidate(Email)
-    setisvalidEmail(validate)
-    validate = PasswordValidate(password)
-    setisvalidPassword(validate)
+    setisvalidEmail(EmailValidate(Email))
+    setisvalidPassword(PasswordValidate(password))
+   return isvalidEmail==true&&isvalidPassword==true ? navigation.navigate(Screen.DrawerNavigation):null
   }
 const toggleSwitch = () => setIsEnabled(previousState => !previousState);
+
+const SigninWithFacebook = () => {
+    LoginManager.logInWithPermissions(["public_profile", "email"]).then(
+
+      function(result) {
+        if (result.isCancelled) {
+          console.log("==> Login cancelled");
+        } else {
+         // console.log("==> Login success with permissions: " ,result.grantedPermissions?.toString());
+          navigation.navigate(Screen.DrawerNavigation)
+          AccessToken.getCurrentAccessToken().then((data) => { console.log(data) })
+        }
+       },
+       function(error) {
+        console.log("==> Login fail with error: " + error);
+       }
+     );
+  }
 
     return (
         <SignIn
             navigation={navigation}
             isvalidEmail={isvalidEmail}
             isvalidPassword={isvalidPassword}
-            Emailinpute={(text: string) => setEmail(text)}
+            Emailinpute={(text: string) => {setEmail(text)}}
             EnterPassword={(text: string) => setpassword(text)}
             visible={visible}
             setvisible={setvisible}
@@ -49,6 +70,7 @@ const toggleSwitch = () => setIsEnabled(previousState => !previousState);
             toggleSwitch={toggleSwitch}
             signInwithGoogle={signInwithGoogle}
             SigninWithFacebook={SigninWithFacebook}
+            submit={submit}
         />
     )
 }

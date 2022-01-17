@@ -23,6 +23,7 @@ const Onborading = (props: Onboardingprops) => {
 
 
         <PagerView style={styles.pagerview} initialPage={0} ref={pagerRef} >
+          
             <View key="1" style={styles.FirstView} >
                 <View style={styles.maincontainer}>
                     <Image source={icon.mainlogo} style={styles.image} />
@@ -31,7 +32,10 @@ const Onborading = (props: Onboardingprops) => {
                     <Text style={styles.subheading}>when you oder Eat treet,we'll hook you up with exclusive coupon,specials and rewards</Text>
                 </View>
                 <View style={styles.buttoncontainer}>
-                    <TouchableOpacity style={styles.skipbutton}>
+                    <TouchableOpacity style={styles.skipbutton}
+                                        onPress={()=>handlePageChange(2)}
+
+                    >
                         <Text style={styles.skiptext}>Skip</Text>
 
                     </TouchableOpacity>
@@ -42,6 +46,8 @@ const Onborading = (props: Onboardingprops) => {
                     </TouchableOpacity>
                 </View>
             </View>
+            
+            
             <View key="2" style={styles.FirstView} >
                 <View style={styles.maincontainer}>
                     <Image source={icon.mainlogo2} style={styles.image} />
@@ -50,7 +56,9 @@ const Onborading = (props: Onboardingprops) => {
                     <Text style={styles.subheading}>We Make food ordering fast,simple and free-no matter if you order online or cash</Text>
                 </View>
                 <View style={styles.buttoncontainer}>
-                    <TouchableOpacity style={styles.skipbutton}>
+                    <TouchableOpacity style={styles.skipbutton}
+                    onPress={()=>handlePageChange(2)}
+                    >
                         <Text style={styles.skiptext}>Skip</Text>
 
                     </TouchableOpacity>
@@ -61,6 +69,8 @@ const Onborading = (props: Onboardingprops) => {
                     </TouchableOpacity>
                 </View>
             </View>
+           
+           
             <View key="3" style={styles.FirstView} >
                 <View style={styles.maincontainer}>
                     <Image source={icon.mainlogo3} style={styles.image} />

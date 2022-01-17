@@ -191,6 +191,7 @@ const styles = StyleSheet.create({
     button: {
         backgroundColor: COLORS.primary,
         borderRadius: 9,
+        alignSelf:"center"
     },
     Inputtext: {
         width: "88%",
@@ -250,13 +251,13 @@ const styles = StyleSheet.create({
     activeStyle: {
         backgroundColor: COLORS.primary,
         borderRadius: 10,
-        width: 120
+        width: "30%"
     },
     inactiveStyle: {
         borderColor: COLORS.gray2,
         borderWidth: 1,
         borderRadius: 10,
-        width: 120
+        width: "30%"
     },
     activeTextStyle: {
         color: COLORS.white,
@@ -315,7 +316,8 @@ const styles = StyleSheet.create({
     },
     DeliveryContainer:{
         flexDirection:"row",
-        justifyContent:"space-between"
+        justifyContent:"space-between",
+        marginVertical:10
     },
     DeliveryContainericon:{
         // flex:.2,
@@ -326,7 +328,9 @@ const styles = StyleSheet.create({
     },
     closefilter:{
         color:COLORS.white,
-        margin:10 ,
+        padding:10 ,
+        alignSelf:"center",
+        textAlignVertical:"center"
     }
 
 

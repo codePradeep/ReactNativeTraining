@@ -4,7 +4,7 @@ const Screen = {
     CheckoutModel: "CheckoutModel",
     DeliveryStatusModel: "DeliveryStatusModel",
     FoodDetailModel: "FoodDetailModel",
-    Homemodel: "Homemodel",
+    Homemodel: "HomeTab",
     MapViewModel: "MapViewModel",
     MyAccountModel: "MyAccountModel",
     MyCardModel: "MyCardModel",
@@ -20,7 +20,9 @@ const Screen = {
     SignInModel: "SignInModel",
     SignUpModel: "SignUpModel",
     SuccessModel: "SuccessModel",
-    DrawerNavigation:"DrawerNavigation"
+    DrawerNavigation:"DrawerNavigation",
+    //TAB NAVIGATION
+    Cart:"Cart"
 }
 
 export default Screen

@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, Text, View, SafeAreaView, SectionList, StatusBar, Image, TouchableOpacity, FlatList, ScrollView } from "react-native";
-import { COLORS, Constant, icon } from "../../config";
+import { COLORS, Constant, icon, Screen } from "../../config";
 import Item from "./renderItem";
 import styles from "./style";
 
@@ -38,10 +38,11 @@ const NotificationTab = (props: NotificationTabprops) => {
                         </View>
                     </TouchableOpacity>
                     <Text style={styles.HeaderText}>{Constant.screens.notificationTab}</Text>
-                    <View style={styles.HeaderRight} >
-                        <Image source={icon.user_avatar} style={styles.headerRightimage} />
-
-                    </View>
+                    <TouchableOpacity style={styles.HeaderRight}
+                        onPress={()=>navigation.navigate(Screen.MyAccountModel)}
+                        >
+                            <Image source={icon.user_avatar} style={styles.headerRightimage} />
+                        </TouchableOpacity>
                 </View>
             </View>
             

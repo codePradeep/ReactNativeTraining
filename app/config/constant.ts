@@ -104,6 +104,7 @@ HomeScreen:{
     populer:"Popular Near You",
     showall:"Show All",
     Recommonded:"Recommended",
+    FilterData:"Filtered Items",
     //filter
     filter:"Filter Your Search",
     distance:"Distance",

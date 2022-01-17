@@ -33,7 +33,7 @@ const RenderSecendlist = (props: renderprops) => {
                         <Text style={[styles.itemtext, { color: COLORS.black }]}>{item.calories} calories</Text>
                     </View>
                     <TouchableOpacity>
-                        <Image source={icon.love} style={styles.Icon} />
+                        <Image source={icon.love} style={[styles.Icon,{tintColor:item.isFavourite?COLORS.primary:COLORS.lightGray1}]} />
                     </TouchableOpacity>
                 </View>
                 <Image source={item.image} style={styles.image} />

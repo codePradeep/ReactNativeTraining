@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { View, Text, TouchableOpacity,Image } from 'react-native';
 import { DrawerContentScrollView} from '@react-navigation/drawer';
-import { COLORS, icon } from '../../config';
-import DrawerData from '../../config/DrawerData';
+import { COLORS, icon, Screen } from '../../config';
+import {DrawerData,userdata} from '../../config/DrawerData';
 import style from './style';
 
 
@@ -18,16 +18,10 @@ const CustomDrawer = (props: any) => {
             <View style={style.container}>
                 <Image source={icon.user_avatar} style={style.user}/>
                 <View style={style.usertext}>
-                    <Text style={style.username}>Username</Text>
-                    <Text style={style.email}>EmailID</Text>
+                    <Text style={style.username}>{userdata.username}</Text>
+                    <Text style={style.email}>{userdata.email}</Text>
                 </View>
             </View>
-
-
-
-
-
-
 
             <DrawerContentScrollView {...props}>
                 <View style={style.drawercontainer}>
@@ -57,6 +51,7 @@ const CustomDrawer = (props: any) => {
 
             <TouchableOpacity
                 style={style.buttoncontainer}
+                onPress={()=>navigation.navigate(Screen.OnboradingModel)}
             >
                 <Image source={icon.door}  style={style.itemicon}/>
                 <Text style={style.buttontext}>Log Out</Text>

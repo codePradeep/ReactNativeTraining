@@ -105,6 +105,7 @@ HomeScreen:{
     showall:"Show All",
     Recommonded:"Recommended",
     FilterData:"Filtered Items",
+    Search:"Search",
     //filter
     filter:"Filter Your Search",
     distance:"Distance",

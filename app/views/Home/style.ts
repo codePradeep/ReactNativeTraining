@@ -61,9 +61,12 @@ const styles = StyleSheet.create({
     },
     searchbarinput: {
 
-        width: "85%",
+        
         fontSize: 16
 
+    },
+    searchclose:{
+        alignSelf:"center"
     },
     searchbarimage: {
         height: 25,
@@ -298,9 +301,16 @@ const styles = StyleSheet.create({
         justifyContent: "space-between",
         marginVertical: 10
     },
+    searchcontainer:{
+        marginBottom:20
+    },
+    listsaperator:{
+       
+
+    },
     mainsmallcontainer: {
         flex: 1,
-        marginVertical: 10
+        
     },
     subfirstrendercontainer: {
         flex: 1,
@@ -317,7 +327,7 @@ const styles = StyleSheet.create({
     DeliveryContainer:{
         flexDirection:"row",
         justifyContent:"space-between",
-        marginVertical:10
+        marginVertical:5
     },
     DeliveryContainericon:{
         // flex:.2,

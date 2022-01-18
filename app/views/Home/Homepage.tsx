@@ -25,7 +25,13 @@ interface Homepageprops {
     filteredData: any
     filterdata: boolean
     setfilterdata: React.Dispatch<React.SetStateAction<boolean>>
-    Resetfilter:() => void
+    Resetfilter: () => void
+    Searchtext: any
+    isSearch: boolean
+    setisSearch: any
+    searchText: string
+    SearchData: any
+    resetsearch: any
 
 
 }
@@ -47,8 +53,15 @@ const Homepage = (props: Homepageprops) => {
         setdistance,
         setprice,
         filteredData,
-        filterdata, setfilterdata,
-        Resetfilter
+        filterdata,
+        setfilterdata,
+        Resetfilter,
+        Searchtext,
+        isSearch,
+        setisSearch,
+        searchText,
+        SearchData,
+        resetsearch
 
     } = props
 
@@ -121,7 +134,7 @@ const Homepage = (props: Homepageprops) => {
                         </TouchableOpacity>
                         <Text style={styles.HeaderText}>{Constant.screens.home}</Text>
                         <TouchableOpacity style={styles.HeaderRight}
-                        onPress={()=>navigation.navigate(Screen.MyAccountModel)}
+                            onPress={() => navigation.navigate(Screen.MyAccountModel)}
                         >
                             <Image source={icon.user_avatar} style={styles.headerRightimage} />
                         </TouchableOpacity>
@@ -130,27 +143,59 @@ const Homepage = (props: Homepageprops) => {
 
                 <View style={styles.searchbarcontainer}>
                     <Image source={icon.search} style={styles.searchbarimage} />
-                    <TextInput style={styles.searchbarinput} />
-                    <TouchableOpacity onPress={() => {setModalVisible(true)}} style={{ alignSelf: "center" }}>
+                    <TextInput style={[styles.searchbarinput, { width: isSearch ? "75%" : "85%", }]}
+                        onChangeText={Searchtext}
+                        value={searchText}
+                    />
+                    {isSearch ? <TouchableOpacity onPress={() => { setisSearch(false), resetsearch(Text) }} style={styles.searchclose}>
+                        <Image source={icon.cross} style={[styles.searchbarimage]} />
+                    </TouchableOpacity> : null}
+                    <TouchableOpacity onPress={() => { setModalVisible(true) }} style={{ alignSelf: "center" }}>
                         <Image source={icon.filter} style={styles.searchbarimage} />
                     </TouchableOpacity>
                 </View>
+                <View style={styles.DeliveryContainer}>
+                    <View>
+                        <Text style={[FONTS.body4, { color: COLORS.primary, marginVertical: 5 }]}>{Constant.HomeScreen.deliverto}</Text>
+                        <Text style={FONTS.h4}>Sector-22, Noida ,UP </Text>
+                    </View>
+                    <TouchableOpacity onPress={() => { setfilterdata(false), Resetfilter }} style={styles.button}>
+                        {filterdata ? <Text style={styles.closefilter} >Close Filter</Text> : null}
+                    </TouchableOpacity>
+
+                </View>
+
+
+
 
                 <ScrollView
                     style={styles.scrollview}
                     showsVerticalScrollIndicator={false}
                 >
-
-                    <View style={styles.DeliveryContainer}>
-                        <View>
-                            <Text style={[FONTS.body4, { color: COLORS.primary, marginVertical: 5 }]}>{Constant.HomeScreen.deliverto}</Text>
-                            <Text style={FONTS.h4}>Sector-22, Noida ,UP </Text>
+                    {!isSearch ? null :
+                        <View style={styles.searchcontainer}>
+                            <View style={styles.mainsmallcontainer}>
+                                <View style={styles.smallcontainer}>
+                                    <Text style={FONTS.h3}>{Constant.HomeScreen.Search}:{searchText}</Text>
+                                    <Text style={[FONTS.body4, { color: COLORS.red }]}></Text>
+                                </View>
+                             {SearchData.length !=0?   <FlatList
+                                    horizontal
+                                    data={SearchData}
+                                    initialScrollIndex={0}
+                                    showsHorizontalScrollIndicator={false}
+                                    renderItem={({ item, index }) => <RenderSecendlist item={item}
+                                        navigation={navigation}
+                                        index={0} />}
+                                    keyExtractor={(_, index) => index.toString()} />:
+                                    <Text style={FONTS.h3}> Searched Item Is Not Found </Text>
+                                    }
+                            </View>
+                            <View style={styles.listsaperator} />
                         </View>
-                        <TouchableOpacity onPress={() => {setfilterdata(false),Resetfilter()}} style={styles.button}>
-                            {filterdata ? <Text style={styles.closefilter} >Close Filter</Text> : null}
-                        </TouchableOpacity>
+                    }
 
-                    </View>
+
 
                     {!filterdata ?
                         <><View style={styles.firstflatlistContainer}>
@@ -174,6 +219,7 @@ const Homepage = (props: Homepageprops) => {
                                 <FlatList
                                     horizontal
                                     data={menulist}
+                                    extraData={menulist}
                                     initialScrollIndex={0}
                                     showsHorizontalScrollIndicator={false}
                                     renderItem={({ item, index }) => <RenderSecendlist item={item}
@@ -182,17 +228,16 @@ const Homepage = (props: Homepageprops) => {
                                     keyExtractor={(_, index) => index.toString()} />
                             </View></>
                         :
-
-
                         <View>
                             <View style={styles.mainsmallcontainer}>
                                 <View style={styles.smallcontainer}>
                                     <Text style={FONTS.h3}>{Constant.HomeScreen.FilterData}</Text>
                                     <Text style={[FONTS.body4, { color: COLORS.red }]}></Text>
                                 </View>
-                               <FlatList
+                                <FlatList
                                     horizontal
                                     data={filteredData}
+                                    extraData={filteredData}
                                     initialScrollIndex={0}
                                     showsHorizontalScrollIndicator={false}
                                     renderItem={({ item, index }) => <RenderSecendlist item={item}
@@ -201,10 +246,6 @@ const Homepage = (props: Homepageprops) => {
                                     keyExtractor={(_, index) => index.toString()} />
                             </View>
                         </View>
-
-
-
-
                     }
                     <View style={styles.mainsmallcontainer}>
                         <View style={styles.smallcontainer}>
@@ -221,9 +262,9 @@ const Homepage = (props: Homepageprops) => {
                                 index={0} />}
                             keyExtractor={(_, index) => index.toString()}
                         />
-
                     </View>
                 </ScrollView>
+
 
 
                 <Modal animationType="slide"
@@ -268,7 +309,7 @@ const Homepage = (props: Homepageprops) => {
                                     min={1}
                                     max={20}
                                     prifix="$"
-                                    onValueChange={(values: any) => setprice(values)} 
+                                    onValueChange={(values: any) => setprice(values)}
                                     postfix={undefined}
                                 />
                             </View>
@@ -280,7 +321,7 @@ const Homepage = (props: Homepageprops) => {
                         </ScrollView>
 
                         <Abutton title={Constant.Button.applyfilter} OnPress={() => { setModalVisible(false), setfilterdata(true) }} />
-                        
+
 
                     </View>
 

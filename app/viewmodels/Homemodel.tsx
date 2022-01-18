@@ -28,9 +28,14 @@ const Homemodel = (props: Homemodelprops) => {
     const [price, setprice] = useState([])
 
     const [filterdata, setfilterdata] = useState(false)
+    const [searchText,SetsearchText]=useState("")
+    const [isSearch,setisSearch]=useState(false)
 
 
     let menudata = menu
+
+    //let obj = menu.find(a =>a.name.toLowerCase()  === searchData.toLowerCase());text.match("ain")
+    const SearchData = menu.filter(a =>a.name.toLowerCase().match(searchText.toLowerCase())).map(a=>a);
 
     if (defaultRating != 0) {
         menudata = menudata.filter(a => a.rating == defaultRating)
@@ -44,7 +49,6 @@ const Homemodel = (props: Homemodelprops) => {
     
     if (price.length != 0) {
         menudata = menudata.filter(a => a.price > price[0] && a.price < price[1])
-        
     }
 
     const Resetfilter = () => {
@@ -75,7 +79,13 @@ const Homemodel = (props: Homemodelprops) => {
             filterdata={filterdata}
             setfilterdata={setfilterdata}
             Resetfilter={Resetfilter}
-        />
+            Searchtext={(text: string) => {SetsearchText(text),setisSearch(true)}}
+            isSearch={isSearch}
+            searchText={searchText}
+            setisSearch={setisSearch} 
+            SearchData={SearchData}  
+            resetsearch={(text:string)=>{SetsearchText("")}}          
+            />
     )
 }
 export default Homemodel;

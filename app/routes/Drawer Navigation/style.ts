@@ -32,6 +32,7 @@ marginHorizontal:10
         resizeMode: "contain",
       alignSelf: "center",
         position:"absolute",
+        tintColor:COLORS.white2
         
         
     },
@@ -60,7 +61,9 @@ marginHorizontal:10
         justifyContent:"space-evenly",
         flexDirection:"row",
         backgroundColor:COLORS.darkBlue,
-        alignItems:"center"
+        alignItems:"center",
+        borderTopLeftRadius:40,
+        borderTopRightRadius:40
     },
     usertext: {
         paddingLeft: 10,

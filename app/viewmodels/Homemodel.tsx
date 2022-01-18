@@ -30,23 +30,24 @@ const Homemodel = (props: Homemodelprops) => {
   const[filterdata,setfilterdata]=useState(false)
 
     
-        let menudata=menu.filter(a=>a.categories==defaultitem)
-        if (defaultRating!=0){
-            menudata= menu.filter(a=>a.rating==defaultRating)
-        }
-        else if (defaulttime.length!=0){
-            menudata= menu.filter(a=>a.time==defaulttime)
-            
-        } else if (distance.length!=0){
-            menudata=menu.filter(a=>a.distance > distance[0] && a.distance < distance[1])
+         let menudata = menu
 
-        } else if (price.length!=0){
-            menudata=menu.filter(a=>a.price > price[0] && a.price < price[1])
-        }
-        else{
-            menudata=menu.filter(a=>a.categories==defaultitem)
-        }
+    
 
+    if (defaultRating != 0) {
+        menudata = menudata.filter(a => a.rating == defaultRating)
+    }
+    if (defaulttime != "") {
+        menudata = menudata.filter(a => a.time == defaulttime)
+    }
+    if (distance.length != 0) {
+        menudata = menudata.filter(a => a.distance > distance[0] && a.distance < distance[1])
+    }
+    
+    if (price.length != 0) {
+        menudata = menudata.filter(a => a.price > price[0] && a.price < price[1])
+        
+    }
     return (
         <Homepage
             navigation={navigation}

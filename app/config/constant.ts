@@ -56,7 +56,8 @@ Button:{
     Continue:"Continue",
     Resend:"Resend",
     TnC:"Terms and Conditions",
-    facebook:"Sign In with Facebook"
+    facebook:"Sign In with Facebook",
+    Sendotp:"Send OTP"
 
 },
 SuccessScreen:{

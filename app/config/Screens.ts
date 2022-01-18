@@ -21,6 +21,7 @@ const Screen = {
     SignUpModel: "SignUpModel",
     SuccessModel: "SuccessModel",
     DrawerNavigation:"DrawerNavigation",
+    PhoneRecoveryModel:"PhoneRecoveryModel",
     //TAB NAVIGATION
     Cart:"Cart"
 }

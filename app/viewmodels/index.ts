@@ -20,6 +20,7 @@ import FoodDetailModel from "./FoodDetailsModel";
 import DeliveryStatusModel from "./DeliveryStatusModel";
 import MyOrderModel from "./MyOrderModel";
 import MapViewModel from "./MapViewModel";
+import PhoneRecoveryModel from "./PhoneRecovery";
 export {
     Homemodel,
     PasswordRecoveryModel,
@@ -42,6 +43,7 @@ export {
     FoodDetailModel,
     DeliveryStatusModel,
     MyOrderModel,
-    MapViewModel
+    MapViewModel,
+    PhoneRecoveryModel
 
 };

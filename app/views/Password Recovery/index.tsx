@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Image, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { Abutton } from "../../common";
 import Logo from "../../common/Logo";
@@ -42,7 +42,14 @@ const PasswordRecovery = (props: PasswordRecoveryprops) => {
                                 style={styles.textinput}
                             />
                             <Image source={isvalid ? icon.check_tick : icon.wrong} style={styles.icon} />
+                            
                         </View>
+
+                        <TouchableOpacity
+                         onPress={()=>navigation.navigate(Screen.PhoneRecoveryModel)}
+                        >
+                            <Text>Recover Password By Phone Number</Text>
+                        </TouchableOpacity>
                     </View>
 
                 </View>

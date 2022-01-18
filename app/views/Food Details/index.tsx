@@ -26,7 +26,6 @@ const FoodDetail = (props: FoodDetailprops) => {
         Subs, 
         count,
         maxsize, } = props
-
     const item = menu[0]
 
 

@@ -2,7 +2,7 @@ import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import fetchData from '../viewmodels/ApiCallModel';
+
 import {
   AddNewCardModel,
   ChangePasswordModel,
@@ -20,6 +20,7 @@ import {
   OnboradingModel,
   OtpModel,
   PasswordRecoveryModel,
+  PhoneRecoveryModel,
   RiderReviewModel,
   SettingModel,
   SignInModel,
@@ -27,7 +28,6 @@ import {
   SuccessModel
 } from '../viewmodels';
 import DrawerNavigation from './Drawer Navigation';
-import Pushnotification from '../views/Push Notification';
 
 const Stack = createNativeStackNavigator();
 
@@ -57,7 +57,7 @@ const Routenavigation = () => {
         <Stack.Screen name="DrawerNavigation" component={DrawerNavigation} options={{ headerShown: false }} />
         <Stack.Screen name="MyOrderModel" component={MyOrderModel} options={{ headerShown: false }} />
         <Stack.Screen name="MapViewModel" component={MapViewModel} options={{ headerShown: false }} />
-        <Stack.Screen name="calldemo" component={fetchData} /> 
+        <Stack.Screen name="PhoneRecoveryModel" component={PhoneRecoveryModel} options={{ headerShown: false }}  />
 
       </Stack.Navigator>
     </NavigationContainer>

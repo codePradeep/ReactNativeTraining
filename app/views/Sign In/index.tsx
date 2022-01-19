@@ -23,7 +23,7 @@ interface signinprops {
     toggleSwitch: () => void
     signInwithGoogle: () => Promise<void>
     SigninWithFacebook: () => void
-    submit: () => void
+    submit:any
 }
 
 const SignIn = (props: signinprops) => {
@@ -103,7 +103,7 @@ const SignIn = (props: signinprops) => {
                             </TouchableOpacity>
                         </View>
                         <KeyboardAvoidingView style={styles.subcontainer}>
-                            <Abutton title={Constant.Button.signin} OnPress={() =>{submit()}} />
+                            <Abutton title={Constant.Button.signin} OnPress={submit} />
                             <View style={[styles.flexdirection, { alignSelf: "center" }]}>
                                 <Text style={styles.bottomtext}>{Constant.SigninScreen.dont}</Text>
                                 <TouchableOpacity onPress={() => navigation.navigate(Screen.SignUpModel)}>

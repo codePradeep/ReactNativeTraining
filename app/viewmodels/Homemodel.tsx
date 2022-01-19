@@ -28,14 +28,12 @@ const Homemodel = (props: Homemodelprops) => {
     const [price, setprice] = useState([])
 
     const [filterdata, setfilterdata] = useState(false)
+    
     const [searchText,SetsearchText]=useState("")
     const [isSearch,setisSearch]=useState(false)
 
 
     let menudata = menu
-
-    //let obj = menu.find(a =>a.name.toLowerCase()  === searchData.toLowerCase());text.match("ain")
-    
     const SearchData = menu.filter(a =>a.name.toLowerCase().match(searchText.toLowerCase())).map(a=>a);
 
     if (defaultRating != 0) {

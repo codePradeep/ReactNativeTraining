@@ -44,8 +44,9 @@ const styles = StyleSheet.create({
     },
     headerRightimage: {
         height: 40,
-        width: 50,
-        resizeMode: "contain",
+        width: 40,
+        borderRadius:180,
+        //resizeMode: "contain",
         alignSelf: "center",
     },
     searchbarcontainer: {

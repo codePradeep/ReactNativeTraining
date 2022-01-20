@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import { menu } from "../config";
 
 import Homepage from "../views/Home/Homepage";
@@ -56,6 +57,11 @@ const Homemodel = (props: Homemodelprops) => {
         setdistance([])
         setprice([])
     }
+    type DefaultRootStat={
+        profile:string
+    }
+         const Profilepic= useSelector<DefaultRootStat>(state => state.profile)
+         
 
     return (
         <Homepage
@@ -83,7 +89,8 @@ const Homemodel = (props: Homemodelprops) => {
             searchText={searchText}
             setisSearch={setisSearch} 
             SearchData={SearchData}  
-            resetsearch={(text:string)=>{SetsearchText("")}}          
+            resetsearch={(text:string)=>{SetsearchText("")}}  
+            Profilepic={Profilepic}        
             />
     )
 }

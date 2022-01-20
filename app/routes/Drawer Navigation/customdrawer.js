@@ -5,6 +5,7 @@ import { COLORS, icon, Screen } from '../../config';
 import {DrawerData,userdata} from '../../config/DrawerData';
 import style from './style';
 import {launchCamera, launchImageLibrary } from 'react-native-image-picker';
+import { useSelector,useDispatch } from "react-redux";
 
 
 
@@ -13,9 +14,14 @@ const CustomDrawer = (props) => {
     
 
     const [modalVisible, setModalVisible] = React.useState(false);
-    const [imageUri, setimageUri] = React.useState('');
-    const [imageUriGallary, setimageUriGallary] = React.useState('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png');
+    // const [imageUri, setimageUri] = React.useState('');
+    // const [imageUriGallary, setimageUriGallary] = React.useState('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png');
  
+
+    const dispatch = useDispatch();
+       const Profilepic= useSelector(state => state.profile)
+       
+
 const openCamara = () => {
   const options = {
   storageOptions: {
@@ -40,11 +46,13 @@ const openCamara = () => {
   // setimageUriGallary(source.uri);
 
 
+
   const source = { uri: response.assets[0].uri};
      
   console.log('response', JSON.stringify(response.assets[0].uri));
   console.log(source)
-  setimageUriGallary(source.uri)
+ // setimageUriGallary(source.uri)
+ dispatch({type:'ADD_PROFILE_PIC',payload:source.uri})
   setModalVisible(false)
   }
   });
@@ -75,7 +83,8 @@ const openCamara = () => {
      
         console.log('response', JSON.stringify(response.assets[0].uri));
         console.log(source)
-        setimageUriGallary(source.uri)
+        dispatch({type:'ADD_PROFILE_PIC',payload:source.uri})
+        // setimageUriGallary(source.uri)
         setModalVisible(false)
       }
     });
@@ -96,7 +105,7 @@ const openCamara = () => {
                 <View style={style.imageView}>
                     
                     <TouchableOpacity onPress={()=> setModalVisible(true)} style={style.cameracontainer}>
-                    <Image source={{ uri: imageUriGallary }} style={style.user}/>
+                    <Image source={{ uri: Profilepic }} style={style.user}/>
                       <Image source={icon.camera}style={style.camera} />
                     </TouchableOpacity>
                 </View>

@@ -22,11 +22,12 @@ interface NotificationTabprops {
         image: any;
         day: string;
     }[]
+    Profilepic:any
 
 }
 
 const NotificationTab = (props: NotificationTabprops) => {
-    const { TodayData,YesterdayData, navigation } = props
+    const { TodayData,YesterdayData, navigation,Profilepic } = props
     return (
         <SafeAreaView style={styles.maincontainer}>
 
@@ -41,7 +42,7 @@ const NotificationTab = (props: NotificationTabprops) => {
                     <TouchableOpacity style={styles.HeaderRight}
                         onPress={()=>navigation.navigate(Screen.MyAccountModel)}
                         >
-                            <Image source={icon.user_avatar} style={styles.headerRightimage} />
+                            <Image source={{ uri: Profilepic }} style={styles.headerRightimage} />
                         </TouchableOpacity>
                 </View>
             </View>

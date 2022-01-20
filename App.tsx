@@ -50,8 +50,9 @@ const App = () => {
 
   return (
     
-     
+    <Provider store={store}>
      <Routenavigation />
+     </Provider>
      
   );
 };

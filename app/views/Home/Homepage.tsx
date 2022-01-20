@@ -32,6 +32,7 @@ interface Homepageprops {
     searchText: string
     SearchData: any
     resetsearch: any
+    Profilepic:any
 
 
 }
@@ -61,7 +62,8 @@ const Homepage = (props: Homepageprops) => {
         setisSearch,
         searchText,
         SearchData,
-        resetsearch
+        resetsearch,
+        Profilepic
 
     } = props
 
@@ -136,7 +138,7 @@ const Homepage = (props: Homepageprops) => {
                         <TouchableOpacity style={styles.HeaderRight}
                             onPress={() => navigation.navigate(Screen.MyAccountModel)}
                         >
-                            <Image source={icon.user_avatar} style={styles.headerRightimage} />
+                            <Image source={{ uri: Profilepic }} style={styles.headerRightimage} />
                         </TouchableOpacity>
                     </View>
                 </View>

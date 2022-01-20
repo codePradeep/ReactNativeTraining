@@ -3,6 +3,7 @@ import { icon } from "../config";
 
 import NotificationTab from "../views/Notification Tab";
 import messaging from '@react-native-firebase/messaging';
+import { useSelector } from "react-redux";
 interface NotificationTabModelprops{
     navigation:any
 }
@@ -62,12 +63,18 @@ const NotificationTabModel=(props:NotificationTabModelprops)=>{
 
       const TodayData= DATA.filter((a)=>a.day=="today")
       const YesterdayData= DATA.filter((a)=>a.day=="Yesterday")
+      type DefaultRootStat={
+        profile:string
+    }
+         const Profilepic= useSelector<DefaultRootStat>(state => state.profile)
+         
    
     return(
         <NotificationTab
          navigation={navigation}
         TodayData={TodayData}
         YesterdayData={YesterdayData}
+        Profilepic={Profilepic}
         
         />
     )

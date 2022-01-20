@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
 
         borderRadius: 40,
-        marginHorizontal:10
+        marginHorizontal:5
     },
     image: {
         width: 25,
@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
     },
     textstyle: {
         textAlignVertical: "center",
-        fontSize: 16,
+        fontSize: 13,
         color: COLORS.white,
         
         marginHorizontal: 3,

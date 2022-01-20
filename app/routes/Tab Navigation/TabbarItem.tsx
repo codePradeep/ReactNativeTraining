@@ -17,21 +17,11 @@ interface Tabbaritemprops {
 const TabbarItem = (props: any) => {
   const { focused, orientation, ICON, label } = props
 
-
-  
   const viewRef = useRef<any | null>(null);
   const textViewRef = useRef<any | null>(null);
 
 
-  // useEffect(() => {
-  //   if (focused) { // 0.3: { scale: .7 }, 0.5: { scale: .3 }, 0.8: { scale: .7 },
-  //     viewRef.current.animate({ 0: { scale: 0, rotate: "360deg" }, 1: { scale: 1, rotate: "360deg" } });
-  //     textViewRef.current.animate({ 0: { scale: 0 }, 1: { scale: 1 } });
-  //   } else {
-  //     viewRef.current.animate({ 0: { scale: 1, }, 1: { scale: 0, } });
-  //     textViewRef.current.animate({ 0: { scale: 1 }, 1: { scale: 0 } });
-  //   }
-  // }, [focused])
+ 
 
   return (
    
@@ -43,7 +33,7 @@ const TabbarItem = (props: any) => {
         ref={viewRef}
 
         style={[StyleSheet.absoluteFillObject, { backgroundColor:focused ?  COLORS.primary:"", borderRadius: 16 }]} />
-      <View style={[styles.btn,{width:90}]}>
+      <View style={[styles.btn,{width:76}]}>
         <Image style={[styles.image, { tintColor: focused ? COLORS.white2 : COLORS.gray, }]}
           source={ICON} />
 

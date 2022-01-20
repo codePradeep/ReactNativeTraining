@@ -1,24 +1,29 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import MyAccount from "../views/My Account";
 interface MyAccountModelprops {
     navigation: any
 }
 
-const Data = {
-    fullname: "Pradeep kumar sharma",
-    Phone: "Phone Number",
-    userid: "223311",
-    IDCard: "Not updated",
-    Dob: "Date of Birth",
-    gender: "Male",
-    joined: "Joind",
-    Email: "Pradeep@Pradeep.com",
-    address: "Sector 11 Noida,UP"
-}
+
+
 
 
 const MyAccountModel = (props: MyAccountModelprops) => {
     const { navigation } = props
+
+    const dispatch = useDispatch()
+
+
+    
+    type DefaultRootStat={
+        Data:any
+    }
+         const userData= useSelector<DefaultRootStat>(state => state.Data)
+
+         const Data = userData
+        
+     //    console.log("updated data===>",userData)
 
     const [DATA, setDATA] = useState(Data)
 
@@ -27,6 +32,11 @@ const MyAccountModel = (props: MyAccountModelprops) => {
     const [open, setOpen] = useState(false)
     const Gender = ["Male", "Female", "Others"]
     var datedata = date.toISOString().slice(0, 10).replace(/ /g, "");
+
+    const dispachcall=()=>{
+        console.log("data succesfully dipatched")
+        dispatch({type:'USER_DATA',payload2:DATA})
+    }
     
 
 
@@ -43,6 +53,7 @@ const MyAccountModel = (props: MyAccountModelprops) => {
             Gender={Gender}
             open={open}
             setOpen={setOpen}
+            dispachcall={()=>dispachcall()}
 
         />
     )

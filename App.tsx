@@ -11,16 +11,12 @@
 import React, { useEffect } from 'react';
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
-
 import Routenavigation from './app/routes/navigation';
-import rootReducer from './app/redux/reducer/rootreducer';
-
-import { Alert, View } from 'react-native';
 import messaging from '@react-native-firebase/messaging';
 import NotificationController from './app/controllers/NotificationController.android';
+import store from './app/redux/store';
 
 
-const store = createStore(rootReducer)
 
 const App = () => {
 
@@ -51,7 +47,9 @@ const App = () => {
   return (
     
     <Provider store={store}>
+     
      <Routenavigation />
+ 
      </Provider>
      
   );

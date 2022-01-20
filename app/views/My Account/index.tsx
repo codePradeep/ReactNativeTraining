@@ -12,17 +12,7 @@ import SelectDropdown from "react-native-select-dropdown";
 
 interface MyAccountprops {
     navigation: any
-    DATA: {
-        fullname: string;
-        Phone: string;
-        userid: string;
-        IDCard: string;
-        Dob: string;
-        gender: string;
-        joined: string;
-        Email: string;
-        address: string;
-    }
+    DATA:any
     setDATA: any
     ifclickedEdit: any
     setifclickedEdit: any
@@ -32,6 +22,7 @@ interface MyAccountprops {
     Gender: any
     open: any
     setOpen: any
+    dispachcall:any
 }
 
 
@@ -44,7 +35,8 @@ const MyAccount = (props: MyAccountprops) => {
         datedata,
         Gender,
         open,
-        setOpen } = props
+        setOpen ,
+        dispachcall} = props
 
 
 
@@ -138,12 +130,12 @@ const MyAccount = (props: MyAccountprops) => {
                                 </View>
                             </View>
                             <Input inputplaceholder={DATA.joined} label={Constant.Myaccount.joined} onChangeText={(text: string) => setDATA({ ...DATA, joined: text })} keyboardType={undefined} maxLength={8} />
-                            <Input inputplaceholder={DATA.Email} label={Constant.Myaccount.Email} onChangeText={(text: string) => setDATA({ ...DATA, Email: text })} keyboardType={"email-address"} maxLength={25} />
+                            <Input inputplaceholder={DATA.Email} label={Constant.Myaccount.Email} onChangeText={(text: string) => setDATA({ ...DATA, Email: text })} keyboardType={"email-address"} maxLength={30} />
                             <Input inputplaceholder={DATA.address} label={Constant.Myaccount.address} onChangeText={(text: string) => setDATA({ ...DATA, address: text })} keyboardType={undefined} maxLength={30} />
                             <Text />
 
                         </View>
-                        <View style={styles.buttoncontner}><Abutton OnPress={() => setifclickedEdit(true)} title={Constant.Button.save} /></View>
+                        <View style={styles.buttoncontner}><Abutton OnPress={() => {setifclickedEdit(true),dispachcall()}} title={Constant.Button.save} /></View>
                     </View>
 
                 }

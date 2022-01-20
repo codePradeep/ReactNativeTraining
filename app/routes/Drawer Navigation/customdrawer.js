@@ -20,6 +20,8 @@ const CustomDrawer = (props) => {
 
     const dispatch = useDispatch();
        const Profilepic= useSelector(state => state.profile)
+       const Userdata= useSelector(state => state.Data)
+    //   console.log("pic",Profilepic)
        
 
 const openCamara = () => {
@@ -44,15 +46,12 @@ const openCamara = () => {
   // const source = {uri: 'data:image/jpeg;base64,' + response.base64};
   // console.log("camerauri",source.uri)
   // setimageUriGallary(source.uri);
-
-
-
   const source = { uri: response.assets[0].uri};
      
   console.log('response', JSON.stringify(response.assets[0].uri));
   console.log(source)
  // setimageUriGallary(source.uri)
- dispatch({type:'ADD_PROFILE_PIC',payload:source.uri})
+  dispatch({type:'ADD_PROFILE_PIC',payload1:source.uri})
   setModalVisible(false)
   }
   });
@@ -83,7 +82,7 @@ const openCamara = () => {
      
         console.log('response', JSON.stringify(response.assets[0].uri));
         console.log(source)
-        dispatch({type:'ADD_PROFILE_PIC',payload:source.uri})
+        dispatch({type:'ADD_PROFILE_PIC',payload1:source.uri})
         // setimageUriGallary(source.uri)
         setModalVisible(false)
       }
@@ -110,8 +109,8 @@ const openCamara = () => {
                     </TouchableOpacity>
                 </View>
                 <View style={style.usertext}>
-                    <Text style={style.username}>{userdata.username}</Text>
-                    <Text style={style.email}>{userdata.email}</Text>
+                    <Text style={style.username}>{Userdata?.fullname}</Text>
+                    <Text style={style.email}>{Userdata?.Email}</Text>
                 </View>
             </View>
 

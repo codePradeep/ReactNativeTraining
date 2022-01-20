@@ -54,7 +54,7 @@ const openCamara = () => {
   dispatch({type:'ADD_PROFILE_PIC',payload1:source.uri})
   setModalVisible(false)
   }
-  });
+  });  
   };
 
   const launchLibrary = () => {

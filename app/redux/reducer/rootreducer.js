@@ -16,25 +16,16 @@ const initialState = {
 
 }
 
-
 const rootReducer = (state = initialState,action) => {
-    console.log("action====>",action)
   
     switch (action.type) {
         case ADD_PROFILE_PIC:
             return { ...state,profile: action.payload1 }
-        
-        // case ADD_PROFILE_PIC :
-        //     //return  Object.assign({}, state, { profile: action.payload })
-        //     return {...state,profile:action.payload}
     }
     switch (action.type) {
      
         case USER_DATA:
             return {...state, Data: action.payload2 }
-        // case ADD_PROFILE_PIC :
-        //     //return  Object.assign({}, state, { profile: action.payload })
-        //     return {...state,profile:action.payload}
     }
     return state
 }

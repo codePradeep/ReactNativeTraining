@@ -1,5 +1,6 @@
 const Screensdata={
     Login:"Login",
+    Register:"Register",
 
 }
 
@@ -12,6 +13,8 @@ const buttons={
 
 const Form={
     usernameorEmail:"Username or Email",
+    User:"Username",
+    Email:"Email",
     Passsword:"Password"
 }
 

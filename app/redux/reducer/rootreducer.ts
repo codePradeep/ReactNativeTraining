@@ -16,13 +16,12 @@ const initialState = {
 
 }
 
-const rootReducer = (state = initialState,action) => {
+const rootReducer = (state = initialState,action:any) => {
   
     switch (action.type) {
         case ADD_PROFILE_PIC:
             return { ...state,profile: action.payload1 }
-    }
-    switch (action.type) {
+  
      
         case USER_DATA:
             return {...state, Data: action.payload2 }

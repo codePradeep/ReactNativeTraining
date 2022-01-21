@@ -34,7 +34,6 @@ const MyAccountModel = (props: MyAccountModelprops) => {
     var datedata = date.toISOString().slice(0, 10).replace(/ /g, "");
 
     const dispachcall=()=>{
-        console.log("data succesfully dipatched")
         dispatch({type:'USER_DATA',payload2:DATA})
     }
     

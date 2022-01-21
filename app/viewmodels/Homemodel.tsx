@@ -23,7 +23,7 @@ const Homemodel = (props: Homemodelprops) => {
 
     const [maxtime, setMaxtime] = useState(["10 Mins", "20 Mins", "30 Mins"]);
 
-    const menulist = menu.filter(a => a.categories == defaultitem)
+    const menulist = menu.filter((a:any) => a.categories == defaultitem)
 
     const [distance, setdistance] = useState([])
     const [price, setprice] = useState([])
@@ -35,20 +35,20 @@ const Homemodel = (props: Homemodelprops) => {
 
 
     let menudata = menu
-    const SearchData = menu.filter(a =>a.name.toLowerCase().match(searchText.toLowerCase())).map(a=>a);
+    const SearchData = menu.filter((a:any) =>a.name.toLowerCase().match(searchText.toLowerCase())).map((a:any)=>a);
 
     if (defaultRating != 0) {
-        menudata = menudata.filter(a => a.rating == defaultRating)
+        menudata = menudata.filter((a:any) => a.rating == defaultRating)
     }
     if (defaulttime != "") {
-        menudata = menudata.filter(a => a.time == defaulttime)
+        menudata = menudata.filter((a:any) => a.time == defaulttime)
     }
     if (distance.length != 0) {
-        menudata = menudata.filter(a => a.distance > distance[0] && a.distance < distance[1])
+        menudata = menudata.filter((a:any) => a.distance > distance[0] && a.distance < distance[1])
     }
     
     if (price.length != 0) {
-        menudata = menudata.filter(a => a.price > price[0] && a.price < price[1])
+        menudata = menudata.filter((a:any) => a.price > price[0] && a.price < price[1])
     }
 
     const Resetfilter = () => {

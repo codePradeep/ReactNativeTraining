@@ -1,17 +1,72 @@
 import React from "react";
-import { View, Text,Button} from "react-native";
+import { View, Text, Button, ImageBackground, Image, TextInput, TouchableOpacity } from "react-native";
+import Input from "../../common/Input";
+import { buttons, Form, icons, images, Screensdata } from "../../config";
+import styles from "./style";
 
-interface loginpageprops{
-    navigation:any
+interface loginpageprops {
+    navigation: any
+    visible: boolean
+    setvisibe: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-const Loginpage=(props:loginpageprops)=>{
-    const{navigation}=props
-   
-    return(
-        <View>
-            <Text>this is login page </Text>
-            <Button title=" go to Home" onPress={() => navigation.navigate('Home')}/>
+const Loginpage = (props: loginpageprops) => {
+    const { navigation, visible, setvisibe } = props
+
+    return (
+        <View style={styles.MainConatiner}>
+            <Image source={images.images.bg} style={styles.bgimage} />
+            <Text style={styles.heading}>{Screensdata.Login}</Text>
+            <View style={styles.container}>
+
+                <View style={styles.input} >
+                    <Text style={styles.formtext}>{Form.usernameorEmail}</Text>
+                    <View style={styles.inputecontainer}>
+                        <TextInput />
+                    </View>
+                </View>
+
+                <View style={styles.input}>
+                    <Text style={styles.formtext}>{Form.Passsword}</Text>
+                    <View style={styles.inputecontainer}>
+                        <TextInput />
+                    </View>
+                </View>
+
+                <TouchableOpacity style={styles.button}>
+                    <Text style={styles.buttontext}>{buttons.Login}</Text>
+                </TouchableOpacity>
+
+                <Text style={styles.text}>Or Login with</Text>
+
+                <View style={styles.socialbuttonsContainer}>
+
+                    <TouchableOpacity style={styles.socialbuttons}>
+                        <Image source={icons.Icon.google} style={styles.Icon}/>
+                        <Text style={styles.socialbuttonstext}>{buttons.Google}</Text>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity style={styles.socialbuttons}>
+                        <Image source={icons.Icon.facebook} style={styles.Icon}/>
+                        <Text style={styles.socialbuttonstext}>{buttons.facebook}</Text>
+                    </TouchableOpacity>
+
+                </View>
+
+                <View style={styles.buttonsContainer}>
+
+                   
+                        <Text style={styles.newusertext}>New User?</Text>
+                   
+
+                    <TouchableOpacity>
+                        <Text style={styles.signuptext}>{buttons.Signupnow}</Text>
+                    </TouchableOpacity>
+
+                </View>
+
+            </View>
+
         </View>
     )
 }

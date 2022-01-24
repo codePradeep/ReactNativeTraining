@@ -4,10 +4,10 @@ const initialState = {
     profile: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png",
     Data : {
         fullname: "Pradeep Kumar Sharma",
-        Phone: "Phone Number",
+        Phone: "8707613387",
         userid: "223311",
         IDCard: "Not updated",
-        Dob: "Date of Birth",
+        Dob: "D15-7-1999",
         gender: "Male",
         joined: "Joind",
         Email: "Pradeep@Pradeep.com",

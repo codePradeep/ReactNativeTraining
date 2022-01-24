@@ -19,7 +19,7 @@ const styles=StyleSheet.create({
     },
     box:{
         width:"40%",
-        padding:10,
+        padding:20,
         borderRadius:10
 
     },

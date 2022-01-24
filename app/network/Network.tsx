@@ -24,8 +24,7 @@ const instance = axios.create({
 
 export function sendGetRequest<T>(url: string) {
 //   instance.defaults.headers.common.Authorization = token();
-  return instance
-    .get(url)
+  return instance .get(url)
     .then((response: any) => {
       return handleResponse(response.data);
     })

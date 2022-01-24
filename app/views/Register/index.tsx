@@ -8,16 +8,18 @@ interface Registerprops {
     navigation: any
     visible: boolean
     setvisibe: React.Dispatch<React.SetStateAction<boolean>>
+    selected: any
+    setselected: any
 }
 
 
 const Register = (props: Registerprops) => {
-    const { navigation, visible, setvisibe } = props
+    const { navigation, visible, setvisibe, selected, setselected } = props
 
     return (
         <View style={styles.MainConatiner}>
-            <StatusBar backgroundColor={"rgba(0,0,0,0)"} 
-            barStyle={"dark-content"}  />
+            <StatusBar backgroundColor={"rgba(0,0,0,0)"}
+                barStyle={"dark-content"} />
 
             <Text style={styles.heading}>{Screensdata.Register}</Text>
 
@@ -27,50 +29,54 @@ const Register = (props: Registerprops) => {
 
                 <View style={styles.container}>
                     <View style={styles.boxcontainer}>
-                        <TouchableOpacity style={[styles.box, { backgroundColor: visible ? "blue" : COLORS.primary3 }]}>
-                            
-                            <Image source={icons.Icon.checkbox_on_dark} style={styles.checkedIcon} />
-                            
-                            <Text style={{color:COLORS.white}}>I am a </Text>
-                            <Text style={{ fontSize: 20 ,color:COLORS.white}}>STUDENT</Text>
+                        <TouchableOpacity
+                            onPress={() => selected ? setselected(false) : setselected(true)}
+                            style={[styles.box, { backgroundColor: selected ? selectedTheme.backgroundColor8 : COLORS.primary3 }]}>
+
+                            <Image source={!selected ? icons.Icon.checkbox_on_dark : icons.Icon.checkbox_off} style={styles.checkedIcon} />
+
+                            <Text style={{ color:selected? COLORS.primary3:COLORS.white}}>I am a </Text>
+                            <Text style={{fontWeight:"700", fontSize: 20, color:selected?COLORS.primary3:COLORS.white }}>STUDENT</Text>
                         </TouchableOpacity>
 
-                        <TouchableOpacity style={[styles.box, { backgroundColor: visible ? "blue" : selectedTheme.backgroundColor8 }]}>
-                            <Image source={icons.Icon.checkbox_off} style={styles.checkedIcon} />
-                            <Text style={{  color:COLORS.primary3}}>I am a </Text>
-                            <Text style={{ fontSize: 20 ,color:COLORS.primary3}}>TUTOR</Text>
+                        <TouchableOpacity
+                            onPress={() => selected ? setselected(false) : setselected(true)}
+                            style={[styles.box, { backgroundColor: selected ? COLORS.primary3 : selectedTheme.backgroundColor8 }]}>
+                            <Image source={selected ? icons.Icon.checkbox_on_dark : icons.Icon.checkbox_off} style={styles.checkedIcon} />
+                            <Text style={{ color:!selected? COLORS.primary3:COLORS.white }}>I am a </Text>
+                            <Text style={{fontWeight:"700", fontSize: 20, color:!selected? COLORS.primary3:COLORS.white}}>TUTOR</Text>
                         </TouchableOpacity>
                     </View>
 
                     <View style={styles.input} >
                         <Text style={styles.formtext}>{Form.User}</Text>
                         <View style={styles.inputecontainer}>
-                            <TextInput   style={styles.inputText}/>
+                            <TextInput style={styles.inputText} />
                         </View>
                     </View>
 
                     <View style={styles.input} >
                         <Text style={styles.formtext}>{Form.Email}</Text>
                         <View style={styles.inputecontainer}>
-                            <TextInput   style={styles.inputText} />
+                            <TextInput style={styles.inputText} />
                         </View>
                     </View>
 
                     <View style={styles.input}>
-                    <Text style={styles.formtext}>{Form.Passsword}</Text>
-                    <View style={styles.inputecontainer}>
-                        <TextInput
-                            style={styles.inputText}
-                            secureTextEntry={!visible}
-                        />
-                        <TouchableOpacity
-                            style={styles.eyecontainer}
-                            onPress={() => visible ? setvisibe(false) : setvisibe(true)}
-                        >
-                            <Image source={visible ? icons.Icon.eye : icons.Icon.eye_close} style={styles.eyeicon} />
-                        </TouchableOpacity>
+                        <Text style={styles.formtext}>{Form.Passsword}</Text>
+                        <View style={styles.inputecontainer}>
+                            <TextInput
+                                style={styles.inputText}
+                                secureTextEntry={!visible}
+                            />
+                            <TouchableOpacity
+                                style={styles.eyecontainer}
+                                onPress={() => visible ? setvisibe(false) : setvisibe(true)}
+                            >
+                                <Image source={visible ? icons.Icon.eye : icons.Icon.eye_close} style={styles.eyeicon} />
+                            </TouchableOpacity>
+                        </View>
                     </View>
-                </View>
 
                     <TouchableOpacity style={styles.button}>
                         <Text style={styles.buttontext}>{buttons.Login}</Text>
@@ -103,10 +109,10 @@ const Register = (props: Registerprops) => {
                         </TouchableOpacity>
 
                     </View>
-                    </View>
+                </View>
             </ScrollView>
 
-       
+
 
         </View >
     )

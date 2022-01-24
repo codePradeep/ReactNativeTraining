@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
         textAlignVertical:"center"
     },
     flatlistcontainer:{
-        flex:.89,
+        flex:1,
         backgroundColor: "rgba(176, 174, 171,0.1)",
         borderRadius:20,
         marginHorizontal:20

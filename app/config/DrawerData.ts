@@ -26,7 +26,7 @@ const DrawerData = [
         id: "3",
         title: "Notification",
         icondata: icon.notification,
-        navigationdata:"NoticationSettingModel"
+        navigationdata:"Notification"
       
     },
     {

@@ -63,7 +63,7 @@ const AddNewCard = (props: PasswordRecoveryprops) => {
                                     keyboardType={"number-pad"}
                                     maxLength={16}
                                 />
-                                <Image source={icon.ok} style={styles.icon} />
+                                {/* <Image source={icon.ok} style={styles.icon} /> */}
                             </View>
                         </View>
                         <View >
@@ -72,7 +72,7 @@ const AddNewCard = (props: PasswordRecoveryprops) => {
                                 <TextInput style={styles.textinput}
                                     onChangeText={(text) => setData({ ...Data, Holdername: text })}
                                     maxLength={25} />
-                                <Image source={icon.ok} style={styles.icon} />
+                                {/* <Image source={icon.ok} style={styles.icon} /> */}
                             </View>
                         </View>
                         <View style={styles.twoinputcontainer}>
@@ -85,7 +85,7 @@ const AddNewCard = (props: PasswordRecoveryprops) => {
                                         keyboardType={"name-phone-pad"}
                                         maxLength={5}
                                     />
-                                    <Image source={icon.ok} style={styles.secondicon} />
+                                    {/* <Image source={icon.ok} style={styles.secondicon} /> */}
                                 </View>
                             </View>
                             <View >
@@ -97,7 +97,7 @@ const AddNewCard = (props: PasswordRecoveryprops) => {
                                         maxLength={3}
 
                                     />
-                                    <Image source={icon.ok} style={styles.secondicon} />
+                                    {/* <Image source={icon.ok} style={styles.secondicon} /> */}
                                 </View>
                             </View>
                         </View>

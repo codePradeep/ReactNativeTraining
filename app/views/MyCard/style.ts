@@ -18,7 +18,7 @@ const styles=StyleSheet.create({
     },
     subContainer:{
         flex:0.65,
-        justifyContent:"space-between"
+        justifyContent:"space-evenly"
     },
     CardContainer:{
 

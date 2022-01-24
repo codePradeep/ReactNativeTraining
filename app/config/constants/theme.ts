@@ -74,13 +74,13 @@ export const darkTheme = {
     lineDivider: COLORS.gray70,
     borderColor1: COLORS.gray70,
     borderColor2: COLORS.gray70,
-    textColor: COLORS.white,
-    textColor2: COLORS.white,
-    textColor3: COLORS.gray40,
-    textColor4: COLORS.white,
-    textColor5: COLORS.gray30,
-    textColor6: COLORS.gray30,
-    textColor7: COLORS.gray40,
+    textblackNwhite: COLORS.white,
+    textgreenNwhite: COLORS.white,
+    textgray8Ngray4: COLORS.gray40,
+    textwhite: COLORS.white,
+    textblackNgray: COLORS.gray20,
+    textblackNgray3: COLORS.gray30,
+    textblackNgray4: COLORS.gray40,
     tintColor: COLORS.white,
     dotColor1: COLORS.white,
     dotColor2: COLORS.primary,
@@ -99,19 +99,19 @@ export const lightTheme = {
     lineDivider: COLORS.gray20,
     borderColor1: COLORS.white,
     borderColor2: COLORS.black,
-    textColor: COLORS.black,
-    textColor2: COLORS.primary,
-    textColor3: COLORS.gray80,
-    textColor4: COLORS.white,
-    textColor5: COLORS.black,
-    //textColor6: COLORS.gray,
-    textColor7: COLORS.black,
+    textblackNwhite: COLORS.black,
+    textgreenNwhite: COLORS.primary,
+    textgray8Ngray4: COLORS.gray80,
+    textwhite: COLORS.white,
+    textblackNgray: COLORS.black,
+    textblackNgray3: COLORS.gray30,
+    textblackNgray4: COLORS.black,
     tintColor: COLORS.black,
     dotColor1: COLORS.gray20,
     dotColor2: COLORS.primary3,
 }
 
-export const selectedTheme = darkTheme
+export const selectedTheme = lightTheme
 
 const appTheme = { COLORS, SIZES, FONTS, darkTheme, lightTheme };
 

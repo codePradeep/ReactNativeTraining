@@ -9,7 +9,7 @@ const RegistrModel =(props:loginmodelprops)=>{
     const [visible,setvisibe]=useState(false)
     return(
         <Register
-        
+
          navigation={navigation} 
          visible={visible}
          setvisibe={setvisibe}

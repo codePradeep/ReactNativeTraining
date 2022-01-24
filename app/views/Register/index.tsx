@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, Button, ImageBackground, Image, TextInput, TouchableOpacity, ScrollView, ColorPropType } from "react-native";
+import { View, Text, Button, ImageBackground, Image, TextInput, TouchableOpacity, ScrollView, ColorPropType, StatusBar } from "react-native";
 import { buttons, Form, icons, images, Screensdata } from "../../config";
 import { COLORS, FONTS, selectedTheme } from "../../config/constants/theme";
 import styles from "./style";
@@ -10,11 +10,14 @@ interface Registerprops {
     setvisibe: React.Dispatch<React.SetStateAction<boolean>>
 }
 
+
 const Register = (props: Registerprops) => {
     const { navigation, visible, setvisibe } = props
 
     return (
         <View style={styles.MainConatiner}>
+            <StatusBar backgroundColor={"rgba(0,0,0,0)"} 
+            barStyle={"dark-content"}  />
 
             <Text style={styles.heading}>{Screensdata.Register}</Text>
 
@@ -42,23 +45,32 @@ const Register = (props: Registerprops) => {
                     <View style={styles.input} >
                         <Text style={styles.formtext}>{Form.User}</Text>
                         <View style={styles.inputecontainer}>
-                            <TextInput />
+                            <TextInput   style={styles.inputText}/>
                         </View>
                     </View>
 
                     <View style={styles.input} >
                         <Text style={styles.formtext}>{Form.Email}</Text>
                         <View style={styles.inputecontainer}>
-                            <TextInput />
+                            <TextInput   style={styles.inputText} />
                         </View>
                     </View>
 
                     <View style={styles.input}>
-                        <Text style={styles.formtext}>{Form.Passsword}</Text>
-                        <View style={styles.inputecontainer}>
-                            <TextInput />
-                        </View>
+                    <Text style={styles.formtext}>{Form.Passsword}</Text>
+                    <View style={styles.inputecontainer}>
+                        <TextInput
+                            style={styles.inputText}
+                            secureTextEntry={!visible}
+                        />
+                        <TouchableOpacity
+                            style={styles.eyecontainer}
+                            onPress={() => visible ? setvisibe(false) : setvisibe(true)}
+                        >
+                            <Image source={visible ? icons.Icon.eye : icons.Icon.eye_close} style={styles.eyeicon} />
+                        </TouchableOpacity>
                     </View>
+                </View>
 
                     <TouchableOpacity style={styles.button}>
                         <Text style={styles.buttontext}>{buttons.Login}</Text>

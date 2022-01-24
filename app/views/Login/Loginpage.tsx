@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, Button, ImageBackground, Image, TextInput, TouchableOpacity } from "react-native";
+import { View, Text, Button, ImageBackground, Image, TextInput, TouchableOpacity, ScrollView } from "react-native";
 import Input from "../../common/Input";
 import { buttons, Form, icons, images, Screensdata } from "../../config";
 import styles from "./style";
@@ -17,19 +17,28 @@ const Loginpage = (props: loginpageprops) => {
         <View style={styles.MainConatiner}>
             <Image source={images.images.bg} style={styles.bgimage} />
             <Text style={styles.heading}>{Screensdata.Login}</Text>
-            <View style={styles.container}>
 
+            <View style={styles.container}>
                 <View style={styles.input} >
                     <Text style={styles.formtext}>{Form.usernameorEmail}</Text>
                     <View style={styles.inputecontainer}>
-                        <TextInput />
+                        <TextInput  style={styles.inputText}/>
                     </View>
                 </View>
 
                 <View style={styles.input}>
                     <Text style={styles.formtext}>{Form.Passsword}</Text>
                     <View style={styles.inputecontainer}>
-                        <TextInput />
+                        <TextInput
+                            style={styles.inputText}
+                            secureTextEntry={!visible}
+                        />
+                        <TouchableOpacity
+                            style={styles.eyecontainer}
+                            onPress={() => visible ? setvisibe(false) : setvisibe(true)}
+                        >
+                            <Image source={visible ? icons.Icon.eye : icons.Icon.eye_close} style={styles.eyeicon} />
+                        </TouchableOpacity>
                     </View>
                 </View>
 
@@ -42,12 +51,12 @@ const Loginpage = (props: loginpageprops) => {
                 <View style={styles.socialbuttonsContainer}>
 
                     <TouchableOpacity style={styles.socialbuttons}>
-                        <Image source={icons.Icon.google} style={styles.Icon}/>
+                        <Image source={icons.Icon.google} style={styles.Icon} />
                         <Text style={styles.socialbuttonstext}>{buttons.Google}</Text>
                     </TouchableOpacity>
 
                     <TouchableOpacity style={styles.socialbuttons}>
-                        <Image source={icons.Icon.facebook} style={styles.Icon}/>
+                        <Image source={icons.Icon.facebook} style={styles.Icon} />
                         <Text style={styles.socialbuttonstext}>{buttons.facebook}</Text>
                     </TouchableOpacity>
 
@@ -55,9 +64,9 @@ const Loginpage = (props: loginpageprops) => {
 
                 <View style={styles.buttonsContainer}>
 
-                   
-                        <Text style={styles.newusertext}>New User?</Text>
-                   
+
+                    <Text style={styles.newusertext}>New User?</Text>
+
 
                     <TouchableOpacity>
                         <Text style={styles.signuptext}>{buttons.Signupnow}</Text>
@@ -65,7 +74,10 @@ const Loginpage = (props: loginpageprops) => {
 
                 </View>
 
+
             </View>
+          
+
 
         </View>
     )

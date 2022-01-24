@@ -8,7 +8,7 @@ const styles=StyleSheet.create({
         backgroundColor:selectedTheme.backgroundColor1
     },
     container:{
-        flex:.95,
+        flex:1,
         justifyContent:"center",
         marginHorizontal:"7%"
 
@@ -28,16 +28,33 @@ const styles=StyleSheet.create({
         fontSize:30,
         fontWeight:"700",
         ...FONTS.heading,
-        color:selectedTheme.textColor
+        color:selectedTheme.textblackNwhite
     },
     inputecontainer:{
         borderBottomWidth:1,
-        borderColor:selectedTheme.textColor3,
+        borderColor:selectedTheme.lineDivider,
+        flexDirection:"row"
         
+    },
+    eyecontainer:{
+        alignSelf:"center",
+    },
+    eyeicon:{
+        width:20,
+        height:20,
+        alignSelf:"center",
+        resizeMode:"contain",
+        tintColor:selectedTheme.tintColor,
+    },
+    inputText:{
+        color:selectedTheme.textblackNgray,
+        width:"94%",
+        fontSize:15,
+        ...FONTS.heading
     },
     socialbuttonsContainer:{
         flexDirection:"row",
-        justifyContent:"space-between",
+        justifyContent:"space-around",
         marginVertical:10
     },
     socialbuttons:{
@@ -54,19 +71,23 @@ const styles=StyleSheet.create({
         marginVertical:10
     },
     formtext:{
-        fontSize:14,
-        color:selectedTheme.textColor
+        fontSize:16,
+        fontWeight:"700",
+        color:COLORS.gray20,
+        ...FONTS.heading
 
     },
     buttontext:{
         fontSize:17,
-        color:selectedTheme.textColor4,
-        fontWeight:"600"
+        color:selectedTheme.textwhite,
+        fontWeight:"800",
+        ...FONTS.heading
     },
     text:{
         alignSelf:"center",
         fontSize:15,
-        color:selectedTheme.textColor
+        color:selectedTheme.textblackNgray,
+        ...FONTS.body
     },
     button:{
         borderRadius:90,
@@ -76,24 +97,31 @@ const styles=StyleSheet.create({
         marginVertical:10
     },
     socialbuttonstext:{
-         margin:12,
+        marginHorizontal:10,
+        marginVertical:12,
+         fontWeight:"600",
          alignSelf:"center",
-         color:COLORS.black
+         color:COLORS.black,
+         ...FONTS.heading
     },
     signuptext:{
         alignSelf:"center",
+        fontWeight:"700",
         color:COLORS.primary,
-        paddingLeft:10
+        paddingLeft:10,
+        ...FONTS.heading
     },
     newusertext:{
         alignSelf:"center",
-        color:COLORS.black
+        color:selectedTheme.textblackNgray,
+        ...FONTS.heading
     },
     Icon:{
         width:25,
         height:25,
         alignSelf:"center",
-        resizeMode:"contain"
+        resizeMode:"contain",
+        marginLeft:10
     }
 })
 

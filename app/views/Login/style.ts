@@ -5,7 +5,7 @@ import { COLORS } from "../../config/constants/theme";
 const styles=StyleSheet.create({
     MainConatiner:{
         flex:1,
-        backgroundColor:selectedTheme.backgroundColor1
+        backgroundColor:selectedTheme.backgroundwhiteNgray8
     },
     container:{
         flex:1,

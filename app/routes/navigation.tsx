@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Homemodel,Loginmodel, RegistrModel } from '../viewmodels';
+import { CategoryModel, Homemodel,Loginmodel, RegistrModel } from '../viewmodels';
 
 
 type rootnode={
@@ -14,9 +14,10 @@ const Stack = createNativeStackNavigator();
 const Routenavigation =() => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="RegistrModel">
+      <Stack.Navigator initialRouteName="CategoryModel">
         <Stack.Screen name="RegistrModel" component={RegistrModel} options={{ headerShown:false }} />
-        <Stack.Screen name="Loginmodel" component={Loginmodel} options={{ headerShown:false }}/>        
+        <Stack.Screen name="Loginmodel" component={Loginmodel} options={{ headerShown:false }}/>     
+        <Stack.Screen name="CategoryModel" component={CategoryModel} options={{ headerShown:false }}/>   
       </Stack.Navigator>
     </NavigationContainer>
   );

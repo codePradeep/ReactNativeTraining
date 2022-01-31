@@ -8,7 +8,9 @@ const buttons={
     Login:"Login",
     Google:"Google",
     facebook:"Facebook",
-    Signupnow:"Sign Up Now"
+    Signupnow:"Sign Up Now",
+    CONTINUE:"CONTINUE"
+    
 }
 
 const Form={

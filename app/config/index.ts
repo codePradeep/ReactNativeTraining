@@ -3,6 +3,7 @@ import { buttons ,Form,Screensdata} from "./constants/ScreenConstant";
 import { selectedTheme } from "./constants/theme";
 import { FONTS } from "./constants/theme";
 import icons from "./constants/icons";
+import { COLORS } from "./constants/theme";
 export {
     images,
     selectedTheme,
@@ -10,5 +11,6 @@ export {
     Screensdata,
     FONTS,
     Form,
-    icons
+    icons,
+    COLORS
 }

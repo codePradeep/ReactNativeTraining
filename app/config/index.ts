@@ -4,6 +4,7 @@ import { selectedTheme } from "./constants/theme";
 import { FONTS } from "./constants/theme";
 import icons from "./constants/icons";
 import { COLORS } from "./constants/theme";
+import dummyData from "./constants/dummyData";
 export {
     images,
     selectedTheme,
@@ -12,5 +13,6 @@ export {
     FONTS,
     Form,
     icons,
-    COLORS
+    COLORS,
+    dummyData
 }

@@ -9,7 +9,8 @@ const buttons={
     Google:"Google",
     facebook:"Facebook",
     Signupnow:"Sign Up Now",
-    CONTINUE:"CONTINUE"
+    CONTINUE:"CONTINUE",
+    startfreetrail:"Start Free Trial"
     
 }
 

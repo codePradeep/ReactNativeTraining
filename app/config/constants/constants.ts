@@ -29,6 +29,32 @@ const walkthrough = [
         image: require("../../assets/images/work.png")
     },
 ]
+const Membership = [
+    {
+        id: 0,
+        price: "$99",
+        months:"Month",
+        subtitile: "Get 7 Days free trial"
+    },
+    {
+        id: 1,
+        price: "$39",
+        months:"3 Month",
+        subtitile: "$13/month Billed quarterly"
+    },
+    {
+        id: 2,
+        price: "$68",
+        months:"6 Month",
+        subtitile: "$11/month Billed half-yearly"
+    },
+    {
+        id: 3,
+        price: "$115",
+        months:"Year",
+        subtitile: "Pay once And Don't worry for a year"
+    },
+]
 
 const categories = [
     {
@@ -186,5 +212,6 @@ export default {
     class_types,
     class_levels,
     created_within,
-    course_details_tabs
+    course_details_tabs,
+    Membership
 }

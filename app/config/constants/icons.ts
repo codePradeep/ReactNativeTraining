@@ -51,6 +51,10 @@
  star_1 : require("../../assets/icons/star_1.png"),
  sun : require("../../assets/icons/sun.png"),
  time : require("../../assets/icons/time.png"),
- web_design : require("../../assets/icons/web_design.png"), }
+ web_design : require("../../assets/icons/web_design.png"),
+ left_arrow:require("../../assets/icons/left_arrow.png"),
+
+
+}
 
 export default {Icon}

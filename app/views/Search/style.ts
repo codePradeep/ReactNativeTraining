@@ -18,7 +18,8 @@ const styles = StyleSheet.create({
         borderWidth:1,
         borderRadius:20,
         alignItems:"center",
-        paddingHorizontal:10
+        paddingHorizontal:10,
+        borderColor:selectedTheme.borderColor2
     },
     leftbutton: {
         height: 50,

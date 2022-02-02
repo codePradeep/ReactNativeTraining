@@ -1,5 +1,5 @@
 import React from "react";
-import { FlatList, Image, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { FlatList, Image, ScrollView, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { buttons, icons } from "../../config";
 import constants from "../../config/constants/constants";
 import dummyData from "../../config/constants/dummyData";
@@ -36,15 +36,20 @@ const SearchScreen = (props: SearchScreenProps) => {
 
 
                 <Text style={styles.text}>Top Searches</Text>
+                <ScrollView
+                horizontal
+                showsHorizontalScrollIndicator={false}
+                >
                 <View style={styles.topsearch}>
                     {dummyData.top_searches.map((item, index) => {
                         return (
-                            <TouchableOpacity>
+                            <TouchableOpacity key={index}>
                                 <Text key={index} style={styles.searchlist}>{item.label}</Text>
                             </TouchableOpacity>
                         )
                     })}
                 </View>
+                </ScrollView> 
                 <Text style={styles.text}>Browse Categories</Text>
 
 

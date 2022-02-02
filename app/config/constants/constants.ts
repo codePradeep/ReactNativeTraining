@@ -210,7 +210,7 @@ export default {
     screens,
     bottom_tabs,
     class_types,
-    class_levels,
+    class_levels,      
     created_within,
     course_details_tabs,
     Membership

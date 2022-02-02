@@ -27,6 +27,7 @@ const NotificationTab = (props: NotificationTabprops) => {
              <Image source={images.images.bg_dark} style={styles.bgimage} />
         <View style={styles.conatiner}>
             <TouchableOpacity
+            onPress={()=>navigation.goBack()}
                 style={styles.leftbutton}
             >
                 <Image source={icons.Icon.back} style={styles.headerlefticon} />

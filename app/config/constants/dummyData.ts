@@ -1,3 +1,5 @@
+import { icons } from ".."
+
 const categories = [
     {
         id: 0,
@@ -347,6 +349,59 @@ const notificationByDays = [
     },
 ]
 
+
+const UserData= [
+    {
+        id: 0,
+        icon:icons.Icon.profile,
+        label:"Name",
+        Value:"Pradeeep kumar Sharma"
+        
+    },
+    {
+        id: 1,
+        icon:icons.Icon.email,
+        label:"Email",
+        Value:"Pradeep@Gmail.com"
+    },
+    {
+        id: 2,
+        icon:icons.Icon.lock,
+        label:"Password",
+        Value:"Updated 2 weeks ago"
+    },
+    {
+        id: 2,
+        icon:icons.Icon.call,
+        label:"Contact Number",
+        Value:"+91 87976133**"
+    },
+
+]
+const Userdata2=[
+    
+        {
+            id: 0,
+            icon:icons.Icon.star,
+            label:"Pages",
+            
+        },
+        {
+            id: 1,
+            icon:icons.Icon.new_icon,
+            label:"New Course notification",
+            
+        },
+        {
+            id: 2,
+            icon:icons.Icon.time,
+            label:"Study Reminder",
+            
+        },
+
+    
+]
+
 export default {
     categories,
     courses_list_1,
@@ -354,4 +409,6 @@ export default {
     top_searches,
     course_details,
     notificationByDays,
+    UserData,
+    Userdata2
 }

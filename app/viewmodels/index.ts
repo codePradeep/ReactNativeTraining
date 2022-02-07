@@ -7,6 +7,8 @@ import NotificationTabModel from "./NotificationModel";
 import MembershipModel from "./MemberShipModel";
 import SearchModel from "./SearchModel";
 import CourseListingModel from "./CourseListingModel";
+import InstructorProfileModel from "./InstructorProfileModel";
+
 export {
     Homemodel,
     Loginmodel,
@@ -15,6 +17,7 @@ export {
     NotificationTabModel,
     MembershipModel,
     SearchModel,
-    CourseListingModel
+    CourseListingModel,
+    InstructorProfileModel
     
 };

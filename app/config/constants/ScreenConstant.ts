@@ -22,7 +22,8 @@ const buttons={
     startfreetrail:"Start Free Trial",
     apply:"Apply",
     reset:"Reset",
-    Cancel:"Cancel"
+    Cancel:"Cancel",
+    Follow:"Follow"
     
 }
 

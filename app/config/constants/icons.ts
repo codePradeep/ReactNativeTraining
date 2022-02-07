@@ -53,6 +53,7 @@
  time : require("../../assets/icons/time.png"),
  web_design : require("../../assets/icons/web_design.png"),
  left_arrow:require("../../assets/icons/left_arrow.png"),
+ share:require("../../assets/icons/share.png",)
 
 
 }

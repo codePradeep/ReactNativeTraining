@@ -74,6 +74,14 @@ const InstrctorProfileScreen = (props: InstrctorProfileScreenprops) => {
                 </View>
                 <View>
                     <View style={styles.Itemcontainer}>
+                        <Text style={styles.thirdcontainertexttitle} >Student Rating</Text>
+                    </View>
+                    <View>
+                       {/* social button */}
+                    </View>
+                </View>
+                <View>
+                    <View style={styles.Itemcontainer}>
                         <Text style={styles.thirdcontainertexttitle} >Student Review</Text>
                         <TouchableOpacity style={styles.SeeAllbutton}>
                             <Text style={styles.seeAlltext}>See All</Text>
@@ -87,11 +95,9 @@ const InstrctorProfileScreen = (props: InstrctorProfileScreenprops) => {
                 <View>
                     <View style={styles.Itemcontainer}>
                         <Text style={styles.thirdcontainertexttitle} >Connect Here</Text>
-                        
-
                     </View>
                     <View>
-                       {/* student review */}
+                       {/* social button */}
                     </View>
                 </View>
  

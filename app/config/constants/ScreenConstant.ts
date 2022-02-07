@@ -1,6 +1,15 @@
 const Screensdata={
     Login:"Login",
     Register:"Register",
+    Filter:{
+        Filter:"Filter",
+        Classtype:"Class Type",
+        ClassLevel:"Class Level",
+        CreatedWithin:"Created Within",
+        classtime:"Class Time"
+
+
+    }
 
 }
 
@@ -10,7 +19,10 @@ const buttons={
     facebook:"Facebook",
     Signupnow:"Sign Up Now",
     CONTINUE:"CONTINUE",
-    startfreetrail:"Start Free Trial"
+    startfreetrail:"Start Free Trial",
+    apply:"Apply",
+    reset:"Reset",
+    Cancel:"Cancel"
     
 }
 
@@ -20,6 +32,7 @@ const Form={
     Email:"Email",
     Passsword:"Password"
 }
+
 
 
 export {Screensdata,buttons,Form}

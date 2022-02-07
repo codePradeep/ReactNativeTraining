@@ -10,6 +10,7 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
+    "@ptomasroos/react-native-multi-slider": "^2.2.2",
     "@react-native-community/netinfo": "^6.2.0",
     "@react-navigation/bottom-tabs": "^6.1.0",
     "@react-navigation/native": "^6.0.6",

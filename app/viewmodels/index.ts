@@ -9,7 +9,7 @@ import SearchModel from "./SearchModel";
 import CourseListingModel from "./CourseListingModel";
 import InstructorProfileModel from "./InstructorProfileModel";
 import CourseModel from "./CourseModel";
-
+import CoursefilesModel from "./CourseFiles";
 export {
     Homemodel,
     Loginmodel,
@@ -20,7 +20,8 @@ export {
     SearchModel,
     CourseListingModel,
     InstructorProfileModel,
-    CourseModel
+    CourseModel,
+    CoursefilesModel
 
     
 };

@@ -71,7 +71,7 @@ const CorselChapter = (props: Corselistingprops) => {
             <View>
                 {DATA.videos.map((item,index)=>{
                     return(
-                        <View style={styles.videocontainer}>
+                        <View key={index} style={styles.videocontainer}>
                             <View style={styles.subvideocontainer}>
                             <Image source={icons.Icon.checked} style={styles.videoIcon}/>
                             <View>

@@ -222,7 +222,7 @@ const styles=StyleSheet.create({
     },  thirdcontainertexttitle:{
         marginVertical:5,
         paddingLeft:10,
-        fontSize:17,
+        fontSize:21,
         width:200,
         fontWeight:"700",
         color:selectedTheme.textblackNwhite,
@@ -295,6 +295,68 @@ smallicon:{
         color:selectedTheme.textblackNwhite,
         textAlignVertical:"center"
     },
+    socialbtnIcon:{
+        width:30,
+        height:30,
+        resizeMode:"contain",
+        alignSelf:"center"
+    },
+    socialbtn:{
+        flexDirection:"row",
+        padding:10,
+        backgroundColor:selectedTheme.backgroundgray10Ngray70,
+        borderRadius:10,
+    
+        marginVertical:5,
+        justifyContent:"space-between"
+    },
+    flexDirectionrow:{
+        flexDirection:"row",
+        justifyContent:"center"
+        
+    },
+    socialbtnText:{
+        fontSize:15,
+        paddingLeft:5,
+        fontWeight:"600",
+        color:selectedTheme.textblackNwhite,
+        textAlignVertical:"center"
+    },
+    reviewcontainer:{
+        flexDirection:"row",
+        padding:10,marginLeft:10,
+        borderRadius:10,
+        backgroundColor:selectedTheme.backgroundblueNgray9,
+
+
+    },
+    studentname:{
+        fontSize:16,
+        width:150,
+        fontWeight:"600",
+        marginVertical:5,
+        color:COLORS.white
+    },
+    comment:{
+        fontSize:14,
+        width:150,
+        color:COLORS.white
+    },
+    postedon:{
+        fontSize:11,
+        width:150,
+        marginVertical:5,
+        color:COLORS.white
+    },
+    socialcontainer:{
+        padding:10,
+        backgroundColor:COLORS.gray10,
+        marginLeft:10,
+        alignItems:"center",
+        borderRadius:10,
+        marginVertical:10,
+
+    }
 
 
 

@@ -347,6 +347,55 @@ const notificationByDays = [
     },
 ]
 
+const userSosialData = [
+    {
+        value: "8.8M",
+        label: "Followers"
+
+    },
+    {
+        value: "1.8K",
+        label: "Reviews"
+
+    },
+    {
+        value: "180M",
+        label: "Total Studant"
+
+    }
+]
+
+const studentreview= [
+    {
+        id: 0,
+        profile: require("../../assets/images/student_1.png"),
+        name: "Pradeep Sharma",
+        posted_on: "7 days ago",
+        comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    },
+    {
+        id: 1,
+        profile: require("../../assets/images/student_1.png"),
+        name: "Ankint",
+        posted_on: "7 days ago",
+        comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    },
+    {
+        id: 2,
+        profile: require("../../assets/images/student_1.png"),
+        name: "Shubham",
+        posted_on: "7 days ago",
+        comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    },
+    {
+        id: 3,
+        profile: require("../../assets/images/student_1.png"),
+        name: "Rahul",
+        posted_on: "7 days ago",
+        comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    },
+]
+
 export default {
     categories,
     courses_list_1,
@@ -354,4 +403,6 @@ export default {
     top_searches,
     course_details,
     notificationByDays,
+    studentreview,
+    userSosialData
 }

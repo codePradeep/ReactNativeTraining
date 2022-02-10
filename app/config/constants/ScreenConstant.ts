@@ -23,7 +23,10 @@ const buttons={
     apply:"Apply",
     reset:"Reset",
     Cancel:"Cancel",
-    Follow:"Follow"
+    Follow:"Follow",
+    twitter:"Twitter",
+    linkdin:"Linkdin"
+
     
 }
 

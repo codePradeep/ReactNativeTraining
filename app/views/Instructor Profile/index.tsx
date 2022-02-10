@@ -9,6 +9,9 @@ interface InstrctorProfileScreenprops {
     navigation: any
     visible: any
     setvisibe: any
+    socialdata: any
+    userdata: any
+    studentreview: any
     // defaultitem: number
     // setdefaultitem: React.Dispatch<React.SetStateAction<number>>
 }
@@ -18,6 +21,9 @@ const InstrctorProfileScreen = (props: InstrctorProfileScreenprops) => {
         visible,
         setvisibe,
         // defaultitem, setdefaultitem, 
+        socialdata,
+        userdata,
+        studentreview
     } = props
 
 
@@ -52,61 +58,119 @@ const InstrctorProfileScreen = (props: InstrctorProfileScreenprops) => {
                     <TouchableOpacity style={styles.followbtn}>
                         <Text style={styles.followbtntext}>+ {buttons.Follow}</Text>
                     </TouchableOpacity>
+                    <View style={{ flexDirection: "row" }}>
+                        {socialdata.map
+
+                        }
+
+                    </View>
                 </View>
-                <ScrollView>
-                <View>
-                    <View style={styles.Itemcontainer}>
-                        <Text style={styles.thirdcontainertexttitle} >Populer Courses</Text>
-                        <TouchableOpacity style={styles.SeeAllbutton}>
-                            <Text style={styles.seeAlltext}>See All</Text>
+                <ScrollView showsVerticalScrollIndicator={false}>
+
+                    <View style={styles.flexDirectionrow}>
+                        {
+                            dummyData.userSosialData.map((item, index) => {
+                                return (
+                                    <View style={styles.socialcontainer}>
+                                        <Text>{item.value}</Text>
+                                        <Text>{item.label}</Text>
+                                    </View>
+                                )
+                            })
+                        }
+
+                    </View>
+                    <View>
+                    <Text style={styles.thirdcontainertexttitle} >About Me</Text>
+                    <Text>Hi everyone this is pradeep sharma i'm a react native lerner and now I'm working on a Demo project for the practice</Text>
+                    </View>
+
+
+
+
+
+
+
+
+
+
+
+                    <View>
+                        <View style={styles.Itemcontainer}>
+                            <Text style={styles.thirdcontainertexttitle} >MY Courses (4)</Text>
+                            <TouchableOpacity style={styles.SeeAllbutton}>
+                                <Text style={styles.seeAlltext}>See All</Text>
+                            </TouchableOpacity>
+
+                        </View>
+                        <FlatList
+
+                            data={dummyData.courses_list_2}
+                            extraData={dummyData.courses_list_2}
+                            showsVerticalScrollIndicator={false}
+                            keyExtractor={(item, index) => item + index.toString()}
+                            renderItem={({ item }) => <Item item={item} />}
+
+                        />
+                    </View>
+                    {/* <View>
+                        <View style={styles.Itemcontainer}>
+                            <Text style={styles.thirdcontainertexttitle} >Student Rating</Text>
+                        </View>
+                        <View>
+
+                        </View>
+                    </View> */}
+                    <View>
+                        <View style={styles.Itemcontainer}>
+                            <Text style={styles.thirdcontainertexttitle} >Student Review</Text>
+                            <TouchableOpacity style={styles.SeeAllbutton}>
+                                <Text style={styles.seeAlltext}>See All</Text>
+                            </TouchableOpacity>
+
+                        </View>
+                        <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+                            <View style={styles.flexDirectionrow}>
+                                {dummyData.studentreview.map((item, index) => {
+                                    return (
+                                        <View style={styles.reviewcontainer}>
+                                            <Image source={item.profile} style={styles.Icons} />
+                                            <View style={styles.itemtextcontainer}>
+                                                <Text style={styles.studentname}>{item.name}</Text>
+                                                <Text style={styles.comment}>{item.comment}</Text>
+                                                <Text style={styles.postedon}>{item.posted_on}</Text>
+                                            </View>
+                                        </View>
+                                    )
+                                })}
+                            </View>
+                        </ScrollView>
+                    </View>
+                    <View>
+                        <View style={styles.Itemcontainer}>
+                            <Text style={styles.thirdcontainertexttitle} >Connect Here</Text>
+                        </View>
+
+                        <TouchableOpacity style={styles.socialbtn}>
+
+                            <View style={styles.flexDirectionrow}>
+                                <Image source={icons.Icon.twitter} style={styles.socialbtnIcon} />
+                                <Text style={styles.socialbtnText}>{buttons.twitter}</Text>
+                            </View>
+                            <Image source={icons.Icon.right_arrow} style={styles.smallicon} />
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.socialbtn}>
+
+                            <View style={styles.flexDirectionrow}>
+                                <Image source={icons.Icon.linkedin} style={styles.socialbtnIcon} />
+                                <Text style={styles.socialbtnText}>{buttons.linkdin}</Text>
+                            </View>
+                            <Image source={icons.Icon.right_arrow} style={styles.smallicon} />
                         </TouchableOpacity>
 
                     </View>
-                    <FlatList
 
-                        data={dummyData.courses_list_2}
-                        extraData={dummyData.courses_list_2}
-                        showsVerticalScrollIndicator={false}
-                        keyExtractor={(item, index) => item + index.toString()}
-                        renderItem={({ item }) => <Item item={item} />}
-
-                    />
-                </View>
-                <View>
-                    <View style={styles.Itemcontainer}>
-                        <Text style={styles.thirdcontainertexttitle} >Student Rating</Text>
-                    </View>
-                    <View>
-                       {/* social button */}
-                    </View>
-                </View>
-                <View>
-                    <View style={styles.Itemcontainer}>
-                        <Text style={styles.thirdcontainertexttitle} >Student Review</Text>
-                        <TouchableOpacity style={styles.SeeAllbutton}>
-                            <Text style={styles.seeAlltext}>See All</Text>
-                        </TouchableOpacity>
-
-                    </View>
-                    <View>
-                       {/* student review */}
-                    </View>
-                </View>
-                <View>
-                    <View style={styles.Itemcontainer}>
-                        <Text style={styles.thirdcontainertexttitle} >Connect Here</Text>
-                    </View>
-                    <View>
-                       {/* social button */}
-                    </View>
-                </View>
- 
                 </ScrollView>
-
-                <TouchableOpacity style={styles.button}>
-                    <Text style={styles.buttontext}>{buttons.startfreetrail} </Text>
-                </TouchableOpacity>
-
 
             </View>
         </View>

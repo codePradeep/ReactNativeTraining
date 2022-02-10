@@ -203,7 +203,8 @@ const styles=StyleSheet.create({
     },
     itemtextcontainer:{
         marginLeft:10
-    },   Itemcontainer:{
+    },   
+    Itemcontainer:{
         flexDirection:"row",
         justifyContent:"space-between",
         alignItems:"center"
@@ -219,7 +220,8 @@ const styles=StyleSheet.create({
         fontSize:12,
         fontWeight:"700",
         
-    },  thirdcontainertexttitle:{
+    },
+      thirdcontainertexttitle:{
         marginVertical:5,
         paddingLeft:10,
         fontSize:21,
@@ -227,7 +229,8 @@ const styles=StyleSheet.create({
         fontWeight:"700",
         color:selectedTheme.textblackNwhite,
 
-    }, fevcontainer:{
+    },
+     fevcontainer:{
         flex:1,
         height:25,
         width: 25,

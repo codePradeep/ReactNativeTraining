@@ -20,7 +20,7 @@ const CourseFiles = (props: coursefilesprops) => {
                     <View style={styles.studentdatacontianer}>
                         {dummyData.course_details.students.map((item, index) => {
                             return (
-                                <View style={styles.studentcontainer}>
+                                <View  key={index}style={styles.studentcontainer}>
                                     {item.id != 3 ? <Image source={item.thumbnail} style={styles.studentIcon} />
                                         : <TouchableOpacity>
                                             <Text style={styles.ViewAll}>View All</Text>
@@ -38,7 +38,7 @@ const CourseFiles = (props: coursefilesprops) => {
                     <View style={styles.filesdatacontianer}>
                         {dummyData.course_details.files.map((item, index) => {
                             return (
-                                <View style={styles.Filescontainer}>
+                                <View key ={index} style={styles.Filescontainer}>
                                     <View style={styles.imagecontainer}>
                                         <Image source={item.thumbnail} style={styles.studentIcon} />
                                         <View style={styles.textcontainer}>

@@ -11,6 +11,9 @@ const styles = StyleSheet.create({
         marginVertical: "5%",
 
     },
+    headercontainer:{
+        justifyContent:"flex-start"
+    },
     container: {
         flex: 1,
         justifyContent: "space-between",

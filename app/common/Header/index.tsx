@@ -15,9 +15,9 @@ interface Headerprops{
     return(
         <View style={styles.headercontainer}>
         <View style={styles.headersubcontainer}>
-            <TouchableOpacity onPress={()=>navigation.goBack()} >
+            <TouchableOpacity onPress={()=>navigation.openDrawer()} >
                 <View style={styles.headerleftimagecontainer}>
-                    <Image source={icon.left_arrow} style={styles.headerleftimage} />
+                    <Image source={icon.menu} style={styles.headerleftimage} />
                 </View>
             </TouchableOpacity>
             <Text style={styles.HeaderText}>{headertitle}</Text>

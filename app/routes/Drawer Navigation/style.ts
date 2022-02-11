@@ -94,7 +94,7 @@ marginHorizontal:10
     },
     buttoncontainer: {
         flexDirection: 'row',
-        justifyContent: "flex-start",
+        justifyContent: "space-between",
         alignItems: 'center',
         bottom: 10,
         borderRadius: 90,

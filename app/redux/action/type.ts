@@ -1,3 +1,0 @@
-export const INCREASE_COUNTER = 'INCREASE_COUNTER';
-export const USER_DATA = 'USER_DATA';
-export const ADD_PROFILE_PIC="ADD_PROFILE_PIC";

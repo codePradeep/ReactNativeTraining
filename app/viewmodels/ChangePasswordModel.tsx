@@ -1,6 +1,5 @@
 import React from "react";
 import ChangePassword from "../views/Change Password";
-import Onborading from "../views/Onboarding";
 interface loginmodelprops{
     navigation:any
 }

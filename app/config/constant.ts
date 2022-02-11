@@ -2,25 +2,11 @@ const Constant={
 
 
 screens: {
-    main_layout: "MainLayout",
-    home: "Home",
-    search: "Search",
-    cart: "MY CART",
-    favourite: "Favourite",
     notification: "NOTIFICATION",
-    MYCARDS:"MY CARDS",
-    Addnewcard:"ADD NEW CARD",
-    checkout:"CHECKOUT",
     riderreview:"RIDER REVIEW",
     notificationTab:"NOTIFICATION",
-    myaccount:"MY ACCOUNT",
-    details:"DETAILS",
-    deliverystatus:"DELIVERY STATUS",
-    myorder:"MY ORDERS",
-    mycoupon:"MY COUPON",
-    SETTING:"SETTINGS",
     CHANGEPASSWORD:"CHANGE PASSWORD",
-    OTPAuthentication:"OTP Authentication"
+
 
 },
  Card:{
@@ -64,99 +50,10 @@ SuccessScreen:{
     title:"Congratulations!",
     subtitle:"Payment was Successfully made!"
 },
-AddNewCardscreen:{
-    CardNumber:"Card Number",
-    CardHolder:"Cardholder Name",
-    date:"Expiry Date",
-    Cvv:"CVV",
-    check:"Remember This Card Details"
-},
-checkoutScreen:{
-    DA:"Delivery Address",
-    AddCoupon:"Add Coupon",
-    subtotoal:"Subtotoal",
-    Shipping:"Shipping Fee",
-    Total:"Total:",
-    Couponcode:"Coupon Code"
-},
-RiderReviewscreen:{
-    addtips:"Add Tips",
-    notip:"No Tips",
-    addcomment:"Add a Comment",
-    please:"Please rate Delivery Service",
-    Deliveryman:"Delivery Man",
-    Order:"Order Delivered"
-},
-
-Myaccount:{
-    edit:"Edit",
-    fullname:"Full name",
-    Phone:"Phone Number",
-    userid:"User ID",
-    IDCard:"ID Card",
-    Dob:"Date of Birth",
-    gender:"Gender",
-    joined:"Joind",
-    Email:"Email",
-    address:"Address"
-},
-HomeScreen:{
-    deliverto:"DELIVERY TO",
-    populer:"Popular Near You",
-    showall:"Show All",
-    Recommonded:"Recommended",
-    FilterData:"Filtered Items",
-    Search:"Search",
-    //filter
-    filter:"Filter Your Search",
-    distance:"Distance",
-    deliverytime:"Delivery Time",
-    pricingrange:"Pricing Range",
-    rating:"Ratings",
-    tags:"Tags"
-
-},
-SigninScreen:{
-    letsSign:"Let's Sign You In",
-    welcome:"Welcome Back, You'ev been missed",
-    email:"Email",
-    password:"Password",
-    save:"Save Me",
-    Forget:"Forget password ?",
-    dont:"Don't have an account ?",
-    
-
-},
-SignUpScreen:{
-    gettingstarted:"Getting Started",
-    createaccount:"Create an account to continue!",
-    username:"Username",
-    already:"Already have an account?"
-
-},
-
-foodDetails:{
-    freeshipping:"Free Shipping",
-    Size:"Sizes:",
-    hambarger:"Hamburger",
-    details:"A popular spice and vegetables mixed favoured rice dish which is typically prepared by layering the biryani gravy and basmati rice in flat bottom vessel.",
-},
-DeliveryStatussScreen:{
-    estimate:"Estimated Delivery",
-    trackorder:"Track Order",
-    orderConfirm:"Order Confirmed",
-    orderconfirmdetai:"Your order has been received",
-    orderPrepared:"Order Prepared",
-    orderPrepareddetails:"Your order has been prepared",
-    deliveryinprogrees:"Delivery in Progress",
-    deliveryprogressdetails:"Hang on! Your food is on the way",
-    Delivered:"Delivered",
-    deliverdtails:"Enjoy your meal!",
-    rateus:"Rate Us",
-    ratedetails:"Help us improve our service"
 
 
-},
+
+
 changePassword:{
     currentpassword:"Current Password",
     newpassword:"New Password",
@@ -171,16 +68,7 @@ Notificationscreen:{
     Today:"Today",
     Yesterday:"Yesterday"
 },
-Otp:{
-    preEmail:"An authentication code has been sent to",
-    detailterm:"By signing up, you agree to our",
-    didnotrecive:"Didn't receive code ?" 
-},
-mapview:{
-    YourdeliveryTime:"Your delivery Time",
-    address:"Your address"
 
-},
 
 Validation:{
     username:"Invalid Username",

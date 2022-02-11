@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Image, ScrollView, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { Abutton, Header } from "../../common";
-import Logo from "../../common/Logo";
 import { Constant, icon } from "../../config";
 import styles from "./style";
 
@@ -17,9 +16,9 @@ const ChangePassword = (props: PasswordRecoveryprops) => {
 
         <View style={styles.mainContainer}>
             <View style={styles.headerview}>
-            <Header headertitle={Constant.screens.CHANGEPASSWORD} navigation={navigation} HeaderRightComponent={undefined}/>
-            
+           
             <View style={styles.container}>
+                
 
 
                     <View style={styles.inputView}>
@@ -52,7 +51,7 @@ const ChangePassword = (props: PasswordRecoveryprops) => {
                         </View>
                     </View>
 
-                <Abutton title={Constant.Button.ChangePassword} OnPress={undefined} />
+                <Abutton title={Constant.Button.ChangePassword} OnPress={()=>navigation.goBack()} />
                 
             </View>
             </View>

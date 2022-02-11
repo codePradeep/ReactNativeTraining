@@ -64,6 +64,7 @@ const icon ={
     facebook:require('../assets/icon/facebook.png'),
     gallery:require('../assets/icon/gallery.png'),
     camera:require('../assets/icon/camera.png'),
+    uparrow:require("../assets/icon/arrow_up.png"),
 
 }
 export default icon

@@ -26,7 +26,7 @@ const Success = (props: PasswordRecoveryprops) => {
                 </View>
 
 
-                <Abutton title={Constant.Button.Done} OnPress={()=>navigation.navigate(Screen.Homemodel)} />
+                <Abutton title={Constant.Button.Done}  OnPress={()=>navigation.goBack()} />
 
 
 

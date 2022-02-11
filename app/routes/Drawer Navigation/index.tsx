@@ -2,8 +2,9 @@ import 'react-native-gesture-handler';
 import React, { useState } from 'react';
 import { createDrawerNavigator, useDrawerProgress } from '@react-navigation/drawer';
 import CustomDrawer from './customdrawer';
-import Roottab from '../Tab Navigation/Roottab';
+
 import Animated from 'react-native-reanimated';
+import { NoticationSettingModel } from '../../viewmodels';
 
 const Drawer = createDrawerNavigator();
 
@@ -26,9 +27,10 @@ const DrawerNavigation = () => {
         drawerType: 'slide',
       }}
     >
-      <Drawer.Screen name="Root" 
-      component={Roottab} 
+      <Drawer.Screen name="home" 
+      component={NoticationSettingModel} 
       options={{ headerShown: false }} />
+       
 
     </Drawer.Navigator>
   );

@@ -9,19 +9,14 @@ import { NoticationSettingModel } from '../../viewmodels';
 const Drawer = createDrawerNavigator();
 
 const DrawerNavigation = () => {
-  // const [progress,setprogress]=useState(new Animated.Value(0))
-  
+
   return (
     <Drawer.Navigator
    
     
-      drawerContent={props =>{
-        setTimeout(()=>{
-          
-        },0)
-      return(<CustomDrawer {...props} />)}}
+      drawerContent={props =>{return(<CustomDrawer {...props} />)}}
       screenOptions={{
-        overlayColor:"none",
+      //  overlayColor:"none",
         headerShown: true, headerStyle: { backgroundColor: 'transparent' }, headerTitle: '',
         drawerStyle: { width: "70%" },
         drawerType: 'slide',

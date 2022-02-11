@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { CategoryModel, CoursefilesModel, CourseListingModel, CourseModel, Homemodel,InstructorProfileModel,Loginmodel, MembershipModel, NotificationTabModel, RegistrModel, SearchModel } from '../viewmodels';
+import { CategoryModel, CourseDiscussionModel, CoursefilesModel, CourseListingModel, CourseModel, Homemodel,InstructorProfileModel,Loginmodel, MembershipModel, NotificationTabModel, RegistrModel, SearchModel } from '../viewmodels';
 import Roottab from './Tab Navigation';
 
 
@@ -15,7 +15,7 @@ const Stack = createNativeStackNavigator();
 const Routenavigation =() => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="CourseFiles">
+      <Stack.Navigator initialRouteName="CourseDiscussionModel">
         <Stack.Screen name="RegistrModel" component={RegistrModel} options={{ headerShown:false }} />
         <Stack.Screen name="Loginmodel" component={Loginmodel} options={{ headerShown:false }}/>     
         <Stack.Screen name="CategoryModel" component={CategoryModel} options={{ headerShown:false }}/> 
@@ -29,8 +29,10 @@ const Routenavigation =() => {
         <Stack.Screen name="Roottab" component={Roottab} options={{ headerShown:false }}/> 
         <Stack.Screen name="Homemodel" component={Homemodel} options={{ headerShown:false }}/> 
         <Stack.Screen name="InstructorProfileModel" component={InstructorProfileModel} options={{ headerShown:false }}/> 
-        <Stack.Screen name="CourseModel" component={CourseModel} options={{ headerShown:false }}/>
+        <Stack.Screen name="CourseModel" component={CourseModel} options={{ headerShown:false }}/>    
         <Stack.Screen name="CourseFiles" component={CoursefilesModel} options={{ headerShown:false }}/>
+        <Stack.Screen name="CourseDiscussionModel" component={CourseDiscussionModel} options={{ headerShown:false }}/>
+
 
 
       </Stack.Navigator>

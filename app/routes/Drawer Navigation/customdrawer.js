@@ -33,7 +33,7 @@ const CustomDrawer = (props) => {
                                 onPress={() => visible? setvisible(false):setvisible(true)}
                                 >
                                 <Image style={style.itemicon}
-                                    source={icon.search} />
+                                    source={icon.home} />
                                 <Text style={style.buttontext}>Academic</Text>
                                {!visible? <Image style={style.itemicon}
                                     source={icon.down_arrow} />:

@@ -73,7 +73,9 @@ const CorselChapter = (props: Corselistingprops) => {
                     return(
                         <View key={index} style={styles.videocontainer}>
                             <View style={styles.subvideocontainer}>
-                            <Image source={icons.Icon.checked} style={styles.videoIcon}/>
+                            <View style={styles.playbutton}>
+                            <Image source={icons.Icon.play} style={styles.videoIcon}/>
+                            </View>
                             <View>
                                 <Text style={styles.title}>{item.title}</Text>
                                 <Text>{item.duration}</Text>

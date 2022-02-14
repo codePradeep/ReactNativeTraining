@@ -4,6 +4,7 @@ import { COLORS, selectedTheme } from "../../config";
 const styles = StyleSheet.create({
     mainconatiner: {
         flex: 1,
+        
         backgroundColor: selectedTheme.backgroundwhiteNgray8
 
     },
@@ -55,12 +56,10 @@ const styles = StyleSheet.create({
 
      },
      videoIcon:{
-         width:30,
-         height:30,
+         width:25,
+         height:25,
          resizeMode:"contain",
          alignSelf:"center",
-         marginRight:5,
-         backgroundColor:COLORS.gray10,
          borderRadius:90
      },
      buttoncontainer:{
@@ -363,6 +362,12 @@ const styles = StyleSheet.create({
         fontWeight:"700",
         
     },
+    playbutton:{  height:40,
+        width:40,
+        backgroundColor:COLORS.primary,
+        borderRadius:90,
+        alignItems:"center",
+        justifyContent:"center"}
 
 
 });

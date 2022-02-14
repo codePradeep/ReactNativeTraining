@@ -31,7 +31,7 @@ const Register = (props: Registerprops) => {
                     <View style={styles.boxcontainer}>
                         <TouchableOpacity
                             onPress={() => selected ? setselected(false) : setselected(true)}
-                            style={[styles.box, { backgroundColor: selected ? selectedTheme.backgroundColor8 : COLORS.primary3 }]}>
+                            style={[styles.box, { backgroundColor: selected ? selectedTheme.backgroundgray10Ngray70 : COLORS.primary3 }]}>
 
                             <Image source={!selected ? icons.Icon.checkbox_on_dark : icons.Icon.checkbox_off} style={styles.checkedIcon} />
 
@@ -41,7 +41,7 @@ const Register = (props: Registerprops) => {
 
                         <TouchableOpacity
                             onPress={() => selected ? setselected(false) : setselected(true)}
-                            style={[styles.box, { backgroundColor: selected ? COLORS.primary3 : selectedTheme.backgroundColor8 }]}>
+                            style={[styles.box, { backgroundColor: selected ? COLORS.primary3 : selectedTheme.backgroundgray10Ngray70 }]}>
                             <Image source={selected ? icons.Icon.checkbox_on_dark : icons.Icon.checkbox_off} style={styles.checkedIcon} />
                             <Text style={{ color:!selected? COLORS.primary3:COLORS.white }}>I am a </Text>
                             <Text style={{fontWeight:"700", fontSize: 20, color:!selected? COLORS.primary3:COLORS.white}}>TUTOR</Text>

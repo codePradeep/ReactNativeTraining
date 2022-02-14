@@ -15,7 +15,7 @@ const Stack = createNativeStackNavigator();
 const Routenavigation =() => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="CourseDiscussionModel">
+      <Stack.Navigator initialRouteName="CourseModel">
         <Stack.Screen name="RegistrModel" component={RegistrModel} options={{ headerShown:false }} />
         <Stack.Screen name="Loginmodel" component={Loginmodel} options={{ headerShown:false }}/>     
         <Stack.Screen name="CategoryModel" component={CategoryModel} options={{ headerShown:false }}/> 

@@ -9,8 +9,8 @@ import SearchModel from "./SearchModel";
 import CourseListingModel from "./CourseListingModel";
 import InstructorProfileModel from "./InstructorProfileModel";
 import CourseModel from "./CourseModel";
-import CoursefilesModel from "./CourseFiles";
-import CourseDiscussionModel from "./CourseDiscussion";
+import OnboardingModel from "./OnboardingModel";
+
 export {
     Homemodel,
     Loginmodel,
@@ -22,8 +22,7 @@ export {
     CourseListingModel,
     InstructorProfileModel,
     CourseModel,
-    CoursefilesModel,
-    CourseDiscussionModel
+    OnboardingModel
 
     
 };

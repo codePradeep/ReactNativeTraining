@@ -15,6 +15,7 @@ const Screensdata={
 
 const buttons={
     Login:"Login",
+    Register:"Register",
     Google:"Google",
     facebook:"Facebook",
     Signupnow:"Sign Up Now",

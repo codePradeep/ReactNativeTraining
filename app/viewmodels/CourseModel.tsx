@@ -15,12 +15,6 @@ const CourseModel = (props: Coursemodlprops) => {
             navigation={navigation}
             DATA={dummyData}
         />
-        // <CorselChapter
-        //     navigation={navigation} 
-        //     flatlistdata={dummyData.courses_list_2}
-        //     DATA={dummyData.course_details}       
-
-        //  />
     )
 }
 export default CourseModel;

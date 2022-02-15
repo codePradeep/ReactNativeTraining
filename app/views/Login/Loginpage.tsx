@@ -8,30 +8,47 @@ interface loginpageprops {
     navigation: any
     visible: boolean
     setvisibe: React.Dispatch<React.SetStateAction<boolean>>
+    isvalidEmail: boolean
+    isvalidPassword: boolean
+    Emailinpute: (text: string) => void
+    EnterPassword: (text: string) => void,
+    isEnabled: boolean
+    submit: any
 }
 
 const Loginpage = (props: loginpageprops) => {
-    const { navigation, visible, setvisibe } = props
+    const { navigation, visible, setvisibe ,
+        isvalidEmail,
+        isvalidPassword,
+        Emailinpute,
+        EnterPassword,
+        isEnabled,
+        
+        submit} = props
 
     return (
         <View style={styles.MainConatiner}>
             <Image source={images.images.bg} style={styles.bgimage} />
             <Text style={styles.heading}>{Screensdata.Login}</Text>
-
             <View style={styles.container}>
                 <View style={styles.input} >
                     <Text style={styles.formtext}>{Form.usernameorEmail}</Text>
                     <View style={styles.inputecontainer}>
-                        <TextInput  style={styles.inputText}/>
-                    </View>
-                </View>
 
+                        <TextInput 
+                        keyboardType={"email-address"}
+                        onChangeText={Emailinpute}
+                        style={styles.inputText} />
+                    </View>
+                    {!isvalidEmail? <Text style={{color:"red"}}>Invalid Email</Text>:null}
+                </View>
                 <View style={styles.input}>
                     <Text style={styles.formtext}>{Form.Passsword}</Text>
                     <View style={styles.inputecontainer}>
                         <TextInput
                             style={styles.inputText}
                             secureTextEntry={!visible}
+                            onChangeText={EnterPassword}
                         />
                         <TouchableOpacity
                             style={styles.eyecontainer}
@@ -40,9 +57,12 @@ const Loginpage = (props: loginpageprops) => {
                             <Image source={visible ? icons.Icon.eye : icons.Icon.eye_close} style={styles.eyeicon} />
                         </TouchableOpacity>
                     </View>
+                    {!isvalidPassword? <Text style={{color:"red"}}>Invalid Password</Text>:null}
                 </View>
 
-                <TouchableOpacity style={styles.button}>
+                <TouchableOpacity style={styles.button}
+                onPress={submit}
+                >
                     <Text style={styles.buttontext}>{buttons.Login}</Text>
                 </TouchableOpacity>
 
@@ -68,7 +88,8 @@ const Loginpage = (props: loginpageprops) => {
                     <Text style={styles.newusertext}>New User?</Text>
 
 
-                    <TouchableOpacity>
+                    <TouchableOpacity
+                    onPress={()=>navigation.navigate("RegistrModel")}>
                         <Text style={styles.signuptext}>{buttons.Signupnow}</Text>
                     </TouchableOpacity>
 
@@ -76,7 +97,7 @@ const Loginpage = (props: loginpageprops) => {
 
 
             </View>
-          
+
 
 
         </View>

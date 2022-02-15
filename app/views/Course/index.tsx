@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Image, ImageBackground, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { COLORS, constants, icons, images, selectedTheme } from "../../config";
-import { CourseDiscussionModel } from "../../viewmodels";
 import CorselChapter from "../Course Chapter";
 import CourseDiscussion from "../Course Discussion";
 import CourseFiles from "../Course Files";

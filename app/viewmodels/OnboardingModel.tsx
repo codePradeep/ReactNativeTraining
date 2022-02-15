@@ -1,18 +1,19 @@
 import React,{useState} from "react";
-import CourseFiles from "../views/Course Files";
-interface CoursefilesModelprops{
+
+import OnBoarding from "../views/Onboardeing";
+interface Onboradingprops{
     navigation:any
 }
-const CoursefilesModel =(props:CoursefilesModelprops)=>{
+const OnboardingModel =(props:Onboradingprops)=>{
     const {navigation}=props
 
     const [visible,setvisibe]=useState(false)
     return(
-        <CourseFiles
+        <OnBoarding
          navigation={navigation} 
-       
+        
          
          />
     )
 }
-export default CoursefilesModel;
+export default OnboardingModel;

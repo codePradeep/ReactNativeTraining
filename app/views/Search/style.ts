@@ -1,7 +1,8 @@
 import { Dimensions, StyleSheet } from "react-native";
-import { selectedTheme } from "../../config";
-import { COLORS, FONTS } from "../../config/constants/theme";
-const styles = StyleSheet.create({
+
+import { COLORS, FONTS, } from "../../config/constants/theme";
+const styles =(selectedTheme:any)=> StyleSheet.create({
+
 
     mainconatiner: {
         flex: 1,
@@ -47,6 +48,12 @@ const styles = StyleSheet.create({
         borderRadius: 10
 
     },
+    searchbarimage:{
+        width:20,
+        height:20,
+        resizeMode:"contain",
+        alignSelf:"center"
+    },
     button: {
         borderRadius: 90,
         backgroundColor: COLORS.primary,
@@ -68,18 +75,22 @@ const styles = StyleSheet.create({
         color: selectedTheme.textblackNgray
     },
     flatlistcontainer: {
-        flex: 1,
         marginVertical: 20,
     },
     item: {
         borderWidth: .5,
         flex: 1,
-        margin: 4,
+        margin: "1%",
+        
         borderRadius: 20,
         height: Dimensions.get('window').width / 3,
     },
     itemInvisible: {
         backgroundColor: 'transparent',
+    },
+    topsearchcontainer:{
+        height:"40%",
+        
     },
     itemtext: {
         margin: 10,
@@ -92,6 +103,7 @@ const styles = StyleSheet.create({
     searchlist: {
         backgroundColor: selectedTheme.backgroundgray10Ngray70,
         padding: 10,
+        flex:1,
         borderRadius: 10,
         marginRight: 10,
         color: selectedTheme.textblackNwhite

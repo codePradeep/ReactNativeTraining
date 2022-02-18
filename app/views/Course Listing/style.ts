@@ -8,8 +8,7 @@ const styles = StyleSheet.create({
 
     },
     headercontainer: {
-        paddingHorizontal: 20,
-        paddingVertical: 20
+        padding:10
     },
     bgimage: {
         height: "120%",
@@ -18,11 +17,15 @@ const styles = StyleSheet.create({
         borderBottomLeftRadius: 40
     },
     conatiner: {
+    
         flex: 1,
         marginHorizontal: 20,
         marginVertical: 20
     },
     leftbutton: {
+        // position:"absolute",
+        // elevation:4,
+        // top:0,right:0,left:0,
         height: 50,
         width: 50,
         borderRadius: 90,

@@ -7,7 +7,7 @@ interface renderItem {
     item: {
         id: number;
         title: string;
-        duration: string;
+        duration: number;
         instructor: string;
         ratings: number;
         price: number;
@@ -33,7 +33,7 @@ const Item = (props: renderItem) => {
                         <Text style={styles.time}>By {item.instructor} </Text>
                         <View style={styles.ratingcontainer}>
                             <Image source={icons.Icon.reminder} style={styles.smallicon} />
-                            <Text style={styles.time}> {item.duration}</Text>
+                            <Text style={styles.time}> {item.duration} Min</Text>
                         </View>
                     </View>
                     <View style={styles.notificationtitlecontainer}>
@@ -61,6 +61,7 @@ interface renderprops {
   }
     defaultitem:any
     setdefaultitem:any
+
   
   }
   
@@ -70,7 +71,7 @@ interface renderprops {
       return(
           
           <TouchableOpacity 
-          onPress={()=>setdefaultitem(item.id)}
+          onPress={()=>(setdefaultitem(item.id))}
           style={[styles.classtypeitem,{backgroundColor:defaultitem == item.id?selectedTheme.backgroundblueNblack:selectedTheme.backgroundwhite3Ngray8,
           borderColor:defaultitem == item.id?selectedTheme.borderColor1:selectedTheme.borderColor1
           }]}>

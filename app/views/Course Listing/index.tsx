@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, View, SafeAreaView, SectionList, StatusBar, Image, TouchableOpacity, FlatList, ScrollView, Modal } from "react-native";
+import { Text, View, Image, TouchableOpacity, FlatList, ScrollView, Modal, Animated } from "react-native";
 import { Slider } from "../../common";
 import { buttons, COLORS, icons, images, Screensdata, selectedTheme } from "../../config";
 import { Item, Renderitem } from "./Renderitem";
@@ -12,7 +12,7 @@ interface Corselistingprops {
     DATA: {
         id: number;
         title: string;
-        duration: string;
+        duration: number;
         instructor: string;
         ratings: number;
         price: number;
@@ -40,6 +40,10 @@ interface Corselistingprops {
     }[]
     defaultcreatedwithin:number
      setdefaultcreatedwithin:React.Dispatch<React.SetStateAction<number>>
+     setclassleveldata:React.Dispatch<React.SetStateAction<string>>
+     setduration:any
+     Resetfilter:any
+     resultdata:any
 }
 
 const Corselisting = (props: Corselistingprops) => {
@@ -55,11 +59,43 @@ const Corselisting = (props: Corselistingprops) => {
         setdefaultclasslevel,
         CreatedWithin ,
         defaultcreatedwithin, 
-        setdefaultcreatedwithin} = props
+        setdefaultcreatedwithin,
+        setclassleveldata,
+        setduration,
+        Resetfilter,
+        resultdata
+    } = props
+
+        const scrollY=new Animated.Value(0)
+  
+        const translateY=scrollY.interpolate({
+            inputRange:[0,50],
+            outputRange:[0,-9]
+        })
+
+
+
+
+
+
     return (
         <View style={styles.mainconatiner}>
+            <Animated.View 
+
+            style={{
+                
+                // position:"absolute",
+                // elevation:1,
+                // zIndex:100,
+                // top:0,left:0,right:0,
+                transform:[
+                    {translateY:translateY},
+                    
+                ]
+            }}
+            >
             <View style={styles.headercontainer}>
-                <Image source={images.images.bg_1} style={styles.bgimage} />
+                <Animated.Image source={images.images.bg_1} style={styles.bgimage} />
                 <TouchableOpacity
                     style={styles.leftbutton}
                 >
@@ -70,9 +106,15 @@ const Corselisting = (props: Corselistingprops) => {
                     <Image source={icons.Icon.mobile} style={styles.mobileimage} />
                 </View>
             </View>
-            <View style={styles.conatiner}>
+            </Animated.View>
+            <Animated.View style={[styles.conatiner,{
+                
+                
+                   
+               
+            }]}>
                 <View style={styles.secContainer}>
-                    <Text style={styles.filterbuttontext}>5.761 Results</Text>
+                    <Text style={styles.filterbuttontext}>{resultdata} Results</Text>
                     <TouchableOpacity style={styles.filterbutton}
                         onPress={() => { setModalVisible(true) }}
                     >
@@ -87,9 +129,12 @@ const Corselisting = (props: Corselistingprops) => {
                     showsVerticalScrollIndicator={false}
                     keyExtractor={(item, index) => item + index.toString()}
                     renderItem={({ item }) => <Item item={item} />}
+                    onScroll={(e)=>{
+                        scrollY.setValue(e.nativeEvent.contentOffset.y)
+                    }}
 
                 />
-            </View>
+            </Animated.View>
 
             <Modal animationType="slide"
                 transparent={true}
@@ -107,7 +152,7 @@ const Corselisting = (props: Corselistingprops) => {
                 
                         <View style={styles.modalTextcontainer}>
                             <Text style={styles.modalText}>{Screensdata.Filter.Filter}</Text>
-                            <TouchableOpacity onPress={() => setModalVisible(false)} style={styles.crossimageconatainer}>
+                            <TouchableOpacity onPress={() => {setModalVisible(false),Resetfilter()}} style={styles.crossimageconatainer}>
                                 <Text style={styles.ModalSubText}>{buttons.Cancel}</Text>
                             </TouchableOpacity>
                         </View>
@@ -117,7 +162,7 @@ const Corselisting = (props: Corselistingprops) => {
                             <FlatList
                                 data={Classtypedata}
                                 extraData={Classtypedata}
-                                renderItem={({ item, index }) => <Renderitem item={item} index={index} defaultitem={defaultitem} setdefaultitem={setdefaultitem} />}
+                                renderItem={({ item, index }) => <Renderitem item={item} index={index} defaultitem={defaultitem} setdefaultitem={setdefaultitem}  />}
                                 numColumns={3}
                                 keyExtractor={(_, index) => index.toString()}
                             />
@@ -130,7 +175,7 @@ const Corselisting = (props: Corselistingprops) => {
                                 return (
                                     <View key={index} style={styles.classlevelcontainer}>
                                         <TouchableOpacity style={styles.classlevelbtn}
-                                            onPress={() => setdefaultclasslevel(item.id)}
+                                            onPress={() => {setdefaultclasslevel(item.id),setclassleveldata(item.label)}}
                                         >
                                             <Text>{item.label}</Text>
                                             <Image source={defaultclasslevel == item.id ? icons.Icon.checkbox_on : icons.Icon.checkbox_off} style={styles.smallicon} />
@@ -166,12 +211,11 @@ const Corselisting = (props: Corselistingprops) => {
                                 min={10}
                                 max={60}
                                 postfix="Min"
-                                onValueChange={(values: any) => console.log(values)
-                                    //   setdistance(values)
-                                } prifix={""}
+                                onValueChange={(values: any) => setduration(values)}
+                                 prifix={""}
                             />
                         </View>
-
+                        
                     </ScrollView>
 
 
@@ -179,7 +223,8 @@ const Corselisting = (props: Corselistingprops) => {
 <TouchableOpacity
                          style={styles.restbutton}
                         onPress={() => {
-                            setModalVisible(false)
+                            setModalVisible(false),
+                            Resetfilter()
                             //   setfilterdata(true) 
                         }}
                     >

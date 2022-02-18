@@ -111,7 +111,25 @@ export const lightTheme = {
     dotColor2: COLORS.primary3,
 }
 
-export const selectedTheme = lightTheme
+
+export let selectedTheme = darkTheme
+
+export const changeTheme=()=>{
+    console.log("buttonclicked")
+
+    if (selectedTheme.name=="light"){
+        selectedTheme=darkTheme
+    }else{
+        selectedTheme=lightTheme
+    }
+     console.log(selectedTheme.name)
+}
+
+
+
+
+
+
 
 const appTheme = { COLORS, SIZES, FONTS, darkTheme, lightTheme };
 

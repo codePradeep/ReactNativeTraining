@@ -25,9 +25,7 @@ interface SearchScreenProps {
         thumbnail: any;
     }[]
     DATA: any
-    changeTheme:any
-    render:any
-    setrender:any
+    
 }
 
 const SearchScreen = (props: SearchScreenProps) => {
@@ -43,7 +41,7 @@ const SearchScreen = (props: SearchScreenProps) => {
         setisSearch,
         resetsearch,
         flatlistdata, DATA,
-        changeTheme,render,setrender
+        
     } = props
 
     const handleEmpty = () => {
@@ -55,7 +53,8 @@ const SearchScreen = (props: SearchScreenProps) => {
             <View style={styles(selectedTheme).conatiner}>
                 <View style={styles(selectedTheme).searchbar}>
                     <TouchableOpacity 
-                    onPress={()=>{setrender(!render),changeTheme()}}>
+                    // onPress={()=>{setrender(!render),changeTheme()}}
+                    >
                         <Image source={icons.Icon.search} style={styles(selectedTheme).headerlefticon} />
                     </TouchableOpacity>
                     

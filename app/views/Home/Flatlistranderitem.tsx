@@ -4,10 +4,12 @@ import { COLORS, icons } from "../../config";
 import styles from "./style";
 
 interface renderItem {
-    item: {
+    item:  {
         id: number;
         title: string;
-        duration: string;
+        clsss_level: string;
+        creted_on: string;
+        duration: number;
         instructor: string;
         ratings: number;
         price: number;

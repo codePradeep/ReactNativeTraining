@@ -1,5 +1,6 @@
+import { NavigationContainer } from "@react-navigation/native";
 import React, { useState } from "react";
-import { Image, ScrollView, Switch, Text, TouchableOpacity, View } from "react-native";
+import { Image, Modal, ScrollView, Switch, Text, TouchableOpacity, TouchableWithoutFeedback, View } from "react-native";
 import { ProgressBar } from "../../common";
 import { COLORS, dummyData, icons, images, selectedTheme } from "../../config";
 import { changeTheme } from "../../config/constants/theme";
@@ -12,20 +13,23 @@ interface profileprops {
     setvisibe: any
     setrender :any
             render:any
+            modalVisible:any
+             setModalVisible:any
+             launchLibrary:any
+             openCamara:any
+             imageUriGallary:any
 }
 const ProfileScreen = (props: profileprops) => {
-    const { 
+    const { navigation,
         visible, 
         setvisibe ,
         setrender ,
-            render
+        render,
+        modalVisible, setModalVisible,
+        openCamara,launchLibrary,
+        imageUriGallary
     } = props
-    function onScroll(event:any) {
-        const { nativeEvent } = event;
-        const { contentOffset } = nativeEvent;
-        const { y } = contentOffset;
-        console.log(y)
-      }
+
     
    
     return (
@@ -39,13 +43,15 @@ const ProfileScreen = (props: profileprops) => {
                 </TouchableOpacity>
             </View>
             <ScrollView 
-           onScroll={onScroll}
+           
             showsVerticalScrollIndicator={false}>
             <View style={styles(selectedTheme).subcontainer}>
 
                 <View style={{ flexDirection: "row" }}>
-                    <TouchableOpacity style={styles(selectedTheme).ImageContainer}>
-                        <Image source={images.images.profile} style={styles(selectedTheme).profileicon} />
+                    <TouchableOpacity style={styles(selectedTheme).ImageContainer}
+                    onPress={() => setModalVisible(true)}
+                    >
+                        <Image source={{uri:imageUriGallary}} style={styles(selectedTheme).profileicon} />
                         <View style={styles(selectedTheme).imagecontainerView}>
                             <View style={styles(selectedTheme).imageViewContainer}>
                                 <Image source={icons.Icon.camera} style={styles(selectedTheme).camericon} />
@@ -63,7 +69,9 @@ const ProfileScreen = (props: profileprops) => {
                     </View>
                 </View>
                 <View>
-                    <TouchableOpacity style={styles(selectedTheme).learnbutton}>
+                    <TouchableOpacity style={styles(selectedTheme).learnbutton}
+                    
+                    onPress={()=>navigation.navigate("MembershipModel")}>
                         <Text style={styles(selectedTheme).learnbuttontext}>+ Become Member</Text>
                     </TouchableOpacity>
                 </View>
@@ -124,6 +132,40 @@ const ProfileScreen = (props: profileprops) => {
 
             </View>
             </ScrollView>
+            <Modal animationType="slide"
+        transparent={true}
+        visible={modalVisible}
+        onRequestClose={() => {
+
+          setModalVisible(!modalVisible);
+        }} >
+          <TouchableWithoutFeedback onPress={() => setModalVisible(!modalVisible)}>
+               <View style={styles(selectedTheme).drawercontainer} />
+               
+            </TouchableWithoutFeedback>
+         
+
+            <View style={styles(selectedTheme).Modalview}>
+            <TouchableOpacity onPress={() => setModalVisible(!modalVisible)}>
+              <Image source={icons.Icon.cross} style={styles(selectedTheme).modalicon}  />
+              <Text style={styles(selectedTheme).modaltext}>Cancel</Text>
+              </TouchableOpacity>
+             
+              <TouchableOpacity onPress={() => openCamara()}>
+
+              <Image source={icons.Icon.camera} style={styles(selectedTheme).modalicon} />
+              <Text style={styles(selectedTheme).modaltext}>Camera</Text>
+              </TouchableOpacity>
+              
+              <TouchableOpacity onPress={() => launchLibrary()} >
+              <Image source={icons.Icon.camera} style={styles(selectedTheme).modalicon}  />
+              <Text  style={styles(selectedTheme).modaltext}>Gallery</Text>
+              </TouchableOpacity>
+             
+             
+            </View>    
+           
+      </Modal>
 
         </View>
     )

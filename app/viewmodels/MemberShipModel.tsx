@@ -7,7 +7,7 @@ const MembershipModel =(props:loginmodelprops)=>{
     const {navigation}=props
 
     const [visible,setvisibe]=useState(false)
-    const [defaultitem, setdefaultitem] = useState(1);
+    const [defaultitem, setdefaultitem] = useState(0);
     return(
         <Membership
             navigation={navigation}

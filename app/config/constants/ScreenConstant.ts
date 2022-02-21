@@ -1,6 +1,11 @@
 const Screensdata={
     Login:"Login",
     Register:"Register",
+    Membership:{
+        name:"Membership",
+        header:"Unlimited Study Anytime,Anywhere",
+        data:"Choose A Plan"
+    },
     Filter:{
         Filter:"Filter",
         Classtype:"Class Type",

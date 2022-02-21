@@ -13,6 +13,11 @@ const SearchModel = (props: SearchModelprops) => {
     const [searchText, SetsearchText] = useState("")
     const [isSearch, setisSearch] = useState(false)
     const [render, setrender] = useState(false)
+    
+    useEffect(() => {
+      setrender(!render)
+    }, [])
+    
 
     let menu = dummyData.courses_list_2
     const SearchData = menu.filter((a: any) => a.title.toLowerCase().match(searchText.toLowerCase())).map((a: any) => a);
@@ -30,9 +35,8 @@ const SearchModel = (props: SearchModelprops) => {
             setisSearch={setisSearch}
             resetsearch={(text: string) => { SetsearchText("") }}
             DATA={SearchData}
-            changeTheme={() => changeTheme()}
-            render={render}
-            setrender={setrender}
+            
+            
         />
     )
 }

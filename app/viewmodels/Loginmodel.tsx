@@ -23,8 +23,7 @@ const Loginmodel = (props: loginmodelprops) => {
     
     setisvalidEmail(EmailValidate(Email))
     setisvalidPassword(PasswordValidate(password))
-    isvalidEmail == true && isvalidPassword == true ? navigation.navigate("Roottab") : null
-
+    // isvalidEmail == true && isvalidPassword == true ? navigation.navigate("Roottab") : null
   }
   return (
     <Loginpage
@@ -37,7 +36,6 @@ const Loginmodel = (props: loginmodelprops) => {
       EnterPassword={(text: string) => setpassword(text)}
       isEnabled={isEnabled}
       submit={() => submit(Email, password)}
-
     />
   )
 }

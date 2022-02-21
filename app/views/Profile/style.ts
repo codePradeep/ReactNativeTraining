@@ -157,7 +157,35 @@ const styles =(selectedTheme:any)=> StyleSheet.create({
         fontSize: 14,
         fontWeight: "500",
         color: selectedTheme.textgray8Ngray4
-    }
+    },
+    drawercontainer:{ 
+        flex: 1, 
+        justifyContent: "center",
+        
+    },
+    Modalview:{
+        flex:.2,
+        justifyContent:"space-evenly",
+        flexDirection:"row",
+        backgroundColor:COLORS.primary3,
+        alignItems:"center",
+        borderTopLeftRadius:40,
+        borderTopRightRadius:40
+    },
+    modalicon:{
+        height: "25%",
+        width:"90%",
+        resizeMode:"contain",
+        alignSelf:"center",
+        tintColor:COLORS.white
+
+    },
+    modaltext:{
+        color:COLORS.white,
+        fontSize:20,
+        
+        marginVertical:5
+    },
 
 
 

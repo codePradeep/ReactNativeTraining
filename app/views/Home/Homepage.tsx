@@ -36,7 +36,8 @@ const Homepage = (props: Homepageprops) => {
                     <Text style={styles.subtextdata}>Make your brand more visible with our checklist</Text>
                     <Text style={styles.auther}>by Pradeep</Text>
                     <Image source={images.images.start_learning} />
-                    <TouchableOpacity style={styles.learnbutton}>
+                    <TouchableOpacity style={styles.learnbutton} 
+                    onPress={()=>navigation.navigate("CourseModel")}>
                         <Text style={styles.learnbuttontext}>Start Learning</Text>
                     </TouchableOpacity>
                 </ImageBackground>

@@ -14,20 +14,21 @@ const styles=StyleSheet.create({
     },
     dotsRootContainer: {
         position: 'absolute',
-        bottom: SIZES.height > 700 ? '2%' : '1%',
+        bottom:25,
+        left:20
+       
     },
     dotsContainer: {
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
-        marginTop: SIZES.padding / 2,
-        marginBottom: SIZES.padding * 3,
-        height: SIZES.padding,
+        marginTop: 10,
+        height: 25,
     },
     dot: {
-        borderRadius: SIZES.radius,
-        backgroundColor: COLORS.primary3,
-        marginHorizontal: SIZES.radius / 2
+        borderRadius: 12,
+        backgroundColor: COLORS.primary,
+         marginHorizontal: 4
     },
     buttonstyle:{
         position: 'absolute',

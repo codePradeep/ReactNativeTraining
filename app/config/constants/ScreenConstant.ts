@@ -7,8 +7,11 @@ const Screensdata={
         ClassLevel:"Class Level",
         CreatedWithin:"Created Within",
         classtime:"Class Time"
-
-
+    },
+    Search:{
+        placeholder:"Search for Topic,Courses & Educations",
+        TopSearches:"Top Searches",
+        BrowseCategories:"Browse Categories"
     }
 
 }
@@ -26,7 +29,9 @@ const buttons={
     Cancel:"Cancel",
     Follow:"Follow",
     twitter:"Twitter",
-    linkdin:"Linkdin"
+    linkdin:"Linkdin",
+    Next:"Next",
+    letsStart:"Let's Start"
 
     
 }

@@ -18,13 +18,13 @@ const walkthrough = [
     },
     {
         id: 1,
-        title: "Explore Online Courses",
+        title: "Go Take The Online Courses",
         sub_title: "All types of educational & professional courses available online.",
         image: require("../../assets/images/work.png")
     },
     {
         id: 2,
-        title: "Explore Online Courses",
+        title: "It's Your Online Courses",
         sub_title: "All types of educational & professional courses available online.",
         image: require("../../assets/images/work.png")
     },

@@ -112,22 +112,15 @@ export const lightTheme = {
 }
 
 
-export let selectedTheme = darkTheme
+export let selectedTheme = lightTheme
 
 export const changeTheme=()=>{
-    console.log("buttonclicked")
-
     if (selectedTheme.name=="light"){
         selectedTheme=darkTheme
     }else{
         selectedTheme=lightTheme
     }
-     console.log(selectedTheme.name)
 }
-
-
-
-
 
 
 

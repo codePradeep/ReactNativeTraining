@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { FlatList, Image, ScrollView, Text, TextInput, TouchableOpacity, View } from "react-native";
-import { buttons, icons } from "../../config";
-import constants from "../../config/constants/constants";
+import {  icons, Screensdata ,selectedTheme } from "../../config";
 import dummyData from "../../config/constants/dummyData";
 import { Item } from "../Course Listing/Renderitem";
 import Renderitem from "./Renderitem";
 import styles from "./style";
-import { selectedTheme } from "../../config";
+
 
 
 interface SearchScreenProps {
@@ -47,37 +46,26 @@ const SearchScreen = (props: SearchScreenProps) => {
         changeTheme,render,setrender
     } = props
 
-
-
-
-console.log("screem=>",selectedTheme.name)
-
-
-
-
+    const handleEmpty = () => {
+        return <Text> No data present!</Text>;
+      };
 
     return (
         <View style={styles(selectedTheme).mainconatiner}>
             <View style={styles(selectedTheme).conatiner}>
-
                 <View style={styles(selectedTheme).searchbar}>
                     <TouchableOpacity 
                     onPress={()=>{setrender(!render),changeTheme()}}>
                         <Image source={icons.Icon.search} style={styles(selectedTheme).headerlefticon} />
                     </TouchableOpacity>
-                    {/* <TextInput 
-                    placeholder="Search for Topic,Courses & Educations" 
-                    onChangeText={SearchTexthandler}
-                    /> */}
+                    
                     <TextInput style={[
-                        //styles(selectedTheme).searchbarinput, 
                         { width: !isSearch ? "100%" : "85%", }]}
                         onChangeText={SearchTexthandler}
+                        placeholder={Screensdata.Search.placeholder} 
                         value={searchText}
                     />
-                    {isSearch ? <TouchableOpacity onPress={() => { setisSearch(false), resetsearch(Text) }}
-                    //  style={styles(selectedTheme).searchclose}
-                    >
+                    {isSearch ? <TouchableOpacity onPress={() => { setisSearch(false), resetsearch(Text) }}>
                         <Image source={icons.Icon.cross} style={[styles(selectedTheme).searchbarimage]} />
                     </TouchableOpacity> : null}
                 </View>
@@ -85,9 +73,8 @@ console.log("screem=>",selectedTheme.name)
 
 
 
-                <Text style={styles(selectedTheme).text}>Top Searches</Text>
+                <Text style={styles(selectedTheme).text}>{Screensdata.Search.TopSearches}</Text>
                 <ScrollView
-                style={{flex:1}}
                     horizontal
                     showsHorizontalScrollIndicator={false}
                 >
@@ -104,22 +91,22 @@ console.log("screem=>",selectedTheme.name)
 
 
                 {!isSearch? 
-                <View >
-                <Text style={styles(selectedTheme).text}>Browse Categories</Text>
                 <FlatList
+                    key={1}
                     data={flatlistdata}
                     extraData={flatlistdata}
                     showsVerticalScrollIndicator={false}
                     renderItem={({ item, index }) => <Renderitem item={item} index={index} defaultitem={defaultitem} setdefaultitem={setdefaultitem} />}
-                    numColumns={2}
+                     numColumns={2}
                     keyExtractor={(_, index) => index.toString()}
+                     ListHeaderComponent={<Text style={styles(selectedTheme).text}>{Screensdata.Search.BrowseCategories}</Text>}
                 />
-                </View>
                 :
 
                 <FlatList
                     data={DATA}
                     showsVerticalScrollIndicator={false}
+                     ListEmptyComponent={handleEmpty}
                     keyExtractor={(item, index) => item + index.toString()}
                     renderItem={({ item }) => <Item item={item} />}
                  />

@@ -39,8 +39,8 @@ const Loginpage = (props: loginpageprops) => {
                         keyboardType={"email-address"}
                         onChangeText={Emailinpute}
                         style={styles.inputText} />
+                        
                     </View>
-                    {!isvalidEmail? <Text style={{color:"red"}}>Invalid Email</Text>:null}
                 </View>
                 <View style={styles.input}>
                     <Text style={styles.formtext}>{Form.Passsword}</Text>

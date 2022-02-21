@@ -1,5 +1,5 @@
 
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import {
     Animated,
     Image,
@@ -26,6 +26,12 @@ const OnBoarding = (props: onboradingscreen) => {
     const { navigation } = props
     const [completed, setCompleted] = React.useState(false);
 
+    const flatlistRef = useRef<any | null>(null);
+
+    const scrollToIndex = (data: any) => {
+        flatlistRef.current.scrollToIndex({ animated: true, index: data + 1 });
+    }
+
     const scrollX = new Animated.Value(0);
 
     React.useEffect(() => {
@@ -35,57 +41,31 @@ const OnBoarding = (props: onboradingscreen) => {
             }
         });
 
-        // return () => scrollX.removeListener();
+        return () => scrollX.removeAllListeners();
     }, []);
 
-    // Render
 
-    function renderContent() {
-        const ListRef = useRef<any|null>(null);
-        const scrollToIndex = (data:any) => {
-    
-            ListRef.current.scrollTo({ x: data*2, y: 0, animated: true })
-            }
-          
-        return (
-            <View>
-                 <FlatList
-                    horizontal
-                    pagingEnabled={true}
-                    data={onBoardings}
-                    showsVerticalScrollIndicator={false}
-                    keyExtractor={(item, index) => item + index.toString()}
-                    renderItem={({ item }) => <Item item={item} navigation={navigation}/>}
-
-                />
-            </View>
-        );
-    }
-
-    function renderDots() {
+    const renderDots=()=> {
 
         const dotPosition = Animated.divide(scrollX, SIZES.width);
 
         return (
             <View style={styles.dotsContainer}>
                 {onBoardings.map((item, index) => {
-                    const opacity = dotPosition.interpolate({
-                        inputRange: [index - 1, index, index + 1],
-                        outputRange: [0.3, 1, 0.3],
-                        extrapolate: "clamp"
-                    });
-
+                   
                     const dotSize = dotPosition.interpolate({
                         inputRange: [index - 1, index, index + 1],
-                        outputRange: [SIZES.base, 17, SIZES.base],
-                        extrapolate: "clamp"
+                        outputRange: [10, 17, 10],
+                       
                     });
 
                     return (
                         <Animated.View
-                            key={`dot-${index}`}
-
-                            style={[styles.dot, { width: dotSize, height: dotSize, }]}
+                            key={index}
+                            style={[styles.dot, {
+                                 width: dotSize,
+                                  height: dotSize,
+                            }]}
                         />
                     );
                 })}
@@ -96,11 +76,30 @@ const OnBoarding = (props: onboradingscreen) => {
     return (
         <SafeAreaView style={styles.container}>
             <View>
-                {renderContent()}
-            </View>
-            <View style={styles.dotsRootContainer}>
+                <Animated.FlatList
+                    ref={flatlistRef}
+                    horizontal
+                    pagingEnabled={true}
+                    data={onBoardings}
+                    showsHorizontalScrollIndicator={false}
+                    keyExtractor={(item, index) => item + index.toString()}
+                    renderItem={({ item }) =>
+                        <Item
+                            item={item}
+                            navigation={navigation}
+                            nextdata={() => {
+                                scrollToIndex(item.id)
+                            }}
+                        />}
+                    onScroll={(e) => scrollX.setValue(e.nativeEvent.contentOffset.x)}
+
+
+                />
+                <View style={styles.dotsRootContainer}>
                 {renderDots()}
             </View>
+            </View>
+            
         </SafeAreaView>
     );
 };

@@ -89,7 +89,7 @@ const styles =(selectedTheme:any)=> StyleSheet.create({
         backgroundColor: 'transparent',
     },
     topsearchcontainer:{
-        height:"40%",
+       
         
     },
     itemtext: {
@@ -103,13 +103,11 @@ const styles =(selectedTheme:any)=> StyleSheet.create({
     searchlist: {
         backgroundColor: selectedTheme.backgroundgray10Ngray70,
         padding: 10,
-        flex:1,
         borderRadius: 10,
         marginRight: 10,
         color: selectedTheme.textblackNwhite
     },
     topsearch: {
-        justifyContent: "space-between",
         flexDirection: 'row',
         marginTop: 5,
     },

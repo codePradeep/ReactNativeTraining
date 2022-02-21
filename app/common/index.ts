@@ -1,3 +1,3 @@
-import Slider from "./MultiSlider";
+import ProgressBar from "./ProgressBar";
 
-export {Slider}
+export {ProgressBar}

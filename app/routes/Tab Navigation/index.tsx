@@ -1,9 +1,11 @@
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import React from 'react';
+import { StyleSheet, View } from 'react-native';
 import { COLORS, icons } from '../../config';
 
-import { SearchModel } from '../../viewmodels';
+import { Homemodel, SearchModel } from '../../viewmodels';
+import ProfileModel from '../../viewmodels/ProfileModel';
 import TabbarItem from './CustomtabBar';
 
 const Tab = createBottomTabNavigator();
@@ -20,25 +22,26 @@ const Roottab = () => {
         headerShown: false,
         tabBarHideOnKeyboard:true,
         
-        tabBarStyle:{
-         // flex:1,
+             tabBarStyle:{
+          // flex:.1,
           height:70,
           marginHorizontal:20,
           bottom:10,
           borderRadius: 10,
           backgroundColor: COLORS.primary3,
-       //   position: "absolute",
+          position: "absolute",
           shadowOffset: { width: 10, height: 20 },
           shadowOpacity: 1,
           shadowRadius: 3,
-          elevation: 20,
+          elevation: 2,
           
           
           
         }
         
       }} >
-      <Tab.Screen name="Home" component={SearchModel}
+        
+      <Tab.Screen name="Home" component={Homemodel}
             options={{      
               tabBarIcon: ({ focused }: any) => (<TabbarItem focused={focused} ICON={icons.Icon.home} label={'Home'} />)
             }} />
@@ -47,11 +50,11 @@ const Roottab = () => {
               tabBarIcon: ({ focused }: any) => (<TabbarItem focused={focused}  ICON={icons.Icon.search} label={'Search'} />),
             }} />
 
-      <Tab.Screen name="Profile" component={SearchModel}
+      <Tab.Screen name="Profile" component={ProfileModel}
             options={{
               tabBarIcon: ({ focused }: any) => (<TabbarItem focused={focused}  ICON={icons.Icon.profile} label={'Profile'} />),
             }} />
-
+ 
     </Tab.Navigator>
   );
 }

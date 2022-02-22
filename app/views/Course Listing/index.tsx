@@ -98,6 +98,7 @@ const Corselisting = (props: Corselistingprops) => {
                 <Animated.Image source={images.images.bg_1} style={styles.bgimage} />
                 <TouchableOpacity
                     style={styles.leftbutton}
+                    onPress={()=>navigation.goBack()}
                 >
                     <Image source={icons.Icon.back} style={styles.headerlefticon} />
                 </TouchableOpacity>

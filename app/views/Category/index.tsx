@@ -1,6 +1,6 @@
 import React from "react";
 import { FlatList, Image, Text, TouchableOpacity, View } from "react-native";
-import { buttons, icons } from "../../config";
+import { buttons, icons, Screensdata, selectedTheme } from "../../config";
 import constants from "../../config/constants/constants";
 import dummyData from "../../config/constants/dummyData";
 import Renderitem from "./Renderitem";
@@ -22,14 +22,15 @@ const CategoryScreen = (props: CategoryProps) => {
 
 
     return (
-        <View style={styles.mainconatiner}>
-            <View style={styles.conatiner}>
+        <View style={styles(selectedTheme).mainconatiner}>
+            <View style={styles(selectedTheme).conatiner}>
                 <TouchableOpacity
-                    style={styles.leftbutton}
+                    style={styles(selectedTheme).leftbutton}
+                    onPress={()=>navigation.goBack()}
                 >
-                    <Image source={icons.Icon.back} style={styles.headerlefticon} />
+                    <Image source={icons.Icon.back} style={styles(selectedTheme).headerlefticon} />
                 </TouchableOpacity>
-                <Text style={styles.text}>Choose Categories</Text>
+                <Text style={styles(selectedTheme).text}>{Screensdata.Home.Categories}</Text>
 
 
           <View style={{flex:1,justifyContent:"space-between"}}>
@@ -42,8 +43,8 @@ const CategoryScreen = (props: CategoryProps) => {
                 />
 
 
-                <TouchableOpacity style={styles.button}>
-                    <Text style={styles.buttontext}>{buttons.CONTINUE} </Text>
+                <TouchableOpacity style={styles(selectedTheme).button}>
+                    <Text style={styles(selectedTheme).buttontext}>{buttons.CONTINUE} </Text>
                 </TouchableOpacity>
          </View>
 

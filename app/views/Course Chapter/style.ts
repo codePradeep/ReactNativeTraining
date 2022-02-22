@@ -1,7 +1,7 @@
 import { Dimensions, StatusBar, StyleSheet } from "react-native";
 import { COLORS, selectedTheme } from "../../config";
 
-const styles = StyleSheet.create({
+const styles =(selectedTheme:any)=> StyleSheet.create({
     mainconatiner: {
         flex: 1,
         

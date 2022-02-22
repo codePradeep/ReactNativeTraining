@@ -1,6 +1,6 @@
 import React from "react";
-import { StyleSheet, Text, View, SafeAreaView, SectionList, StatusBar, Image, TouchableOpacity, FlatList, ScrollView, Modal } from "react-native";
-import { Slider } from "../../common";
+import {  Text, View, Image, TouchableOpacity, FlatList, ScrollView, Modal } from "react-native";
+
 import { buttons, COLORS, icons, images, Screensdata, selectedTheme } from "../../config";
 import { Item, Renderitem } from "./Renderitem";
 import styles from "./style";
@@ -38,53 +38,64 @@ interface Corselistingprops {
           
         }[];
     }
-    flatlistdata:any
+    flatlistdata: {
+        id: number;
+        title: string;
+        clsss_level: string;
+        creted_on: string;
+        duration: number;
+        instructor: string;
+        ratings: number;
+        price: number;
+        is_favourite: boolean;
+        thumbnail: any;
+    }[]
 }
 
 const CorselChapter = (props: Corselistingprops) => {
     const { DATA,navigation,flatlistdata} = props
     return (
-        <View style={styles.mainconatiner}>
-            <View style={styles.conatiner}>
-            <View style={styles.headercontainer}>
-                <Text style={styles.usertitle}>{DATA.title}</Text>
-                <View style={styles.studentdata}>
-                    <Text style={styles.Smalltext}>{DATA.number_of_students}</Text>
-                    <Text style={styles.Smalltext}>{DATA.duration}</Text>
+        <View style={styles(selectedTheme).mainconatiner}>
+            <View style={styles(selectedTheme).conatiner}>
+            <View style={styles(selectedTheme).headercontainer}>
+                <Text style={styles(selectedTheme).usertitle}>{DATA.title}</Text>
+                <View style={styles(selectedTheme).studentdata}>
+                    <Text style={styles(selectedTheme).Smalltext}>{DATA.number_of_students}</Text>
+                    <Text style={styles(selectedTheme).Smalltext}>{DATA.duration}</Text>
                 </View>
             </View>
-            <View style={styles.profileconatiner}>
-                <View style={styles.subprofileconatiner}>
-                    <Image source={images.images.profile} style={styles.profileicon}/>
+            <View style={styles(selectedTheme).profileconatiner}>
+                <View style={styles(selectedTheme).subprofileconatiner}>
+                    <Image source={images.images.profile} style={styles(selectedTheme).profileicon}/>
                     <View>
                         <Text>{DATA.instructor.name}</Text>
                         <Text>{DATA.instructor.title}</Text>
                     </View>
                 </View>
-                <TouchableOpacity style={styles.SeeAllbutton}>
-                  <Text style={styles.seeAlltext}>{buttons.Follow}+</Text>
+                <TouchableOpacity style={styles(selectedTheme).SeeAllbutton}>
+                  <Text style={styles(selectedTheme).seeAlltext}>{buttons.Follow}+</Text>
                 </TouchableOpacity>
             </View>
 
-            <View style={styles.seperater}/>
+            <View style={styles(selectedTheme).seperater}/>
 
             <View>
                 {DATA.videos.map((item,index)=>{
                     return(
-                        <View key={index} style={styles.videocontainer}>
-                            <View style={styles.subvideocontainer}>
-                            <View style={styles.playbutton}>
-                            <Image source={icons.Icon.play} style={styles.videoIcon}/>
+                        <View key={index} style={styles(selectedTheme).videocontainer}>
+                            <View style={styles(selectedTheme).subvideocontainer}>
+                            <View style={styles(selectedTheme).playbutton}>
+                            <Image source={icons.Icon.play} style={styles(selectedTheme).videoIcon}/>
                             </View>
                             <View>
-                                <Text style={styles.title}>{item.title}</Text>
+                                <Text style={styles(selectedTheme).title}>{item.title}</Text>
                                 <Text>{item.duration}</Text>
                             </View>
                             </View>
-                            <View style={styles.buttoncontainer}>
+                            <View style={styles(selectedTheme).buttoncontainer}>
                                 <Text>{item.size}</Text>
                                 <TouchableOpacity>
-                                    <Image source={icons.Icon.download} style={styles.downloadIcon}/>
+                                    <Image source={icons.Icon.download} style={styles(selectedTheme).downloadIcon}/>
                                 </TouchableOpacity>
 
                             </View>
@@ -96,22 +107,26 @@ const CorselChapter = (props: Corselistingprops) => {
 
             </View>
 
-            <View style={styles.seperater}/>
+            <View style={styles(selectedTheme).seperater}/>
 
             
-            <View style={styles.Itemcontainer}>
-                            <Text style={styles.thirdcontainertexttitle} >Student Review</Text>
-                            <TouchableOpacity style={styles.SeeAllbutton}>
-                                <Text style={styles.seeAlltext}>See All</Text>
+            <View style={styles(selectedTheme).Itemcontainer}>
+                            <Text style={styles(selectedTheme).thirdcontainertexttitle} >Student Review</Text>
+                            <TouchableOpacity style={styles(selectedTheme).SeeAllbutton}>
+                                <Text style={styles(selectedTheme).seeAlltext}>See All</Text>
                             </TouchableOpacity>
 
                         </View>
-                <FlatList
-                    data={flatlistdata}
-                    showsVerticalScrollIndicator={false}
-                    keyExtractor={(item, index) => item + index.toString()}
-                    renderItem={({ item }) => <Item item={item} />}
-                />
+                
+                 <ScrollView >
+                    {
+                        flatlistdata.map((item,index)=>{
+                            return(
+                                <Item key={index} item={item} />
+                            )
+                        })
+                    }
+                </ScrollView>
             </View>
 
           

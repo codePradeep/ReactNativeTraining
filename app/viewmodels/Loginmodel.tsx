@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { EmailValidate, PasswordValidate } from "../config/constants/Validation";
 import Loginpage from '../views/Login/Loginpage'
 interface loginmodelprops {
@@ -14,16 +14,19 @@ const Loginmodel = (props: loginmodelprops) => {
   const [isvalidPassword, setisvalidPassword] = useState(true)
   const [isEnabled, setIsEnabled] = useState(false);
 
-  useEffect(() => {
+  const email =useRef(false)
+  const passwordA =useRef(false)
+  // useEffect(() => {
     
-    isvalidEmail == true && isvalidPassword == true ? navigation.navigate("Roottab") : null
-  }, [isvalidEmail, isvalidPassword])
+  //   isvalidEmail == true && isvalidPassword == true ? navigation.navigate("Roottab") : null
+  // }, [isvalidEmail, isvalidPassword])
 
   const submit = (Email: string, password: string) => {
-    
-    setisvalidEmail(EmailValidate(Email))
-    setisvalidPassword(PasswordValidate(password))
-    // isvalidEmail == true && isvalidPassword == true ? navigation.navigate("Roottab") : null
+        email.current=EmailValidate(Email)
+        passwordA.current=PasswordValidate(password)
+    // setisvalidEmail(EmailValidate(Email))
+    // setisvalidPassword(PasswordValidate(password))
+     email.current == true && passwordA.current == true ? navigation.navigate("Roottab") : null
   }
   return (
     <Loginpage

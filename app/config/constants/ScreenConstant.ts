@@ -17,6 +17,16 @@ const Screensdata={
         placeholder:"Search for Topic,Courses & Educations",
         TopSearches:"Top Searches",
         BrowseCategories:"Browse Categories"
+    },
+    Home:{
+        greeting:"Hello, Pradeep Kumar Sharma",
+        date:"Thursday ,3 Feb 2022",
+        head1:"How To",
+        head2:"Make your brand more visible with our checklist",
+        by:"by Pradeep Sharma",
+        startlerning:"Start Learning",
+        Categories:"Choose Categories",
+        PopulerCourses:"Populer Courses"
     }
 
 }
@@ -36,7 +46,8 @@ const buttons={
     twitter:"Twitter",
     linkdin:"Linkdin",
     Next:"Next",
-    letsStart:"Let's Start"
+    letsStart:"Let's Start",
+    SeeAll:"See All"
 
     
 }

@@ -1,7 +1,7 @@
 import { Dimensions, StyleSheet } from "react-native";
-import { COLORS, FONTS, selectedTheme } from "../../config";
+import { COLORS, FONTS, } from "../../config";
 
-const styles = StyleSheet.create({
+let styles =(selectedTheme:any)=> StyleSheet.create({
 
     Container: {
         flex:1 ,
@@ -124,6 +124,7 @@ const styles = StyleSheet.create({
 
     },
     Itemcontainer:{
+        marginVertical:10,
         flexDirection:"row",
         justifyContent:"space-between",
         alignItems:"center"

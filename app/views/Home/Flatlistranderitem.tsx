@@ -4,7 +4,7 @@ import { COLORS, icons, selectedTheme } from "../../config";
 import styles from "./style";
 
 interface renderItem {
-    item:  {
+    item: {
         id: number;
         title: string;
         clsss_level: string;
@@ -16,17 +16,29 @@ interface renderItem {
         is_favourite: boolean;
         thumbnail: any;
     }
+    isfavourite: any
+    setisfavourite: any
 }
 
 const Item = (props: renderItem) => {
-    const { item } = props
+    const { item ,setisfavourite,isfavourite} = props
     return (
         <View>
             <View style={styles(selectedTheme).item}>
 
                 <Image source={item.thumbnail} style={styles(selectedTheme).image} />
-                <TouchableOpacity style={styles(selectedTheme).fevcontainer}>
-                <Image source={item.is_favourite? icons.Icon.favourite:icons.Icon.favourite_outline} style={styles(selectedTheme).fevcon}/>
+                <TouchableOpacity style={styles(selectedTheme).fevcontainer}
+                onPress={() => {
+                    console.log(isfavourite);
+                    if (isfavourite.includes(item.id)) {
+                      let unlike = isfavourite.filter((elem:any) => elem !== item.id);
+                      setisfavourite(unlike);
+                    } else {
+                      setisfavourite([...isfavourite, item.id]);
+                    }
+                  }}
+                >
+                    <Image source={isfavourite.includes(item.id) ?  icons.Icon.favourite : icons.Icon.favourite_outline} style={styles(selectedTheme).fevcon} />
                 </TouchableOpacity>
                 <View style={styles(selectedTheme).itemtextcontainer}>
                     <Text style={styles(selectedTheme).title}>{item.title}</Text>

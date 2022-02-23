@@ -27,6 +27,14 @@ const Screensdata={
         startlerning:"Start Learning",
         Categories:"Choose Categories",
         PopulerCourses:"Populer Courses"
+    },
+    Instructor:{
+        name:"Pradeep Kumar sharma",
+        des:"React-Native Developer",
+        AboutMe:"About Me",
+        bio:"Hi everyone this is pradeep sharma i'm a react native lerner and now I'm working on a Demo project for the practice",
+        StudentReview:"Student Review",
+        ConnectHere:"Connect Here"
     }
 
 }
@@ -56,7 +64,12 @@ const Form={
     usernameorEmail:"Username or Email",
     User:"Username",
     Email:"Email",
-    Passsword:"Password"
+    Passsword:"Password",
+    Validation:{
+        username:"Invalid Username",
+        EmailValidation:"Invalid Email",
+        passwordvalidation:"Min 8 letter password, with at least a symbol, upper and lower case letters and a number"
+    }
 }
 
 

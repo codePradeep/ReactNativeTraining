@@ -1,7 +1,8 @@
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { StyleSheet, View } from 'react-native';
+import { useSelector } from 'react-redux';
 import { COLORS, icons } from '../../config';
 
 import { Homemodel, SearchModel } from '../../viewmodels';
@@ -11,7 +12,7 @@ import TabbarItem from './CustomtabBar';
 const Tab = createBottomTabNavigator();
 
 const Roottab = () => {
- 
+
 
   return (
     <Tab.Navigator
@@ -34,9 +35,6 @@ const Roottab = () => {
           shadowOpacity: 1,
           shadowRadius: 3,
           elevation: 2,
-          
-          
-          
         }
         
       }} >

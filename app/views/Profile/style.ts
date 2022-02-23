@@ -8,6 +8,9 @@ const styles =(selectedTheme:any)=> StyleSheet.create({
         paddingHorizontal: 20,
         paddingVertical: 20
     },
+    MainSubContainer:{
+        flex:.9
+    },
     headercontainer: {
         flexDirection: "row",
         justifyContent: "space-between"

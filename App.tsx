@@ -1,37 +1,20 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * Generated with the TypeScript template
- * https://github.com/react-native-community/react-native-template-typescript
- *
- * @format
- */
-
 import React from 'react';
-import { createStore } from 'redux'
-import { Provider } from 'react-redux'
+import { Provider, } from 'react-redux';
+import store from './app/redux/store';
 
+// import MainApp from './app/routes';
 import Routenavigation from './app/routes/navigation';
-import rootReducer from './app/redux/reducer/rootreducer';
-
-const store = createStore(rootReducer)
 
 const App = () => {
-
-
-  return (
-
-      <Routenavigation/>
-    
   
+  return (
+    <Provider store={store}>
+     
+    <Routenavigation />
 
+    </Provider>
   );
 };
 
 export default App;
-
-
-///////////////////////
-
 

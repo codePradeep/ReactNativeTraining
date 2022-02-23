@@ -12,12 +12,17 @@ interface Registerprops {
     setselected: any
     isvalidEmail: boolean
     isvalidPassword: boolean
-    isvalidusername:boolean
+    isvalidusername: boolean
     Emailinpute: (text: string) => void
     EnterPassword: (text: string) => void
-    EnterUserName:(text: string) => void
-    isEnabled: boolean
+    EnterUserName: (text: string) => void
     submit: any
+    register: {
+        id: number;
+        label: string;
+    }[]
+    defaultitem: any
+    setdefaultitem: any
 
 
 }
@@ -31,9 +36,9 @@ const Register = (props: Registerprops) => {
         Emailinpute,
         EnterPassword,
         EnterUserName,
-        
-        isEnabled,
-
+        register,
+        defaultitem,
+        setdefaultitem,
         submit } = props
 
     return (
@@ -49,32 +54,41 @@ const Register = (props: Registerprops) => {
 
                 <View style={styles.container}>
                     <View style={styles.boxcontainer}>
-                        <TouchableOpacity
-                            onPress={() => selected ? setselected(false) : setselected(true)}
-                            style={[styles.box, { backgroundColor: selected ? selectedTheme.backgroundgray10Ngray70 : COLORS.primary3 }]}>
+                        {register.map((item, index) => {
+                            return (
+                                <TouchableOpacity
+                                    onPress={() => setdefaultitem(item.id)}
+                                    style={[styles.box, {
+                                        backgroundColor: defaultitem == item.id ? selectedTheme.backgroundblueNblack : selectedTheme.backgroundwhite3Ngray8,
+                                        borderColor: defaultitem == item.id ? selectedTheme.borderColor1 : selectedTheme.borderColor1
+                                    }]}>
 
-                            <Image source={!selected ? icons.Icon.checkbox_on_dark : icons.Icon.checkbox_off} style={styles.checkedIcon} />
+                                    <View style={styles.checkedcontainer}>
+                                        {defaultitem == item.id ?
+                                            <Image source={icons.Icon.checkbox_on_dark}
+                                                style={[styles.Icons,]}
+                                            /> :
+                                            <View style={styles.Icons}></View>}
 
-                            <Text style={{ color: selected ? COLORS.primary3 : COLORS.white }}>I am a </Text>
-                            <Text style={{ fontWeight: "700", fontSize: 20, color: selected ? COLORS.primary3 : COLORS.white }}>STUDENT</Text>
-                        </TouchableOpacity>
+                                    </View>
 
-                        <TouchableOpacity
-                            onPress={() => selected ? setselected(false) : setselected(true)}
-                            style={[styles.box, { backgroundColor: selected ? COLORS.primary3 : selectedTheme.backgroundgray10Ngray70 }]}>
-                            <Image source={selected ? icons.Icon.checkbox_on_dark : icons.Icon.checkbox_off} style={styles.checkedIcon} />
-                            <Text style={{ color: !selected ? COLORS.primary3 : COLORS.white }}>I am a </Text>
-                            <Text style={{ fontWeight: "700", fontSize: 20, color: !selected ? COLORS.primary3 : COLORS.white }}>TUTOR</Text>
-                        </TouchableOpacity>
+
+                                    <Text style={{ color: defaultitem == item.id ? COLORS.white : COLORS.primary3 }}>I am a </Text>
+                                    <Text style={{ fontWeight: "700", fontSize: 20, color: defaultitem == item.id ? COLORS.white : COLORS.primary3 }}>{item.label}</Text>
+                                </TouchableOpacity>
+                            )
+                        })}
+
+
                     </View>
 
                     <View style={styles.input} >
                         <Text style={styles.formtext}>{Form.User}</Text>
                         <View style={styles.inputecontainer}>
-                            <TextInput style={styles.inputText} 
-                            onChangeText={EnterUserName} />
+                            <TextInput style={styles.inputText}
+                                onChangeText={EnterUserName} />
                         </View>
-                        {!isvalidusername ? <Text style={{ color: "red" }}>Invalid Username</Text> : null}
+                        {!isvalidusername ? <Text style={{ color: "red" }}>{Form.Validation.username}</Text> : null}
 
                     </View>
 
@@ -86,7 +100,7 @@ const Register = (props: Registerprops) => {
                                 onChangeText={Emailinpute}
                                 style={styles.inputText} />
                         </View>
-                        {!isvalidEmail ? <Text style={{ color: "red" }}>Invalid Email</Text> : null}
+                        {!isvalidEmail ? <Text style={{ color: "red" }}>{Form.Validation.EmailValidation}</Text> : null}
                     </View>
 
                     <View style={styles.input}>
@@ -104,12 +118,12 @@ const Register = (props: Registerprops) => {
                                 <Image source={visible ? icons.Icon.eye : icons.Icon.eye_close} style={styles.eyeicon} />
                             </TouchableOpacity>
                         </View>
-                        {!isvalidPassword? <Text style={{color:"red"}}>Invalid Password</Text>:null}
+                        {!isvalidPassword ? <Text style={{ color: "red" }}>{Form.Validation.passwordvalidation}</Text> : null}
 
                     </View>
 
                     <TouchableOpacity style={styles.button}
-                     onPress={submit}>
+                        onPress={submit}>
                         <Text style={styles.buttontext}>{buttons.Register}</Text>
                     </TouchableOpacity>
 
@@ -135,8 +149,8 @@ const Register = (props: Registerprops) => {
                         <Text style={styles.newusertext}>Alredy a User?</Text>
 
 
-                        <TouchableOpacity 
-                        onPress={()=>navigation.navigate("Loginmodel")}>
+                        <TouchableOpacity
+                            onPress={() => navigation.navigate("Loginmodel")}>
                             <Text style={styles.signuptext}>{buttons.Login}</Text>
                         </TouchableOpacity>
 

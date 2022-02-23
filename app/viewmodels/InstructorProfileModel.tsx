@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { dummyData } from "../config";
+import dummyData from "../config/constants/dummyData";
 import InstrctorProfileScreen from "../views/Instructor Profile";
 
 interface InstructorProfileModelprops {
@@ -31,12 +31,15 @@ const InstructorProfileModel = (props: InstructorProfileModelprops) => {
 
     return (
         <InstrctorProfileScreen
-            navigation={navigation}
-            visible={visible}
-            setvisibe={setvisibe}
-            socialdata={socialdata}
-            userdata={userdata}
-            studentreview={studentreview}
+            {...{
+                data:dummyData.courses_list_2,
+                navigation,
+            visible,
+            setvisibe,
+            socialdata,
+            userdata:userdata,
+            studentreview:studentreview,
+            }}
 
         />
     )

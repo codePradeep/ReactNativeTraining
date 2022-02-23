@@ -1,7 +1,7 @@
 import { Dimensions, StyleSheet } from "react-native";
 import { selectedTheme } from "../../config";
 import { COLORS, FONTS } from "../../config/constants/theme";
-const styles=StyleSheet.create({
+const styles=(selectedTheme:any)=>StyleSheet.create({
 
     mainconatiner:{
         flex:1,
@@ -223,7 +223,6 @@ const styles=StyleSheet.create({
     },
       thirdcontainertexttitle:{
         marginVertical:5,
-        paddingLeft:10,
         fontSize:21,
         width:200,
         fontWeight:"700",

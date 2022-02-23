@@ -21,14 +21,14 @@ const Renderitem=(props:renderprops)=>{
     return(
         
         <TouchableOpacity 
-        onPress={()=>setdefaultitem(item.id)}
-        style={[styles(selectedTheme).item,{backgroundColor:defaultitem == item.id?selectedTheme.backgroundblueNblack:selectedTheme.backgroundwhite3Ngray8,
-        borderColor:defaultitem == item.id?selectedTheme.borderColor1:selectedTheme.borderColor1
+        onPress={()=>setdefaultitem(item.label)}
+        style={[styles(selectedTheme).item,{backgroundColor:defaultitem == item.label?selectedTheme.backgroundblueNblack:selectedTheme.backgroundwhite3Ngray8,
+        borderColor:defaultitem == item.label?selectedTheme.borderColor1:selectedTheme.borderColor1
         }]}>
         <Image source={item.icon} 
-        style={[styles(selectedTheme).Icons,{tintColor:defaultitem == item.id?COLORS.white:selectedTheme.tintColor}]} 
+        style={[styles(selectedTheme).Icons,{tintColor:defaultitem == item.label?COLORS.white:selectedTheme.tintColor}]} 
         />
-        <Text style={[styles(selectedTheme).itemtext,{color:defaultitem == item.id? COLORS.white:selectedTheme.textblackNwhite}]} 
+        <Text style={[styles(selectedTheme).itemtext,{color:defaultitem == item.label? COLORS.white:selectedTheme.textblackNwhite}]} 
         >{item.label}</Text>
     </TouchableOpacity>
     )

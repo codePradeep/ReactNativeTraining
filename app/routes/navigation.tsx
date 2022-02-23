@@ -4,16 +4,20 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { CategoryModel,  CourseListingModel, CourseModel, Homemodel,InstructorProfileModel,Loginmodel, MembershipModel, NotificationTabModel, OnboardingModel, RegistrModel, SearchModel } from '../viewmodels';
 import Roottab from './Tab Navigation';
 import ProfileModel from '../viewmodels/ProfileModel';
+import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
 
 
-type rootnode={
-    Home:undefined;
-    login:undefined;
-}
+// type rootnode={
+//     Home:undefined;
+//     login:undefined;
+// }
 
-const Stack = createNativeStackNavigator();
 
-const Routenavigation =() => {
+const Stack = createNativeStackNavigator<any>();
+
+const Routenavigation =(props:any) => {
+
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="OnboardingModel">

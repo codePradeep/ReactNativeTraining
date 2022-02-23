@@ -5,7 +5,7 @@ import { COLORS } from "../../config/constants/theme";
 const styles=StyleSheet.create({
     MainConatiner:{
         flex:1,
-        backgroundColor:selectedTheme.backgroundColor1
+        backgroundColor:selectedTheme.backgroundwhiteNgray8
     },
     container:{
         
@@ -134,7 +134,19 @@ const styles=StyleSheet.create({
         alignSelf:"center",
         resizeMode:"contain",
         marginLeft:10
-    }
+    },
+    checkedcontainer:{
+        flexDirection:"row",
+        justifyContent:"space-between",
+        marginVertical:5
+    },
+    Icons:{
+        height:30,
+        width:30,
+        resizeMode:"contain",
+        borderRadius:90,
+        borderWidth:1
+    },
 })
 
 export default styles

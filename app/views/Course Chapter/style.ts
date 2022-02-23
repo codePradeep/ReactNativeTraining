@@ -15,7 +15,8 @@ const styles =(selectedTheme:any)=> StyleSheet.create({
         height:40,
         width: 40,
         borderRadius:90,
-        alignSelf:"center"
+        alignSelf:"center",
+        marginRight:10
 
     },
     conatiner: {
@@ -367,7 +368,8 @@ const styles =(selectedTheme:any)=> StyleSheet.create({
         backgroundColor:COLORS.primary,
         borderRadius:90,
         alignItems:"center",
-        justifyContent:"center"}
+        justifyContent:"center",
+    marginRight:10}
 
 
 });

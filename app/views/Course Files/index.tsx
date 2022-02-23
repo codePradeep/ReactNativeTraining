@@ -1,6 +1,7 @@
 import React from "react";
 import { Image, ScrollView, Text, ToastAndroid, TouchableOpacity, View } from "react-native";
-import { dummyData, icons, selectedTheme } from "../../config";
+import {  icons, selectedTheme } from "../../config";
+import dummyData from "../../config/constants/dummyData";
 import styles from "./style";
 
 interface coursefilesprops {

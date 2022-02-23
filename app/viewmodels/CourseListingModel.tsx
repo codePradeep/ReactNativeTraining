@@ -1,12 +1,14 @@
 import React,{useState} from "react";
-import { constants, dummyData } from "../config";
+import { constants,  } from "../config";
+import dummyData from "../config/constants/dummyData";
 import Corselisting from "../views/Course Listing";
 interface Corselistinprops{
     navigation:any
+    route:any
 }
 const CourseListingModel =(props:Corselistinprops)=>{
-    const {navigation}=props
-
+    const {navigation,route}=props
+     const { Header } = route.params;
     const [visible,setvisibe]=useState(false)
     const [defaultitem, setdefaultitem] = useState(1);
     const [defaultclasslevel, setdefaultclasslevel] = useState(0);
@@ -49,24 +51,27 @@ if (classleveldata != "") {
 
     return(
         <Corselisting
-            navigation={navigation}
-            DATA={menudata}    
-            modalVisible={modalVisible}
-            setModalVisible={setModalVisible}   
-            Classtypedata={constants.class_types} 
-            defaultitem={ defaultitem}
-            setdefaultitem={setdefaultitem}
-            ClassLevel={constants.class_levels}
-            defaultclasslevel={defaultclasslevel}
-            setdefaultclasslevel={setdefaultclasslevel}
-            CreatedWithin={constants.created_within}
-            defaultcreatedwithin={defaultcreatedwithin}
-            resultdata={resultdata}
-            setdefaultcreatedwithin={setdefaultcreatedwithin}
-            setclassleveldata={setclassleveldata}
-            setduration={setduration}
-            Resetfilter={Resetfilter}
-         
+        
+         {...{
+            Header,
+            navigation,
+            DATA:menudata,   
+            modalVisible,
+            setModalVisible  , 
+            Classtypedata:constants.class_types ,
+            defaultitem,
+            setdefaultitem,
+            ClassLevel:constants.class_levels,
+            defaultclasslevel,
+            setdefaultclasslevel,
+            CreatedWithin:constants.created_within,
+            defaultcreatedwithin,
+            resultdata,
+            setdefaultcreatedwithin,
+            setclassleveldata,
+            setduration,
+            Resetfilter,
+         }}
          />
     )
 }

@@ -10,23 +10,19 @@ const Loginmodel = (props: loginmodelprops) => {
   const [visible, setvisibe] = useState(false)
   const [Email, setEmail] = useState("");
   const [password, setpassword] = useState("");
-  const [isvalidEmail, setisvalidEmail] = useState(false)
+  const [isvalidEmail, setisvalidEmail] = useState(true)
   const [isvalidPassword, setisvalidPassword] = useState(true)
   const [isEnabled, setIsEnabled] = useState(false);
 
-  const email =useRef(false)
-  const passwordA =useRef(false)
-  // useEffect(() => {
-    
-  //   isvalidEmail == true && isvalidPassword == true ? navigation.navigate("Roottab") : null
-  // }, [isvalidEmail, isvalidPassword])
+  const email = useRef(false)
+  const passwordA = useRef(false)
 
   const submit = (Email: string, password: string) => {
-        email.current=EmailValidate(Email)
-        passwordA.current=PasswordValidate(password)
-    // setisvalidEmail(EmailValidate(Email))
-    // setisvalidPassword(PasswordValidate(password))
-     email.current == true && passwordA.current == true ? navigation.navigate("Roottab") : null
+    email.current = EmailValidate(Email)
+    passwordA.current = PasswordValidate(password)
+    setisvalidEmail(email.current)
+    setisvalidPassword(passwordA.current)
+    email.current == true && passwordA.current == true ? navigation.navigate("Roottab") : null
   }
   return (
     <Loginpage

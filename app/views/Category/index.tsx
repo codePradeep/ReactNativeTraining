@@ -10,8 +10,8 @@ interface CategoryProps {
     navigation: any
     visible: any
     setvisibe: any
-    defaultitem: number
-    setdefaultitem: React.Dispatch<React.SetStateAction<number>>
+    defaultitem: string
+    setdefaultitem: React.Dispatch<React.SetStateAction<string>>
 }
 
 const CategoryScreen = (props: CategoryProps) => {
@@ -43,7 +43,10 @@ const CategoryScreen = (props: CategoryProps) => {
                 />
 
 
-                <TouchableOpacity style={styles(selectedTheme).button}>
+                <TouchableOpacity style={styles(selectedTheme).button}
+                onPress={() => navigation.navigate("CourseListingModel", {
+                    Header: defaultitem,
+                  })}>
                     <Text style={styles(selectedTheme).buttontext}>{buttons.CONTINUE} </Text>
                 </TouchableOpacity>
          </View>

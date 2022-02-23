@@ -39,8 +39,10 @@ const Loginpage = (props: loginpageprops) => {
                         keyboardType={"email-address"}
                         onChangeText={Emailinpute}
                         style={styles.inputText} />
-                        
+
                     </View>
+                    {!isvalidEmail? <Text style={{color:"red"}}>{Form.Validation.EmailValidation}</Text>:null}
+
                 </View>
                 <View style={styles.input}>
                     <Text style={styles.formtext}>{Form.Passsword}</Text>
@@ -57,7 +59,7 @@ const Loginpage = (props: loginpageprops) => {
                             <Image source={visible ? icons.Icon.eye : icons.Icon.eye_close} style={styles.eyeicon} />
                         </TouchableOpacity>
                     </View>
-                    {!isvalidPassword? <Text style={{color:"red"}}>Invalid Password</Text>:null}
+                    {!isvalidPassword? <Text style={{color:"red"}}>{Form.Validation.passwordvalidation}</Text>:null}
                 </View>
 
                 <TouchableOpacity style={styles.button}
@@ -70,7 +72,9 @@ const Loginpage = (props: loginpageprops) => {
 
                 <View style={styles.socialbuttonsContainer}>
 
-                    <TouchableOpacity style={styles.socialbuttons}>
+                    <TouchableOpacity style={styles.socialbuttons}
+                    
+                    onPress={()=>navigation.navigate("Roottab")}>
                         <Image source={icons.Icon.google} style={styles.Icon} />
                         <Text style={styles.socialbuttonstext}>{buttons.Google}</Text>
                     </TouchableOpacity>

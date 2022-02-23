@@ -10,7 +10,7 @@ const styles =(selectedTheme:any)=> StyleSheet.create({
 
     },
     conatiner: {
-        flex: 1,
+        flex: .9,
         marginHorizontal: 20,
         marginVertical: 20
     },

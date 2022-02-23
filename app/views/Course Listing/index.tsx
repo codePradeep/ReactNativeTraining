@@ -44,6 +44,7 @@ interface Corselistingprops {
      setduration:any
      Resetfilter:any
      resultdata:any
+     Header:string
 }
 
 const Corselisting = (props: Corselistingprops) => {
@@ -63,7 +64,8 @@ const Corselisting = (props: Corselistingprops) => {
         setclassleveldata,
         setduration,
         Resetfilter,
-        resultdata
+        resultdata,
+        Header
     } = props
 
         const scrollY=new Animated.Value(0)
@@ -103,7 +105,7 @@ const Corselisting = (props: Corselistingprops) => {
                     <Image source={icons.Icon.back} style={styles.headerlefticon} />
                 </TouchableOpacity>
                 <View style={styles.headersub}>
-                    <Text style={styles.HeaderText}>Mobile Design</Text>
+                    <Text style={styles.HeaderText}>{Header}</Text>
                     <Image source={icons.Icon.mobile} style={styles.mobileimage} />
                 </View>
             </View>

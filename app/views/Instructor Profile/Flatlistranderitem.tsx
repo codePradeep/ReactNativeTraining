@@ -1,13 +1,15 @@
 import React from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
-import { COLORS, icons } from "../../config";
+import { COLORS, icons, selectedTheme } from "../../config";
 import styles from "./style";
 
 interface renderItem {
-    item: {
+    item:  {
         id: number;
         title: string;
-        duration: string;
+        clsss_level: string;
+        creted_on: string;
+        duration: number;
         instructor: string;
         ratings: number;
         price: number;
@@ -20,32 +22,32 @@ const Item = (props: renderItem) => {
     const { item } = props
     return (
         <View>
-            <View style={styles.item}>
+            <View style={styles(selectedTheme).item}>
 
-                <Image source={item.thumbnail} style={styles.image} />
-                <TouchableOpacity style={styles.fevcontainer}>
-                <Image source={item.is_favourite? icons.Icon.favourite:icons.Icon.favourite_outline} style={styles.fevcon}/>
+                <Image source={item.thumbnail} style={styles(selectedTheme).image} />
+                <TouchableOpacity style={styles(selectedTheme).fevcontainer}>
+                <Image source={item.is_favourite? icons.Icon.favourite:icons.Icon.favourite_outline} style={styles(selectedTheme).fevcon}/>
                 </TouchableOpacity>
-                <View style={styles.itemtextcontainer}>
-                    <Text style={styles.title}>{item.title}</Text>
-                    <View style={styles.notificationtitlecontainer}>
+                <View style={styles(selectedTheme).itemtextcontainer}>
+                    <Text style={styles(selectedTheme).title}>{item.title}</Text>
+                    <View style={styles(selectedTheme).notificationtitlecontainer}>
 
-                        <Text style={styles.time}>By {item.instructor} </Text>
-                        <View style={styles.ratingcontainer}>
-                            <Image source={icons.Icon.reminder} style={styles.smallicon} />
-                            <Text style={styles.time}> {item.duration}</Text>
+                        <Text style={styles(selectedTheme).time}>By {item.instructor} </Text>
+                        <View style={styles(selectedTheme).ratingcontainer}>
+                            <Image source={icons.Icon.reminder} style={styles(selectedTheme).smallicon} />
+                            <Text style={styles(selectedTheme).time}> {item.duration}</Text>
                         </View>
                     </View>
-                    <View style={styles.notificationtitlecontainer}>
-                        <Text style={styles.subtitle}>${item.price}.00</Text>
-                        <View style={styles.ratingcontainer}>
-                            <Image source={icons.Icon.star} style={styles.smallicon} />
-                            <Text style={styles.ratings}> {item.ratings}</Text>
+                    <View style={styles(selectedTheme).notificationtitlecontainer}>
+                        <Text style={styles(selectedTheme).subtitle}>${item.price}.00</Text>
+                        <View style={styles(selectedTheme).ratingcontainer}>
+                            <Image source={icons.Icon.star} style={styles(selectedTheme).smallicon} />
+                            <Text style={styles(selectedTheme).ratings}> {item.ratings}</Text>
                         </View>
                     </View>
                 </View>
             </View>
-            <View style={styles.seperater} />
+            <View style={styles(selectedTheme).seperater} />
         </View>
     );
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import {  Text, View, Image, TouchableOpacity, FlatList, ScrollView, Modal } from "react-native";
+import { Text, View, Image, TouchableOpacity, FlatList, ScrollView, Modal } from "react-native";
 
 import { buttons, COLORS, icons, images, Screensdata, selectedTheme } from "../../config";
 import { Item, Renderitem } from "./Renderitem";
@@ -29,13 +29,13 @@ interface Corselistingprops {
             is_downloaded: boolean;
         }[];
         students: {
-            
+
         }[];
         files: {
-            
+
         }[];
         discussions: {
-          
+
         }[];
     }
     flatlistdata: {
@@ -53,75 +53,76 @@ interface Corselistingprops {
 }
 
 const CorselChapter = (props: Corselistingprops) => {
-    const { DATA,navigation,flatlistdata} = props
+    const { DATA, navigation, flatlistdata } = props
     return (
         <View style={styles(selectedTheme).mainconatiner}>
             <View style={styles(selectedTheme).conatiner}>
-            <View style={styles(selectedTheme).headercontainer}>
-                <Text style={styles(selectedTheme).usertitle}>{DATA.title}</Text>
-                <View style={styles(selectedTheme).studentdata}>
-                    <Text style={styles(selectedTheme).Smalltext}>{DATA.number_of_students}</Text>
-                    <Text style={styles(selectedTheme).Smalltext}>{DATA.duration}</Text>
-                </View>
-            </View>
-            <View style={styles(selectedTheme).profileconatiner}>
-                <View style={styles(selectedTheme).subprofileconatiner}>
-                    <Image source={images.images.profile} style={styles(selectedTheme).profileicon}/>
-                    <View>
-                        <Text>{DATA.instructor.name}</Text>
-                        <Text>{DATA.instructor.title}</Text>
+                <View style={styles(selectedTheme).headercontainer}>
+                    <Text style={styles(selectedTheme).usertitle}>{DATA.title}</Text>
+                    <View style={styles(selectedTheme).studentdata}>
+                        <Text style={styles(selectedTheme).Smalltext}>{DATA.number_of_students}</Text>
+                        <Text style={styles(selectedTheme).Smalltext}>{DATA.duration}</Text>
                     </View>
                 </View>
-                <TouchableOpacity style={styles(selectedTheme).SeeAllbutton}>
-                  <Text style={styles(selectedTheme).seeAlltext}>{buttons.Follow}+</Text>
-                </TouchableOpacity>
-            </View>
-
-            <View style={styles(selectedTheme).seperater}/>
-
-            <View>
-                {DATA.videos.map((item,index)=>{
-                    return(
-                        <View key={index} style={styles(selectedTheme).videocontainer}>
-                            <View style={styles(selectedTheme).subvideocontainer}>
-                            <View style={styles(selectedTheme).playbutton}>
-                            <Image source={icons.Icon.play} style={styles(selectedTheme).videoIcon}/>
-                            </View>
-                            <View>
-                                <Text style={styles(selectedTheme).title}>{item.title}</Text>
-                                <Text>{item.duration}</Text>
-                            </View>
-                            </View>
-                            <View style={styles(selectedTheme).buttoncontainer}>
-                                <Text>{item.size}</Text>
-                                <TouchableOpacity>
-                                    <Image source={icons.Icon.download} style={styles(selectedTheme).downloadIcon}/>
-                                </TouchableOpacity>
-
-                            </View>
-
-            
+                <View style={styles(selectedTheme).profileconatiner}>
+                    <View style={styles(selectedTheme).subprofileconatiner}>
+                        <Image source={images.images.profile} style={styles(selectedTheme).profileicon} />
+                        <View>
+                            <Text>{DATA.instructor.name}</Text>
+                            <Text>{DATA.instructor.title}</Text>
                         </View>
-                    )
-                })}
+                    </View>
+                    <TouchableOpacity style={styles(selectedTheme).SeeAllbutton}
+                        onPress={() => navigation.navigate("InstructorProfileModel")}>
+                        <Text style={styles(selectedTheme).seeAlltext}>{buttons.Follow}+</Text>
+                    </TouchableOpacity>
+                </View>
 
-            </View>
+                <View style={styles(selectedTheme).seperater} />
 
-            <View style={styles(selectedTheme).seperater}/>
+                <View>
+                    {DATA.videos.map((item, index) => {
+                        return (
+                            <View key={index} style={styles(selectedTheme).videocontainer}>
+                                <View style={styles(selectedTheme).subvideocontainer}>
+                                    <View style={styles(selectedTheme).playbutton}>
+                                        <Image source={icons.Icon.play} style={styles(selectedTheme).videoIcon} />
+                                    </View>
+                                    <View>
+                                        <Text style={styles(selectedTheme).title}>{item.title}</Text>
+                                        <Text>{item.duration}</Text>
+                                    </View>
+                                </View>
+                                <View style={styles(selectedTheme).buttoncontainer}>
+                                    <Text>{item.size}</Text>
+                                    <TouchableOpacity>
+                                        <Image source={icons.Icon.download} style={styles(selectedTheme).downloadIcon} />
+                                    </TouchableOpacity>
 
-            
-            <View style={styles(selectedTheme).Itemcontainer}>
-                            <Text style={styles(selectedTheme).thirdcontainertexttitle} >Student Review</Text>
-                            <TouchableOpacity style={styles(selectedTheme).SeeAllbutton}>
-                                <Text style={styles(selectedTheme).seeAlltext}>See All</Text>
-                            </TouchableOpacity>
+                                </View>
 
-                        </View>
-                
-                 <ScrollView >
+
+                            </View>
+                        )
+                    })}
+
+                </View>
+
+                <View style={styles(selectedTheme).seperater} />
+
+
+                <View style={styles(selectedTheme).Itemcontainer}>
+                    <Text style={styles(selectedTheme).thirdcontainertexttitle} >{Screensdata.Home.PopulerCourses}</Text>
+                    <TouchableOpacity style={styles(selectedTheme).SeeAllbutton}>
+                        <Text style={styles(selectedTheme).seeAlltext}>{buttons.SeeAll}</Text>
+                    </TouchableOpacity>
+
+                </View>
+
+                <ScrollView >
                     {
-                        flatlistdata.map((item,index)=>{
-                            return(
+                        flatlistdata.map((item, index) => {
+                            return (
                                 <Item key={index} item={item} />
                             )
                         })
@@ -129,7 +130,7 @@ const CorselChapter = (props: Corselistingprops) => {
                 </ScrollView>
             </View>
 
-          
+
         </View>
     );
 }

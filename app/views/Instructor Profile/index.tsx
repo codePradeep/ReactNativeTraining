@@ -1,7 +1,8 @@
 import React from "react";
 import { FlatList, Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
-import { buttons, dummyData, icons, images } from "../../config";
-import constants from "../../config/constants/constants";
+import { screensEnabled } from "react-native-screens";
+import { buttons,  icons, images, Screensdata, selectedTheme } from "../../config";
+import dummyData from "../../config/constants/dummyData";
 import Item from "./Flatlistranderitem";
 import styles from "./style";
 
@@ -12,18 +13,27 @@ interface InstrctorProfileScreenprops {
     socialdata: any
     userdata: any
     studentreview: any
-    // defaultitem: number
-    // setdefaultitem: React.Dispatch<React.SetStateAction<number>>
+    data: {
+        id: number;
+        title: string;
+        clsss_level: string;
+        creted_on: string;
+        duration: number;
+        instructor: string;
+        ratings: number;
+        price: number;
+        is_favourite: boolean;
+        thumbnail: any;
+    }[]
 }
 
 const InstrctorProfileScreen = (props: InstrctorProfileScreenprops) => {
     const { navigation,
         visible,
         setvisibe,
-        // defaultitem, setdefaultitem, 
         socialdata,
         userdata,
-        studentreview
+        studentreview, data
     } = props
 
 
@@ -31,47 +41,42 @@ const InstrctorProfileScreen = (props: InstrctorProfileScreenprops) => {
 
 
     return (
-        <View style={styles.mainconatiner}>
-            <View style={styles.headContentcontainer}>
-                <View style={styles.header}>
-                    <TouchableOpacity style={styles.leftbutton}>
-                        <Image source={icons.Icon.left_arrow} style={styles.headerlefticon} />
+        <View style={styles(selectedTheme).mainconatiner}>
+            <View style={styles(selectedTheme).headContentcontainer}>
+                <View style={styles(selectedTheme).header}>
+                    <TouchableOpacity style={styles(selectedTheme).leftbutton}
+                        onPress={() => navigation.goBack()}>
+                        <Image source={icons.Icon.left_arrow} style={styles(selectedTheme).headerlefticon} />
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.leftbutton}>
-                        <Image source={icons.Icon.share} style={styles.headerlefticon} />
+                    <TouchableOpacity style={styles(selectedTheme).leftbutton}>
+                        <Image source={icons.Icon.share} style={styles(selectedTheme).headerlefticon} />
                     </TouchableOpacity>
                 </View>
             </View>
 
-            <View style={styles.conatiner}>
-                <View style={styles.ImageContainer}>
-                    <Image source={images.images.profile} style={styles.profileicon} />
-                    <View style={styles.imagecontainerView}>
-                        <View style={styles.imageViewContainer}>
-                            <Image source={icons.Icon.checked} style={styles.camericon} />
+            <View style={styles(selectedTheme).conatiner}>
+                <View style={styles(selectedTheme).ImageContainer}>
+                    <Image source={images.images.profile} style={styles(selectedTheme).profileicon} />
+                    <View style={styles(selectedTheme).imagecontainerView}>
+                        <View style={styles(selectedTheme).imageViewContainer}>
+                            <Image source={icons.Icon.checked} style={styles(selectedTheme).camericon} />
                         </View>
                     </View>
                 </View>
-                <View style={styles.userdatacontainer}>
-                    <Text style={styles.username}>Pradeep Sharma</Text>
-                    <Text style={styles.body}>Full Stack Developer</Text>
-                    <TouchableOpacity style={styles.followbtn}>
-                        <Text style={styles.followbtntext}>+ {buttons.Follow}</Text>
+                <View style={styles(selectedTheme).userdatacontainer}>
+                    <Text style={styles(selectedTheme).username}>{Screensdata.Instructor.name}</Text>
+                    <Text style={styles(selectedTheme).body}>{Screensdata.Instructor.des}</Text>
+                    <TouchableOpacity style={styles(selectedTheme).followbtn}>
+                        <Text style={styles(selectedTheme).followbtntext}>+ {buttons.Follow}</Text>
                     </TouchableOpacity>
-                    <View style={{ flexDirection: "row" }}>
-                        {socialdata.map
-
-                        }
-
-                    </View>
                 </View>
                 <ScrollView showsVerticalScrollIndicator={false}>
 
-                    <View style={styles.flexDirectionrow}>
+                    <View style={styles(selectedTheme).flexDirectionrow}>
                         {
                             dummyData.userSosialData.map((item, index) => {
                                 return (
-                                    <View style={styles.socialcontainer}>
+                                    <View key={index} style={styles(selectedTheme).socialcontainer}>
                                         <Text>{item.value}</Text>
                                         <Text>{item.label}</Text>
                                     </View>
@@ -81,64 +86,56 @@ const InstrctorProfileScreen = (props: InstrctorProfileScreenprops) => {
 
                     </View>
                     <View>
-                    <Text style={styles.thirdcontainertexttitle} >About Me</Text>
-                    <Text>Hi everyone this is pradeep sharma i'm a react native lerner and now I'm working on a Demo project for the practice</Text>
+                        <Text style={styles(selectedTheme).thirdcontainertexttitle} >{Screensdata.Instructor.AboutMe}</Text>
+                        <Text style={styles(selectedTheme).time}>{Screensdata.Instructor.bio}</Text>
                     </View>
 
-
-
-
-
-
-
-
-
-
-
                     <View>
-                        <View style={styles.Itemcontainer}>
-                            <Text style={styles.thirdcontainertexttitle} >MY Courses (4)</Text>
-                            <TouchableOpacity style={styles.SeeAllbutton}>
-                                <Text style={styles.seeAlltext}>See All</Text>
+                        <View style={styles(selectedTheme).Itemcontainer}>
+                            <Text style={styles(selectedTheme).thirdcontainertexttitle} >MY Courses (4)</Text>
+                            <TouchableOpacity style={styles(selectedTheme).SeeAllbutton}>
+                                <Text style={styles(selectedTheme).seeAlltext}>{buttons.SeeAll}</Text>
                             </TouchableOpacity>
 
                         </View>
-                        <FlatList
 
-                            data={dummyData.courses_list_2}
-                            extraData={dummyData.courses_list_2}
-                            showsVerticalScrollIndicator={false}
-                            keyExtractor={(item, index) => item + index.toString()}
-                            renderItem={({ item }) => <Item item={item} />}
-
-                        />
+                        <ScrollView >
+                            {
+                                data.map((item, index) => {
+                                    return (
+                                        <Item key={index} item={item} />
+                                    )
+                                })
+                            }
+                        </ScrollView>
                     </View>
+
                     {/* <View>
-                        <View style={styles.Itemcontainer}>
-                            <Text style={styles.thirdcontainertexttitle} >Student Rating</Text>
+                        <View style={styles(selectedTheme).Itemcontainer}>
+                            <Text style={styles(selectedTheme).thirdcontainertexttitle} >Student Rating</Text>
                         </View>
                         <View>
 
                         </View>
                     </View> */}
                     <View>
-                        <View style={styles.Itemcontainer}>
-                            <Text style={styles.thirdcontainertexttitle} >Student Review</Text>
-                            <TouchableOpacity style={styles.SeeAllbutton}>
-                                <Text style={styles.seeAlltext}>See All</Text>
+                        <View style={styles(selectedTheme).Itemcontainer}>
+                            <Text style={styles(selectedTheme).thirdcontainertexttitle} >{Screensdata.Instructor.StudentReview}</Text>
+                            <TouchableOpacity style={styles(selectedTheme).SeeAllbutton}>
+                                <Text style={styles(selectedTheme).seeAlltext}>{buttons.SeeAll}</Text>
                             </TouchableOpacity>
 
                         </View>
                         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-                            <View style={styles.flexDirectionrow}>
+                            <View style={styles(selectedTheme).flexDirectionrow}>
                                 {dummyData.studentreview.map((item, index) => {
                                     return (
-                                        <View style={styles.reviewcontainer}>
-                                            <Image source={item.profile} style={styles.Icons} />
-                                            <View style={styles.itemtextcontainer}>
-                                                <Text style={styles.studentname}>{item.name}</Text>
-                                                <Text style={styles.comment}>{item.comment}</Text>
-                                                <Text style={styles.postedon}>{item.posted_on}</Text>
+                                        <View key={index} style={styles(selectedTheme).reviewcontainer}>
+                                            <Image source={item.profile} style={styles(selectedTheme).Icons} />
+                                            <View style={styles(selectedTheme).itemtextcontainer}>
+                                                <Text style={styles(selectedTheme).studentname}>{item.name}</Text>
+                                                <Text style={styles(selectedTheme).comment}>{item.comment}</Text>
+                                                <Text style={styles(selectedTheme).postedon}>{item.posted_on}</Text>
                                             </View>
                                         </View>
                                     )
@@ -147,25 +144,25 @@ const InstrctorProfileScreen = (props: InstrctorProfileScreenprops) => {
                         </ScrollView>
                     </View>
                     <View>
-                        <View style={styles.Itemcontainer}>
-                            <Text style={styles.thirdcontainertexttitle} >Connect Here</Text>
+                        <View style={styles(selectedTheme).Itemcontainer}>
+                            <Text style={styles(selectedTheme).thirdcontainertexttitle} >{Screensdata.Instructor.ConnectHere}</Text>
                         </View>
 
-                        <TouchableOpacity style={styles.socialbtn}>
+                        <TouchableOpacity style={styles(selectedTheme).socialbtn}>
 
-                            <View style={styles.flexDirectionrow}>
-                                <Image source={icons.Icon.twitter} style={styles.socialbtnIcon} />
-                                <Text style={styles.socialbtnText}>{buttons.twitter}</Text>
+                            <View style={styles(selectedTheme).flexDirectionrow}>
+                                <Image source={icons.Icon.twitter} style={styles(selectedTheme).socialbtnIcon} />
+                                <Text style={styles(selectedTheme).socialbtnText}>{buttons.twitter}</Text>
                             </View>
-                            <Image source={icons.Icon.right_arrow} style={styles.smallicon} />
+                            <Image source={icons.Icon.right_arrow} style={styles(selectedTheme).smallicon} />
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles.socialbtn}>
+                        <TouchableOpacity style={styles(selectedTheme).socialbtn}>
 
-                            <View style={styles.flexDirectionrow}>
-                                <Image source={icons.Icon.linkedin} style={styles.socialbtnIcon} />
-                                <Text style={styles.socialbtnText}>{buttons.linkdin}</Text>
+                            <View style={styles(selectedTheme).flexDirectionrow}>
+                                <Image source={icons.Icon.linkedin} style={styles(selectedTheme).socialbtnIcon} />
+                                <Text style={styles(selectedTheme).socialbtnText}>{buttons.linkdin}</Text>
                             </View>
-                            <Image source={icons.Icon.right_arrow} style={styles.smallicon} />
+                            <Image source={icons.Icon.right_arrow} style={styles(selectedTheme).smallicon} />
                         </TouchableOpacity>
 
                     </View>

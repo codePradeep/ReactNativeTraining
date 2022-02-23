@@ -10,6 +10,9 @@ let styles =(selectedTheme:any)=> StyleSheet.create({
         paddingVertical:20
 
     },
+    MainSubContainer:{
+        flex:.9
+    },
     headercontainer:{
         flexDirection:"row",
         justifyContent:"space-between"
@@ -102,18 +105,17 @@ let styles =(selectedTheme:any)=> StyleSheet.create({
     },
     item: {
        flexDirection:"row",
-               flex: 1,
+        flex: 1,
         margin: 4,
-        borderRadius: 30,
         height: Dimensions.get('window').width / 3,
     },
     Icons: {
         flex: 1,
         resizeMode: "contain",
-        // alignSelf:"center",
         justifyContent: "flex-end",
-        borderRadius: 20
-
+    },
+    itemIcons:{
+        borderRadius:20
     },
     itemtext: {
         margin: 10,
@@ -211,11 +213,13 @@ smallicon:{
        alignItems:"center"
     },
     fevcon:{
-        width:15,
+        width:20,
         height:15,
         justifyContent:"center",
         margin:5,
-        tintColor:COLORS.primary2
+        tintColor:"red",
+        resizeMode:"contain",
+        
     },
 
 

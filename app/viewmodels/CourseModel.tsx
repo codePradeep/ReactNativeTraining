@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { dummyData } from "../config";
+import dummyData from "../config/constants/dummyData";
 import CourseScreen from "../views/Course";
 import CorselChapter from "../views/Course Chapter";
 import Loginpage from '../views/Login/Loginpage'
@@ -12,8 +12,10 @@ const CourseModel = (props: Coursemodlprops) => {
     const [visible, setvisibe] = useState(false)
     return (
         <CourseScreen
-            navigation={navigation}
-            DATA={dummyData}
+            {...{
+                DATA:dummyData,
+                navigation
+            }}
         />
     )
 }

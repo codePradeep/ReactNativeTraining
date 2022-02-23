@@ -1,22 +1,26 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import CategoryScreen from "../views/Category";
-interface loginmodelprops{
-    navigation:any
+interface loginmodelprops {
+    navigation: any
 }
-const CategoryModel =(props:loginmodelprops)=>{
-    const {navigation}=props
+const CategoryModel = (props: loginmodelprops) => {
+    const { navigation } = props
+    
 
-    const [visible,setvisibe]=useState(false)
-    const [defaultitem, setdefaultitem] = useState(1);
-    return(
+    const [visible, setvisibe] = useState(false)
+    const [defaultitem, setdefaultitem] = useState(" ");
+    return (
         <CategoryScreen
-         navigation={navigation} 
-         visible={visible}
-         setvisibe={setvisibe}
-         defaultitem={ defaultitem}
-            setdefaultitem={setdefaultitem}
-         
-         />
+
+            {...{
+                navigation,
+                visible,
+                setvisibe,
+                defaultitem,
+                setdefaultitem
+            }}
+
+        />
     )
 }
 export default CategoryModel;

@@ -17,6 +17,7 @@ interface Homepageprops {
         id: number;
         title: string;
         thumbnail: any;
+        icon: any;
     }[]
     courselist2: {
         id: number;
@@ -120,10 +121,12 @@ const Homepage = (props: Homepageprops) => {
                                         <TouchableOpacity key={index}
                                         onPress={() => navigation.navigate("CourseListingModel", {
                                             Header: item.title,
+                                            Icon:item.icon
+                                            
                                           })}
                                         style={[styles(selectedTheme).item,
                                         ]}>
-                                     {index<3?
+                                    
                                         <ImageBackground source={item.thumbnail}
                                         imageStyle={styles(selectedTheme).itemIcons}
                                             style={[styles(selectedTheme).Icons]}
@@ -132,7 +135,7 @@ const Homepage = (props: Homepageprops) => {
                                             ]}
                                             >{item.title}</Text>
                                         </ImageBackground>
-                                        :null}
+                                       
                                     </TouchableOpacity>
                                     
                                 )

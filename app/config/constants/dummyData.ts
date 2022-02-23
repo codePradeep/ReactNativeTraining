@@ -4,33 +4,30 @@ const categories = [
     {
         id: 0,
         title: "Mobile Design",
-        thumbnail: require("../../assets/images/bg_1.png")
+        thumbnail: require("../../assets/images/bg_1.png"),
+        icon: require("../../assets/icons/mobile.png")
+
     },
     {
         id: 1,
         title: "3D Modeling",
-        thumbnail: require("../../assets/images/bg_2.png")
+        thumbnail: require("../../assets/images/bg_2.png"),
+        icon: require("../../assets/icons/model_3d.png")
+
     },
     {
         id: 2,
         title: "Web Designing",
-        thumbnail: require("../../assets/images/bg_3.png")
+        thumbnail: require("../../assets/images/bg_3.png"),
+        icon: require("../../assets/icons/web_design.png")
+
     },
     {
         id: 3,
         title: "Illustrations",
-        thumbnail: require("../../assets/images/bg_4.png")
+        thumbnail: require("../../assets/images/bg_4.png"),
+        icon: require("../../assets/icons/illustration.png")
     },
-    {
-        id: 4,
-        title: "Drawing",
-        thumbnail: require("../../assets/images/bg_5.png")
-    },
-    {
-        id: 5,
-        title: "Animation",
-        thumbnail: require("../../assets/images/bg_6.png")
-    }
 ]
 
 const courses_list_1 = [

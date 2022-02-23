@@ -23,6 +23,7 @@ interface SearchScreenProps {
         id: number;
         title: string;
         thumbnail: any;
+        icon: any;
     }[]
     DATA: any
     
@@ -63,6 +64,7 @@ const SearchScreen = (props: SearchScreenProps) => {
                         onChangeText={SearchTexthandler}
                         placeholder={Screensdata.Search.placeholder} 
                         value={searchText}
+                        placeholderTextColor={selectedTheme.textgray8Ngray4}
                     />
                     {isSearch ? <TouchableOpacity onPress={() => { setisSearch(false), resetsearch(Text) }}>
                         <Image source={icons.Icon.cross} style={[styles(selectedTheme).searchbarimage]} />
@@ -95,7 +97,7 @@ const SearchScreen = (props: SearchScreenProps) => {
                     data={flatlistdata}
                     extraData={flatlistdata}
                     showsVerticalScrollIndicator={false}
-                    renderItem={({ item, index }) => <Renderitem item={item} index={index} defaultitem={defaultitem} setdefaultitem={setdefaultitem} />}
+                    renderItem={({ item, index }) => <Renderitem item={item} index={index} navigation={navigation}/>}
                      numColumns={2}
                     keyExtractor={(_, index) => index.toString()}
                      ListHeaderComponent={<Text style={styles(selectedTheme).text}>{Screensdata.Search.BrowseCategories}</Text>}

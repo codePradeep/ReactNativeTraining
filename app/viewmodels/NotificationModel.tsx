@@ -1,5 +1,5 @@
 import React from "react";
-import { dummyData } from "../config";
+import dummyData from "../config/constants/dummyData";
 import NotificationTab from "../views/Notification";
 
 

@@ -16,10 +16,10 @@ const ProfileModel = (props: profilemodelprops) => {
   const dispatch = useDispatch();
   type DefaultRootStat={
     profile:any
-}//  const Userdata= useSelector(state => state.Data)
+}
      const Profilepic= useSelector<DefaultRootStat>(state => state.profile)
     
-    console.log("pic",Profilepic)
+  
 
 
   const openCamara = () => {

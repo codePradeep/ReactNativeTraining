@@ -1,6 +1,6 @@
 import React from "react";
 import { Image, Text, View } from "react-native";
-import { COLORS } from "../../config";
+import { COLORS, selectedTheme } from "../../config";
 import styles from "./style";
 
 interface renderItem{
@@ -17,17 +17,17 @@ const Item = (props:renderItem) =>{
     const {item}=props
     return(
         <View>
-    <View style={styles.item}>
-            <Image source={item.avatar} style={styles.image} />
-        <View style={styles.itemtextcontainer}>
-            <View style={styles.notificationtitlecontainer}>
-            <Text style={styles.title}>{item.name}</Text>
-            <Text style={styles.time}>{item.created_at}</Text>
+    <View style={styles(selectedTheme).item}>
+            <Image source={item.avatar} style={styles(selectedTheme).image} />
+        <View style={styles(selectedTheme).itemtextcontainer}>
+            <View style={styles(selectedTheme).notificationtitlecontainer}>
+            <Text style={styles(selectedTheme).title}>{item.name}</Text>
+            <Text style={styles(selectedTheme).time}>{item.created_at}</Text>
             </View>
-            <Text style={styles.subtitle}>{item.message}</Text>
+            <Text style={styles(selectedTheme).subtitle}>{item.message}</Text>
         </View>
     </View>
-    <View style={styles.seperater}/>
+    <View style={styles(selectedTheme).seperater}/>
     </View>
 );}
 

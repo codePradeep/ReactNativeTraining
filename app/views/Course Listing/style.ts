@@ -1,14 +1,14 @@
 import { Dimensions, StatusBar, StyleSheet } from "react-native";
 import { COLORS, selectedTheme } from "../../config";
 
-const styles = StyleSheet.create({
+const styles =(selectedTheme:any)=> StyleSheet.create({
     mainconatiner: {
         flex: 1,
         backgroundColor: selectedTheme.backgroundwhiteNgray8
 
     },
     headercontainer: {
-        padding:10
+        padding:15
     },
     bgimage: {
         height: "120%",
@@ -40,11 +40,12 @@ const styles = StyleSheet.create({
         tintColor: selectedTheme.tintColor
     },
     headersub: {
+        marginHorizontal:20,
         flexDirection: "row",
         justifyContent: "space-between"
     },
     HeaderText: {
-        color: COLORS.white,
+        color: selectedTheme.textblackNwhite,
         fontSize: 22,
         fontWeight: "700",
         textAlignVertical: "center",
@@ -79,6 +80,9 @@ const styles = StyleSheet.create({
     },
 
     mobileimage: {
+        tintColor:selectedTheme.tintColor,
+        width:100,
+        height:100,
         resizeMode: "contain"
     },
     item: {

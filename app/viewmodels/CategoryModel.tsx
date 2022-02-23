@@ -6,7 +6,7 @@ interface loginmodelprops {
 const CategoryModel = (props: loginmodelprops) => {
     const { navigation } = props
     
-
+    const [defaulticon,setdefaulticon]=useState()
     const [visible, setvisibe] = useState(false)
     const [defaultitem, setdefaultitem] = useState(" ");
     return (
@@ -17,7 +17,9 @@ const CategoryModel = (props: loginmodelprops) => {
                 visible,
                 setvisibe,
                 defaultitem,
-                setdefaultitem
+                setdefaultitem,
+                setdefaulticon,
+                defaulticon
             }}
 
         />

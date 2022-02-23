@@ -52,7 +52,8 @@ const styles =(selectedTheme:any)=> StyleSheet.create({
         width:20,
         height:20,
         resizeMode:"contain",
-        alignSelf:"center"
+        alignSelf:"center",
+        tintColor:selectedTheme.tintColor
     },
     button: {
         borderRadius: 90,
@@ -81,7 +82,6 @@ const styles =(selectedTheme:any)=> StyleSheet.create({
         borderWidth: .5,
         flex: 1,
         margin: "1%",
-        
         borderRadius: 20,
         height: Dimensions.get('window').width / 3,
     },

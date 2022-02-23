@@ -7,7 +7,7 @@ const initialState = {
 }
 
 const rootReducer = (state = initialState,action:any) => {
-  console.log(state.Data)
+
     switch (action.type) {
         case ADD_PROFILE_PIC:
             return { ...state,profile: action.payload1 }

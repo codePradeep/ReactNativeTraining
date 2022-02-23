@@ -9,26 +9,28 @@ interface renderprops {
     id: number;
     title: string;
     thumbnail: any;
+    icon:any
 }
-  defaultitem:any
-  setdefaultitem:any
+  navigation:any
 
 }
 
 
 const Renderitem=(props:renderprops)=>{
-    const {item,defaultitem,setdefaultitem}=props
+    const {item,navigation}=props
     return(
         
         <TouchableOpacity 
-        onPress={()=>setdefaultitem(item.id)}
-        style={[styles(selectedTheme).item,{backgroundColor:defaultitem == item.id?selectedTheme.backgroundblueNblack:selectedTheme.backgroundwhite3Ngray8,
-        borderColor:defaultitem == item.id?selectedTheme.borderColor1:selectedTheme.borderColor1
-        }]}>
+        onPress={() => navigation.navigate("CourseListingModel", {
+          Header: item.title,
+          Icon:item.icon
+          
+        })}
+        style={[styles(selectedTheme).item]}>
         <ImageBackground source={item.thumbnail} 
         style={[styles(selectedTheme).Icons]} 
         >
-        <Text style={[styles(selectedTheme).itemtext,{color:defaultitem == item.id? COLORS.white:selectedTheme.textblackNwhite}]} 
+        <Text style={[styles(selectedTheme).itemtext]} 
         >{item.title}</Text>
         </ImageBackground>
     </TouchableOpacity>

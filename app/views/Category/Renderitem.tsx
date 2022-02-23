@@ -12,16 +12,17 @@ interface renderprops {
 }
   defaultitem:any
   setdefaultitem:any
+  setdefaulticon:any
 
 }
 
 
 const Renderitem=(props:renderprops)=>{
-    const {item,defaultitem,setdefaultitem}=props
+    const {item,defaultitem,setdefaultitem,setdefaulticon}=props
     return(
         
         <TouchableOpacity 
-        onPress={()=>setdefaultitem(item.label)}
+        onPress={()=>{setdefaultitem(item.label),setdefaulticon(item.icon)}}
         style={[styles(selectedTheme).item,{backgroundColor:defaultitem == item.label?selectedTheme.backgroundblueNblack:selectedTheme.backgroundwhite3Ngray8,
         borderColor:defaultitem == item.label?selectedTheme.borderColor1:selectedTheme.borderColor1
         }]}>

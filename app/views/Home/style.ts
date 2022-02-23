@@ -33,6 +33,7 @@ let styles =(selectedTheme:any)=> StyleSheet.create({
         width:30,
         resizeMode:"contain",
         alignSelf:"center",
+        tintColor:selectedTheme.tintColor
         
     },
     mainScrollView:{

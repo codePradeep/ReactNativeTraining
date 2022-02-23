@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, Text, View, SafeAreaView, SectionList, StatusBar, Image, TouchableOpacity } from "react-native";
-import { icons, images } from "../../config";
+import { icons, images, selectedTheme } from "../../config";
 import Item from "./Renderitem";
 import styles from "./style";
 
@@ -23,16 +23,16 @@ interface NotificationTabprops {
 const NotificationTab = (props: NotificationTabprops) => {
     const { DATA, navigation } = props
     return (
-        <View style={styles.mainconatiner}>
-             <Image source={images.images.bg_dark} style={styles.bgimage} />
-        <View style={styles.conatiner}>
+        <View style={styles(selectedTheme).mainconatiner}>
+             <Image source={selectedTheme.name=="light"?images.images.bg: images.images.bg_dark} style={styles(selectedTheme).bgimage} />
+        <View style={styles(selectedTheme).conatiner}>
             <TouchableOpacity
             onPress={()=>navigation.goBack()}
-                style={styles.leftbutton}
+                style={styles(selectedTheme).leftbutton}
             >
-                <Image source={icons.Icon.back} style={styles.headerlefticon} />
+                <Image source={icons.Icon.back} style={styles(selectedTheme).headerlefticon} />
             </TouchableOpacity>
-            <Text style={styles.HeaderText}>Notifications</Text>
+            <Text style={styles(selectedTheme).HeaderText}>Notifications</Text>
 
 
             
@@ -42,7 +42,7 @@ const NotificationTab = (props: NotificationTabprops) => {
                     keyExtractor={(item, index) => item + index.toString()}
                     renderItem={({ item }) => <Item item={item} />}
                     renderSectionHeader={({ section: { title } }) => (
-                        <Text style={styles.header}>{title}</Text>
+                        <Text style={styles(selectedTheme).header}>{title}</Text>
                     )}
                 />
            

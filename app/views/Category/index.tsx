@@ -12,10 +12,12 @@ interface CategoryProps {
     setvisibe: any
     defaultitem: string
     setdefaultitem: React.Dispatch<React.SetStateAction<string>>
+    defaulticon:any
+    setdefaulticon:any
 }
 
 const CategoryScreen = (props: CategoryProps) => {
-    const { navigation, visible, setvisibe,defaultitem,setdefaultitem, } = props
+    const { navigation, visible, setvisibe,defaultitem,setdefaultitem,setdefaulticon,defaulticon } = props
 
 
 
@@ -37,7 +39,13 @@ const CategoryScreen = (props: CategoryProps) => {
                 <FlatList
                     data={constants.categories}
                     extraData={constants.categories}
-                    renderItem={({ item, index }) => <Renderitem item={item} index={index} defaultitem={defaultitem} setdefaultitem={setdefaultitem} />}
+                    renderItem={({ item, index }) => <Renderitem 
+                    item={item} 
+                    index={index}
+                     defaultitem={defaultitem} 
+                     setdefaultitem={setdefaultitem} 
+                     setdefaulticon={setdefaulticon}
+                     />}
                     numColumns={3}
                     keyExtractor={(_, index) => index.toString()}
                 />
@@ -46,6 +54,7 @@ const CategoryScreen = (props: CategoryProps) => {
                 <TouchableOpacity style={styles(selectedTheme).button}
                 onPress={() => navigation.navigate("CourseListingModel", {
                     Header: defaultitem,
+                    Icon:defaulticon
                   })}>
                     <Text style={styles(selectedTheme).buttontext}>{buttons.CONTINUE} </Text>
                 </TouchableOpacity>

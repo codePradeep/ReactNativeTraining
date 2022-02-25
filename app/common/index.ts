@@ -1,3 +1,7 @@
 import ProgressBar from "./ProgressBar";
 import Slider from "./MultiSlider";
-export {ProgressBar,Slider}
+import CircularProgress from "./CircularProgress";
+import MultiProgressBar from "./Multiprogress";
+
+
+export {ProgressBar,Slider,CircularProgress,MultiProgressBar}

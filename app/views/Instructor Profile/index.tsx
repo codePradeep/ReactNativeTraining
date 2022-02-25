@@ -1,7 +1,8 @@
 import React from "react";
-import { FlatList, Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
+import { FlatList, Image, Linking, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { screensEnabled } from "react-native-screens";
-import { buttons,  icons, images, Screensdata, selectedTheme } from "../../config";
+import { CircularProgress, MultiProgressBar } from "../../common";
+import { buttons, COLORS, icons, images, Screensdata, selectedTheme } from "../../config";
 import dummyData from "../../config/constants/dummyData";
 import Item from "./Flatlistranderitem";
 import styles from "./style";
@@ -10,9 +11,18 @@ interface InstrctorProfileScreenprops {
     navigation: any
     visible: any
     setvisibe: any
-    socialdata: any
+    socialdata: {
+        value: string;
+        label: string;
+    }[]
     userdata: any
-    studentreview: any
+    studentreview: {
+        id: number;
+        profile: any;
+        name: string;
+        posted_on: string;
+        comment: string;
+    }[]
     data: {
         id: number;
         title: string;
@@ -25,6 +35,12 @@ interface InstrctorProfileScreenprops {
         is_favourite: boolean;
         thumbnail: any;
     }[]
+    socialConnection: {
+        id: number;
+        name: string;
+        icon: any;
+        Link: string;
+    }[]
 }
 
 const InstrctorProfileScreen = (props: InstrctorProfileScreenprops) => {
@@ -33,7 +49,9 @@ const InstrctorProfileScreen = (props: InstrctorProfileScreenprops) => {
         setvisibe,
         socialdata,
         userdata,
-        studentreview, data
+        studentreview,
+        data,
+        socialConnection,
     } = props
 
 
@@ -74,7 +92,7 @@ const InstrctorProfileScreen = (props: InstrctorProfileScreenprops) => {
 
                     <View style={styles(selectedTheme).flexDirectionrow}>
                         {
-                            dummyData.userSosialData.map((item, index) => {
+                            socialdata.map((item, index) => {
                                 return (
                                     <View key={index} style={styles(selectedTheme).socialcontainer}>
                                         <Text>{item.value}</Text>
@@ -110,14 +128,37 @@ const InstrctorProfileScreen = (props: InstrctorProfileScreenprops) => {
                         </ScrollView>
                     </View>
 
-                    {/* <View>
+                    <View>
                         <View style={styles(selectedTheme).Itemcontainer}>
                             <Text style={styles(selectedTheme).thirdcontainertexttitle} >Student Rating</Text>
                         </View>
                         <View>
+                            <View style={styles(selectedTheme).StudentReviewcontainer}>
+                                <CircularProgress percent={76} />
+                                <Text style={styles(selectedTheme).studentreviewtext}>{Screensdata.Instructor.studentsatisfied}</Text>
+                            </View>
+                            <View style={styles(selectedTheme).progressContainer}>
+                                <MultiProgressBar containerstyle={styles(selectedTheme).progressbar} />
+                                {dummyData.studentrating.map((item, index) => {
+                                    return (
+                                        <View  key={index}   >
+                                        <View style={styles(selectedTheme).progresSecendSubcontainer}>
+                                            <View style={styles(selectedTheme).progresSubcontainer}>
+                                                <Image source={item.icons} style={[styles(selectedTheme).progressicon,{tintColor:item.color}]} />
+                                                <Text style={styles(selectedTheme).progressText}>{item.label}</Text>
+                                            </View>
+                                            <Text style={styles(selectedTheme).progressText}>{item.count}</Text>
+                                            
+                                        </View>
+                                      {index<3?  <View style={styles(selectedTheme).seperater}/>:null}
+                                        </View>
+                                    )
+                                })}
+
+                            </View>
 
                         </View>
-                    </View> */}
+                    </View>
                     <View>
                         <View style={styles(selectedTheme).Itemcontainer}>
                             <Text style={styles(selectedTheme).thirdcontainertexttitle} >{Screensdata.Instructor.StudentReview}</Text>
@@ -128,7 +169,7 @@ const InstrctorProfileScreen = (props: InstrctorProfileScreenprops) => {
                         </View>
                         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
                             <View style={styles(selectedTheme).flexDirectionrow}>
-                                {dummyData.studentreview.map((item, index) => {
+                                {studentreview.map((item, index) => {
                                     return (
                                         <View key={index} style={styles(selectedTheme).reviewcontainer}>
                                             <Image source={item.profile} style={styles(selectedTheme).Icons} />
@@ -147,28 +188,23 @@ const InstrctorProfileScreen = (props: InstrctorProfileScreenprops) => {
                         <View style={styles(selectedTheme).Itemcontainer}>
                             <Text style={styles(selectedTheme).thirdcontainertexttitle} >{Screensdata.Instructor.ConnectHere}</Text>
                         </View>
-
-                        <TouchableOpacity style={styles(selectedTheme).socialbtn}>
-
-                            <View style={styles(selectedTheme).flexDirectionrow}>
-                                <Image source={icons.Icon.twitter} style={styles(selectedTheme).socialbtnIcon} />
-                                <Text style={styles(selectedTheme).socialbtnText}>{buttons.twitter}</Text>
-                            </View>
-                            <Image source={icons.Icon.right_arrow} style={styles(selectedTheme).smallicon} />
-                        </TouchableOpacity>
-                        <TouchableOpacity style={styles(selectedTheme).socialbtn}>
-
-                            <View style={styles(selectedTheme).flexDirectionrow}>
-                                <Image source={icons.Icon.linkedin} style={styles(selectedTheme).socialbtnIcon} />
-                                <Text style={styles(selectedTheme).socialbtnText}>{buttons.linkdin}</Text>
-                            </View>
-                            <Image source={icons.Icon.right_arrow} style={styles(selectedTheme).smallicon} />
-                        </TouchableOpacity>
-
+                        {socialConnection.map((item, index) => {
+                            return (
+                                <TouchableOpacity
+                                    key={index}
+                                    style={styles(selectedTheme).socialbtn}
+                                    onPress={() => Linking.openURL(item.Link)}
+                                >
+                                    <View style={styles(selectedTheme).flexDirectionrow}>
+                                        <Image source={item.icon} style={styles(selectedTheme).socialbtnIcon} />
+                                        <Text style={styles(selectedTheme).socialbtnText}>{item.name}</Text>
+                                    </View>
+                                    <Image source={icons.Icon.right_arrow} style={styles(selectedTheme).smallicon} />
+                                </TouchableOpacity>
+                            )
+                        })}
                     </View>
-
                 </ScrollView>
-
             </View>
         </View>
     )

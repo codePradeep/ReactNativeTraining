@@ -455,10 +455,49 @@ const Userdata2=[
             label:"Study Reminder",
             
         },
-
-    
 ]
 
+const socialConnection=[
+    {
+        id:0,
+        name:"Twitter",
+        icon:icons.Icon.twitter,
+        Link:"https://www.twitter.com/i/flow/login"
+    },
+    {
+        id:0,
+        name:"Linkdin",
+        icon:icons.Icon.linkedin,
+        Link:"https://www.linkedin.com/in/pradeep-kumar-sharma-0152a11b7"
+    },
+]
+
+const studentrating=[
+    {
+        label:"Very Satisfied",
+        count:587,
+        icons:icons.Icon.camera,
+        color:"orange"
+    },
+    {
+        label:"Satisfied",
+        count:327,
+        icons:icons.Icon.camera,
+        color:"skyblue"
+    },
+    {
+        label:"Neutral",
+        count:200,
+        icons:icons.Icon.camera,
+        color:"blue"
+    },
+    {
+        label:"Poor",
+        count:44,
+        icons:icons.Icon.camera,
+        color:"red"
+    },
+]
 export default {
     categories,
     courses_list_1,
@@ -469,5 +508,7 @@ export default {
     studentreview,
     userSosialData,
     UserData,
-    Userdata2
+    Userdata2,
+    socialConnection,
+    studentrating
 }

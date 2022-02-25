@@ -34,7 +34,12 @@ const Screensdata={
         AboutMe:"About Me",
         bio:"Hi everyone this is pradeep sharma i'm a react native lerner and now I'm working on a Demo project for the practice",
         StudentReview:"Student Review",
-        ConnectHere:"Connect Here"
+        ConnectHere:"Connect Here",
+        StudentReting:"",
+        studentsatisfied:"Student satisfied with courses",
+        Studentprogress:{
+
+        }
     }
 
 }

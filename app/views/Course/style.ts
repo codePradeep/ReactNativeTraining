@@ -11,7 +11,12 @@ const styles = StyleSheet.create({
         backgroundColor: "white",
         width: "100%",
         height: "40%",
-        
+
+    },
+    container: {
+        flex: 1,
+        justifyContent: "center",
+        alignSelf: "center"
     },
     imagebackgraound: {
         width: "100%",
@@ -20,7 +25,7 @@ const styles = StyleSheet.create({
     headercontainer: {
 
         padding: 15,
-alignContent:"center",
+        alignContent: "center",
         flexDirection: "row",
         justifyContent: "space-between"
     },
@@ -31,7 +36,7 @@ alignContent:"center",
         borderRadius: 90,
         justifyContent: "center",
         alignItems: "center",
-        
+
 
     },
     playbutton: {

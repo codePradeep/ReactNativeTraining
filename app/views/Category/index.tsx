@@ -8,8 +8,6 @@ import styles from "./style";
 
 interface CategoryProps {
     navigation: any
-    visible: any
-    setvisibe: any
     defaultitem: string
     setdefaultitem: React.Dispatch<React.SetStateAction<string>>
     defaulticon:any
@@ -17,10 +15,7 @@ interface CategoryProps {
 }
 
 const CategoryScreen = (props: CategoryProps) => {
-    const { navigation, visible, setvisibe,defaultitem,setdefaultitem,setdefaulticon,defaulticon } = props
-
-
-
+    const { navigation,defaultitem,setdefaultitem,setdefaulticon,defaulticon } = props
 
 
     return (
@@ -34,8 +29,7 @@ const CategoryScreen = (props: CategoryProps) => {
                 </TouchableOpacity>
                 <Text style={styles(selectedTheme).text}>{Screensdata.Home.Categories}</Text>
 
-
-          <View style={{flex:1,justifyContent:"space-between"}}>
+          <View style={styles(selectedTheme).flatlistcontaine}>
                 <FlatList
                     data={constants.categories}
                     extraData={constants.categories}
@@ -49,7 +43,6 @@ const CategoryScreen = (props: CategoryProps) => {
                     numColumns={3}
                     keyExtractor={(_, index) => index.toString()}
                 />
-
 
                 <TouchableOpacity style={styles(selectedTheme).button}
                 onPress={() => navigation.navigate("CourseListingModel", {

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Image, ImageBackground, ScrollView, Text, TouchableOpacity, View } from "react-native";
+import { ActivityIndicator, Image, ImageBackground, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { COLORS, constants, icons, images, selectedTheme } from "../../config";
 import CorselChapter from "../Course Chapter";
 import CourseDiscussion from "../Course Discussion";
@@ -36,7 +36,6 @@ const CourseScreen = (props: coursescreenprops) => {
 
     }
 
-    console.log(defaultitem)
     return (
         <View style={styles.mainconatiner}>
 
@@ -60,7 +59,7 @@ const CourseScreen = (props: coursescreenprops) => {
 
                             </View>
                         </View>
-                        <View style={{ flex: 1, justifyContent: "center", alignSelf: "center" }}>
+                        <View style={styles.container}>
                             <TouchableOpacity style={styles.playbutton}
 
                                 onPress={() => setplayvideo(false)}>
@@ -88,10 +87,9 @@ const CourseScreen = (props: coursescreenprops) => {
                             </View>
                         </View>
                         <Video
-
                             source={{ uri: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4' }}
                             controls={true}
-                            onBuffer={() => { return (<Text>Loading</Text>) }}
+                            onBuffer={() => { return (<ActivityIndicator />) }}
                             style={{
                                 position: "absolute",
                                 top: 50,

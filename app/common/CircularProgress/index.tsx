@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     fontSize: 15,
     fontWeight: 'bold',
-    color:selectedTheme.textblackNwhite
+    color:COLORS.gray10
     
   },
   firstProgressLayer: {

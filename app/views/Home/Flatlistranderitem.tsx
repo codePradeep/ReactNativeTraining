@@ -23,7 +23,7 @@ interface renderItem {
 const Item = (props: renderItem) => {
     const { item ,setisfavourite,isfavourite} = props
     return (
-        <View>
+        <TouchableOpacity>
             <View style={styles(selectedTheme).item}>
 
                 <Image source={item.thumbnail} style={styles(selectedTheme).image} />
@@ -60,7 +60,7 @@ const Item = (props: renderItem) => {
                 </View>
             </View>
             <View style={styles(selectedTheme).seperater} />
-        </View>
+        </TouchableOpacity>
     );
 }
 

@@ -37,51 +37,51 @@ const CourseScreen = (props: coursescreenprops) => {
     }
 
     return (
-        <View style={styles.mainconatiner}>
+        <View style={styles(selectedTheme).mainconatiner}>
 
-            <View style={styles.VideoConatiner}>
+            <View style={styles(selectedTheme).VideoConatiner}>
                 {playvideo ?
-                    <ImageBackground source={images.images.thumbnail_1} style={styles.imagebackgraound}>
+                    <ImageBackground source={images.images.thumbnail_1} style={styles(selectedTheme).imagebackgraound}>
 
-                        <View style={styles.headercontainer}>
-                            <TouchableOpacity style={styles.iconback}
+                        <View style={styles(selectedTheme).headercontainer}>
+                            <TouchableOpacity style={styles(selectedTheme).iconback}
                                 onPress={() => navigation.goBack()}
                             >
-                                <Image source={icons.Icon.back} style={styles.icons} />
+                                <Image source={icons.Icon.back} style={styles(selectedTheme).icons} />
                             </TouchableOpacity>
                             <View style={{ flexDirection: "row", }}>
                                 <TouchableOpacity >
-                                    <Image source={icons.Icon.media} style={styles.secendicons} />
+                                    <Image source={icons.Icon.media} style={styles(selectedTheme).secendicons} />
                                 </TouchableOpacity>
                                 <TouchableOpacity >
-                                    <Image source={icons.Icon.heart_off} style={styles.secendicons} />
+                                    <Image source={icons.Icon.heart_off} style={styles(selectedTheme).secendicons} />
                                 </TouchableOpacity>
 
                             </View>
                         </View>
-                        <View style={styles.container}>
-                            <TouchableOpacity style={styles.playbutton}
+                        <View style={styles(selectedTheme).container}>
+                            <TouchableOpacity style={styles(selectedTheme).playbutton}
 
                                 onPress={() => setplayvideo(false)}>
-                                <Image source={icons.Icon.play} style={styles.icons} />
+                                <Image source={icons.Icon.play} style={styles(selectedTheme).icons} />
                             </TouchableOpacity>
                         </View>
 
                     </ImageBackground>
 
                     : <View style={{ flex: 1 }} >
-                        <View style={[styles.headercontainer, { backgroundColor: "black" }]}>
-                            <TouchableOpacity style={styles.iconback}
+                        <View style={[styles(selectedTheme).headercontainer, { backgroundColor: "black" }]}>
+                            <TouchableOpacity style={styles(selectedTheme).iconback}
                                 onPress={() => navigation.goBack()}
                             >
-                                <Image source={icons.Icon.back} style={styles.icons} />
+                                <Image source={icons.Icon.back} style={styles(selectedTheme).icons} />
                             </TouchableOpacity>
                             <View style={{ flexDirection: "row", }}>
                                 <TouchableOpacity >
-                                    <Image source={icons.Icon.media} style={styles.secendicons} />
+                                    <Image source={icons.Icon.media} style={styles(selectedTheme).secendicons} />
                                 </TouchableOpacity>
                                 <TouchableOpacity >
-                                    <Image source={icons.Icon.heart_off} style={styles.secendicons} />
+                                    <Image source={icons.Icon.heart_off} style={styles(selectedTheme).secendicons} />
                                 </TouchableOpacity>
 
                             </View>
@@ -108,7 +108,7 @@ const CourseScreen = (props: coursescreenprops) => {
 
 
             </View>
-            <View style={styles.ButtonContainer}>
+            <View style={styles(selectedTheme).ButtonContainer}>
                 {
                     constants.course_details_tabs.map((item, index) => {
                         return (
@@ -116,11 +116,11 @@ const CourseScreen = (props: coursescreenprops) => {
                             <TouchableOpacity
                                 key={index}
                                 onPress={() => setdefaultitem(item.id)}
-                                style={[styles.button, {
+                                style={[styles(selectedTheme).button, {
                                     backgroundColor: defaultitem == item.id ? selectedTheme.backgroundgray10Ngray70 : selectedTheme.backgroundwhite3Ngray8,
-                                    borderColor: defaultitem == item.id ? COLORS.primary : COLORS.white
+                                    borderColor: defaultitem == item.id ? COLORS.primary : selectedTheme.backgroundwhite3Ngray8
                                 }]}>
-                                <Text style={styles.btnText}>{item.label}</Text>
+                                <Text style={styles(selectedTheme).btnText}>{item.label}</Text>
                             </TouchableOpacity>
 
                         )

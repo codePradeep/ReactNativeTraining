@@ -11,7 +11,7 @@ import {
     FlatList
 } from 'react-native';
 import { constants } from '../../config';
-import { COLORS, FONTS, SIZES } from '../../config/constants/theme';
+import { COLORS, FONTS, selectedTheme, SIZES } from '../../config/constants/theme';
 import { Item } from './Renderitem';
 import styles from './style';
 
@@ -50,7 +50,7 @@ const OnBoarding = (props: onboradingscreen) => {
         const dotPosition = Animated.divide(scrollX, SIZES.width);
 
         return (
-            <View style={styles.dotsContainer}>
+            <View style={styles(selectedTheme).dotsContainer}>
                 {onBoardings.map((item, index) => {
                    
                     const dotSize = dotPosition.interpolate({
@@ -62,7 +62,7 @@ const OnBoarding = (props: onboradingscreen) => {
                     return (
                         <Animated.View
                             key={index}
-                            style={[styles.dot, {
+                            style={[styles(selectedTheme).dot, {
                                  width: dotSize,
                                   height: dotSize,
                             }]}
@@ -74,7 +74,7 @@ const OnBoarding = (props: onboradingscreen) => {
     }
 
     return (
-        <SafeAreaView style={styles.container}>
+        <SafeAreaView style={styles(selectedTheme).container}>
             <View>
                 <Animated.FlatList
                     ref={flatlistRef}
@@ -95,7 +95,7 @@ const OnBoarding = (props: onboradingscreen) => {
 
 
                 />
-                <View style={styles.dotsRootContainer}>
+                <View style={styles(selectedTheme).dotsRootContainer}>
                 {renderDots()}
             </View>
             </View>

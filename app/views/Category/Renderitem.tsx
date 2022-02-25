@@ -25,7 +25,7 @@ const Renderitem = (props: renderprops) => {
       onPress={() => { setdefaultitem(item.label), setdefaulticon(item.icon) }}
       style={[styles(selectedTheme).item,
       {
-        backgroundColor: defaultitem == item.label ? selectedTheme.backgroundblueNblack : selectedTheme.backgroundwhite3Ngray8,
+        backgroundColor: defaultitem == item.label ? selectedTheme.backgroundblueNgreen : selectedTheme.backgroundwhite3Ngray8,
         borderColor: defaultitem == item.label ? selectedTheme.borderColor1 : selectedTheme.borderColor1
       }]}>
       <Image source={item.icon}

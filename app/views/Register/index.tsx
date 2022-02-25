@@ -1,5 +1,5 @@
-import React from "react";
-import { View, Text, Button, ImageBackground, Image, TextInput, TouchableOpacity, ScrollView, ColorPropType, StatusBar } from "react-native";
+import React, { useRef } from "react";
+import { View, Text, Button, ImageBackground, Image, TextInput, TouchableOpacity, ScrollView, ColorPropType, StatusBar, Animated } from "react-native";
 import { buttons, Form, icons, images, Screensdata } from "../../config";
 import { COLORS, FONTS, selectedTheme } from "../../config/constants/theme";
 import styles from "./style";
@@ -41,117 +41,150 @@ const Register = (props: Registerprops) => {
         setdefaultitem,
         submit } = props
 
+        const animationValue = useRef(new Animated.Value(0)).current;
+        const scaleValue = useRef(0);
+
+        const NEWButton=Animated.createAnimatedComponent(TouchableOpacity)
+        
+        const runAnimationOnClick = () => {
+           scaleValue.current = scaleValue.current === 0 ? 1 : 0;
+           Animated.spring(animationValue, {
+               toValue: scaleValue.current,
+             friction:2,
+               useNativeDriver: true,
+           }).start();
+        }
+     
+
+
     return (
-        <View style={styles.MainConatiner}>
+        <View style={styles(selectedTheme).MainConatiner}>
             <StatusBar backgroundColor={"rgba(0,0,0,0)"}
                 barStyle={"dark-content"} />
 
-            <Text style={styles.heading}>{Screensdata.Register}</Text>
+            <Text style={styles(selectedTheme).heading}>{Screensdata.Register}</Text>
 
 
             <ScrollView style={{ flex: 1 }}>
 
 
-                <View style={styles.container}>
-                    <View style={styles.boxcontainer}>
+                <View style={styles(selectedTheme).container}>
+                    <View style={styles(selectedTheme).boxcontainer}>
                         {register.map((item, index) => {
                             return (
-                                <TouchableOpacity
-                                    onPress={() => setdefaultitem(item.id)}
-                                    style={[styles.box, {
-                                        backgroundColor: defaultitem == item.id ? selectedTheme.backgroundblueNblack : selectedTheme.backgroundwhite3Ngray8,
+                                <NEWButton
+                                
+                                    key={index}
+                                    onPress={() => { setdefaultitem(item.id),runAnimationOnClick()}}
+                                    style={[styles(selectedTheme).box, {
+                                       
+                                        backgroundColor: defaultitem == item.id ? selectedTheme.backgroundblueNblack : selectedTheme.backgroundgray10Ngray70,
                                         borderColor: defaultitem == item.id ? selectedTheme.borderColor1 : selectedTheme.borderColor1
                                     }]}>
 
-                                    <View style={styles.checkedcontainer}>
+                                    <Animated.View 
+                                    
+                                    style={[styles(selectedTheme).checkedcontainer,
+                                     {transform: [
+                                        {
+                                            translateX: animationValue.interpolate({
+                                                      inputRange: [0, 1],
+                                                      outputRange: [1, 70],
+                                                   }),
+                                          },
+                                         
+                                        
+                                ],
+                                    opacity: animationValue.interpolate({
+                                        inputRange: [0, 1],
+                                        outputRange: [1, 2],
+                                     }),
+                                    }]}>
                                         {defaultitem == item.id ?
                                             <Image source={icons.Icon.checkbox_on_dark}
-                                                style={[styles.Icons,]}
+                                                style={[styles(selectedTheme).Icons,]}
                                             /> :
-                                            <View style={styles.Icons}></View>}
-
-                                    </View>
-
-
-                                    <Text style={{ color: defaultitem == item.id ? COLORS.white : COLORS.primary3 }}>I am a </Text>
-                                    <Text style={{ fontWeight: "700", fontSize: 20, color: defaultitem == item.id ? COLORS.white : COLORS.primary3 }}>{item.label}</Text>
-                                </TouchableOpacity>
+                                            <View style={styles(selectedTheme).Icons}></View>}
+                                    </Animated.View>
+                                    <Text style={{ color: defaultitem == item.id ? COLORS.white : COLORS.gray40 }}>I am a </Text>
+                                    <Text style={{ fontWeight: "700", fontSize: 20, color: defaultitem == item.id ? COLORS.white : COLORS.gray40 }}>{item.label}</Text>
+                                </NEWButton>
                             )
                         })}
 
 
                     </View>
 
-                    <View style={styles.input} >
-                        <Text style={styles.formtext}>{Form.User}</Text>
-                        <View style={styles.inputecontainer}>
-                            <TextInput style={styles.inputText}
+                    <View style={styles(selectedTheme).input} >
+                        <Text style={styles(selectedTheme).formtext}>{Form.User}</Text>
+                        <View style={styles(selectedTheme).inputecontainer}>
+                            <TextInput style={styles(selectedTheme).inputText}
                                 onChangeText={EnterUserName} />
                         </View>
                         {!isvalidusername ? <Text style={{ color: "red" }}>{Form.Validation.username}</Text> : null}
 
                     </View>
 
-                    <View style={styles.input} >
-                        <Text style={styles.formtext}>{Form.Email}</Text>
-                        <View style={styles.inputecontainer}>
+                    <View style={styles(selectedTheme).input} >
+                        <Text style={styles(selectedTheme).formtext}>{Form.Email}</Text>
+                        <View style={styles(selectedTheme).inputecontainer}>
                             <TextInput
                                 keyboardType={"email-address"}
                                 onChangeText={Emailinpute}
-                                style={styles.inputText} />
+                                style={styles(selectedTheme).inputText} />
                         </View>
                         {!isvalidEmail ? <Text style={{ color: "red" }}>{Form.Validation.EmailValidation}</Text> : null}
                     </View>
 
-                    <View style={styles.input}>
-                        <Text style={styles.formtext}>{Form.Passsword}</Text>
-                        <View style={styles.inputecontainer}>
+                    <View style={styles(selectedTheme).input}>
+                        <Text style={styles(selectedTheme).formtext}>{Form.Passsword}</Text>
+                        <View style={styles(selectedTheme).inputecontainer}>
                             <TextInput
-                                style={styles.inputText}
+                                style={styles(selectedTheme).inputText}
                                 secureTextEntry={!visible}
                                 onChangeText={EnterPassword}
                             />
                             <TouchableOpacity
-                                style={styles.eyecontainer}
+                                style={styles(selectedTheme).eyecontainer}
                                 onPress={() => visible ? setvisibe(false) : setvisibe(true)}
                             >
-                                <Image source={visible ? icons.Icon.eye : icons.Icon.eye_close} style={styles.eyeicon} />
+                                <Image source={visible ? icons.Icon.eye : icons.Icon.eye_close} style={styles(selectedTheme).eyeicon} />
                             </TouchableOpacity>
                         </View>
                         {!isvalidPassword ? <Text style={{ color: "red" }}>{Form.Validation.passwordvalidation}</Text> : null}
 
                     </View>
 
-                    <TouchableOpacity style={styles.button}
+                    <TouchableOpacity style={styles(selectedTheme).button}
                         onPress={submit}>
-                        <Text style={styles.buttontext}>{buttons.Register}</Text>
+                        <Text style={styles(selectedTheme).buttontext}>{buttons.Register}</Text>
                     </TouchableOpacity>
 
-                    <Text style={styles.text}>Or Signup with</Text>
+                    <Text style={styles(selectedTheme).text}>Or Signup with</Text>
 
-                    <View style={styles.socialbuttonsContainer}>
+                    <View style={styles(selectedTheme).socialbuttonsContainer}>
 
-                        <TouchableOpacity style={styles.socialbuttons}>
-                            <Image source={icons.Icon.google} style={styles.Icon} />
-                            <Text style={styles.socialbuttonstext}>{buttons.Google}</Text>
+                        <TouchableOpacity style={styles(selectedTheme).socialbuttons}>
+                            <Image source={icons.Icon.google} style={styles(selectedTheme).Icon} />
+                            <Text style={styles(selectedTheme).socialbuttonstext}>{buttons.Google}</Text>
                         </TouchableOpacity>
 
-                        <TouchableOpacity style={styles.socialbuttons}>
-                            <Image source={icons.Icon.facebook} style={styles.Icon} />
-                            <Text style={styles.socialbuttonstext}>{buttons.facebook}</Text>
+                        <TouchableOpacity style={styles(selectedTheme).socialbuttons}>
+                            <Image source={icons.Icon.facebook} style={styles(selectedTheme).Icon} />
+                            <Text style={styles(selectedTheme).socialbuttonstext}>{buttons.facebook}</Text>
                         </TouchableOpacity>
 
                     </View>
 
-                    <View style={styles.buttonsContainer}>
+                    <View style={styles(selectedTheme).buttonsContainer}>
 
 
-                        <Text style={styles.newusertext}>Alredy a User?</Text>
+                        <Text style={styles(selectedTheme).newusertext}>Alredy a User?</Text>
 
 
                         <TouchableOpacity
                             onPress={() => navigation.navigate("Loginmodel")}>
-                            <Text style={styles.signuptext}>{buttons.Login}</Text>
+                            <Text style={styles(selectedTheme).signuptext}>{buttons.Login}</Text>
                         </TouchableOpacity>
 
                     </View>

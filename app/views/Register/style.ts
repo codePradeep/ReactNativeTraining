@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 import { FONTS, selectedTheme } from "../../config";
 import { COLORS } from "../../config/constants/theme";
 
-const styles=StyleSheet.create({
+const styles=(selectedTheme:any)=>StyleSheet.create({
     MainConatiner:{
         flex:1,
         backgroundColor:selectedTheme.backgroundwhiteNgray8

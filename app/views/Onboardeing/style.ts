@@ -1,12 +1,12 @@
 import { StyleSheet } from "react-native";
 import { COLORS, FONTS, SIZES } from "../../config/constants/theme";
 
-const styles=StyleSheet.create({
+const styles=(selectedTheme:any)=>StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: COLORS.white
+        backgroundColor: selectedTheme.backgroundwhite3Ngray8
     },
     imageAndTextContainer: {
         flex:1,
@@ -56,7 +56,7 @@ const styles=StyleSheet.create({
     },
     headingtext:{
         ...FONTS.heading,
-        color: COLORS.black,
+        color: selectedTheme.textblackNwhite,
     
         fontSize:30,
         width:200,fontWeight:"700"
@@ -64,7 +64,7 @@ const styles=StyleSheet.create({
     textstyle:{
         ...FONTS.body,
         marginTop: SIZES.base,
-        color: COLORS.black,
+        color: selectedTheme.textblackNwhite,
     },
     itemcontainer:{
         padding:20

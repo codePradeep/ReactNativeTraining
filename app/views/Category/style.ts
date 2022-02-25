@@ -55,7 +55,8 @@ const styles=(selectedTheme:any)=>StyleSheet.create({
     text:{
         fontSize:25,
         fontWeight:"700",
-        marginVertical:20
+        marginVertical:20,
+        color:selectedTheme.textblackNwhite
     },
     flatlistcontaine: {
         flex:1,justifyContent:"space-between"

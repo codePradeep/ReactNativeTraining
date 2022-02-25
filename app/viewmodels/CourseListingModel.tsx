@@ -25,9 +25,7 @@ const CourseListingModel = (props: Corselistinprops) => {
     if (duration.length != 0) {
         menudata = menudata.filter((a: any) => a.duration > duration[0] && a.duration < duration[1])
     }
-
     const resultdata = menudata.length
-    console.log("resultdata=>", resultdata)
 
     const Resetfilter = () => {
         console.log("reseted filter")

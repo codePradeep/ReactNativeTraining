@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, Button, ImageBackground, Image, TextInput, TouchableOpacity, ScrollView } from "react-native";
 import Input from "../../common/Input";
-import { buttons, Form, icons, images, Screensdata } from "../../config";
+import { buttons, Form, icons, images, Screensdata, selectedTheme } from "../../config";
 import styles from "./style";
 
 interface loginpageprops {
@@ -27,74 +27,74 @@ const Loginpage = (props: loginpageprops) => {
         submit} = props
 
     return (
-        <View style={styles.MainConatiner}>
-            <Image source={images.images.bg} style={styles.bgimage} />
-            <Text style={styles.heading}>{Screensdata.Login}</Text>
-            <View style={styles.container}>
-                <View style={styles.input} >
-                    <Text style={styles.formtext}>{Form.usernameorEmail}</Text>
-                    <View style={styles.inputecontainer}>
+        <View style={styles(selectedTheme).MainConatiner}>
+            <Image source={selectedTheme.name=="light"?images.images.bg: images.images.bg_dark} style={styles(selectedTheme).bgimage} />
+            <Text style={styles(selectedTheme).heading}>{Screensdata.Login}</Text>
+            <View style={styles(selectedTheme).container}>
+                <View style={styles(selectedTheme).input} >
+                    <Text style={styles(selectedTheme).formtext}>{Form.usernameorEmail}</Text>
+                    <View style={styles(selectedTheme).inputecontainer}>
 
                         <TextInput 
                         keyboardType={"email-address"}
                         onChangeText={Emailinpute}
-                        style={styles.inputText} />
+                        style={styles(selectedTheme).inputText} />
 
                     </View>
                     {!isvalidEmail? <Text style={{color:"red"}}>{Form.Validation.EmailValidation}</Text>:null}
 
                 </View>
-                <View style={styles.input}>
-                    <Text style={styles.formtext}>{Form.Passsword}</Text>
-                    <View style={styles.inputecontainer}>
+                <View style={styles(selectedTheme).input}>
+                    <Text style={styles(selectedTheme).formtext}>{Form.Passsword}</Text>
+                    <View style={styles(selectedTheme).inputecontainer}>
                         <TextInput
-                            style={styles.inputText}
+                            style={styles(selectedTheme).inputText}
                             secureTextEntry={!visible}
                             onChangeText={EnterPassword}
                         />
                         <TouchableOpacity
-                            style={styles.eyecontainer}
+                            style={styles(selectedTheme).eyecontainer}
                             onPress={() => visible ? setvisibe(false) : setvisibe(true)}
                         >
-                            <Image source={visible ? icons.Icon.eye : icons.Icon.eye_close} style={styles.eyeicon} />
+                            <Image source={visible ? icons.Icon.eye : icons.Icon.eye_close} style={styles(selectedTheme).eyeicon} />
                         </TouchableOpacity>
                     </View>
                     {!isvalidPassword? <Text style={{color:"red"}}>{Form.Validation.passwordvalidation}</Text>:null}
                 </View>
 
-                <TouchableOpacity style={styles.button}
+                <TouchableOpacity style={styles(selectedTheme).button}
                 onPress={submit}
                 >
-                    <Text style={styles.buttontext}>{buttons.Login}</Text>
+                    <Text style={styles(selectedTheme).buttontext}>{buttons.Login}</Text>
                 </TouchableOpacity>
 
-                <Text style={styles.text}>Or Login with</Text>
+                <Text style={styles(selectedTheme).text}>Or Login with</Text>
 
-                <View style={styles.socialbuttonsContainer}>
+                <View style={styles(selectedTheme).socialbuttonsContainer}>
 
-                    <TouchableOpacity style={styles.socialbuttons}
+                    <TouchableOpacity style={styles(selectedTheme).socialbuttons}
                     
                     onPress={()=>navigation.navigate("Roottab")}>
-                        <Image source={icons.Icon.google} style={styles.Icon} />
-                        <Text style={styles.socialbuttonstext}>{buttons.Google}</Text>
+                        <Image source={icons.Icon.google} style={styles(selectedTheme).Icon} />
+                        <Text style={styles(selectedTheme).socialbuttonstext}>{buttons.Google}</Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={styles.socialbuttons}>
-                        <Image source={icons.Icon.facebook} style={styles.Icon} />
-                        <Text style={styles.socialbuttonstext}>{buttons.facebook}</Text>
+                    <TouchableOpacity style={styles(selectedTheme).socialbuttons}>
+                        <Image source={icons.Icon.facebook} style={styles(selectedTheme).Icon} />
+                        <Text style={styles(selectedTheme).socialbuttonstext}>{buttons.facebook}</Text>
                     </TouchableOpacity>
 
                 </View>
 
-                <View style={styles.buttonsContainer}>
+                <View style={styles(selectedTheme).buttonsContainer}>
 
 
-                    <Text style={styles.newusertext}>New User?</Text>
+                    <Text style={styles(selectedTheme).newusertext}>New User?</Text>
 
 
                     <TouchableOpacity
                     onPress={()=>navigation.navigate("RegistrModel")}>
-                        <Text style={styles.signuptext}>{buttons.Signupnow}</Text>
+                        <Text style={styles(selectedTheme).signuptext}>{buttons.Signupnow}</Text>
                     </TouchableOpacity>
 
                 </View>

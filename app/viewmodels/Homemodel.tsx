@@ -18,7 +18,6 @@ type DefaultRootStat = {
 const Homemodel = (props: Homemodelprops) => {
     const { navigation } = props
     const  Userdata = useSelector<DefaultRootStat>(state => state.Data)
-    const [render, setrender] = React.useState(false)
     
     const [seeall,setseeall]=useState(false)
     const [isfavourite, setisfavourite]=useState([])

@@ -10,7 +10,7 @@ import CourseListingModel from "./CourseListingModel";
 import InstructorProfileModel from "./InstructorProfileModel";
 import CourseModel from "./CourseModel";
 import OnboardingModel from "./OnboardingModel";
-
+import ProfileModel from "./ProfileModel";
 export {
     Homemodel,
     Loginmodel,
@@ -22,7 +22,8 @@ export {
     CourseListingModel,
     InstructorProfileModel,
     CourseModel,
-    OnboardingModel
+    OnboardingModel,
+    ProfileModel
 
     
 };

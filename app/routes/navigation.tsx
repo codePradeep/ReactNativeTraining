@@ -1,9 +1,8 @@
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { CategoryModel,  CourseListingModel, CourseModel, Homemodel,InstructorProfileModel,Loginmodel, MembershipModel, NotificationTabModel, OnboardingModel, RegistrModel, SearchModel } from '../viewmodels';
+import { CategoryModel,  CourseListingModel, CourseModel, Homemodel,InstructorProfileModel,Loginmodel, MembershipModel, NotificationTabModel, OnboardingModel, ProfileModel, RegistrModel, SearchModel } from '../viewmodels';
 import Roottab from './Tab Navigation';
-import ProfileModel from '../viewmodels/ProfileModel';
 import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
 

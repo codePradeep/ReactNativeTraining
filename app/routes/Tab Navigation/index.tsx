@@ -5,8 +5,8 @@ import { StyleSheet, View } from 'react-native';
 import { useSelector } from 'react-redux';
 import { COLORS, icons } from '../../config';
 
-import { Homemodel, SearchModel } from '../../viewmodels';
-import ProfileModel from '../../viewmodels/ProfileModel';
+import { Homemodel, ProfileModel, SearchModel } from '../../viewmodels';
+
 import TabbarItem from './CustomtabBar';
 
 const Tab = createBottomTabNavigator();

@@ -14,6 +14,7 @@ interface loginpageprops {
     EnterPassword: (text: string) => void,
     isEnabled: boolean
     submit: any
+    signIn:any
 }
 
 const Loginpage = (props: loginpageprops) => {
@@ -23,7 +24,7 @@ const Loginpage = (props: loginpageprops) => {
         Emailinpute,
         EnterPassword,
         isEnabled,
-        
+        signIn,
         submit} = props
 
     return (
@@ -74,7 +75,7 @@ const Loginpage = (props: loginpageprops) => {
 
                     <TouchableOpacity style={styles(selectedTheme).socialbuttons}
                     
-                    onPress={()=>navigation.navigate("Roottab")}>
+                    onPress={()=>signIn()}>
                         <Image source={icons.Icon.google} style={styles(selectedTheme).Icon} />
                         <Text style={styles(selectedTheme).socialbuttonstext}>{buttons.Google}</Text>
                     </TouchableOpacity>

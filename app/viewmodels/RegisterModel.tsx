@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { constants } from "../config";
+import { constants, Helper } from "../config";
 import { EmailValidate, PasswordValidate, UsernameValidation } from "../config/constants/Validation";
 import Register from "../views/Register";
 interface loginmodelprops {
@@ -57,6 +57,7 @@ const RegistrModel = (props: loginmodelprops) => {
         EnterPassword: (text: string) => setpassword(text),
         EnterUserName: (text: string) => setUsername(text),
         submit: () => submit(Email, password, Username),
+        GoogleSignin:Helper.GooglesignIn
       }}
     />
   )

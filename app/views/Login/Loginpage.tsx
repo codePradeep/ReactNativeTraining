@@ -80,7 +80,9 @@ const Loginpage = (props: loginpageprops) => {
                         <Text style={styles(selectedTheme).socialbuttonstext}>{buttons.Google}</Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={styles(selectedTheme).socialbuttons}>
+                    <TouchableOpacity
+                     onPress={()=>navigation.navigate("Roottab")}
+                      style={styles(selectedTheme).socialbuttons}>
                         <Image source={icons.Icon.facebook} style={styles(selectedTheme).Icon} />
                         <Text style={styles(selectedTheme).socialbuttonstext}>{buttons.facebook}</Text>
                     </TouchableOpacity>

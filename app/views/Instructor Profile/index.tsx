@@ -4,7 +4,7 @@ import { screensEnabled } from "react-native-screens";
 import { CircularProgress, MultiProgressBar } from "../../common";
 import { buttons, COLORS, icons, images, Screensdata, selectedTheme } from "../../config";
 import dummyData from "../../config/constants/dummyData";
-import Item from "./Flatlistranderitem";
+import Item from "../Home/Flatlistranderitem";
 import styles from "./style";
 
 interface InstrctorProfileScreenprops {
@@ -41,6 +41,8 @@ interface InstrctorProfileScreenprops {
         icon: any;
         Link: string;
     }[]
+    isfavourite:any
+    setisfavourite:any
 }
 
 const InstrctorProfileScreen = (props: InstrctorProfileScreenprops) => {
@@ -52,6 +54,8 @@ const InstrctorProfileScreen = (props: InstrctorProfileScreenprops) => {
         studentreview,
         data,
         socialConnection,
+        isfavourite,
+        setisfavourite
     } = props
 
 
@@ -121,7 +125,16 @@ const InstrctorProfileScreen = (props: InstrctorProfileScreenprops) => {
                             {
                                 data.map((item, index) => {
                                     return (
-                                        <Item key={index} item={item} />
+                                        <View key={index}>
+                                        {index<4?
+                                        <Item 
+                                        
+                                        navigation={navigation} 
+                                        item={item}
+                                         isfavourite={isfavourite}
+                                          setisfavourite={setisfavourite}
+                                           />:null}
+                                           </View>
                                     )
                                 })
                             }

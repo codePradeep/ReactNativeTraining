@@ -16,6 +16,7 @@ const CourseListingModel = (props: Corselistinprops) => {
     const [classleveldata, setclassleveldata] = useState("")
     const [duration, setduration] = useState([])
     const [modalVisible, setModalVisible] = useState(false);
+    const [isfavourite, setisfavourite]=useState([])
 
     let menudata = dummyData.courses_list_2
 
@@ -59,6 +60,8 @@ const CourseListingModel = (props: Corselistinprops) => {
                 setclassleveldata,
                 setduration,
                 Resetfilter,
+                isfavourite,
+                setisfavourite
             }}
         />
     )

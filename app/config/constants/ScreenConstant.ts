@@ -32,7 +32,7 @@ const Screensdata={
         name:"Pradeep Kumar sharma",
         des:"React-Native Developer",
         AboutMe:"About Me",
-        bio:"Hi everyone this is pradeep sharma i'm a react native lerner and now I'm working on a Demo project for the practice",
+        bio:"Hi everyone this is pradeep sharma i'm a react native learner and now I'm working on a Demo project for the practice",
         StudentReview:"Student Review",
         ConnectHere:"Connect Here",
         StudentReting:"",

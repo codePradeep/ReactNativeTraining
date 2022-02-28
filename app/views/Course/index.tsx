@@ -10,12 +10,15 @@ import Video from 'react-native-video';
 
 interface coursescreenprops {
     navigation: any
-    DATA: any
+    DATA: any,
+    Title:any,
+    isfavourite:any 
+    setisfavourite:any
 }
 
 
 const CourseScreen = (props: coursescreenprops) => {
-    const { navigation, DATA } = props
+    const { navigation, DATA,Title,isfavourite, setisfavourite } = props
     const [defaultitem, setdefaultitem] = useState(0)
     const [playvideo, setplayvideo] = useState(true)
 
@@ -23,7 +26,13 @@ const CourseScreen = (props: coursescreenprops) => {
 
         switch (defaultitem) {
             case 0:
-                return <CorselChapter navigation={navigation} flatlistdata={DATA.courses_list_2} DATA={DATA.course_details} />
+                return <CorselChapter navigation={navigation} 
+                flatlistdata={DATA.courses_list_2} 
+                DATA={DATA.course_details} 
+                Title={Title} 
+
+               {...{ isfavourite, setisfavourite}}
+                />
             case 2:
                 return <CourseDiscussion
                     navigation={navigation}

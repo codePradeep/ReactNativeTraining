@@ -71,7 +71,7 @@ const Homepage = (props: Homepageprops) => {
                         <Text style={styles(selectedTheme).auther}>{Screensdata.Home.by}</Text>
                         <Image source={images.images.start_learning} />
                         <TouchableOpacity style={styles(selectedTheme).learnbutton}
-                            onPress={() => navigation.navigate("CourseModel")}>
+                            onPress={() => navigation.navigate("CategoryModel")}>
                             <Text style={styles(selectedTheme).learnbuttontext}>{Screensdata.Home.startlerning}</Text>
                         </TouchableOpacity>
                     </ImageBackground>
@@ -81,7 +81,11 @@ const Homepage = (props: Homepageprops) => {
                         style={styles(selectedTheme).thirdrdcontainer} >
                         {courselist1.map((item, index) => {
                             return (
-                                <TouchableOpacity key={index}>
+                                <TouchableOpacity key={index}
+                                onPress={() => navigation.navigate("CourseModel", {
+                                    Title: item.title,
+                                  })}
+                                >
                                     <Image source={item.thumbnail} style={styles(selectedTheme).thumbnail} />
                                     <View style={styles(selectedTheme).row}>
                                         <Image source={icons.Icon.play_1} style={styles(selectedTheme).playicon} />
@@ -159,6 +163,7 @@ const Homepage = (props: Homepageprops) => {
                             courselist2.map((item, index) => {
                                 return (
                                     <Item 
+                                    navigation={navigation}
                                     key={index} 
                                     item={item} 
                                     isfavourite={isfavourite}

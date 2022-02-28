@@ -23,6 +23,7 @@ interface Registerprops {
     }[]
     defaultitem: any
     setdefaultitem: any
+    GoogleSignin:any
 
 
 }
@@ -39,6 +40,7 @@ const Register = (props: Registerprops) => {
         register,
         defaultitem,
         setdefaultitem,
+        GoogleSignin,
         submit } = props
 
         const animationValue = useRef(new Animated.Value(0)).current;
@@ -164,7 +166,9 @@ const Register = (props: Registerprops) => {
 
                     <View style={styles(selectedTheme).socialbuttonsContainer}>
 
-                        <TouchableOpacity style={styles(selectedTheme).socialbuttons}>
+                        <TouchableOpacity style={styles(selectedTheme).socialbuttons}
+                        onPress={()=>GoogleSignin()}
+                        >
                             <Image source={icons.Icon.google} style={styles(selectedTheme).Icon} />
                             <Text style={styles(selectedTheme).socialbuttonstext}>{buttons.Google}</Text>
                         </TouchableOpacity>

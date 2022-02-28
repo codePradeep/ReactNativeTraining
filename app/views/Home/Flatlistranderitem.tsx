@@ -17,20 +17,25 @@ interface renderItem {
         thumbnail: any;
     }
     isfavourite: any
-    setisfavourite: any
+    setisfavourite: any,
+    navigation:any
+
 }
 
 const Item = (props: renderItem) => {
-    const { item ,setisfavourite,isfavourite} = props
+    const { item ,setisfavourite,isfavourite,navigation} = props
     return (
-        <TouchableOpacity>
+        <TouchableOpacity
+        onPress={() => navigation.navigate("CourseModel", {
+            Title: item.title,
+          })}
+        >
             <View style={styles(selectedTheme).item}>
 
                 <Image source={item.thumbnail} style={styles(selectedTheme).image} />
                 <TouchableOpacity style={styles(selectedTheme).fevcontainer}
                 onPress={() => {
-                    console.log(isfavourite);
-                    if (isfavourite.includes(item.id)) {
+                    if (isfavourite.includes(item.id)&& item.is_favourite!=true) {
                       let unlike = isfavourite.filter((elem:any) => elem !== item.id);
                       setisfavourite(unlike);
                     } else {

@@ -29,7 +29,6 @@ const Routenavigation =(props:any) => {
         <Stack.Screen name="OnboardingModel" component={OnboardingModel} options={{ headerShown:false }}/> 
 
        
-       {/* Tab Secreen */}
         <Stack.Screen name="SearchModel" component={SearchModel} options={{ headerShown:false }}/> 
         <Stack.Screen name="Roottab" component={Roottab} options={{ headerShown:false }}/> 
         <Stack.Screen name="Homemodel" component={Homemodel} options={{ headerShown:false }}/> 

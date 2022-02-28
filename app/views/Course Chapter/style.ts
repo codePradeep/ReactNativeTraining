@@ -57,8 +57,8 @@ const styles =(selectedTheme:any)=> StyleSheet.create({
 
      },
      videoIcon:{
-         width:25,
-         height:25,
+         width:20,
+         height:20,
          resizeMode:"contain",
          alignSelf:"center",
          borderRadius:90
@@ -363,8 +363,9 @@ const styles =(selectedTheme:any)=> StyleSheet.create({
         fontWeight:"700",
         
     },
-    playbutton:{  height:40,
-        width:40,
+    playbutton:{  
+        height:35,
+        width:35,
         backgroundColor:COLORS.primary,
         borderRadius:90,
         alignItems:"center",

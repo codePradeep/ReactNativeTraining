@@ -5,6 +5,7 @@ import { FONTS } from "./constants/theme";
 import icons from "./constants/icons";
 import { COLORS } from "./constants/theme";
 import constants from "./constants/constants";
+import Helper from "./Helper";
 export {
     images,
     selectedTheme,
@@ -14,5 +15,6 @@ export {
     Form,
     icons,
     COLORS,
-    constants
+    constants,
+    Helper
 }

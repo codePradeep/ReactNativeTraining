@@ -100,7 +100,7 @@ const courses_list_2 = [
         clsss_level:"Advanced",
         creted_on:"18-02-2022",
         duration: 20,
-        instructor: "Ravi Sharma",
+        instructor: "Varun Sir",
         ratings: 4.9,
         price: 75,
         is_favourite: false,
@@ -476,25 +476,25 @@ const studentrating=[
     {
         label:"Very Satisfied",
         count:587,
-        icons:icons.Icon.camera,
+        icons:icons.Icon.happy,
         color:"orange"
     },
     {
         label:"Satisfied",
         count:327,
-        icons:icons.Icon.camera,
+        icons:icons.Icon.happy,
         color:"skyblue"
     },
     {
         label:"Neutral",
         count:200,
-        icons:icons.Icon.camera,
+        icons:icons.Icon.neutral,
         color:"blue"
     },
     {
         label:"Poor",
         count:44,
-        icons:icons.Icon.camera,
+        icons:icons.Icon.sad,
         color:"red"
     },
 ]

@@ -25,7 +25,7 @@ const InstructorProfileModel = (props: InstructorProfileModelprops) => {
     const [userdata, setuserdata] = useState(userdtails)
     const [studentreview, setstudentreview] = useState(dummyData.studentreview)
 
-
+    const [isfavourite, setisfavourite]=useState([])
 
 
 
@@ -39,7 +39,9 @@ const InstructorProfileModel = (props: InstructorProfileModelprops) => {
                 socialdata,
                 userdata: userdata,
                 studentreview,
-                socialConnection: dummyData.socialConnection
+                socialConnection: dummyData.socialConnection,
+                isfavourite,
+                setisfavourite
             }}
 
         />

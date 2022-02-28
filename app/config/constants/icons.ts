@@ -57,6 +57,9 @@ const Icon = {
     linkedin: require("../../assets/icons/linkedin.png"),
     twitter: require("../../assets/icons/twitter.png"),
     cross: require("../../assets/icons/close.png"),
+    happy:require("../../assets/icons/happy.png"),
+    neutral:require("../../assets/icons/neutral.png"),
+    sad:require("../../assets/icons/sad.png"),
 
 }
 

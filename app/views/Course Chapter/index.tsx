@@ -2,7 +2,8 @@ import React from "react";
 import { Text, View, Image, TouchableOpacity, FlatList, ScrollView, Modal } from "react-native";
 
 import { buttons, COLORS, icons, images, Screensdata, selectedTheme } from "../../config";
-import { Item, Renderitem } from "./Renderitem";
+import Item from "../Home/Flatlistranderitem";
+import { Renderitem } from "./Renderitem";
 import styles from "./style";
 
 
@@ -50,15 +51,18 @@ interface Corselistingprops {
         is_favourite: boolean;
         thumbnail: any;
     }[]
+    Title:any
+    isfavourite:any
+    setisfavourite:any
 }
 
 const CorselChapter = (props: Corselistingprops) => {
-    const { DATA, navigation, flatlistdata } = props
+    const { DATA, navigation, flatlistdata,Title,isfavourite, setisfavourite } = props
     return (
         <View style={styles(selectedTheme).mainconatiner}>
             <View style={styles(selectedTheme).conatiner}>
                 <View style={styles(selectedTheme).headercontainer}>
-                    <Text style={styles(selectedTheme).usertitle}>{DATA.title}</Text>
+                    <Text style={styles(selectedTheme).usertitle}>{Title}</Text>
                     <View style={styles(selectedTheme).studentdata}>
                         <Text style={styles(selectedTheme).Smalltext}>{DATA.number_of_students}</Text>
                         <Text style={styles(selectedTheme).Smalltext}>{DATA.duration}</Text>
@@ -123,7 +127,7 @@ const CorselChapter = (props: Corselistingprops) => {
                     {
                         flatlistdata.map((item, index) => {
                             return (
-                                <Item key={index} item={item} />
+                                <Item key={index} navigation={navigation} item={item} isfavourite={isfavourite} setisfavourite={setisfavourite} />
                             )
                         })
                     }

@@ -79,10 +79,8 @@ const styles =(selectedTheme:any)=> StyleSheet.create({
         marginVertical: 20,
     },
     item: {
-        borderWidth: .5,
         flex: 1,
         margin: "1%",
-        borderRadius: 20,
         height: Dimensions.get('window').width / 3,
     },
     itemInvisible: {

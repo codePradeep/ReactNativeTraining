@@ -2,7 +2,8 @@ import React from "react";
 import { Text, View, Image, TouchableOpacity, FlatList, ScrollView, Modal, Animated } from "react-native";
 import { Slider } from "../../common";
 import { buttons, COLORS, icons, images, Screensdata, selectedTheme } from "../../config";
-import { Item, Renderitem } from "./Renderitem";
+import Item from "../Home/Flatlistranderitem";
+import { Renderitem } from "./Renderitem";
 import styles from "./style";
 
 
@@ -12,6 +13,8 @@ interface Corselistingprops {
     DATA: {
         id: number;
         title: string;
+        clsss_level: string;
+        creted_on: string;
         duration: number;
         instructor: string;
         ratings: number;
@@ -46,6 +49,8 @@ interface Corselistingprops {
     resultdata: any
     Header: string
     Icon: any
+    isfavourite:any
+    setisfavourite:any
 }
 
 const Corselisting = (props: Corselistingprops) => {
@@ -67,7 +72,9 @@ const Corselisting = (props: Corselistingprops) => {
         Resetfilter,
         resultdata,
         Header,
-        Icon
+        Icon,
+        isfavourite,
+        setisfavourite
     } = props
 
     const scrollY = new Animated.Value(0)
@@ -129,7 +136,7 @@ const Corselisting = (props: Corselistingprops) => {
                     data={DATA}
                     showsVerticalScrollIndicator={false}
                     keyExtractor={(item, index) => item + index.toString()}
-                    renderItem={({ item }) => <Item item={item} />}
+                    renderItem={({ item }) => <Item navigation={navigation} item={item} isfavourite={isfavourite} setisfavourite={setisfavourite} />}
                     onScroll={(e) => {
                         scrollY.setValue(e.nativeEvent.contentOffset.y)
                     }}

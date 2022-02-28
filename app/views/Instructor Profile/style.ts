@@ -29,8 +29,8 @@ const styles = (selectedTheme: any) => StyleSheet.create({
         justifyContent: "center"
     },
     headerlefticon: {
-        height: 40,
-        width: 40,
+        height: 30,
+        width: 30,
         resizeMode: "contain",
         alignSelf: "center",
         tintColor: COLORS.white
@@ -252,6 +252,7 @@ const styles = (selectedTheme: any) => StyleSheet.create({
         marginLeft: 10
     },
     Itemcontainer: {
+        marginVertical:10,
         flexDirection: "row",
         justifyContent: "space-between",
         alignItems: "center"

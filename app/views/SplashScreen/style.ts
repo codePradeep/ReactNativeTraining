@@ -7,17 +7,19 @@ const styles = StyleSheet.create({
 
         justifyContent: "center",
         alignItems: "center"
-
+    },
+    Image: {
+        height: 400,
+        width:400
 
     },
-
-    paragraph: {
-        paddingLeft: 10,
-        fontSize: 22,
-        color: "black",
-        fontWeight: 'bold',
-
-    },
+    successive:{
+        position:"absolute",
+        height:200,
+        width:200,
+        bottom:0,
+        resizeMode:"contain"
+    }
 })
 
 export default styles;

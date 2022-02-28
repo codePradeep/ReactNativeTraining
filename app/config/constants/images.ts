@@ -17,5 +17,7 @@ const images={
  thumbnail_2 : require("../../assets/images/thumbnail_2.png"),
  thumbnail_3 : require("../../assets/images/thumbnail_3.png"),
  thumbnail_4 : require("../../assets/images/thumbnail_4.png"),
+ Learning:require("../../assets/images/Learning.png"),
+ successive:require("../../assets/images/successive.jpg")
 }
 export default {images}

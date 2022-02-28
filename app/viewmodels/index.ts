@@ -11,6 +11,7 @@ import InstructorProfileModel from "./InstructorProfileModel";
 import CourseModel from "./CourseModel";
 import OnboardingModel from "./OnboardingModel";
 import ProfileModel from "./ProfileModel";
+import SplashScreenModel from "./SplashScreenModel";
 export {
     Homemodel,
     Loginmodel,
@@ -23,7 +24,8 @@ export {
     InstructorProfileModel,
     CourseModel,
     OnboardingModel,
-    ProfileModel
+    ProfileModel,
+    SplashScreenModel
 
     
 };

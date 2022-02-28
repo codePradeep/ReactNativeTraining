@@ -24,14 +24,14 @@ const Roottab = () => {
         tabBarHideOnKeyboard:true,
         
              tabBarStyle:{
-          // flex:.1,
+          flex:1,
           height:70,
           marginHorizontal:20,
-          bottom:10,
+          bottom:5,
           borderRadius: 10,
           backgroundColor: COLORS.primary3,
           position: "absolute",
-          shadowOffset: { width: 10, height: 20 },
+          shadowOffset: { width: 1, height: 2 },
           shadowOpacity: 1,
           shadowRadius: 3,
           elevation: 2,

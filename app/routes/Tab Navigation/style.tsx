@@ -3,7 +3,9 @@ import { StyleSheet, Dimensions } from "react-native";
 import { COLORS } from "../../config";
 
 const styles = StyleSheet.create({
-    maincontainer: { marginRight: 10, marginLeft: 1, justifyContent: "center" },
+    maincontainer: {
+        // justifyContent: "center" 
+    },
     container: {
         justifyContent: 'center',
         alignItems: 'center',
@@ -11,7 +13,6 @@ const styles = StyleSheet.create({
     btn: {
 
         alignItems: 'center',
-
         borderRadius: 10,
     },
     image: {

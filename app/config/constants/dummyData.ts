@@ -123,7 +123,7 @@ const courses_list_2 = [
 const top_searches = [
     {
         id: 0,
-        label: "Sketch"
+        label: "React-native"
     },
     {
         id: 1,

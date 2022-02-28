@@ -15,6 +15,7 @@ const SearchModel = (props: SearchModelprops) => {
     const [defaultitem, setdefaultitem] = useState(1);
     const [searchText, SetsearchText] = useState("")
     const [isSearch, setisSearch] = useState(false)
+    const [isfavourite, setisfavourite]=useState([])
     
   
     const  Userdata = useSelector<DefaultRootStat>(state => state.Data)
@@ -38,6 +39,7 @@ const SearchModel = (props: SearchModelprops) => {
                 setisSearch,
                 resetsearch: (text: string) => SetsearchText(""),
                 DATA: SearchData,
+                isfavourite, setisfavourite
             }}
 
 

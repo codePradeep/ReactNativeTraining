@@ -45,7 +45,8 @@ const styles =(selectedTheme:any)=> StyleSheet.create({
         resizeMode: "contain",
         // alignSelf:"center",
         justifyContent: "flex-end",
-        borderRadius: 10
+        borderRadius: 10,
+        padding:10,
 
     },
     searchbarimage:{
@@ -81,31 +82,32 @@ const styles =(selectedTheme:any)=> StyleSheet.create({
     item: {
         flex: 1,
         margin: "1%",
+        
         height: Dimensions.get('window').width / 3,
     },
     itemInvisible: {
         backgroundColor: 'transparent',
     },
     topsearchcontainer:{
-       
+        backgroundColor: selectedTheme.backgroundgray10Ngray70,
+        marginRight:4,
+        borderRadius: 10,
+        padding:10
         
     },
     itemtext: {
-        margin: 10,
         fontSize: 22,
         fontWeight: "700",
         ...FONTS.largeTitle,
         color: selectedTheme.textblackNwhite
 
     },
-    searchlist: {
-        backgroundColor: selectedTheme.backgroundgray10Ngray70,
-        padding: 10,
-        borderRadius: 10,
-        marginRight: 10,
+    searchlist: { 
+        fontSize:15,
         color: selectedTheme.textblackNwhite
     },
     topsearch: {
+        flex:1,
         flexDirection: 'row',
         marginTop: 5,
     },

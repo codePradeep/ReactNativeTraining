@@ -23,7 +23,7 @@ interface Registerprops {
     }[]
     defaultitem: any
     setdefaultitem: any
-    GoogleSignin:any
+    GoogleSignin: any
 
 
 }
@@ -43,20 +43,20 @@ const Register = (props: Registerprops) => {
         GoogleSignin,
         submit } = props
 
-        const animationValue = useRef(new Animated.Value(0)).current;
-        const scaleValue = useRef(0);
+    const animationValue = useRef(new Animated.Value(0)).current;
+    const scaleValue = useRef(0);
 
-        const NEWButton=Animated.createAnimatedComponent(TouchableOpacity)
-        
-        const runAnimationOnClick = () => {
-           scaleValue.current = scaleValue.current === 0 ? 1 : 0;
-           Animated.spring(animationValue, {
-               toValue: scaleValue.current,
-             friction:2,
-               useNativeDriver: true,
-           }).start();
-        }
-     
+    const NEWButton = Animated.createAnimatedComponent(TouchableOpacity)
+
+    const runAnimationOnClick = () => {
+        scaleValue.current = scaleValue.current === 0 ? 1 : 0;
+        Animated.spring(animationValue, {
+            toValue: scaleValue.current,
+            friction: 1,
+            useNativeDriver: true,
+        }).start();
+    }
+
 
 
     return (
@@ -75,33 +75,29 @@ const Register = (props: Registerprops) => {
                         {register.map((item, index) => {
                             return (
                                 <NEWButton
-                                
+
                                     key={index}
-                                    onPress={() => { setdefaultitem(item.id),runAnimationOnClick()}}
+                                    onPress={() => { setdefaultitem(item.id), runAnimationOnClick() }}
                                     style={[styles(selectedTheme).box, {
-                                       
+
                                         backgroundColor: defaultitem == item.id ? selectedTheme.backgroundblueNblack : selectedTheme.backgroundgray10Ngray70,
                                         borderColor: defaultitem == item.id ? selectedTheme.borderColor1 : selectedTheme.borderColor1
                                     }]}>
 
-                                    <Animated.View 
-                                    
-                                    style={[styles(selectedTheme).checkedcontainer,
-                                     {transform: [
+                                    <Animated.View
+
+                                        style={[styles(selectedTheme).checkedcontainer,
                                         {
-                                            translateX: animationValue.interpolate({
-                                                      inputRange: [0, 1],
-                                                      outputRange: [1, 70],
-                                                   }),
-                                          },
-                                         
-                                        
-                                ],
-                                    opacity: animationValue.interpolate({
-                                        inputRange: [0, 1],
-                                        outputRange: [1, 2],
-                                     }),
-                                    }]}>
+                                            transform:defaultitem == item.id ? [
+                                                {
+                                                    translateX: animationValue.interpolate({
+                                                        inputRange: [0, 1],
+                                                        outputRange: [1, 70],
+                                                    }),
+                                                },
+                                            ]:[],
+                                           
+                                        }]}>
                                         {defaultitem == item.id ?
                                             <Image source={icons.Icon.checkbox_on_dark}
                                                 style={[styles(selectedTheme).Icons,]}
@@ -167,7 +163,7 @@ const Register = (props: Registerprops) => {
                     <View style={styles(selectedTheme).socialbuttonsContainer}>
 
                         <TouchableOpacity style={styles(selectedTheme).socialbuttons}
-                        onPress={()=>GoogleSignin()}
+                            onPress={() => GoogleSignin()}
                         >
                             <Image source={icons.Icon.google} style={styles(selectedTheme).Icon} />
                             <Text style={styles(selectedTheme).socialbuttonstext}>{buttons.Google}</Text>

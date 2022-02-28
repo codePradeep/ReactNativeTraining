@@ -1,6 +1,6 @@
 
 import React from "react";
-import { View, Text, Button, TouchableOpacity, Image, ScrollView, ImageBackground, FlatList } from "react-native";
+import { View, Text, Button, TouchableOpacity, Image, ScrollView, ImageBackground, FlatList, Animated } from "react-native";
 import { buttons, icons, images, Screensdata, selectedTheme } from "../../config";
 import Item from "./Flatlistranderitem";
 import styles from "./style";
@@ -46,6 +46,34 @@ const Homepage = (props: Homepageprops) => {
         isfavourite,
         setisfavourite
     } = props
+
+    const animation=new Animated.Value(0)
+
+    const runAnimationOnClick = () => {
+        Animated.loop(
+        Animated.sequence([ Animated.timing(animation, {
+            toValue: -1,
+            duration:100,
+            useNativeDriver: true,
+        }), Animated.timing(animation, {
+            toValue: 1,
+            duration:100,
+            useNativeDriver: true,
+        }),Animated.timing(animation, {
+            toValue: 0,
+            duration:100,
+            useNativeDriver: true,
+        })]),{
+            iterations:4
+        }).start()
+       
+     }
+  
+
+  const rotateanimation=animation.interpolate({
+      inputRange:[-1,1,2],
+      outputRange:["-20deg","20deg","0deg"]
+  })
     return (
         <View style={styles(selectedTheme).Container} >
             <View style={styles(selectedTheme).MainSubContainer}>
@@ -54,10 +82,16 @@ const Homepage = (props: Homepageprops) => {
                         <Text style={styles(selectedTheme).Text}>{Screensdata.Home.greeting}</Text>
                         <Text style={styles(selectedTheme).SubText}>{Screensdata.Home.date}</Text>
                     </View>
+                    <Animated.View 
+                    onTouchStart={runAnimationOnClick}
+                    style={{
+                        transform:[{rotate:rotateanimation}]
+                    }}
+                    >
                     <TouchableOpacity onPress={() => navigation.navigate("NotificationTab")}>
-
                         <Image source={icons.Icon.notification} style={styles(selectedTheme).notifiactionicon} />
                     </TouchableOpacity>
+                    </Animated.View>
 
                 </View>
                 <ScrollView

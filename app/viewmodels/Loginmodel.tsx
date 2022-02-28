@@ -40,6 +40,7 @@ const Loginmodel = (props: loginmodelprops) => {
       isEnabled={isEnabled}
       submit={() => submit(Email, password)}
       signIn={Helper.GooglesignIn}
+      Facebooklogin={Helper.SigninWithFacebook}
     />
   )
 }

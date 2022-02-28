@@ -15,6 +15,7 @@ interface loginpageprops {
     isEnabled: boolean
     submit: any
     signIn:any
+    Facebooklogin:any
 }
 
 const Loginpage = (props: loginpageprops) => {
@@ -25,6 +26,7 @@ const Loginpage = (props: loginpageprops) => {
         EnterPassword,
         isEnabled,
         signIn,
+        Facebooklogin,
         submit} = props
 
     return (
@@ -81,7 +83,7 @@ const Loginpage = (props: loginpageprops) => {
                     </TouchableOpacity>
 
                     <TouchableOpacity
-                     onPress={()=>navigation.navigate("Roottab")}
+                     onPress={()=>Facebooklogin()}
                       style={styles(selectedTheme).socialbuttons}>
                         <Image source={icons.Icon.facebook} style={styles(selectedTheme).Icon} />
                         <Text style={styles(selectedTheme).socialbuttonstext}>{buttons.facebook}</Text>

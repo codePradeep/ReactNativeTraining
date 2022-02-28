@@ -1,4 +1,5 @@
 import { GoogleSignin, statusCodes } from "@react-native-google-signin/google-signin";
+import { AccessToken, LoginManager } from "react-native-fbsdk-next";
 
   
 const GooglesignIn = async () => {
@@ -32,4 +33,22 @@ const GooglesignIn = async () => {
     }
   };
 
-  export default {GooglesignIn}
+  const SigninWithFacebook = () => {
+    LoginManager.logInWithPermissions(["public_profile", "email"]).then(
+
+      function(result) {
+        if (result.isCancelled) {
+          console.log("==> Login cancelled");
+        } else {
+         // console.log("==> Login success with permissions: " ,result.grantedPermissions?.toString());
+          
+          AccessToken.getCurrentAccessToken().then((data) => { console.log(data) })
+        }
+       },
+       function(error) {
+        console.log("==> Login fail with error: " + error);
+       }
+     );
+  }
+
+  export default {GooglesignIn,SigninWithFacebook}

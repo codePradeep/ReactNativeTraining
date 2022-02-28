@@ -42,13 +42,13 @@ const RegistrModel = (props: loginmodelprops) => {
 
 
       {...{
-        navigation: navigation,
-        visible: visible,
-        setvisibe: setvisibe,
-        selected: selected,
-        setselected: setselected,
-        isvalidEmail: isvalidEmail,
-        isvalidPassword: isvalidPassword,
+        navigation,
+        visible,
+        setvisibe,
+        selected,
+        setselected,
+        isvalidEmail,
+        isvalidPassword,
         isvalidusername: isvalidUsername,
         register: constants.register_options,
         defaultitem,
@@ -57,7 +57,8 @@ const RegistrModel = (props: loginmodelprops) => {
         EnterPassword: (text: string) => setpassword(text),
         EnterUserName: (text: string) => setUsername(text),
         submit: () => submit(Email, password, Username),
-        GoogleSignin:Helper.GooglesignIn
+        GoogleSignin:Helper.GooglesignIn,
+        Facebooklogin:Helper.SigninWithFacebook
       }}
     />
   )

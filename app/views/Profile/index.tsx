@@ -2,7 +2,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import React, { useState } from "react";
 import { Image, Modal, ScrollView, Switch, Text, TouchableOpacity, TouchableWithoutFeedback, View } from "react-native";
 import { ProgressBar } from "../../common";
-import { COLORS,  icons, images, selectedTheme } from "../../config";
+import { buttons, COLORS,  icons, images, Screensdata, selectedTheme } from "../../config";
 import dummyData from "../../config/constants/dummyData";
 import { changeTheme } from "../../config/constants/theme";
 import styles from "./style";
@@ -38,7 +38,7 @@ const ProfileScreen = (props: profileprops) => {
         <View style={styles(selectedTheme).mainconatiner}>
             <View style={styles(selectedTheme).MainSubContainer} >
                 <View style={styles(selectedTheme).headercontainer}>
-                    <Text style={styles(selectedTheme).headertext}>Profile</Text>
+                    <Text style={styles(selectedTheme).headertext}>{Screensdata.Profile.name}</Text>
                     <TouchableOpacity
                         onPress={() => { setrender(!render), changeTheme() ,dispachcall()}} >
 
@@ -62,12 +62,12 @@ const ProfileScreen = (props: profileprops) => {
                                 </View>
                             </TouchableOpacity>
                             <View style={styles(selectedTheme).userheaderDataContainer}>
-                                <Text style={styles(selectedTheme).username}>Pradeep Sharma </Text>
-                                <Text style={styles(selectedTheme).body}>FullStack Developer</Text>
-                                <ProgressBar containerstyle={styles(selectedTheme).progressbar} progress="58%" />
+                                <Text style={styles(selectedTheme).username}>{Screensdata.Instructor.name} </Text>
+                                <Text style={styles(selectedTheme).body}>{Screensdata.Instructor.des}</Text>
+                                <ProgressBar containerstyle={styles(selectedTheme).progressbar} progress="90%" />
                                 <View style={styles(selectedTheme).ProgressTextContainer}>
-                                    <Text style={styles(selectedTheme).progresstext}>Overall progress</Text>
-                                    <Text style={styles(selectedTheme).progresstext}>58 %</Text>
+                                    <Text style={styles(selectedTheme).progresstext}>{Screensdata.Profile.Overallprogress}</Text>
+                                    <Text style={styles(selectedTheme).progresstext}>{Screensdata.Profile.percentage}</Text>
                                 </View>
                             </View>
                         </View>
@@ -75,7 +75,7 @@ const ProfileScreen = (props: profileprops) => {
                             <TouchableOpacity style={styles(selectedTheme).learnbutton}
 
                                 onPress={() => navigation.navigate("MembershipModel")}>
-                                <Text style={styles(selectedTheme).learnbuttontext}>+ Become Member</Text>
+                                <Text style={styles(selectedTheme).learnbuttontext}>{buttons.becomemember}</Text>
                             </TouchableOpacity>
                         </View>
                     </View >
@@ -151,18 +151,18 @@ const ProfileScreen = (props: profileprops) => {
                     <View style={styles(selectedTheme).Modalview}>
                         <TouchableOpacity onPress={() => setModalVisible(!modalVisible)}>
                             <Image source={icons.Icon.cross} style={styles(selectedTheme).modalicon} />
-                            <Text style={styles(selectedTheme).modaltext}>Cancel</Text>
+                            <Text style={styles(selectedTheme).modaltext}>{buttons.Cancel}</Text>
                         </TouchableOpacity>
 
                         <TouchableOpacity onPress={() => openCamara()}>
 
                             <Image source={icons.Icon.camera} style={styles(selectedTheme).modalicon} />
-                            <Text style={styles(selectedTheme).modaltext}>Camera</Text>
+                            <Text style={styles(selectedTheme).modaltext}>{buttons.Camera}</Text>
                         </TouchableOpacity>
 
                         <TouchableOpacity onPress={() => launchLibrary()} >
                             <Image source={icons.Icon.camera} style={styles(selectedTheme).modalicon} />
-                            <Text style={styles(selectedTheme).modaltext}>Gallery</Text>
+                            <Text style={styles(selectedTheme).modaltext}>{buttons.Gallery}</Text>
                         </TouchableOpacity>
 
 

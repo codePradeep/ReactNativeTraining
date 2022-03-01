@@ -30,17 +30,19 @@ const Loginmodel = (props: loginmodelprops) => {
 
   return (
     <Loginpage
-      navigation={navigation}
-      visible={visible}
-      setvisibe={setvisibe}
-      isvalidEmail={isvalidEmail}
-      isvalidPassword={isvalidPassword}
-      Emailinpute={(text: string) => setEmail(text)}
-      EnterPassword={(text: string) => setpassword(text)}
-      isEnabled={isEnabled}
-      submit={() => submit(Email, password)}
-      signIn={Helper.GooglesignIn}
-      Facebooklogin={Helper.SigninWithFacebook}
+      {...{
+        navigation: navigation,
+        visible,
+        setvisibe,
+        isvalidEmail,
+        isvalidPassword,
+        isEnabled,
+        Emailinpute: (text: string) => setEmail(text),
+        EnterPassword: (text: string) => setpassword(text),
+        submit: () => submit(Email, password),
+        signIn: Helper.GooglesignIn,
+        Facebooklogin: Helper.SigninWithFacebook,
+      }}
     />
   )
 }

@@ -1,21 +1,23 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import Membership from "../views/Membership";
-interface loginmodelprops{
-    navigation:any
+interface loginmodelprops {
+    navigation: any
 }
-const MembershipModel =(props:loginmodelprops)=>{
-    const {navigation}=props
+const MembershipModel = (props: loginmodelprops) => {
+    const { navigation } = props
 
-    const [visible,setvisibe]=useState(false)
+    const [visible, setvisibe] = useState(false)
     const [defaultitem, setdefaultitem] = useState(0);
-    return(
+    return (
         <Membership
-            navigation={navigation}
-            visible={visible}
-            setvisibe={setvisibe}     
-            defaultitem={ defaultitem}
-            setdefaultitem={setdefaultitem}
-         />
+            {...{
+                navigation,
+                visible,
+                setvisibe,
+                defaultitem,
+                setdefaultitem,
+            }}
+        />
     )
 }
 export default MembershipModel;

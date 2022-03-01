@@ -13,7 +13,8 @@ interface NotificationTabModelprops{
 const NotificationTabModel=(props:NotificationTabModelprops)=>{
     const {navigation}=props
     return(
-        <NotificationTab navigation={navigation}
+        <NotificationTab 
+        navigation={navigation}
         DATA={dummyData.notificationByDays} />
     )
 }

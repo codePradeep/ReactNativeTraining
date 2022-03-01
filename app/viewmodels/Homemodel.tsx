@@ -17,14 +17,13 @@ type DefaultRootStat = {
 
 const Homemodel = (props: Homemodelprops) => {
     const { navigation } = props
+
     const  Userdata = useSelector<DefaultRootStat>(state => state.Data)
     
     const [seeall,setseeall]=useState(false)
     const [isfavourite, setisfavourite]=useState([])
     let courselist2=dummyData.courses_list_2
 
-    useEffect(() => {
-    }, [Userdata])
 
 
  if (seeall==false){

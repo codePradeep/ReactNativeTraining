@@ -40,6 +40,12 @@ const Screensdata={
         Studentprogress:{
 
         }
+    },
+    Profile:{
+        name:"Profile",
+        Overallprogress:"Overall progress",
+        percentage:"90 %"
+
     }
 
 }
@@ -60,7 +66,11 @@ const buttons={
     linkdin:"Linkdin",
     Next:"Next",
     letsStart:"Let's Start",
-    SeeAll:"See All"
+    SeeAll:"See All",
+    becomemember:"+ Become Member",
+    Camera:"Camera",
+    Gallery:"Gallery"
+
 
     
 }

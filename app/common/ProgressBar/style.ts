@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
       backgroundColor:COLORS.white
     },
     subcontainer:{
-        position:"absolute",
+        // position:"absolute",
         left:0,
         height:"100%",
         borderRadius:10,

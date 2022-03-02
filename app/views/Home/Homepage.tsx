@@ -1,27 +1,86 @@
 
 import React from "react";
-import { View, Text,Button} from "react-native";
+import { View, Text, Button, Image, TouchableOpacity } from "react-native";
+import { Icon } from "../../config";
 import styles from "./style";
 
 interface Homepageprops {
     navigation: any
-
+    RideType: {
+        name: string;
+        image: any;
+    }[]
+    buttons: {
+        icon: any;
+        name: string;
+    }[]
 
 }
 
-const Homepage=(props:Homepageprops)=>{
-    const {navigation} = props
-    return(
+const Homepage = (props: Homepageprops) => {
+    const { navigation, RideType, buttons } = props
+    return (
         <View style={styles.Container} >
-            <Text style={styles.paragraph}> This is Home page </Text>
+            {/* Header */}
+            <TouchableOpacity style={styles.Header}>
+                <Image source={Icon.Car} style={styles.UserIcon} />
+            </TouchableOpacity>
+            {/* banner */}
+            <TouchableOpacity style={styles.BannerContainer}>
+                <View style={styles.bannerText}>
+                    <Text style={styles.H1}>Ready?Then Lets Roll.</Text>
+                    <Text style={styles.P1}>Ride with Uber</Text>
+                </View>
+                <Image source={Icon.Car} style={styles.banner} />
+            </TouchableOpacity>
 
-            <Button title=" go to login" onPress={() => navigation.navigate('login')}/>
-        
-            {/* <Button title=" go to redux counter" onPress={() => navigation.navigate('counter')}/> */}
-            {/* <Button title=" go to Api call" onPress={() => navigation.navigate('Apicalldemo')}/>
-            <Button title=" redux Api call" onPress={() => navigation.navigate('reduxApicalldemo')}/> */}
-            <Button title=" Api call" onPress={() => navigation.navigate('calldemo')}/>
-            
+            <View style={styles.RideTypeMainContainer}>
+                {
+                    RideType.map((item, index) => {
+                        return (
+                            <TouchableOpacity key={index} style={styles.RideTypeContainer}>
+                                <Text style={styles.ridetypetext}>{item.name}</Text>
+                                <Image source={item.image} style={styles.caricon} />
+                            </TouchableOpacity>
+                        )
+                    })
+                }
+            </View>
+
+
+            <View style={styles.wharetoConatiner}>
+                <Text style={styles.H1}>Where to?</Text>
+                <TouchableOpacity style={styles.TimeButton}>
+                    <Image source={Icon.clock} style={styles.smallIcon} />
+                    <Text style={styles.P1}>Now</Text>
+                    <Image source={Icon.down} style={styles.smallIcon} />
+                </TouchableOpacity>
+            </View>
+            <View style={styles.MainButtonContainer}>
+                {buttons.map((item, index) => {
+                    return (
+                        <View key={index}>
+                            <TouchableOpacity style={styles.buttonContainer}>
+                                <View style={styles.childbuttonContainer}>
+                                    <View style={styles.imagecontainer}>
+                                        <Image source={item.icon} style={styles.smallIcon} />
+                                    </View>
+                                    <Text style={styles.P1}>{item.name}</Text>
+                                </View>
+                                <Image source={Icon.rightarrrow} style={styles.smallIcon} />
+                            </TouchableOpacity>
+                            <View style={styles.seperator}/>
+                        </View>
+                    )
+                })}
+            </View>
+            <Text style={styles.H1}>Around You</Text>
+            <View style={styles.Map}>
+
+            </View>
+
+
+
         </View>
     )
 }

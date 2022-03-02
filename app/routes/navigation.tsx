@@ -1,12 +1,7 @@
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Homemodel,Loginmodel } from '../viewmodels';
-import Homepage from '../views/Home/Homepage';
-import Counterdemo from '../views/Counterscreen/counter';
-import ThunkApp from '../viewmodels/ReduxApimodel';
-import ApiCallDemo from '../views/ApiCallDemo';
-import fetchData from '../viewmodels/ApiCallModel';
+import { Homemodel } from '../viewmodels';
 import Googlemap from '../views/GoogleMap';
 import MapDirections from '../views/GoogleMap/MapDirections';
 

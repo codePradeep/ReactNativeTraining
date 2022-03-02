@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { memo, useRef } from "react";
 import { View, Text, Button, ImageBackground, Image, TextInput, TouchableOpacity, ScrollView, ColorPropType, StatusBar, Animated } from "react-native";
 import { buttons, Form, icons, images, Screensdata } from "../../config";
 import { COLORS, FONTS, selectedTheme } from "../../config/constants/theme";
@@ -24,7 +24,7 @@ interface Registerprops {
     defaultitem: any
     setdefaultitem: any
     GoogleSignin: () => Promise<void>
-    Facebooklogin:() => void
+    Facebooklogin: () => void
 
 
 }
@@ -54,6 +54,7 @@ const Register = (props: Registerprops) => {
         scaleValue.current = scaleValue.current === 0 ? 1 : 0;
         Animated.spring(animationValue, {
             toValue: scaleValue.current,
+            delay:1,
             friction: 1,
             useNativeDriver: true,
         }).start();
@@ -90,15 +91,15 @@ const Register = (props: Registerprops) => {
 
                                         style={[styles(selectedTheme).checkedcontainer,
                                         {
-                                            transform:defaultitem == item.id ? [
+                                            transform: defaultitem == item.id ? [
                                                 {
                                                     translateX: animationValue.interpolate({
                                                         inputRange: [0, 1],
                                                         outputRange: [1, 70],
                                                     }),
                                                 },
-                                            ]:[],
-                                           
+                                            ] : [],
+
                                         }]}>
                                         {defaultitem == item.id ?
                                             <Image source={icons.Icon.checkbox_on_dark}
@@ -172,7 +173,7 @@ const Register = (props: Registerprops) => {
                         </TouchableOpacity>
 
                         <TouchableOpacity style={styles(selectedTheme).socialbuttons}
-                        onPress={()=>Facebooklogin()}>
+                            onPress={() => Facebooklogin()}>
                             <Image source={icons.Icon.facebook} style={styles(selectedTheme).Icon} />
                             <Text style={styles(selectedTheme).socialbuttonstext}>{buttons.facebook}</Text>
                         </TouchableOpacity>

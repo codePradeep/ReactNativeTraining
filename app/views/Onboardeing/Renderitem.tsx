@@ -1,5 +1,5 @@
 import { NavigationContainer } from "@react-navigation/native";
-import React from "react";
+import React, { memo } from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 import { COLORS, FONTS, icons, selectedTheme } from "../../config";
 import styles from "./style";
@@ -7,7 +7,7 @@ import styles from "./style";
 interface renderItem {
     navigation: any
     nextdata: any
-   
+
     item: {
         id: number;
         title: string;
@@ -17,7 +17,7 @@ interface renderItem {
 }
 
 const Item = (props: renderItem) => {
-    const { item, navigation, nextdata,  } = props
+    const { item, navigation, nextdata, } = props
     return (
 
         <View style={styles(selectedTheme).imageAndTextContainer}
@@ -37,14 +37,14 @@ const Item = (props: renderItem) => {
                     style={styles(selectedTheme).image}
                 />
             </View>
-            <View style={{flexDirection:"row",justifyContent:"space-between"}}>
-            
-            <TouchableOpacity
-                style={styles(selectedTheme).buttonstyle}
-                onPress={() => item.id == 2 ? navigation.navigate("Loginmodel") : nextdata()}
-            >
-                <Text style={{ ...FONTS.heading, fontSize: 22, color: COLORS.white }}>{item.id == 2 ? "Let's Start" : "Next"}</Text>
-            </TouchableOpacity>
+            <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+
+                <TouchableOpacity
+                    style={styles(selectedTheme).buttonstyle}
+                    onPress={() => item.id == 2 ? navigation.navigate("Loginmodel") : nextdata()}
+                >
+                    <Text style={{ ...FONTS.heading, fontSize: 22, color: COLORS.white }}>{item.id == 2 ? "Let's Start" : "Next"}</Text>
+                </TouchableOpacity>
             </View>
 
         </View>
@@ -58,4 +58,4 @@ const Item = (props: renderItem) => {
 
 
 
-export { Item }
+export default  Item 

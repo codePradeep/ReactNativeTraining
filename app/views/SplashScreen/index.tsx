@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { View, Text, Alert, Image, ActivityIndicator } from "react-native"
 import { COLORS, images } from "../../config";
 import styles from "./style";
@@ -21,4 +21,4 @@ const SplashScreen = (props:SplashScreenProps) => {
         </View>
     )
 }
-export default SplashScreen
+export default memo( SplashScreen)

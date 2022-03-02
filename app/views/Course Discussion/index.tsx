@@ -1,26 +1,12 @@
-import React from "react";
+import React, { memo } from "react";
 import { Image, Text, View } from "react-native";
 import { icons, selectedTheme } from "../../config";
+import { discussionsDataModel } from "../../Model/DataModel";
 import styles from "./style";
 
 interface Coursediscussionprops{
     navigation:any
-    Data:{
-        id: number;
-        profile: any;
-        name: string;
-        no_of_comments: string;
-        no_of_likes: string;
-        posted_on: string;
-        comment: string;
-        replies: {
-            id: number;
-            profile: any;
-            name: string;
-            posted_on: string;
-            comment: string;
-        }[];
-    }[]
+    Data:discussionsDataModel[]
     
 }
 
@@ -87,4 +73,4 @@ const CourseDiscussion=(props:Coursediscussionprops)=>{
     )
 }
 
-export default CourseDiscussion
+export default memo(CourseDiscussion)

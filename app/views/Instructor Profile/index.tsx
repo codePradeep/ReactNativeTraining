@@ -9,13 +9,10 @@ import styles from "./style";
 
 interface InstrctorProfileScreenprops {
     navigation: any
-    visible: any
-    setvisibe: any
     socialdata: {
         value: string;
         label: string;
     }[]
-    userdata: any
     studentreview: {
         id: number;
         profile: any;
@@ -41,16 +38,14 @@ interface InstrctorProfileScreenprops {
         icon: any;
         Link: string;
     }[]
-    isfavourite:any
-    setisfavourite:any
+    isfavourite: any
+    setisfavourite: any
 }
 
 const InstrctorProfileScreen = (props: InstrctorProfileScreenprops) => {
-    const { navigation,
-        visible,
-        setvisibe,
+    const { 
+        navigation,
         socialdata,
-        userdata,
         studentreview,
         data,
         socialConnection,
@@ -126,15 +121,15 @@ const InstrctorProfileScreen = (props: InstrctorProfileScreenprops) => {
                                 data.map((item, index) => {
                                     return (
                                         <View key={index}>
-                                        {index<4?
-                                        <Item 
-                                        
-                                        navigation={navigation} 
-                                        item={item}
-                                         isfavourite={isfavourite}
-                                          setisfavourite={setisfavourite}
-                                           />:null}
-                                           </View>
+                                            {index < 4 ?
+                                                <Item
+
+                                                    navigation={navigation}
+                                                    item={item}
+                                                    isfavourite={isfavourite}
+                                                    setisfavourite={setisfavourite}
+                                                /> : null}
+                                        </View>
                                     )
                                 })
                             }
@@ -154,16 +149,16 @@ const InstrctorProfileScreen = (props: InstrctorProfileScreenprops) => {
                                 <MultiProgressBar containerstyle={styles(selectedTheme).progressbar} />
                                 {dummyData.studentrating.map((item, index) => {
                                     return (
-                                        <View  key={index}   >
-                                        <View style={styles(selectedTheme).progresSecendSubcontainer}>
-                                            <View style={styles(selectedTheme).progresSubcontainer}>
-                                                <Image source={item.icons} style={[styles(selectedTheme).progressicon,{tintColor:item.color}]} />
-                                                <Text style={styles(selectedTheme).progressText}>{item.label}</Text>
+                                        <View key={index}   >
+                                            <View style={styles(selectedTheme).progresSecendSubcontainer}>
+                                                <View style={styles(selectedTheme).progresSubcontainer}>
+                                                    <Image source={item.icons} style={[styles(selectedTheme).progressicon, { tintColor: item.color }]} />
+                                                    <Text style={styles(selectedTheme).progressText}>{item.label}</Text>
+                                                </View>
+                                                <Text style={styles(selectedTheme).progressText}>{item.count}</Text>
+
                                             </View>
-                                            <Text style={styles(selectedTheme).progressText}>{item.count}</Text>
-                                            
-                                        </View>
-                                      {index<3?  <View style={styles(selectedTheme).seperater}/>:null}
+                                            {index < 3 ? <View style={styles(selectedTheme).seperater} /> : null}
                                         </View>
                                     )
                                 })}

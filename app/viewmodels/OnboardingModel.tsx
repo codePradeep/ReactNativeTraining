@@ -1,19 +1,18 @@
-import React,{useState} from "react";
+import React, { memo } from "react";
 
 import OnBoarding from "../views/Onboardeing";
-interface Onboradingprops{
-    navigation:any
+interface Onboradingprops {
+    navigation: any
 }
-const OnboardingModel =(props:Onboradingprops)=>{
-    const {navigation}=props
+const OnboardingModel = (props: Onboradingprops) => {
+    const { navigation } = props
 
-    const [visible,setvisibe]=useState(false)
-    return(
+    return (
         <OnBoarding
-         navigation={navigation} 
-        
-         
-         />
+            navigation={navigation}
+
+
+        />
     )
 }
-export default OnboardingModel;
+export default memo(OnboardingModel);

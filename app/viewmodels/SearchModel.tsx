@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { memo, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import dummyData from "../config/constants/dummyData";
 import SearchScreen from "../views/Search";
@@ -15,13 +15,12 @@ const SearchModel = (props: SearchModelprops) => {
     const [defaultitem, setdefaultitem] = useState(1);
     const [searchText, SetsearchText] = useState("")
     const [isSearch, setisSearch] = useState(false)
-    const [isfavourite, setisfavourite]=useState([])
-    
-  
-    const  Userdata = useSelector<DefaultRootStat>(state => state.Data)
+    const [isfavourite, setisfavourite] = useState([])
 
-    useEffect(() => {
-    }, [Userdata])
+
+    const Userdata = useSelector<DefaultRootStat>(state => state.Data)
+
+
     let menu = dummyData.courses_list_2
     const SearchData = menu.filter((a: any) => a.title.toLowerCase().match(searchText.toLowerCase())).map((a: any) => a);
     return (
@@ -46,4 +45,4 @@ const SearchModel = (props: SearchModelprops) => {
         />
     )
 }
-export default SearchModel;
+export default memo( SearchModel);

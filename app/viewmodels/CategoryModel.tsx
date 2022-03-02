@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React, { memo, useState } from "react";
 import CategoryScreen from "../views/Category";
 interface loginmodelprops {
     navigation: any
 }
 const CategoryModel = (props: loginmodelprops) => {
     const { navigation } = props
-    
-    const [defaulticon,setdefaulticon]=useState()
+
+    const [defaulticon, setdefaulticon] = useState()
     const [defaultitem, setdefaultitem] = useState(" ");
     return (
         <CategoryScreen
@@ -22,4 +22,4 @@ const CategoryModel = (props: loginmodelprops) => {
         />
     )
 }
-export default CategoryModel;
+export default  memo( CategoryModel);

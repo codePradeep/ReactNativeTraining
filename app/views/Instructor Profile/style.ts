@@ -141,7 +141,7 @@ const styles = (selectedTheme: any) => StyleSheet.create({
     progressText:{
         fontSize:17,
         fontWeight:"600",
-        color:selectedTheme.textblackNwhite
+        color:selectedTheme.textblackNgray4
     },
     
 

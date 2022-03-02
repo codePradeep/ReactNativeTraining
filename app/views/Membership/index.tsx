@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { FlatList, Image, Text, TouchableOpacity, View } from "react-native";
 import { buttons, icons, Screensdata, selectedTheme } from "../../config";
 import constants from "../../config/constants/constants";
@@ -62,4 +62,4 @@ const Membership = (props: CategoryProps) => {
 }
 
 
-export default Membership
+export default memo(Membership)

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { Image, ScrollView, Text, ToastAndroid, TouchableOpacity, View } from "react-native";
 import {  icons, selectedTheme } from "../../config";
 import dummyData from "../../config/constants/dummyData";
@@ -68,4 +68,4 @@ const CourseFiles = (props: coursefilesprops) => {
     )
 }
 
-export default CourseFiles
+export default memo(CourseFiles)

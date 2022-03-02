@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { memo, useState } from "react";
 import Membership from "../views/Membership";
 interface loginmodelprops {
     navigation: any
@@ -20,4 +20,4 @@ const MembershipModel = (props: loginmodelprops) => {
         />
     )
 }
-export default MembershipModel;
+export default memo(MembershipModel);

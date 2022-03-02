@@ -1,7 +1,7 @@
 import { StyleSheet, TextInputComponent } from "react-native";
 import { COLORS, selectedTheme } from "../../config";
 
-const styles = (selectedTheme:any)=>StyleSheet.create({
+const styles = (selectedTheme: any) => StyleSheet.create({
     mainconatiner: {
         flex: 1,
 
@@ -36,7 +36,7 @@ const styles = (selectedTheme:any)=>StyleSheet.create({
         borderRadius: 90,
         justifyContent: "center",
         alignItems: "center",
-        tintColor:"white"
+        tintColor: "white"
     },
     playbutton: {
         height: 50,

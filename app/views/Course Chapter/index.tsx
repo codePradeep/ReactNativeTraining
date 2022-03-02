@@ -1,44 +1,16 @@
-import React from "react";
+import React, { memo } from "react";
 import { Text, View, Image, TouchableOpacity, FlatList, ScrollView, Modal } from "react-native";
 
 import { buttons, COLORS, icons, images, Screensdata, selectedTheme } from "../../config";
+import { course_detailsModel } from "../../Model/DataModel";
 import Item from "../Home/Flatlistranderitem";
-import { Renderitem } from "./Renderitem";
 import styles from "./style";
 
 
 
 interface Corselistingprops {
     navigation: any
-    DATA: {
-        id: number;
-        title: string;
-        number_of_students: string;
-        duration: string;
-        instructor: {
-            name: string;
-            title: string;
-        };
-        videos: {
-            title: string;
-            duration: string;
-            size: string;
-            progress: string;
-            is_playing: boolean;
-            is_complete: boolean;
-            is_lock: boolean;
-            is_downloaded: boolean;
-        }[];
-        students: {
-
-        }[];
-        files: {
-
-        }[];
-        discussions: {
-
-        }[];
-    }
+    DATA:course_detailsModel 
     flatlistdata: {
         id: number;
         title: string;
@@ -51,13 +23,13 @@ interface Corselistingprops {
         is_favourite: boolean;
         thumbnail: any;
     }[]
-    Title:any
-    isfavourite:any
-    setisfavourite:any
+    Title: string
+    isfavourite: any
+    setisfavourite: any
 }
 
 const CorselChapter = (props: Corselistingprops) => {
-    const { DATA, navigation, flatlistdata,Title,isfavourite, setisfavourite } = props
+    const { DATA, navigation, flatlistdata, Title, isfavourite, setisfavourite } = props
     return (
         <View style={styles(selectedTheme).mainconatiner}>
             <View style={styles(selectedTheme).conatiner}>
@@ -72,8 +44,8 @@ const CorselChapter = (props: Corselistingprops) => {
                     <View style={styles(selectedTheme).subprofileconatiner}>
                         <Image source={images.images.profile} style={styles(selectedTheme).profileicon} />
                         <View>
-                            <Text>{DATA.instructor.name}</Text>
-                            <Text>{DATA.instructor.title}</Text>
+                            <Text style={styles(selectedTheme).time}>{DATA.instructor.name}</Text>
+                            <Text style={styles(selectedTheme).time}>{DATA.instructor.title}</Text>
                         </View>
                     </View>
                     <TouchableOpacity style={styles(selectedTheme).SeeAllbutton}
@@ -94,11 +66,11 @@ const CorselChapter = (props: Corselistingprops) => {
                                     </View>
                                     <View>
                                         <Text style={styles(selectedTheme).title}>{item.title}</Text>
-                                        <Text>{item.duration}</Text>
+                                        <Text style={styles(selectedTheme).time}>{item.duration}</Text>
                                     </View>
                                 </View>
                                 <View style={styles(selectedTheme).buttoncontainer}>
-                                    <Text>{item.size}</Text>
+                                    <Text style={styles(selectedTheme).time}>{item.size}</Text>
                                     <TouchableOpacity>
                                         <Image source={icons.Icon.download} style={styles(selectedTheme).downloadIcon} />
                                     </TouchableOpacity>
@@ -138,4 +110,4 @@ const CorselChapter = (props: Corselistingprops) => {
         </View>
     );
 }
-export default CorselChapter;
+export default memo(CorselChapter)

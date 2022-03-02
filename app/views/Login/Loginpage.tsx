@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { View, Text, Button, ImageBackground, Image, TextInput, TouchableOpacity, ScrollView } from "react-native";
 import Input from "../../common/Input";
 import { buttons, Form, icons, images, Screensdata, selectedTheme } from "../../config";
@@ -14,12 +14,12 @@ interface loginpageprops {
     EnterPassword: (text: string) => void,
     isEnabled: boolean
     submit: any
-    signIn:any
-    Facebooklogin:any
+    signIn: any
+    Facebooklogin: any
 }
 
 const Loginpage = (props: loginpageprops) => {
-    const { navigation, visible, setvisibe ,
+    const { navigation, visible, setvisibe,
         isvalidEmail,
         isvalidPassword,
         Emailinpute,
@@ -27,24 +27,24 @@ const Loginpage = (props: loginpageprops) => {
         isEnabled,
         signIn,
         Facebooklogin,
-        submit} = props
+        submit } = props
 
     return (
         <View style={styles(selectedTheme).MainConatiner}>
-            <Image source={selectedTheme.name=="light"?images.images.bg: images.images.bg_dark} style={styles(selectedTheme).bgimage} />
+            <Image source={selectedTheme.name == "light" ? images.images.bg : images.images.bg_dark} style={styles(selectedTheme).bgimage} />
             <Text style={styles(selectedTheme).heading}>{Screensdata.Login}</Text>
             <View style={styles(selectedTheme).container}>
                 <View style={styles(selectedTheme).input} >
                     <Text style={styles(selectedTheme).formtext}>{Form.usernameorEmail}</Text>
                     <View style={styles(selectedTheme).inputecontainer}>
 
-                        <TextInput 
-                        keyboardType={"email-address"}
-                        onChangeText={Emailinpute}
-                        style={styles(selectedTheme).inputText} />
+                        <TextInput
+                            keyboardType={"email-address"}
+                            onChangeText={Emailinpute}
+                            style={styles(selectedTheme).inputText} />
 
                     </View>
-                    {!isvalidEmail? <Text style={{color:"red"}}>{Form.Validation.EmailValidation}</Text>:null}
+                    {!isvalidEmail ? <Text style={{ color: "red" }}>{Form.Validation.EmailValidation}</Text> : null}
 
                 </View>
                 <View style={styles(selectedTheme).input}>
@@ -62,11 +62,11 @@ const Loginpage = (props: loginpageprops) => {
                             <Image source={visible ? icons.Icon.eye : icons.Icon.eye_close} style={styles(selectedTheme).eyeicon} />
                         </TouchableOpacity>
                     </View>
-                    {!isvalidPassword? <Text style={{color:"red"}}>{Form.Validation.passwordvalidation}</Text>:null}
+                    {!isvalidPassword ? <Text style={{ color: "red" }}>{Form.Validation.passwordvalidation}</Text> : null}
                 </View>
 
                 <TouchableOpacity style={styles(selectedTheme).button}
-                onPress={submit}
+                    onPress={submit}
                 >
                     <Text style={styles(selectedTheme).buttontext}>{buttons.Login}</Text>
                 </TouchableOpacity>
@@ -76,15 +76,15 @@ const Loginpage = (props: loginpageprops) => {
                 <View style={styles(selectedTheme).socialbuttonsContainer}>
 
                     <TouchableOpacity style={styles(selectedTheme).socialbuttons}
-                    
-                    onPress={()=>signIn()}>
+
+                        onPress={() => signIn()}>
                         <Image source={icons.Icon.google} style={styles(selectedTheme).Icon} />
                         <Text style={styles(selectedTheme).socialbuttonstext}>{buttons.Google}</Text>
                     </TouchableOpacity>
 
                     <TouchableOpacity
-                     onPress={()=>Facebooklogin()}
-                      style={styles(selectedTheme).socialbuttons}>
+                        onPress={() => Facebooklogin()}
+                        style={styles(selectedTheme).socialbuttons}>
                         <Image source={icons.Icon.facebook} style={styles(selectedTheme).Icon} />
                         <Text style={styles(selectedTheme).socialbuttonstext}>{buttons.facebook}</Text>
                     </TouchableOpacity>
@@ -98,7 +98,7 @@ const Loginpage = (props: loginpageprops) => {
 
 
                     <TouchableOpacity
-                    onPress={()=>navigation.navigate("RegistrModel")}>
+                        onPress={() => navigation.navigate("RegistrModel")}>
                         <Text style={styles(selectedTheme).signuptext}>{buttons.Signupnow}</Text>
                     </TouchableOpacity>
 
@@ -112,4 +112,4 @@ const Loginpage = (props: loginpageprops) => {
         </View>
     )
 }
-export default Loginpage;
+export default memo(Loginpage);

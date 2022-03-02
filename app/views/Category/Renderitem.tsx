@@ -1,18 +1,18 @@
-import React from "react";
-import {  Text, Image, TouchableOpacity } from "react-native";
+import React, { memo } from "react";
+import { Text, Image, TouchableOpacity } from "react-native";
 import { COLORS, FONTS, selectedTheme } from "../../config";
 import styles from "./style";
 
 interface renderprops {
-  index: any
+  index: number
   item: {
     id: number;
     label: string;
     icon: any;
   }
-  defaultitem: any
-  setdefaultitem: any
-  setdefaulticon: any
+  defaultitem: string
+  setdefaultitem: React.Dispatch<React.SetStateAction<string>>
+  setdefaulticon: React.Dispatch<React.SetStateAction<undefined>>
 
 }
 
@@ -34,10 +34,10 @@ const Renderitem = (props: renderprops) => {
       />
       <Text style={[styles(selectedTheme).itemtext,
       { color: defaultitem == item.label ? COLORS.white : selectedTheme.textblackNwhite }]}
-      
+
       >{item.label}</Text>
     </TouchableOpacity>
   )
 }
 
-export default Renderitem
+export default memo(Renderitem)

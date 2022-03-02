@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { memo, useState } from "react";
 import ProfileScreen from "../views/Profile";
 import { launchCamera, launchImageLibrary } from 'react-native-image-picker';
 import { Alert } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 interface profilemodelprops {
   navigation: any
+}
+type DefaultRootStat = {
+  profile: any
 }
 const ProfileModel = (props: profilemodelprops) => {
   const { navigation } = props
@@ -14,12 +17,10 @@ const ProfileModel = (props: profilemodelprops) => {
   const [modalVisible, setModalVisible] = useState(false);
 
   const dispatch = useDispatch();
-  type DefaultRootStat={
-    profile:any
-}
-     const Profilepic= useSelector<DefaultRootStat>(state => state.profile)
-    
   
+  const Profilepic = useSelector<DefaultRootStat>(state => state.profile)
+
+
 
 
   const openCamara = () => {
@@ -41,8 +42,8 @@ const ProfileModel = (props: profilemodelprops) => {
         console.log('User tapped custom button: ', response.customButton);
       } else {
         const source = { uri: response.assets[0].uri };
-        
-        dispatch({type:'ADD_PROFILE_PIC',payload1:source.uri})
+
+        dispatch({ type: 'ADD_PROFILE_PIC', payload1: source.uri })
         setModalVisible(false)
       }
     });
@@ -68,34 +69,35 @@ const ProfileModel = (props: profilemodelprops) => {
       } else {
         const source = { uri: response.assets[0].uri };
 
-        dispatch({type:'ADD_PROFILE_PIC',payload1:source.uri})
+        dispatch({ type: 'ADD_PROFILE_PIC', payload1: source.uri })
         setModalVisible(false)
       }
     });
 
   }
 
-  const dispachcall=()=>{
-    dispatch({type:'USER_DATA',payload2:render})
-}
+  const dispachcall = () => {
+    dispatch({ type: 'USER_DATA', payload2: render })
+  }
 
 
   return (
     <ProfileScreen
-      {...{navigation:navigation,
-      visible, 
-      setvisibe:undefined,
-      setrender,
-      render,
-      modalVisible,
-      setModalVisible,
-      launchLibrary,
-      openCamara,
-      imageUriGallary:Profilepic,
-      dispachcall
+      {...{
+        navigation: navigation,
+        visible,
+        setvisibe: undefined,
+        setrender,
+        render,
+        modalVisible,
+        setModalVisible,
+        launchLibrary,
+        openCamara,
+        imageUriGallary: Profilepic,
+        dispachcall
       }}
-      
+
     />
   )
 }
-export default ProfileModel;
+export default memo( ProfileModel);

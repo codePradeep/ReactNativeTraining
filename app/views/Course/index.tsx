@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { memo, useState } from "react";
 import { ActivityIndicator, Image, ImageBackground, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { COLORS, constants, icons, images, selectedTheme } from "../../config";
 import CorselChapter from "../Course Chapter";
@@ -10,40 +10,17 @@ import Video from 'react-native-video';
 
 interface coursescreenprops {
     navigation: any
-    DATA: any,
-    Title:any,
-    isfavourite:any 
-    setisfavourite:any
+    playvideo:boolean
+    setplayvideo: React.Dispatch<React.SetStateAction<boolean>>
+    defaultitem:number 
+    setdefaultitem:React.Dispatch<React.SetStateAction<number>>
+    Page: () => JSX.Element | undefined
 }
 
 
 const CourseScreen = (props: coursescreenprops) => {
-    const { navigation, DATA,Title,isfavourite, setisfavourite } = props
-    const [defaultitem, setdefaultitem] = useState(0)
-    const [playvideo, setplayvideo] = useState(true)
-
-    const Page = () => {
-
-        switch (defaultitem) {
-            case 0:
-                return <CorselChapter navigation={navigation} 
-                flatlistdata={DATA.courses_list_2} 
-                DATA={DATA.course_details} 
-                Title={Title} 
-
-               {...{ isfavourite, setisfavourite}}
-                />
-            case 2:
-                return <CourseDiscussion
-                    navigation={navigation}
-                    Data={DATA.course_details.discussions}
-                />
-            case 1:
-                return <CourseFiles navigation={navigation} />
-
-        }
-
-    }
+    const { navigation,playvideo, setplayvideo ,defaultitem, setdefaultitem,Page} = props
+ 
 
     return (
         <View style={styles(selectedTheme).mainconatiner}>
@@ -107,11 +84,7 @@ const CourseScreen = (props: coursescreenprops) => {
                                 right: 0,
                                 backgroundColor: COLORS.black
                             }}
-
-
-
                         />
-
                     </View>}
 
 
@@ -137,7 +110,6 @@ const CourseScreen = (props: coursescreenprops) => {
                 }
             </View>
             <ScrollView horizontal={false} style={{ flex: 1, }} >
-
                 {Page()}
             </ScrollView>
 
@@ -147,4 +119,4 @@ const CourseScreen = (props: coursescreenprops) => {
     )
 }
 
-export default CourseScreen
+export default memo(CourseScreen)

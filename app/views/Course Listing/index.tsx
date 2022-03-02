@@ -1,9 +1,9 @@
-import React from "react";
+import React, { memo } from "react";
 import { Text, View, Image, TouchableOpacity, FlatList, ScrollView, Modal, Animated } from "react-native";
 import { Slider } from "../../common";
 import { buttons, COLORS, icons, images, Screensdata, selectedTheme } from "../../config";
 import Item from "../Home/Flatlistranderitem";
-import { Renderitem } from "./Renderitem";
+import  Renderitem  from "./Renderitem";
 import styles from "./style";
 
 
@@ -22,8 +22,8 @@ interface Corselistingprops {
         is_favourite: boolean;
         thumbnail: any;
     }[]
-    modalVisible: any
-    setModalVisible: any
+    modalVisible: boolean
+    setModalVisible: React.Dispatch<React.SetStateAction<boolean>>
     Classtypedata: {
         id: number;
         label: string;
@@ -44,8 +44,8 @@ interface Corselistingprops {
     defaultcreatedwithin: number
     setdefaultcreatedwithin: React.Dispatch<React.SetStateAction<number>>
     setclassleveldata: React.Dispatch<React.SetStateAction<string>>
-    setduration: any
-    Resetfilter: any
+    setduration: React.Dispatch<React.SetStateAction<never[]>>
+    Resetfilter: () => void
     resultdata: any
     Header: string
     Icon: any
@@ -261,4 +261,4 @@ const Corselisting = (props: Corselistingprops) => {
         </View>
     );
 }
-export default Corselisting;
+export default memo(Corselisting)

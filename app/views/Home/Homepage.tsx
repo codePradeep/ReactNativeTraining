@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { memo } from "react";
 import { View, Text, Button, TouchableOpacity, Image, ScrollView, ImageBackground, FlatList, Animated } from "react-native";
 import { buttons, icons, images, Screensdata, selectedTheme } from "../../config";
 import Item from "./Flatlistranderitem";
@@ -31,9 +31,9 @@ interface Homepageprops {
         is_favourite: boolean;
         thumbnail: any;
     }[]
-    setseeall:any
-    isfavourite:any
-    setisfavourite:any
+    setseeall: any
+    isfavourite: any
+    setisfavourite: any
 
 }
 
@@ -47,33 +47,33 @@ const Homepage = (props: Homepageprops) => {
         setisfavourite
     } = props
 
-    const animation=new Animated.Value(0)
+    const animation = new Animated.Value(0)
 
     const runAnimationOnClick = () => {
         Animated.loop(
-        Animated.sequence([ Animated.timing(animation, {
-            toValue: -1,
-            duration:100,
-            useNativeDriver: true,
-        }), Animated.timing(animation, {
-            toValue: 1,
-            duration:100,
-            useNativeDriver: true,
-        }),Animated.timing(animation, {
-            toValue: 0,
-            duration:100,
-            useNativeDriver: true,
-        })]),{
-            iterations:4
+            Animated.sequence([Animated.timing(animation, {
+                toValue: -1,
+                duration: 100,
+                useNativeDriver: true,
+            }), Animated.timing(animation, {
+                toValue: 1,
+                duration: 100,
+                useNativeDriver: true,
+            }), Animated.timing(animation, {
+                toValue: 0,
+                duration: 100,
+                useNativeDriver: true,
+            })]), {
+            iterations: 4
         }).start()
-       
-     }
-  
 
-  const rotateanimation=animation.interpolate({
-      inputRange:[-1,1,2],
-      outputRange:["-20deg","20deg","0deg"]
-  })
+    }
+
+
+    const rotateanimation = animation.interpolate({
+        inputRange: [-1, 1, 2],
+        outputRange: ["-20deg", "20deg", "0deg"]
+    })
     return (
         <View style={styles(selectedTheme).Container} >
             <View style={styles(selectedTheme).MainSubContainer}>
@@ -82,15 +82,15 @@ const Homepage = (props: Homepageprops) => {
                         <Text style={styles(selectedTheme).Text}>{Screensdata.Home.greeting}</Text>
                         <Text style={styles(selectedTheme).SubText}>{Screensdata.Home.date}</Text>
                     </View>
-                    <Animated.View 
-                    onTouchStart={runAnimationOnClick}
-                    style={{
-                        transform:[{rotate:rotateanimation}]
-                    }}
+                    <Animated.View
+                        onTouchStart={runAnimationOnClick}
+                        style={{
+                            transform: [{ rotate: rotateanimation }]
+                        }}
                     >
-                    <TouchableOpacity onPress={() => navigation.navigate("NotificationTab")}>
-                        <Image source={icons.Icon.notification} style={styles(selectedTheme).notifiactionicon} />
-                    </TouchableOpacity>
+                        <TouchableOpacity onPress={() => navigation.navigate("NotificationTab")}>
+                            <Image source={icons.Icon.notification} style={styles(selectedTheme).notifiactionicon} />
+                        </TouchableOpacity>
                     </Animated.View>
 
                 </View>
@@ -116,9 +116,9 @@ const Homepage = (props: Homepageprops) => {
                         {courselist1.map((item, index) => {
                             return (
                                 <TouchableOpacity key={index}
-                                onPress={() => navigation.navigate("CourseModel", {
-                                    Title: item.title,
-                                  })}
+                                    onPress={() => navigation.navigate("CourseModel", {
+                                        Title: item.title,
+                                    })}
                                 >
                                     <Image source={item.thumbnail} style={styles(selectedTheme).thumbnail} />
                                     <View style={styles(selectedTheme).row}>
@@ -149,33 +149,33 @@ const Homepage = (props: Homepageprops) => {
                     </View>
 
 
-                    <ScrollView 
-                    horizontal
-                    showsHorizontalScrollIndicator={false}>
+                    <ScrollView
+                        horizontal
+                        showsHorizontalScrollIndicator={false}>
                         {
                             category.map((item, index) => {
                                 return (
-                                    
-                                        <TouchableOpacity key={index}
+
+                                    <TouchableOpacity key={index}
                                         onPress={() => navigation.navigate("CourseListingModel", {
                                             Header: item.title,
-                                            Icon:item.icon
-                                            
-                                          })}
+                                            Icon: item.icon
+
+                                        })}
                                         style={[styles(selectedTheme).item,
                                         ]}>
-                                    
+
                                         <ImageBackground source={item.thumbnail}
-                                        imageStyle={styles(selectedTheme).itemIcons}
+                                            imageStyle={styles(selectedTheme).itemIcons}
                                             style={[styles(selectedTheme).Icons]}
                                         >
                                             <Text style={[styles(selectedTheme).itemtext,
                                             ]}
                                             >{item.title}</Text>
                                         </ImageBackground>
-                                       
+
                                     </TouchableOpacity>
-                                    
+
                                 )
                             })
                         }
@@ -196,12 +196,12 @@ const Homepage = (props: Homepageprops) => {
                         {
                             courselist2.map((item, index) => {
                                 return (
-                                    <Item 
-                                    navigation={navigation}
-                                    key={index} 
-                                    item={item} 
-                                    isfavourite={isfavourite}
-                                    setisfavourite={setisfavourite}
+                                    <Item
+                                        navigation={navigation}
+                                        key={index}
+                                        item={item}
+                                        isfavourite={isfavourite}
+                                        setisfavourite={setisfavourite}
                                     />
                                 )
                             })
@@ -213,4 +213,4 @@ const Homepage = (props: Homepageprops) => {
         </View>
     )
 }
-export default Homepage;
+export default memo(Homepage);

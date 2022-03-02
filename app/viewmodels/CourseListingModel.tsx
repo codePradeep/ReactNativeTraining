@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { memo, useState } from "react";
 import { constants, } from "../config";
 import dummyData from "../config/constants/dummyData";
 import Corselisting from "../views/Course Listing";
@@ -8,15 +8,14 @@ interface Corselistinprops {
 }
 const CourseListingModel = (props: Corselistinprops) => {
     const { navigation, route } = props
-    const { Header,Icon } = route.params;
-    const [visible, setvisibe] = useState(false)
-    const [defaultitem, setdefaultitem] = useState(1);
+    const { Header, Icon } = route.params;
+    const [defaultitem, setdefaultitem] = useState(0);
     const [defaultclasslevel, setdefaultclasslevel] = useState(0);
     const [defaultcreatedwithin, setdefaultcreatedwithin] = useState(0);
     const [classleveldata, setclassleveldata] = useState("")
     const [duration, setduration] = useState([])
     const [modalVisible, setModalVisible] = useState(false);
-    const [isfavourite, setisfavourite]=useState([])
+    const [isfavourite, setisfavourite] = useState([])
 
     let menudata = dummyData.courses_list_2
 
@@ -29,7 +28,6 @@ const CourseListingModel = (props: Corselistinprops) => {
     const resultdata = menudata.length
 
     const Resetfilter = () => {
-        console.log("reseted filter")
         setclassleveldata("")
         setduration([])
 
@@ -66,4 +64,4 @@ const CourseListingModel = (props: Corselistinprops) => {
         />
     )
 }
-export default CourseListingModel;
+export default memo(CourseListingModel);

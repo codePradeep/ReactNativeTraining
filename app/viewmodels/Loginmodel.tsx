@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { memo, useEffect, useRef, useState } from "react";
 import { Helper } from "../config";
 import { EmailValidate, PasswordValidate } from "../config/constants/Validation";
 import Loginpage from '../views/Login/Loginpage'
@@ -46,4 +46,4 @@ const Loginmodel = (props: loginmodelprops) => {
     />
   )
 }
-export default Loginmodel;
+export default memo(Loginmodel);

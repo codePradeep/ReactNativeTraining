@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 import { COLORS, icons, selectedTheme } from "../../config";
 import styles from "./style";
@@ -18,32 +18,32 @@ interface renderItem {
     }
     isfavourite: any
     setisfavourite: any,
-    navigation:any
+    navigation: any
 
 }
 
 const Item = (props: renderItem) => {
-    const { item ,setisfavourite,isfavourite,navigation} = props
+    const { item, setisfavourite, isfavourite, navigation } = props
     return (
         <TouchableOpacity
-        onPress={() => navigation.navigate("CourseModel", {
-            Title: item.title,
-          })}
+            onPress={() => navigation.navigate("CourseModel", {
+                Title: item.title,
+            })}
         >
             <View style={styles(selectedTheme).item}>
 
                 <Image source={item.thumbnail} style={styles(selectedTheme).image} />
                 <TouchableOpacity style={styles(selectedTheme).fevcontainer}
-                onPress={() => {
-                    if (isfavourite.includes(item.id)&& item.is_favourite!=true) {
-                      let unlike = isfavourite.filter((elem:any) => elem !== item.id);
-                      setisfavourite(unlike);
-                    } else {
-                      setisfavourite([...isfavourite, item.id]);
-                    }
-                  }}
+                    onPress={() => {
+                        if (isfavourite.includes(item.id) && item.is_favourite != true) {
+                            let unlike = isfavourite.filter((elem: any) => elem !== item.id);
+                            setisfavourite(unlike);
+                        } else {
+                            setisfavourite([...isfavourite, item.id]);
+                        }
+                    }}
                 >
-                    <Image source={isfavourite.includes(item.id) ?  icons.Icon.favourite : icons.Icon.favourite_outline} style={styles(selectedTheme).fevcon} />
+                    <Image source={isfavourite.includes(item.id) ? icons.Icon.favourite : icons.Icon.favourite_outline} style={styles(selectedTheme).fevcon} />
                 </TouchableOpacity>
                 <View style={styles(selectedTheme).itemtextcontainer}>
                     <Text style={styles(selectedTheme).title}>{item.title}</Text>

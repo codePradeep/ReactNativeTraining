@@ -1,5 +1,5 @@
-import React from "react";
-import { StyleSheet, Text, View, SafeAreaView, SectionList, StatusBar, Image, TouchableOpacity } from "react-native";
+import React, { memo } from "react";
+import {  Text, View,  SectionList,  Image, TouchableOpacity } from "react-native";
 import { icons, images, selectedTheme } from "../../config";
 import Item from "./Renderitem";
 import styles from "./style";
@@ -8,7 +8,7 @@ import styles from "./style";
 
 interface NotificationTabprops {
     navigation: any
-    DATA:{
+    DATA: {
         title: string;
         data: {
             id: number;
@@ -24,18 +24,18 @@ const NotificationTab = (props: NotificationTabprops) => {
     const { DATA, navigation } = props
     return (
         <View style={styles(selectedTheme).mainconatiner}>
-             <Image source={selectedTheme.name=="light"?images.images.bg: images.images.bg_dark} style={styles(selectedTheme).bgimage} />
-        <View style={styles(selectedTheme).conatiner}>
-            <TouchableOpacity
-            onPress={()=>navigation.goBack()}
-                style={styles(selectedTheme).leftbutton}
-            >
-                <Image source={icons.Icon.back} style={styles(selectedTheme).headerlefticon} />
-            </TouchableOpacity>
-            <Text style={styles(selectedTheme).HeaderText}>Notifications</Text>
+            <Image source={selectedTheme.name == "light" ? images.images.bg : images.images.bg_dark} style={styles(selectedTheme).bgimage} />
+            <View style={styles(selectedTheme).conatiner}>
+                <TouchableOpacity
+                    onPress={() => navigation.goBack()}
+                    style={styles(selectedTheme).leftbutton}
+                >
+                    <Image source={icons.Icon.back} style={styles(selectedTheme).headerlefticon} />
+                </TouchableOpacity>
+                <Text style={styles(selectedTheme).HeaderText}>Notifications</Text>
 
 
-            
+
                 <SectionList
                     sections={DATA}
                     showsVerticalScrollIndicator={false}
@@ -45,9 +45,9 @@ const NotificationTab = (props: NotificationTabprops) => {
                         <Text style={styles(selectedTheme).header}>{title}</Text>
                     )}
                 />
-           
-        </View>
+
+            </View>
         </View>
     );
 }
-export default NotificationTab;
+export default memo (NotificationTab);

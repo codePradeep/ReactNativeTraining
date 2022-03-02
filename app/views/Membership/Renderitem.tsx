@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { View, Text, Image, TouchableOpacity, FlatList, StyleSheet } from "react-native";
 import { COLORS, FONTS, icons, selectedTheme } from "../../config";
 import styles from "./style";

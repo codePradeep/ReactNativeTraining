@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useRef, useState } from "react"
 import { Animated, Dimensions, Image, StyleSheet, Text, View } from "react-native"
 import { COLORS } from "../../config"
 import styles from "./style";
@@ -14,8 +14,8 @@ interface Tabbaritemprops {
 const TabbarItem = (props: Tabbaritemprops) => {
   const { focused, ICON, label } = props
   const width = Dimensions.get("screen").width
-  const translateValue = new Animated.Value(0)
-  const rotatevalue = new Animated.Value(0)
+  const translateValue = useRef(new Animated.Value(0)).current
+  const rotatevalue =  useRef(new Animated.Value(0)).current
 
 
   Animated.parallel([

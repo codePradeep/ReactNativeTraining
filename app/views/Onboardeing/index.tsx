@@ -1,18 +1,13 @@
 
-import React, { useRef, useState } from 'react';
+import React, { memo, useRef, useState } from 'react';
 import {
     Animated,
-    Image,
     SafeAreaView,
-    StyleSheet,
     View,
-    Text,
-    TouchableOpacity,
-    FlatList
 } from 'react-native';
 import { constants } from '../../config';
-import { COLORS, FONTS, selectedTheme, SIZES } from '../../config/constants/theme';
-import { Item } from './Renderitem';
+import {selectedTheme, SIZES } from '../../config/constants/theme';
+import Item  from './Renderitem';
 import styles from './style';
 
 
@@ -45,26 +40,27 @@ const OnBoarding = (props: onboradingscreen) => {
     }, []);
 
 
-    const renderDots=()=> {
+    const renderDots = () => {
 
         const dotPosition = Animated.divide(scrollX, SIZES.width);
 
         return (
             <View style={styles(selectedTheme).dotsContainer}>
                 {onBoardings.map((item, index) => {
-                   
+
                     const dotSize = dotPosition.interpolate({
                         inputRange: [index - 1, index, index + 1],
                         outputRange: [10, 17, 10],
-                       
+                        extrapolate: "clamp"
+
                     });
 
                     return (
                         <Animated.View
                             key={index}
                             style={[styles(selectedTheme).dot, {
-                                 width: dotSize,
-                                  height: dotSize,
+                                width: dotSize,
+                                height: dotSize,
                             }]}
                         />
                     );
@@ -96,13 +92,13 @@ const OnBoarding = (props: onboradingscreen) => {
 
                 />
                 <View style={styles(selectedTheme).dotsRootContainer}>
-                {renderDots()}
+                    {renderDots()}
+                </View>
             </View>
-            </View>
-            
+
         </SafeAreaView>
     );
 };
 
 
-export default OnBoarding;
+export default memo( OnBoarding);

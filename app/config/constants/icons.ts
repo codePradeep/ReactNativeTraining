@@ -60,6 +60,7 @@ const Icon = {
     happy:require("../../assets/icons/happy.png"),
     neutral:require("../../assets/icons/neutral.png"),
     sad:require("../../assets/icons/sad.png"),
+    gallery:require("../../assets/icons/gallery.png")
 
 }
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 import { COLORS, icons, selectedTheme } from "../../config";
 import styles from "./style";
@@ -42,4 +42,4 @@ interface renderprops {
 
 
 
-export { Renderitem}
+export default Renderitem

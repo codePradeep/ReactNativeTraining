@@ -77,38 +77,38 @@ const SearchScreen = (props: SearchScreenProps) => {
 
 
 
-              
-                {!isSearch ?
-                <View>
-                      <Text style={styles(selectedTheme).text}>{Screensdata.Search.TopSearches}</Text>
-                <ScrollView
-                    horizontal
-                    showsHorizontalScrollIndicator={false}
-                >
-                    <View style={styles(selectedTheme).topsearch}>
-                        {dummyData.top_searches.map((item, index) => {
-                            return (
-                                <View key={index} style={{flex:1}}>
-                                    <TouchableOpacity style={styles(selectedTheme).topsearchcontainer}
-                                    onPress={()=>SearchTexthandler(item.label)}>
-                                        <Text key={index} style={styles(selectedTheme).searchlist}>{item.label}</Text>
-                                    </TouchableOpacity>
-                                </View>
-                            )
-                        })}
-                    </View>
-                </ScrollView>
 
-                    <FlatList
-                        key={1}
-                        data={flatlistdata}
-                        extraData={flatlistdata}
-                        showsVerticalScrollIndicator={false}
-                        renderItem={({ item, index }) => <Renderitem item={item} index={index} navigation={navigation} />}
-                        numColumns={2}
-                        keyExtractor={(_, index) => index.toString()}
-                        ListHeaderComponent={<Text style={styles(selectedTheme).text}>{Screensdata.Search.BrowseCategories}</Text>}
-                    />
+                {!isSearch ?
+                    <View>
+                        <Text style={styles(selectedTheme).text}>{Screensdata.Search.TopSearches}</Text>
+                        <ScrollView
+                            horizontal
+                            showsHorizontalScrollIndicator={false}
+                        >
+                            <View style={styles(selectedTheme).topsearch}>
+                                {dummyData.top_searches.map((item, index) => {
+                                    return (
+                                        <View key={index} style={{ flex: 1 }}>
+                                            <TouchableOpacity style={styles(selectedTheme).topsearchcontainer}
+                                                onPress={() => SearchTexthandler(item.label)}>
+                                                <Text key={index} style={styles(selectedTheme).searchlist}>{item.label}</Text>
+                                            </TouchableOpacity>
+                                        </View>
+                                    )
+                                })}
+                            </View>
+                        </ScrollView>
+
+                        <FlatList
+                            key={1}
+                            data={flatlistdata}
+                            extraData={flatlistdata}
+                            showsVerticalScrollIndicator={false}
+                            renderItem={({ item, index }) => <Renderitem item={item} index={index} navigation={navigation} />}
+                            numColumns={2}
+                            keyExtractor={(_, index) => index.toString()}
+                            ListHeaderComponent={<Text style={styles(selectedTheme).text}>{Screensdata.Search.BrowseCategories}</Text>}
+                        />
                     </View>
                     :
 

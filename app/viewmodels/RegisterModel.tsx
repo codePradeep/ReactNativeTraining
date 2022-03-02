@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { memo, useRef, useState } from "react";
 import { constants, Helper } from "../config";
 import { EmailValidate, PasswordValidate, UsernameValidation } from "../config/constants/Validation";
 import Register from "../views/Register";
@@ -57,10 +57,10 @@ const RegistrModel = (props: loginmodelprops) => {
         EnterPassword: (text: string) => setpassword(text),
         EnterUserName: (text: string) => setUsername(text),
         submit: () => submit(Email, password, Username),
-        GoogleSignin:Helper.GooglesignIn,
-        Facebooklogin:Helper.SigninWithFacebook
+        GoogleSignin: Helper.GooglesignIn,
+        Facebooklogin: Helper.SigninWithFacebook
       }}
     />
   )
 }
-export default RegistrModel;
+export default memo( RegistrModel);

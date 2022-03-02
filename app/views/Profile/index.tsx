@@ -1,8 +1,8 @@
 import { NavigationContainer } from "@react-navigation/native";
-import React, { useState } from "react";
+import React, { memo, useState } from "react";
 import { Image, Modal, ScrollView, Switch, Text, TouchableOpacity, TouchableWithoutFeedback, View } from "react-native";
 import { ProgressBar } from "../../common";
-import { buttons, COLORS,  icons, images, Screensdata, selectedTheme } from "../../config";
+import { buttons, COLORS, icons, images, Screensdata, selectedTheme } from "../../config";
 import dummyData from "../../config/constants/dummyData";
 import { changeTheme } from "../../config/constants/theme";
 import styles from "./style";
@@ -18,7 +18,7 @@ interface profileprops {
     launchLibrary: any
     openCamara: any
     imageUriGallary: any
-    dispachcall:any
+    dispachcall: any
 }
 const ProfileScreen = (props: profileprops) => {
     const { navigation,
@@ -40,7 +40,7 @@ const ProfileScreen = (props: profileprops) => {
                 <View style={styles(selectedTheme).headercontainer}>
                     <Text style={styles(selectedTheme).headertext}>{Screensdata.Profile.name}</Text>
                     <TouchableOpacity
-                        onPress={() => { setrender(!render), changeTheme() ,dispachcall()}} >
+                        onPress={() => { setrender(!render), changeTheme(), dispachcall() }} >
 
                         <Image source={icons.Icon.sun} style={styles(selectedTheme).headericons} />
                     </TouchableOpacity>
@@ -161,7 +161,7 @@ const ProfileScreen = (props: profileprops) => {
                         </TouchableOpacity>
 
                         <TouchableOpacity onPress={() => launchLibrary()} >
-                            <Image source={icons.Icon.camera} style={styles(selectedTheme).modalicon} />
+                            <Image source={icons.Icon.gallery} style={styles(selectedTheme).modalicon} />
                             <Text style={styles(selectedTheme).modaltext}>{buttons.Gallery}</Text>
                         </TouchableOpacity>
 
@@ -174,4 +174,4 @@ const ProfileScreen = (props: profileprops) => {
     )
 }
 
-export default ProfileScreen
+export default memo(ProfileScreen)

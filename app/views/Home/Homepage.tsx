@@ -1,6 +1,7 @@
 
 import React from "react";
 import { View, Text, Button, Image, TouchableOpacity } from "react-native";
+import MapView from "react-native-maps";
 import { COLORS, Icon } from "../../config";
 import styles from "./style";
 
@@ -39,23 +40,23 @@ const Homepage = (props: Homepageprops) => {
                     RideType.map((item, index) => {
                         return (
                             <View key={index}>
-                               
-                            <TouchableOpacity  style={styles.RideTypeContainer}>
-                               {index==0&& <View
-                               style={{ 
-                                   position:"absolute",
-                                   backgroundColor:"green",
-                                   padding:5,
-                                   paddingHorizontal:10,
-                                   borderRadius:20,
-                                   top:-15,
-                                   left:60
-                               }}>
-                                    <Text style={{color:COLORS.white}}>Promo</Text>
-                                </View>}
-                                <Text style={styles.ridetypetext}>{item.name}</Text>
-                                <Image source={item.image} style={styles.caricon} />
-                            </TouchableOpacity>
+
+                                <TouchableOpacity style={styles.RideTypeContainer}>
+                                    {index == 0 && <View
+                                        style={{
+                                            position: "absolute",
+                                            backgroundColor: "green",
+                                            padding: 5,
+                                            paddingHorizontal: 10,
+                                            borderRadius: 20,
+                                            top: -15,
+                                            left: 60
+                                        }}>
+                                        <Text style={{ color: COLORS.white }}>Promo</Text>
+                                    </View>}
+                                    <Text style={styles.ridetypetext}>{item.name}</Text>
+                                    <Image source={item.image} style={styles.caricon} />
+                                </TouchableOpacity>
                             </View>
                         )
                     })
@@ -84,14 +85,24 @@ const Homepage = (props: Homepageprops) => {
                                 </View>
                                 <Image source={Icon.rightarrrow} style={styles.smallIcon} />
                             </TouchableOpacity>
-                            <View style={styles.seperator}/>
+                            <View style={styles.seperator} />
                         </View>
                     )
                 })}
             </View>
             <Text style={styles.H1}>Around You</Text>
             <View style={styles.Map}>
-
+                <MapView
+                    style={styles.mapStyle}
+                    showsUserLocation={true}
+                    zoomEnabled={true}
+                    zoomControlEnabled={true}
+                    initialRegion={{
+                        latitude: 28.5995001,
+                        longitude: 77.3315623,
+                        latitudeDelta: 0.0922,
+                        longitudeDelta: 0.0421,
+                    }}></MapView>
             </View>
 
 

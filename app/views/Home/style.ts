@@ -134,9 +134,16 @@ const styles = StyleSheet.create({
     },
     Map:{
         height:150,
-        backgroundColor:COLORS.graybackground,
-        borderRadius:10
-    }
+        borderRadius:40
+    },
+    mapStyle: {  
+         position: 'absolute',  
+        top: 0,  
+        left: 0,  
+        right: 0,  
+        bottom: 0, 
+        borderRadius:30 
+      },
 
 })
 

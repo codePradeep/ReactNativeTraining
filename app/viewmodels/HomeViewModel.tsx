@@ -3,7 +3,7 @@ import { Icon } from "../config";
 
 import Homepage from "../views/Home/Homepage";
 
-interface Homemodelprops {
+interface HomeViewModelprops {
     navigation: any
 
 
@@ -11,7 +11,7 @@ interface Homemodelprops {
 
 
 
-const Homemodel =(props:Homemodelprops)=>{
+const HomeViewModel =(props:HomeViewModelprops)=>{
     const {navigation} = props 
 
     const RideType=[
@@ -36,8 +36,9 @@ const Homemodel =(props:Homemodelprops)=>{
     ]
 
     return(
-        <Homepage  navigation={navigation} 
+        <Homepage 
         {...{
+            navigation,
             RideType,
             buttons
         }}
@@ -45,4 +46,4 @@ const Homemodel =(props:Homemodelprops)=>{
         />
     )
 }
-export default Homemodel;
+export default HomeViewModel;

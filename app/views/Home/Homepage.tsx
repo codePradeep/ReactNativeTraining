@@ -2,7 +2,7 @@
 import React from "react";
 import { View, Text, Button, Image, TouchableOpacity } from "react-native";
 import MapView from "react-native-maps";
-import { COLORS, Icon } from "../../config";
+import { COLORS, Icon, Screens } from "../../config";
 import styles from "./style";
 
 interface Homepageprops {
@@ -23,7 +23,8 @@ const Homepage = (props: Homepageprops) => {
     return (
         <View style={styles.Container} >
             {/* Header */}
-            <TouchableOpacity style={styles.Header}>
+            <TouchableOpacity style={styles.Header}
+            onPress={()=>navigation.navigate(Screens.UserprofileViewModel)}>
                 <Image source={Icon.user} style={styles.UserIcon} />
             </TouchableOpacity>
             {/* banner */}
@@ -43,16 +44,8 @@ const Homepage = (props: Homepageprops) => {
 
                                 <TouchableOpacity style={styles.RideTypeContainer}>
                                     {index == 0 && <View
-                                        style={{
-                                            position: "absolute",
-                                            backgroundColor: "green",
-                                            padding: 5,
-                                            paddingHorizontal: 10,
-                                            borderRadius: 20,
-                                            top: -15,
-                                            left: 60
-                                        }}>
-                                        <Text style={{ color: COLORS.white }}>Promo</Text>
+                                        style={styles.renderitem}>
+                                        <Text style={styles.promotext}>Promo</Text>
                                     </View>}
                                     <Text style={styles.ridetypetext}>{item.name}</Text>
                                     <Image source={item.image} style={styles.caricon} />

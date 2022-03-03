@@ -13,4 +13,4 @@ const Font={
    body:{ fontFamily:"UberMoveMedium"},
 }
 
-export default COLORS
+export  {COLORS,Font}

@@ -1,4 +1,5 @@
 import React, { memo, useEffect, useState } from "react";
+import { Screens } from "../config";
 import SplashScreen from "../views/SplashScreen";
 
 
@@ -18,7 +19,7 @@ const SplashScreenViewModel = (props: SplashScreenprops) => {
 
   useEffect(() => {
     if (authLoaded) {
-      navigation.replace('Home');
+      navigation.replace(Screens.HomeViewModel);
     }
   }, [authLoaded, navigation]);
 

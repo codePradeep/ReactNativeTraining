@@ -39,6 +39,7 @@ const styles = StyleSheet.create({
         color:"black",
         fontWeight:"600",
         
+        
     },
     P1:{
         fontSize:16,
@@ -144,6 +145,16 @@ const styles = StyleSheet.create({
         bottom: 0, 
         borderRadius:30 
       },
+      renderitem:{
+        position: "absolute",
+        backgroundColor: "green",
+        padding: 5,
+        paddingHorizontal: 10,
+        borderRadius: 20,
+        top: -15,
+        left: 60
+    },
+    promotext:{ color: COLORS.white }
 
 })
 

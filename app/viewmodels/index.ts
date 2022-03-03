@@ -1,6 +1,9 @@
-
-
-import Homemodel from "./Homemodel";
+import HomeViewModel from "./HomeViewModel";
 import SplashScreenViewModel from "./SplashScreenViewModel";
+import UserprofileViewModel from "./UserprofileViewModel";
 
-export {Homemodel,SplashScreenViewModel};
+export {
+    HomeViewModel,
+    SplashScreenViewModel,
+    UserprofileViewModel
+};

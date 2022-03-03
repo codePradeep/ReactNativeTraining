@@ -1,7 +1,7 @@
 
 import React from "react";
 import { View, Text, Button, Image, TouchableOpacity } from "react-native";
-import { Icon } from "../../config";
+import { COLORS, Icon } from "../../config";
 import styles from "./style";
 
 interface Homepageprops {
@@ -23,7 +23,7 @@ const Homepage = (props: Homepageprops) => {
         <View style={styles.Container} >
             {/* Header */}
             <TouchableOpacity style={styles.Header}>
-                <Image source={Icon.Car} style={styles.UserIcon} />
+                <Image source={Icon.user} style={styles.UserIcon} />
             </TouchableOpacity>
             {/* banner */}
             <TouchableOpacity style={styles.BannerContainer}>
@@ -38,10 +38,25 @@ const Homepage = (props: Homepageprops) => {
                 {
                     RideType.map((item, index) => {
                         return (
-                            <TouchableOpacity key={index} style={styles.RideTypeContainer}>
+                            <View key={index}>
+                               
+                            <TouchableOpacity  style={styles.RideTypeContainer}>
+                               {index==0&& <View
+                               style={{ 
+                                   position:"absolute",
+                                   backgroundColor:"green",
+                                   padding:5,
+                                   paddingHorizontal:10,
+                                   borderRadius:20,
+                                   top:-15,
+                                   left:60
+                               }}>
+                                    <Text style={{color:COLORS.white}}>Promo</Text>
+                                </View>}
                                 <Text style={styles.ridetypetext}>{item.name}</Text>
                                 <Image source={item.image} style={styles.caricon} />
                             </TouchableOpacity>
+                            </View>
                         )
                     })
                 }

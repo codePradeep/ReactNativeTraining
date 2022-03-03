@@ -1,3 +1,3 @@
 import { Icon } from "./Icons";
-
-export {Icon}
+import COLORS from "./Theme";
+export {Icon,COLORS}

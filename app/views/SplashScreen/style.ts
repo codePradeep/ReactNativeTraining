@@ -10,7 +10,8 @@ const styles=StyleSheet.create({
     Text:{
         fontSize:40,
         color:"black",
-        fontWeight:"800"
+        fontWeight:"800",
+        fontFamily:"UberMoveBold"
 
     }
 })

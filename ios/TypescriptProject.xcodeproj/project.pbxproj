@@ -14,6 +14,8 @@
 		6172F2D35A4C3AA820D92908 /* libPods-TypescriptProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6423831EA8574132BED9D8CC /* libPods-TypescriptProject.a */; };
 		7EF68E3733C33B6898317E18 /* libPods-TypescriptProject-TypescriptProjectTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABFE59519B596E51CEFDCCC0 /* libPods-TypescriptProject-TypescriptProjectTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		D843311E8C9946A09B6E6A57 /* UberMoveBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 48D3096EAC9B43BA878EB746 /* UberMoveBold.otf */; };
+		2E189448957A4FC0B87C22E3 /* UberMoveMedium.otf in Resources */ = {isa = PBXBuildFile; fileRef = B6502A7B67264EB08F921169 /* UberMoveMedium.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		C0A881CF5CF3F2B244570E2A /* Pods-TypescriptProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TypescriptProject.debug.xcconfig"; path = "Target Support Files/Pods-TypescriptProject/Pods-TypescriptProject.debug.xcconfig"; sourceTree = "<group>"; };
 		D00AAFFCFCFDA5787532823F /* Pods-TypescriptProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TypescriptProject.release.xcconfig"; path = "Target Support Files/Pods-TypescriptProject/Pods-TypescriptProject.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		48D3096EAC9B43BA878EB746 /* UberMoveBold.otf */ = {isa = PBXFileReference; name = "UberMoveBold.otf"; path = "../app/assets/fonts/UberMoveBold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B6502A7B67264EB08F921169 /* UberMoveMedium.otf */ = {isa = PBXFileReference; name = "UberMoveMedium.otf"; path = "../app/assets/fonts/UberMoveMedium.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +126,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				E233CBF5F47BEE60B243DCF8 /* Pods */,
+				40730D6B0F1E4C29A3C4381D /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -148,6 +153,16 @@
 			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		40730D6B0F1E4C29A3C4381D /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				48D3096EAC9B43BA878EB746 /* UberMoveBold.otf */,
+				B6502A7B67264EB08F921169 /* UberMoveMedium.otf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -245,6 +260,8 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				D843311E8C9946A09B6E6A57 /* UberMoveBold.otf in Resources */,
+				2E189448957A4FC0B87C22E3 /* UberMoveMedium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

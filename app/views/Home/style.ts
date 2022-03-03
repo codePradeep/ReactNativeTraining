@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { COLORS } from "../../config";
 
 const styles = StyleSheet.create({
 
@@ -15,11 +16,13 @@ const styles = StyleSheet.create({
         height:30,
         width: 30,
         borderRadius:20,
+        
+        backgroundColor:COLORS.skyblue
         // alignSelf:"center",
-        tintColor:"black"
+        
     },
     BannerContainer:{
-        backgroundColor:"skyblue",
+        backgroundColor:COLORS.skyblue,
         flexDirection:"row",
         justifyContent:"space-between",
         marginVertical:10,
@@ -32,9 +35,10 @@ const styles = StyleSheet.create({
         alignSelf:"center"
     },
     H1:{
-        fontSize:22,
+        fontSize:21,
         color:"black",
-        fontWeight:"700"
+        fontWeight:"600",
+        
     },
     P1:{
         fontSize:16,
@@ -46,7 +50,7 @@ const styles = StyleSheet.create({
         height:130,
         width:130,
         resizeMode:"stretch",
-        tintColor:"black",
+       
         borderTopRightRadius:10,
         borderBottomRightRadius:10,
     },
@@ -57,7 +61,7 @@ const styles = StyleSheet.create({
         
     },
     RideTypeContainer:{
-        backgroundColor:"lightgray",
+        backgroundColor:COLORS.graybackground,
         flexDirection:"row",
         justifyContent:"space-between",
         padding: 10,
@@ -71,15 +75,15 @@ const styles = StyleSheet.create({
         alignSelf:"flex-end"
     },
     caricon:{
-        height:70,
-        width:70,
-        resizeMode:"contain"
+        height:80,
+        width:80,
+        resizeMode:"stretch"
     },
     wharetoConatiner:{
         flexDirection:"row",
         justifyContent:"space-between",
         alignItems:"center",
-        backgroundColor:"skyblue",
+        backgroundColor:COLORS.graybackground,
         padding:10,
         
 
@@ -87,9 +91,9 @@ const styles = StyleSheet.create({
     TimeButton:{
         flexDirection:"row",
         justifyContent:"space-between",
-        backgroundColor:"lightgray",
+        backgroundColor:COLORS.white,
         padding:10,
-        borderRadius:10,
+        borderRadius:20,
 
         width:100
 
@@ -115,7 +119,7 @@ const styles = StyleSheet.create({
     imagecontainer:{
         width:40,
         height:40,
-        backgroundColor:"lightgray",
+        backgroundColor:COLORS.graybackground,
         padding:10,
         alignItems:"center",
         borderRadius:90,
@@ -126,11 +130,11 @@ const styles = StyleSheet.create({
         borderTopWidth:1,
         marginVertical:10,
         marginLeft:50,
-        borderColor:"lightgray"
+        borderColor:COLORS.graybackground
     },
     Map:{
         height:150,
-        backgroundColor:"lightgray",
+        backgroundColor:COLORS.graybackground,
         borderRadius:10
     }
 

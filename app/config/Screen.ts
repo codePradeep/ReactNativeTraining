@@ -2,7 +2,8 @@ const Screens={
     UserprofileViewModel:"UserprofileViewModel",
     HomeViewModel:"HomeViewModel",
     WalletViewModel:"WalletViewModel",
-    HelpViewModel:"HelpViewModel"
+    HelpViewModel:"HelpViewModel",
+    MessagesViewModel:"MessagesViewModel"
     
 
 }

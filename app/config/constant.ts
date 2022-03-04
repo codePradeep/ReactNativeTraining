@@ -44,6 +44,11 @@ const  ScreenConstent={
         Help:"Help",
         Alltopic:"All Topics"
 
+    },
+    MessagesScreen:{
+        Messages:"Messages",
+        coupon:"20% off on first %",
+        offertext:"Offer automatically applied for limited period only"
     }
 }
 const buttons={

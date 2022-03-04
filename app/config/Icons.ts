@@ -13,7 +13,8 @@ const Icon={
     settings:require("../assets/Icons/gear.png"),
     giftbox:require("../assets/Icons/gift-box-with-a-bow.png"),
     info:require("../assets/Icons/info.png"),
-    help:require("../assets/Icons/lifesaver.png")
+    help:require("../assets/Icons/lifesaver.png"),
+    back:require("../assets/Icons/back.png")
 }
 
 export{ Icon}

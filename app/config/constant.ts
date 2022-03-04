@@ -39,6 +39,11 @@ const  ScreenConstent={
         addvoucher:"Add voucher code",
         permotions:"permotions"
 
+    },
+    Help:{
+        Help:"Help",
+        Alltopic:"All Topics"
+
     }
 }
 const buttons={

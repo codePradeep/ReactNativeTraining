@@ -9,7 +9,8 @@ const MessagesViewModel = (props: MessagesViewModelprops) => {
     const { navigation } = props
 
     return (
-        <MessagesScreen {...{
+        <MessagesScreen 
+        {...{
             navigation
         }} />
     )

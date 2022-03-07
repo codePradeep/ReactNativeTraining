@@ -4,12 +4,16 @@ import MessagesViewModel from "./MessagesViewModel";
 import SplashScreenViewModel from "./SplashScreenViewModel";
 import UserprofileViewModel from "./UserprofileViewModel";
 import WalletViewModel from "./WallectViewModel";
+import OnBoardingViewModel from "./Onboarding";
+import SettingsViewModel from "./SettingsViewModel";
 
 export {
+    OnBoardingViewModel,
     HomeViewModel,
     SplashScreenViewModel,
     UserprofileViewModel,
     WalletViewModel,
     HelpViewModel,
-    MessagesViewModel
+    MessagesViewModel,
+    SettingsViewModel
 };

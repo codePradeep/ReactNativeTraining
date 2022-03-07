@@ -7,7 +7,7 @@ import WalletViewModel from "./WallectViewModel";
 import OnBoardingViewModel from "./Onboarding";
 import SettingsViewModel from "./SettingsViewModel";
 import LoginViewModel from "./LoginViewModel";
-
+import SearchViewModel from "./SearchViewModel";
 export {
     OnBoardingViewModel,
     HomeViewModel,
@@ -17,5 +17,6 @@ export {
     HelpViewModel,
     MessagesViewModel,
     SettingsViewModel,
-    LoginViewModel
+    LoginViewModel,
+    SearchViewModel
 };

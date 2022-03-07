@@ -58,13 +58,20 @@ const  ScreenConstent={
         shareyourtrip:"Share your trip status with family and friends in a single tap",
         Doyouwanttosignout:"Do you want to sign out?",
         Staysigned:"Stay signed in to book your next trip faster"
+    },
+    Login:{
+        EnterNumber :"Enter Your Mobile Number ",
+        des:"If you continue, you may recive an sms for varification message and datarate may apply"
     }
 }
 const buttons={
     giftcard:"Gift Card",
     SendGift:"Send a Gift",
     ConfirmSignOut:"Confirm Sign Out",
-    cancel:"Cancel"
+    cancel:"Cancel",
+    next:"Next",
+    facebook:"Continue with Facebook",
+    Google:"Continue with Google"
 }
 
 export { profileList,ScreenConstent,buttons}

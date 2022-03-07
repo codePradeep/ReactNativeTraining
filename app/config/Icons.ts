@@ -16,7 +16,10 @@ const Icon={
     help:require("../assets/Icons/lifesaver.png"),
     back:require("../assets/Icons/back.png"),
     home:require("../assets/Icons/home.png"),
-    work:require("../assets/Icons/work.png")
+    work:require("../assets/Icons/work.png"),
+    google:require("../assets/Icons/google.png"),
+    facebook:require("../assets/Icons/facebook.png"),
+    
 }
 
 export{ Icon}

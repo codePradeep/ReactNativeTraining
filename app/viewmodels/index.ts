@@ -6,6 +6,7 @@ import UserprofileViewModel from "./UserprofileViewModel";
 import WalletViewModel from "./WallectViewModel";
 import OnBoardingViewModel from "./Onboarding";
 import SettingsViewModel from "./SettingsViewModel";
+import LoginViewModel from "./LoginViewModel";
 
 export {
     OnBoardingViewModel,
@@ -15,5 +16,6 @@ export {
     WalletViewModel,
     HelpViewModel,
     MessagesViewModel,
-    SettingsViewModel
+    SettingsViewModel,
+    LoginViewModel
 };

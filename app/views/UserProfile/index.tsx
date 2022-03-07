@@ -39,7 +39,8 @@ const Userprofile = (props: userprofileprops) => {
             <View style={styles.boxs}>
                 {data.map((item,index)=>{
                     return(
-                        <TouchableOpacity style={styles.boxstyle}>
+                        <TouchableOpacity key={index}
+                        style={styles.boxstyle}>
                             <Image source={item.image} style={styles.lighticon}/>
                             <Text style={styles.P1}>{item.name}</Text>                            
                         </TouchableOpacity>

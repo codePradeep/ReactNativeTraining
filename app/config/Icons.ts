@@ -14,7 +14,9 @@ const Icon={
     giftbox:require("../assets/Icons/gift-box-with-a-bow.png"),
     info:require("../assets/Icons/info.png"),
     help:require("../assets/Icons/lifesaver.png"),
-    back:require("../assets/Icons/back.png")
+    back:require("../assets/Icons/back.png"),
+    home:require("../assets/Icons/home.png"),
+    work:require("../assets/Icons/work.png")
 }
 
 export{ Icon}

@@ -49,11 +49,22 @@ const  ScreenConstent={
         Messages:"Messages",
         coupon:"20% off on first %",
         offertext:"Offer automatically applied for limited period only"
+    },
+    Settings:{
+        Settings:"Settings",
+        Fevorites:"Fevorites",
+        TrustedContacts:"Trusted Contacts",
+        ManageTrustedContacts:"Manage Trusted Contacts",
+        shareyourtrip:"Share your trip status with family and friends in a single tap",
+        Doyouwanttosignout:"Do you want to sign out?",
+        Staysigned:"Stay signed in to book your next trip faster"
     }
 }
 const buttons={
     giftcard:"Gift Card",
-    SendGift:"Send a Gift"
+    SendGift:"Send a Gift",
+    ConfirmSignOut:"Confirm Sign Out",
+    cancel:"Cancel"
 }
 
 export { profileList,ScreenConstent,buttons}

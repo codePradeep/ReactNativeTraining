@@ -7,6 +7,7 @@ import WalletViewModel from "./WallectViewModel";
 import OnBoardingViewModel from "./Onboarding";
 import SettingsViewModel from "./SettingsViewModel";
 import LoginViewModel from "./LoginViewModel";
+import EditAccountViewModel from "./EditaccountViewModel";
 
 export {
     OnBoardingViewModel,
@@ -17,5 +18,6 @@ export {
     HelpViewModel,
     MessagesViewModel,
     SettingsViewModel,
-    LoginViewModel
+    LoginViewModel,
+    EditAccountViewModel
 };

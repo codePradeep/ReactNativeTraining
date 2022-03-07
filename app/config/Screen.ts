@@ -6,7 +6,8 @@ const Screens={
     HelpViewModel:"HelpViewModel",
     MessagesViewModel:"MessagesViewModel",
     SettingsViewModel:"SettingsViewModel",
-    LoginViewModel:"LoginViewModel"
+    LoginViewModel:"LoginViewModel",
+    EditAccountViewModel:"EditAccountViewModel"
     
 
 }

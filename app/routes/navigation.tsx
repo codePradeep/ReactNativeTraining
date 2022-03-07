@@ -2,6 +2,7 @@ import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { 
+  EditAccountViewModel,
   HelpViewModel, 
   HomeViewModel, 
   LoginViewModel, 
@@ -25,7 +26,7 @@ const Stack = createNativeStackNavigator();
 const Routenavigation = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="LoginViewModel"
+      <Stack.Navigator initialRouteName="EditAccountViewModel"
         screenOptions={{ headerShown: false }} >
         <Stack.Screen name='SplashScreenViewModel' component={SplashScreenViewModel} />
         <Stack.Screen name={Screens.OnBoardingViewModel} component={OnBoardingViewModel} />
@@ -36,6 +37,8 @@ const Routenavigation = () => {
         <Stack.Screen name={Screens.MessagesViewModel} component={MessagesViewModel} />
         <Stack.Screen name={Screens.SettingsViewModel} component={SettingsViewModel} />
         <Stack.Screen name={Screens.LoginViewModel} component={LoginViewModel} />
+        <Stack.Screen name={Screens.EditAccountViewModel} component={EditAccountViewModel} />
+
 
 
 

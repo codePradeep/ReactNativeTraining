@@ -7,7 +7,9 @@ const Screens={
     MessagesViewModel:"MessagesViewModel",
     SettingsViewModel:"SettingsViewModel",
     LoginViewModel:"LoginViewModel",
-    SearchViewModel:"SearchViewModel"
+    SearchViewModel:"SearchViewModel",
+    TripViewModal:"TripViewModal",
+    
     
 
 }

@@ -8,6 +8,7 @@ import OnBoardingViewModel from "./Onboarding";
 import SettingsViewModel from "./SettingsViewModel";
 import LoginViewModel from "./LoginViewModel";
 import SearchViewModel from "./SearchViewModel";
+import TripViewModal from "./TripViewModal";
 export {
     OnBoardingViewModel,
     HomeViewModel,
@@ -18,5 +19,6 @@ export {
     MessagesViewModel,
     SettingsViewModel,
     LoginViewModel,
-    SearchViewModel
+    SearchViewModel,
+    TripViewModal
 };

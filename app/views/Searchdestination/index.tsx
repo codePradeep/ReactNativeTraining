@@ -88,6 +88,8 @@ const SearchScreen = (props: SearchScreenprops) => {
                         pinColor="black"
                         opacity={1}
                     />
+                    {/* <Image source={Icon.location} style={{  height: 20, width: 20, }} /> */}
+
                 </MapView>
             </View>
             <View style={styles.button}>

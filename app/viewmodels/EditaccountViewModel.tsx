@@ -11,18 +11,8 @@ const EditAccountViewModel = (props: EditAccountViewModelprops) => {
     const { navigation } = props
     const [ModalVisible,setModalVisible]=useState(false)
 
-    const Fevorites = [
-        {
-            icon: Icon.home,
-            name: "Add Home",
-
-        },
-        {
-            icon: Icon.work,
-            name: "Add Work"
-        }
-    ]
-    const settingButtons = [
+  
+    const Data = [
         {
             Text: "FirstName",
             subtext: "Pradeep"
@@ -47,8 +37,8 @@ const EditAccountViewModel = (props: EditAccountViewModelprops) => {
         <EditAccount
             {...{
                 navigation,
-                Fevorites,
-                settingButtons,
+                
+                Data,
                 ModalVisible,
                 setModalVisible
             }} />

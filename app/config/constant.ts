@@ -71,7 +71,8 @@ const buttons={
     cancel:"Cancel",
     next:"Next",
     facebook:"Continue with Facebook",
-    Google:"Continue with Google"
+    Google:"Continue with Google",
+    Save:"Save"
 }
 
 export { profileList,ScreenConstent,buttons}

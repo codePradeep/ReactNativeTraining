@@ -26,7 +26,8 @@ const styles = StyleSheet.create({
     P1: {
         fontSize: 16,
         color: "black",
-        ...Font.body
+        ...Font.body,
+        marginVertical:5
 
     },
     P2: {
@@ -95,8 +96,12 @@ const styles = StyleSheet.create({
         ...Font.body,
         textAlign:"center"
     },
-    modalcontainer:{ flex: 1, justifyContent: "flex-end",backgroundColor:"rgba(1,1,1,.9)" },
-    submodalcontainer:{ backgroundColor: COLORS.graybackground,padding:20}
+    modalcontainer:{ flex: 1, justifyContent: "center",backgroundColor:"rgba(1,1,1,.9)" },
+    submodalcontainer:{ backgroundColor: COLORS.graybackground,padding:20},
+    textInput:{
+        borderBottomWidth:1,
+
+    }
 
 })
 

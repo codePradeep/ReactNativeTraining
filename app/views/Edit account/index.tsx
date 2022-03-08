@@ -2,17 +2,14 @@ import React from "react";
 import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { Header, Seperater } from "../../common";
 import { Icon, ScreenConstent } from "../../config";
-import SettingModal from "./SettingModal";
+import AccountModal from "./AccountModal";
 import styles from "./style";
 
 
 interface EditAccountprops {
     navigation: any
-    Fevorites: {
-        icon: any,
-        name: string
-    }[]
-    settingButtons: {
+
+    Data: {
         Text: string;
         subtext: string;
     }[]
@@ -22,8 +19,8 @@ interface EditAccountprops {
 const EditAccount = (props: EditAccountprops) => {
     const {
         navigation,
-        Fevorites,
-        settingButtons,
+
+        Data,
         ModalVisible,
         setModalVisible
     } = props
@@ -37,35 +34,31 @@ const EditAccount = (props: EditAccountprops) => {
                 showsVerticalScrollIndicator={false}
                 style={styles.secendContainer}>
 
-                <TouchableOpacity style={styles.userContainer}>
-                    <Image source={Icon.user} style={styles.icon} />
+                <View style={styles.userContainer}>
+                    <TouchableOpacity>
+                        <Image source={Icon.user} style={styles.icon} />
+                    </TouchableOpacity>
                     <View style={styles.usertextconatiner}>
                         <Text style={styles.P1}>Pradeep Sharma</Text>
                         <Text style={styles.P3} >+91 87076133**</Text>
                     </View>
-                </TouchableOpacity>
+                </View>
                 <Seperater />
                 <View style={styles.subconatiner} >
-                    {settingButtons.map((item, index) => {
+                    {Data.map((item, index) => {
                         return (
                             <View key={index}>
-                                <TouchableOpacity >
-                                    <Text style={styles.P1}>{item.Text}</Text>
-                                    <Text style={styles.P2} >{item.subtext}</Text>
+                                <TouchableOpacity  onPress={()=>setModalVisible(true)}>
+                                    <Text style={styles.P2}>{item.Text}</Text>
+                                    <Text style={styles.P1} >{item.subtext}</Text>
                                 </TouchableOpacity>
-                                <Seperater />
+                               {index!=4 && <Seperater />}
                             </View>
                         )
                     })}
-
-
-
-
-
-
                 </View>
 
-                <SettingModal navigation={navigation} ModalVisible={ModalVisible} setModalVisible={setModalVisible} />
+                <AccountModal navigation={navigation} ModalVisible={ModalVisible} setModalVisible={setModalVisible} />
 
             </ScrollView>
 

@@ -1,14 +1,14 @@
 import React from "react";
-import { Modal, Text, Touchable, TouchableOpacity, View } from "react-native";
+import { Modal, Text, TextInput, Touchable, TouchableOpacity, View } from "react-native";
 import { buttons, COLORS, ScreenConstent } from "../../config";
 import styles from "./style";
 
-interface SettingModalprops {
+interface AccountModalprops {
     navigation: any
     ModalVisible: any
     setModalVisible: any
 }
-const SettingModal = (props: SettingModalprops) => {
+const AccountModal = (props: AccountModalprops) => {
     const { navigation, ModalVisible, setModalVisible } = props
 
     return (
@@ -23,10 +23,13 @@ const SettingModal = (props: SettingModalprops) => {
             }}>
             <View style={styles.modalcontainer}>
                 <View style={styles.submodalcontainer}>
-                    <Text style={styles.H2}>{ScreenConstent.Settings.Doyouwanttosignout}</Text>
-                    <Text style={styles.P3}>{ScreenConstent.Settings.Staysigned}</Text>
+                    <Text style={styles.P1}>First Name</Text>
+                    <TextInput  style={styles.textInput} />
+                   
+                    
+                    
                     <TouchableOpacity style={styles.button}>
-                        <Text style={styles.ButtonText}>{buttons.ConfirmSignOut}</Text>
+                        <Text style={styles.ButtonText}>{buttons.Save}</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={[styles.button, { backgroundColor: COLORS.white }]} onPress={() => setModalVisible(false)}>
                         <Text style={[styles.ButtonText, { color: COLORS.black }]}>{buttons.cancel}</Text>
@@ -41,5 +44,5 @@ const SettingModal = (props: SettingModalprops) => {
     )
 }
 
-export default SettingModal
+export default AccountModal
 

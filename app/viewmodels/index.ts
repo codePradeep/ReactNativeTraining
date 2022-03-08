@@ -9,6 +9,8 @@ import SettingsViewModel from "./SettingsViewModel";
 import LoginViewModel from "./LoginViewModel";
 import EditAccountViewModel from "./EditaccountViewModel";
 
+import SearchViewModel from "./SearchViewModel";
+import TripViewModal from "./TripViewModal";
 export {
     OnBoardingViewModel,
     HomeViewModel,
@@ -19,5 +21,7 @@ export {
     MessagesViewModel,
     SettingsViewModel,
     LoginViewModel,
-    EditAccountViewModel
+    EditAccountViewModel,
+    SearchViewModel,
+    TripViewModal
 };

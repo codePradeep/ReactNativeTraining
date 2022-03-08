@@ -1,5 +1,6 @@
 import React from "react";
 import { StyleSheet } from "react-native";
+import { COLORS, Font } from "../../config";
 
 const styles = StyleSheet.create({
     container: {
@@ -12,15 +13,17 @@ const styles = StyleSheet.create({
       paddingHorizontal: 22,
       paddingVertical: 10,
     },
-    paragraph: {
-        
-        fontSize: 15,
-        color:"skyblue",
-        fontWeight: 'bold',
-        paddingHorizontal: 22,
-      paddingVertical: 5,
-        
-      },
+    button:{
+      backgroundColor:COLORS.black,
+      padding:10,
+      marginVertical:10
+  },
+  ButtonText:{
+      fontSize: 16,
+      color: COLORS.white,
+      ...Font.body,
+      textAlign:"center"
+  },
 })
 
 export default styles;

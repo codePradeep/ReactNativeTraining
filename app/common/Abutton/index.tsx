@@ -1,21 +1,22 @@
 import React from "react";
-import { View,Text,TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 import styles from './style'
 
-interface Buttonprops{
-    title:string;
-    press:any;
+interface Buttonprops {
+    title: string;
+    onPress: any;
 }
 
-export default function Abutton (props:any){
-    const {title} = props;
-    return(
+export default function Abutton(props: Buttonprops) {
+    const { title,onPress } = props;
+    return (
         <View>
-         <TouchableOpacity
-    onPress={props.Press}
-    style={styles.container}>
-    <Text style={styles.paragraph} >{props.title}</Text>
-  </TouchableOpacity>
+            <TouchableOpacity style={styles.button}
+            onPress={onPress}
+            
+            >
+                <Text style={styles.ButtonText}>{title}</Text>
+            </TouchableOpacity>
 
         </View>
     )

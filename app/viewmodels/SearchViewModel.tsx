@@ -8,7 +8,9 @@ const SearchViewModel=(props:SearchViewModelprops)=>{
     const {navigation}=props
     const [fromtext,setfromtext]=useState("")
     const [desinationtext,setdestinationtext]=useState("")
-    console.log(fromtext,desinationtext)
+    const [Data,setData]=useState({ "latitude": 28.595521527723474, "latitudeDelta": 0.09220340012889494, "longitude": 77.33245169743896, "longitudeDelta": 0.0592241808771945})
+
+    console.log(fromtext,Data)
     return(
         <SearchScreen
         {...{
@@ -16,7 +18,9 @@ const SearchViewModel=(props:SearchViewModelprops)=>{
             fromtext,
             setfromtext:(text:string)=>setfromtext(text),
             desinationtext,
-            setdestinationtext:(text:string)=>setdestinationtext(text)
+            setdestinationtext:(text:string)=>setdestinationtext(text),
+            Data,
+            setData
         }}
         
         />

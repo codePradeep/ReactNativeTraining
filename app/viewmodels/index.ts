@@ -11,6 +11,7 @@ import EditAccountViewModel from "./EditaccountViewModel";
 
 import SearchViewModel from "./SearchViewModel";
 import TripViewModal from "./TripViewModal";
+import CashPayViewModel from "./CashPayViewModel";
 export {
     OnBoardingViewModel,
     HomeViewModel,
@@ -23,5 +24,6 @@ export {
     LoginViewModel,
     EditAccountViewModel,
     SearchViewModel,
-    TripViewModal
+    TripViewModal,
+    CashPayViewModel
 };

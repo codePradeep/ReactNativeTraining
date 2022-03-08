@@ -10,6 +10,7 @@ const Screens={
     EditAccountViewModel:"EditAccountViewModel",
     SearchViewModel:"SearchViewModel",
     TripViewModal:"TripViewModal",
+    CashPayViewModel:"CashPayViewModel"
     
     
 

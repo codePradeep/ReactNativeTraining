@@ -2,6 +2,7 @@ import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { 
+  CashPayViewModel,
   EditAccountViewModel,
   HelpViewModel, 
   HomeViewModel, 
@@ -28,7 +29,7 @@ const Stack = createNativeStackNavigator();
 const Routenavigation = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="TripViewModal"
+      <Stack.Navigator initialRouteName="CashPayViewModel"
         screenOptions={{ headerShown: false }} >
         <Stack.Screen name='SplashScreenViewModel' component={SplashScreenViewModel} />
         <Stack.Screen name={Screens.OnBoardingViewModel} component={OnBoardingViewModel} />
@@ -42,6 +43,7 @@ const Routenavigation = () => {
         <Stack.Screen name={Screens.EditAccountViewModel} component={EditAccountViewModel} />
         <Stack.Screen name={Screens.SearchViewModel} component={SearchViewModel} />
         <Stack.Screen name={Screens.TripViewModal} component={TripViewModal} />
+        <Stack.Screen name={Screens.CashPayViewModel} component={CashPayViewModel} />
 
 
 

@@ -26,7 +26,7 @@ const Stack = createNativeStackNavigator();
 const Routenavigation = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="EditAccountViewModel"
+      <Stack.Navigator initialRouteName="SplashScreenViewModel"
         screenOptions={{ headerShown: false }} >
         <Stack.Screen name='SplashScreenViewModel' component={SplashScreenViewModel} />
         <Stack.Screen name={Screens.OnBoardingViewModel} component={OnBoardingViewModel} />

@@ -1,7 +1,7 @@
 import React from "react";
 import { Image, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { Seperater } from "../../common";
-import { buttons, Icon, ScreenConstent } from "../../config";
+import { buttons, Icon, ScreenConstent, Screens } from "../../config";
 import styles from "./style";
 
 interface LoginScreenprops {
@@ -20,7 +20,7 @@ const LoginScreen = (props: LoginScreenprops) => {
                 </View>
                 <TextInput style={styles.inputstyle} />
             </View>
-            <TouchableOpacity style={styles.button}>
+            <TouchableOpacity style={styles.button} onPress={()=>navigation.navigate(Screens.HomeViewModel)}>
                 <Text style={styles.ButtonText}>{buttons.next}</Text>
             </TouchableOpacity>
             <Text>{ScreenConstent.Login.des}</Text>

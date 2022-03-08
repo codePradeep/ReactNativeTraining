@@ -13,19 +13,20 @@ const Styles = StyleSheet.create({
         resizeMode: "contain"
     },
     H1: {
-        fontSize: 30,
+        fontSize: 25,
         color: "black",
         fontWeight: "600",
         ...Font.heading
     },
     H2: {
-        fontSize: 18,
-        color: "black",
+        fontSize: 15,
+        color:"#484848",
         fontWeight: "600",
+        width:"95%",
         ...Font.heading
     },
     P1: {
-        fontSize: 16,
+        fontSize: 14,
         color: "black",
         ...Font.body
 

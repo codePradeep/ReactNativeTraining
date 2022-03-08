@@ -19,7 +19,7 @@ const SplashScreenViewModel = (props: SplashScreenprops) => {
 
   useEffect(() => {
     if (authLoaded) {
-      navigation.replace(Screens.HomeViewModel);
+      navigation.replace(Screens.OnBoardingViewModel);
     }
   }, [authLoaded, navigation]);
 

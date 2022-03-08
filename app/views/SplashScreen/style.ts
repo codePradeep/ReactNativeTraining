@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { COLORS, Font } from "../../config";
 
 const styles=StyleSheet.create({
     MainContainer:{
@@ -11,9 +12,14 @@ const styles=StyleSheet.create({
         fontSize:40,
         color:"black",
         fontWeight:"800",
-        fontFamily:"UberMoveBold"
+        ...Font.body
 
-    }
+    },
+    H1: {
+        fontSize: 50,
+        color: COLORS.black,
+        ...Font.body
+    },
 })
 
 export default styles

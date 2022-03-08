@@ -7,8 +7,10 @@ interface userprofileprops {
     profileList: {
         image: any;
         name: string;
+        route: string
     }[]
     data: {
+        route: any
         image: any;
         name: string;
     }[]
@@ -30,7 +32,7 @@ const Userprofile = (props: userprofileprops) => {
                 </View>
 
                 <TouchableOpacity
-                    onPress={() => navigation.navigate(Screens.UserprofileViewModel)}>
+                    onPress={() => navigation.navigate(Screens.EditAccountViewModel)}>
                     <Image source={Icon.user} style={styles.UserIcon} />
                 </TouchableOpacity>
 
@@ -39,7 +41,9 @@ const Userprofile = (props: userprofileprops) => {
             <View style={styles.boxs}>
                 {data.map((item,index)=>{
                     return(
-                        <TouchableOpacity key={index}
+                        <TouchableOpacity
+                        onPress={()=>navigation.navigate(item.route)}
+                        key={index}
                         style={styles.boxstyle}>
                             <Image source={item.image} style={styles.lighticon}/>
                             <Text style={styles.P1}>{item.name}</Text>                            
@@ -51,7 +55,11 @@ const Userprofile = (props: userprofileprops) => {
             
                 {profileList.map((item,index)=>{
                     return(
-                        <TouchableOpacity key={index} style={styles.list}>
+                        <TouchableOpacity 
+                        key={index} 
+                        style={styles.list}
+                        onPress={()=>navigation.navigate(item.route)}
+                        >
                             <Image source={item.image}style={styles.icons} />
                             <Text style={styles.listitem}>{item.name}</Text>
                         </TouchableOpacity>

@@ -32,7 +32,8 @@ const styles = StyleSheet.create({
     P2: {
         fontSize: 12,
         color: "#3b3b3b",
-        ...Font.body
+        ...Font.body,
+        marginVertical:5
 
     },
     P3: {
@@ -87,7 +88,8 @@ const styles = StyleSheet.create({
     button:{
         backgroundColor:COLORS.black,
         padding:10,
-        marginVertical:10
+        marginVertical:10,
+        borderWidth:1
     },
     ButtonText:{
         fontSize: 16,

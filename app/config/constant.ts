@@ -1,26 +1,35 @@
-import { Icon } from ".";
+import { Icon, Screens } from ".";
 import Wallet from "../views/Wallet";
 
 const profileList=[
     {
         image:Icon.email,
-        name:"Messages"
+        name:"Messages",
+        route: Screens.MessagesViewModel
     },
     {
         image:Icon.giftbox,
-        name:"Send a gift"
+        name:"Send a gift",
+        route: Screens.MessagesViewModel
+
     },
     {
         image:Icon.settings,
-        name:"Settings"
+        name:"Settings",
+        route: Screens.SettingsViewModel
+
     },
     {
         image:Icon.driver,
-        name:"Driver or deliver with uber"
+        name:"Driver or deliver with uber",
+        route: Screens.MessagesViewModel
+
     },
     {
         image:Icon.info,
-        name:"Legal"
+        name:"Legal",
+        route: Screens.HelpViewModel
+
     },
 
 ]
@@ -72,7 +81,8 @@ const buttons={
     next:"Next",
     facebook:"Continue with Facebook",
     Google:"Continue with Google",
-    Save:"Save"
+    Save:"Save",
+    Signout:"Signout"
 }
 
 export { profileList,ScreenConstent,buttons}

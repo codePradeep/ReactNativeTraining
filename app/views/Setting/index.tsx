@@ -1,7 +1,7 @@
 import React from "react";
 import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { Header, Seperater } from "../../common";
-import { Icon, ScreenConstent } from "../../config";
+import { buttons, Icon, ScreenConstent } from "../../config";
 import SettingModal from "./SettingModal";
 import styles from "./style";
 
@@ -87,16 +87,9 @@ const SettingScreen = (props: SettingScreenprops) => {
                     })}
 
                     <TouchableOpacity onPress={()=>setModalVisible(true)} >
-                        <Text style={styles.P1}>Signout</Text>
+                        <Text style={styles.P1}>{buttons.Signout}</Text>
                     </TouchableOpacity>
-
-
-
-
-
-
                 </View>
-
                 <SettingModal navigation={navigation} ModalVisible={ModalVisible} setModalVisible={setModalVisible} />
 
             </ScrollView>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Icon, profileList } from "../config";
+import { Icon, profileList, Screens } from "../config";
 import Userprofile from "../views/UserProfile";
 
 interface UserprofileViewModel{
@@ -11,15 +11,18 @@ const UserprofileViewModel=(props:UserprofileViewModel)=>{
     const  data=[
         {
             image:Icon.help,
-            name:"Help"
+            name:"Help",
+            route:Screens.HelpViewModel
         },
         {
             image:Icon.email,
-            name:"Wallet"
+            name:"Wallet",
+            route:Screens.WalletViewModel
         },
         {
             image:Icon.clock,
-            name:"Trips"
+            name:"Trips",
+            route:undefined
         }
     ]
 

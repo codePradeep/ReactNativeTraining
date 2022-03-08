@@ -8,7 +8,7 @@ interface SplashScreenprops {
 const SplashScreen=(props:SplashScreenprops)=>{
     return(
         <View style={styles.MainContainer}>
-            <Text style={styles.Text}>Uber</Text>
+            <Text style={styles.H1}>Uber</Text>
         </View>
     )
 }

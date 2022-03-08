@@ -88,7 +88,9 @@ const styles = StyleSheet.create({
     button:{
         backgroundColor:COLORS.black,
         padding:10,
-        marginVertical:10
+        marginVertical:10,
+        borderWidth:1,
+        borderColor:COLORS.black
     },
     ButtonText:{
         fontSize: 16,

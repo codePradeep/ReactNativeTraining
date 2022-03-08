@@ -27,7 +27,7 @@ const Wallet = (props: Walletprops) => {
                     </View>
                 </>
                 <View style={Styles.giftcardbutton}>
-                    <Text style={[Styles.P1, { color: COLORS.white }]}>+</Text>
+                    <Text style={[Styles.P1, { color: COLORS.white }]}>+ </Text>
                     <Text style={[Styles.P1, { color: COLORS.white }]}>{buttons.giftcard}</Text>
                 </View>
 
@@ -62,7 +62,7 @@ const Wallet = (props: Walletprops) => {
                             <Image source={Icon.driver} style={[Styles.icon, { tintColor: COLORS.white }]} />
                         </View>
                         <View>
-                            <Text style={[Styles.P1, { color: "blue" }]}>{ScreenConstent.Wallet.Startusinguber}</Text>
+                            <Text style={[Styles.P1, { color: "#031045" }]}>{ScreenConstent.Wallet.Startusinguber}</Text>
                             <Text style={[Styles.P1, { color: "gray" }]}>{ScreenConstent.Wallet.turnon}</Text>
                         </View>
                     </TouchableOpacity>

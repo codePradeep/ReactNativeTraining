@@ -1,6 +1,6 @@
 import React from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
-import { buttons, Icon } from "../../config";
+import { buttons, Icon, Screens } from "../../config";
 import styles from "./style";
 
 interface Onboardingscreenprops {
@@ -17,7 +17,8 @@ const Onboardingscreen = (props: Onboardingscreenprops) => {
             <Text style={styles.H1}>Move with Safety</Text>
 
             </View>
-            <TouchableOpacity style={styles.button}>
+            <TouchableOpacity style={styles.button}
+            onPress={()=>navigation.navigate(Screens.LoginViewModel)}>
                 <Text style={styles.ButtonText}>Get Started</Text>
             </TouchableOpacity>
 

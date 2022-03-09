@@ -71,6 +71,13 @@ const  ScreenConstent={
     Login:{
         EnterNumber :"Enter Your Mobile Number ",
         des:"If you continue, you may recive an sms for varification message and datarate may apply"
+    },
+    PaymentOPtions:{
+        Paymentopt:"Payment Options",
+        ubercash:"Uber Cash",
+        paymentMethod:"Payment Method",
+        Voucher:"Voucher"
+
     }
 }
 const buttons={
@@ -82,7 +89,11 @@ const buttons={
     facebook:"Continue with Facebook",
     Google:"Continue with Google",
     Save:"Save",
-    Signout:"Signout"
+    Signout:"Signout",
+    personal:"Personal",
+    Business:"Business",
+    AddPayementmethod:"Add Payment Method" ,
+    AddVoucherCode:"AddVoucherCode"
 }
 
 export { profileList,ScreenConstent,buttons}

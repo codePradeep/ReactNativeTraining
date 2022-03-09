@@ -9,6 +9,7 @@ import {
   LoginViewModel, 
   MessagesViewModel, 
   OnBoardingViewModel, 
+  PaymentOptionsViewModel, 
   SearchViewModel, 
   SettingsViewModel, 
   SplashScreenViewModel, 
@@ -29,7 +30,7 @@ const Stack = createNativeStackNavigator();
 const Routenavigation = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="CashPayViewModel"
+      <Stack.Navigator initialRouteName="PaymentOptionsViewModel"
         screenOptions={{ headerShown: false }} >
         <Stack.Screen name='SplashScreenViewModel' component={SplashScreenViewModel} />
         <Stack.Screen name={Screens.OnBoardingViewModel} component={OnBoardingViewModel} />
@@ -44,6 +45,8 @@ const Routenavigation = () => {
         <Stack.Screen name={Screens.SearchViewModel} component={SearchViewModel} />
         <Stack.Screen name={Screens.TripViewModal} component={TripViewModal} />
         <Stack.Screen name={Screens.CashPayViewModel} component={CashPayViewModel} />
+        <Stack.Screen name={Screens.PaymentOptionsViewModel} component={PaymentOptionsViewModel} />
+
 
 
 
